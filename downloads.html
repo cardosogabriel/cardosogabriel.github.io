@@ -21,7 +21,7 @@
 
   </head>
   
-  <body class="documentation">
+  <body class="downloads">
   
     <div class="dropup">
        <div id="ajbossproject">A JBoss Project</div> <a class="tabnav-closed" href="#" id="tab">Red Hat</a>
@@ -45,8 +45,8 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">LiveOak</a></li>
             <li><a href="#">Getting Started</a></li>
-            <li><a href="downloads.html">Downloads</a></li>
-            <li class="dropdown active">
+            <li class="active"><a href="downloads.html">Downloads</a></li>
+            <li class="dropdown">
               <a href="documentation.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="documentation.html">Getting Started</a></li>
@@ -66,53 +66,102 @@
 
     <section class="main-banner">
       <div class="container">
-        <h1>Documentation</h1>
-        <p>How to use LiveOak as backend for your amazing applications.</p>
+        <h1>Downloads</h1>
+        <p>The current release, previous versions and how to have LiveOak running.</p>
       </div><!-- container -->
     </section> <!-- main banner -->
 
     <section class="docs">
       <div class="container">
       
-        <div class="row">        
+        <div class="row">    
+        
           <div class="col-md-3 sidebar">
             <ul class="nav">
               <li class="active">
-                <a href="#getting-started">Getting Started</a>
+                <a href="#downloads">Downloads</a>
                 <ul class="nav">
-                  <li class="active"><a href="#getting-getting">Getting LiveOak</a></li>
-                  <li><a href="#getting-installing">Installing and Running LiveOak</a></li>
+                  <li class="active"><a href="#current-version">Current Version</a></li>
+                  <li><a href="#github">Tagged on GitHub</a></li>
+                  <li><a href="#previous-versions">Previous Versions</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#dashboard">Dashboard</a>
-              </li>
-              <li>
-                <a href="#developing">Developing Apps</a>
-              </li>
-              <li>
-                <a href="#customising">Customising the Server</a>
-              </li>
-              <li>
-                <a href="#advanced">Advanced Topics</a>
-              </li>
-              <li>
-                <a href="#client">Client Libraries</a>
+                <a href="#installing-and-running">Installing and Running</a>
+                <ul class="nav">
+                  <li><a href="#locally">Locally</a></li>
+                  <li><a href="#in-the-cloud">In the Cloud</a></li>
+                </ul>
               </li>
             </ul>
           </div><!-- col -->
         
           <div class="col-md-9 text-content">
-            <h2 class="section-header first">Introduction</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, or example, should be wrapped as inline.</p>
+            <h2 class="section-header first" id="downloads">Downloads</h2>
+            <p class="lead">LiveOak is currently on version v1.0.0.Beta01, from October 27, 2014. Download your preferred distribution choosing among the options below.</p>
 
-            <h3>Getting LiveOak</h3>
-            <p>LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume cloud services that most mobile applications today require.</p>
-            <p>LiveOak can be deployed locally on a developer machine, or in the cloud - there is an example available for deploying it to OpenShift Online.</p>
-            <p>For this guide we’ll use a local installation which can be downloaded from <a href="http://liveoak.io/downloads">http://liveoak.io/downloads</a>.
+            <h3 id="current-version">Current Version (v1.0.0.Beta01)</h3>
+            <div class="row download-buttons">
+              <div class="col-sm-4">
+                <a href="#" class="btn btn-default btn-lg full-width"><i class="fa fa-download"></i> Binary .zip</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" class="btn btn-default btn-lg full-width"><i class="fa fa-download"></i> Binary tar.gz</a>
+              </div>
+              <div class="col-sm-4">
+                <a href="#" class="btn btn-default btn-lg full-width"><i class="fa fa-download"></i> Source .zip</a>
+              </div>
+            </div>
             
-            <h3>Installing and Running LiveOak</h3>
-            <p>It’s very easy to get started with LiveOak.</p>
+            <h3 id="github">Tagged on GitHub</h3>
+            <p>Get the source directly from the <a href="https://github.com/liveoak-io/liveoak">LiveOak repository on GitHub.<p>
+            <a href="#" class="btn btn-default btn-lg github"><i class="fa fa-github"></i> View on GitHub</a>
+            
+            <h3 id="previous-versios">Download Previous Versions</h3>
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Version v1.0.0.Alpha02, from August 29, 2014</th>
+                </tr>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.zip" id="1.0.0.Alpha02.zip">Binary .zip archive</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.tar.gz" id="1.0.0.Alpha02.tar.gz">Binary tar.gz archive</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02-src.zip" id="1.0.0.Alpha02-src">Source .zip archive</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/liveoak-io/liveoak-examples/archive/1.0.0.Alpha02.zip" id="1.0.0.Alpha02-examples">Examples - binary .zip archive</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/liveoak-io/liveoak/tree/1.0.0.Alpha02">Tagged on GitHub</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/liveoak-io/liveoak-examples/tree/1.0.0.Alpha02">Examples tagged on GitHub</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h2 class="section-header" id="installing-and-running">Installing and Running</h2>
+            <p class="lead">LiveOak can be deployed locally on a developer machine, or in the cloud. Read through to see how to install and run LiveOak in the way you choose.
+
+            <h3 id="running-locally">Installing and Running LiveOak Locally</h3>
+            <p>It’s very easy to get started with LiveOak. First, download your preferred distribution, among the options above. </p>
             <p>Start by unpacking the downloaded binary <code>.zip</code> or <code>.tgz</code> archive, which will create a <code>liveoak</code> directory on your disk. We’ll refer to this directory as <code>$LIVEOAK_HOME</code>.</p>
             <p>All you have to do now is run it:</p>
             <pre><code>$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0</code></pre>
@@ -127,6 +176,11 @@
             <p><a href="http://localhost:8080/admin">LiveOak Admin Console</a> requires you to log in. Use <code>admin</code> as username, and password. The first time you log in you’ll be prompted to change the password.</p>
             <p><a href="http://localhost:8080/admin">LiveOak Admin Console</a> has quite a short idle timeout, so you may have to login again quite often.</p>
             <p><a href="/docs/guides/tutorial_chat">Let’s create and deploy another application</a>, to see how easy it is.</p>
+            
+            <h3 id="running-in-the-cloud">Installing and Running LiveOak in the Cloud</h3>
+            <p>            - there is an example available for deploying it to OpenShift Online.</p>
+
+            
           </div><!-- col -->
         </div><!-- row -->
 
