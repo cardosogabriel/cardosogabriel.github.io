@@ -60,16 +60,6 @@ body{
   color: @gray-subtitle;
  }
 
-.section-header{
-  color: @primary-color;
-  text-transform: uppercase;
-  font-weight: @font-weight-light;
-  border-bottom: 1px solid @gray-divider;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-  margin-top: 0;
-}
-
 strong{
   font-weight: @font-weight-bold;
 }
@@ -86,6 +76,41 @@ h1, h2, h3, h4, h5, h6 {
   font-family: @font-family-exo;
 }
 
+p {
+  line-height: 1.5;
+}
+
+
+//text content
+
+.section-header{
+  text-transform: uppercase;
+  border-bottom: 1px solid @gray-divider;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+.text-content {
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: @font-weight-regular;
+  }
+
+  p {
+    font-weight: @font-weight-regular;
+    
+    &.lead {
+      font-size: 18px;
+      font-weight: @font-weight-light;
+    }
+  } 
+  
+  h3 {
+    margin-bottom: 15px;
+  }
+}
+
 
 //NavBar ==================================================================
 
@@ -97,7 +122,9 @@ h1, h2, h3, h4, h5, h6 {
   border: none; 
   box-shadow: 0 0 4px rgba(0,0,0,.3);
   background-color: #fff;
-  
+}
+
+.nav {
   a {
     color: @gray-subtitle;
     font-weight: @font-weight-bold;
@@ -108,8 +135,8 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   
-  li.active a {
-    color: @primary-color;
+  li.active > a {
+    color: @primary-color-dark;
   }
 }
 
@@ -144,21 +171,35 @@ h1, h2, h3, h4, h5, h6 {
 .main-banner{
   background: #3f9250 url(../imgs/banner-bg.jpg) repeat-x left top;
   color: #fff;
-  text-align: center;
-  padding: 75px 0;
+  padding: 60px 0;
   
   @media (max-width: 640px) {
     padding: 40px 0;
   }
 
-
   h1{
-    font-size: 60px;
     font-weight: @font-weight-light;
-    margin-bottom: 50px;
     line-height: 1.1;
     margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 6px;
     text-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+  }
+  
+  p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 2px;
+  }
+}
+
+.homepage .main-banner {
+  padding: 75px 0;
+  text-align: center;
+  
+  h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
     
     @media (max-width: @screen-sm-max) { /* 991px */
       font-size: 56px;
@@ -256,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
       background-size: auto 200px;
     }
     
-    &#server-side .content {
+    &.server-side .content {
       background-image: url(../imgs/box-server.jpg);
       
       @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
@@ -267,7 +308,7 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
 
-    &#services .content {
+    &.services .content {
       background-image: url(../imgs/box-services.jpg);
       
       @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
@@ -278,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
 
-    &#cloud .content {
+    &.cloud .content {
       background-image: url(../imgs/box-cloud.jpg);
       
       @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
@@ -382,65 +423,43 @@ h1, h2, h3, h4, h5, h6 {
 
 //submenu ==================================================================
 
-
-.docs{
-  .col-md-6{
-    margin-bottom: 30px;
-  }
-}
-
 .sidebar{
   @media (min-width: @screen-md-min) {
-    position: sticky; top: 130px;
+    position: static;
+    position: sticky; 
+    top: 90px;
+    margin-top: 6px;
   }
-}
-
-.submenu{
-
-//main titles
-  h5{
+  
+  @media (max-width: @screen-sm-max) {
+    margin-bottom: 25px;
+  }
+  
+  a {
+    font-weight: @font-weight-regular;
+  }
+  
+  .active > a {
+    border-right: 2px solid @primary-color-dark;
+  }
+  
+  > .nav > li > a {
     text-transform: uppercase;
-    font-weight: @font-weight-light;
-    a{
-      color: @primary-color-light;
-      display: block;
-    } //a
-    &.active a{
-     color: @accent-color;
-    }
-
-  }//h6
-
-  ul{
-    .reset;
-    list-style: none;
-    
-    
-    a{
-      display: block;
-      padding: 5px 0;
-      border-right: 2px solid #fff;
+  }
+  
+  .nav > li {
+    > a {
+      padding: 8px 15px;
     }
     
-    li{
-    &.active>a{
-        border-right: 2px solid @accent-color;
-        color: @accent-color
+    > .nav {
+      margin-bottom: 10px;
+      
+      li a {
+        padding: 4px 15px 4px 35px;
       }
     }
-    
-    .menu-title>a{
-//      background: blue;
-      font-weight: @font-weight-bold;
-      color: @primary-color-dark;
-    }
-    
-    ul{
-      padding-left: 10px;
-    }
-    
-  }//ul 
-
+  }
 }
 
 
