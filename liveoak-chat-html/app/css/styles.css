@@ -6455,7 +6455,7 @@ form {
   transition: background-color 0.5s ease;
   -webkit-transition: background-color 0.5s;
   height: 72px;
-  line-height: 72px;
+  line-height: 21px;
   padding-left: 16px;
   padding-right: 16px;
 }
