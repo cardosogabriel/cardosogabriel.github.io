@@ -1,0 +1,26 @@
+{
+  "html-app" : "/app/index.html",
+  "example" : "chat-html",
+  "resources" : {
+    "app" : {
+      "type" : "filesystem",
+      "config" : {
+        "directory" : "${application.dir}/app/"
+      }
+    },
+
+    "client" : {
+      "type" : "aggregating-filesystem",
+      "config" : {
+        "directory" : "${io.liveoak.js.dir}"
+      }
+    },
+
+    "storage" : {
+      "type" : "mongo",
+      "config" : {
+        "db" : "chat-demo"
+      }
+    }
+  }
+}
