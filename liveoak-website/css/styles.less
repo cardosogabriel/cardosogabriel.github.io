@@ -459,14 +459,23 @@ table {
 
 .sidebar{
   @media (min-width: @screen-md-min) {
+/*
     position: static;
     position: sticky; 
     top: 90px;
+*/
     margin-top: 6px;
   }
   
   @media (max-width: @screen-sm-max) {
     margin-bottom: 25px;
+  }
+  
+  .affix {
+    @media (min-width: @screen-lg-min) {
+      top: 95px;
+      width: calc(~"1170px/4 - 30px");
+    }
   }
   
   a {

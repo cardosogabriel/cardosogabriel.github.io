@@ -261,8 +261,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6634,15 +6634,23 @@ table {
 }
 @media (min-width: 992px) {
   .sidebar {
+    /*
     position: static;
-    position: sticky;
+    position: sticky; 
     top: 90px;
+*/
     margin-top: 6px;
   }
 }
 @media (max-width: 991px) {
   .sidebar {
     margin-bottom: 25px;
+  }
+}
+@media (min-width: 1200px) {
+  .sidebar .affix {
+    top: 95px;
+    width: calc(1170px/4 - 30px);
   }
 }
 .sidebar a {
