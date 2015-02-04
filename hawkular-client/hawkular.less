@@ -1,0 +1,29 @@
+@import "bower_components/patternfly/less/patternfly.less";
+@fa-font-path:      "bower_components/patternfly/components/font-awesome/fonts/";
+@font-path:         "bower_components/patternfly/dist/fonts";
+@icon-font-path:    "bower_components/patternfly/components/bootstrap/fonts/";
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  margin-top: @grid-gutter-width*3;
+  padding-bottom: @grid-gutter-width*2;
+  margin-bottom: @grid-gutter-width;
+  background: url(img/ic-welcome.png) no-repeat center bottom;
+}
+
+h2 {
+  font-size: ceil(@font-size-base * 1.5);
+  margin-bottom: @grid-gutter-width/2;
+}
+
+.form-horizontal .form-group > div {
+  margin: 0 auto;
+  float: none;
+}
+
+.form-group.input {
+  margin-bottom: @grid-gutter-width/2;
+}
