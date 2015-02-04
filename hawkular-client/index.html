@@ -12,6 +12,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    
   </head>
   
   <body>
@@ -32,7 +34,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <span class="pficon pficon-user"></span>
-              Admin <b class="caret"></b>
+              Brian Johnson <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li>
@@ -80,16 +82,17 @@
     
     <div class="content">
       <div class="container">
-        <h1>Welcome Admin!</h1>
+        <h1>Welcome Brian!</h1>
         <h2>Collect metrics from a website that you want to monitor.</h2>
         <form class="form-horizontal">
           <div class="form-group input">
             <div class="col-sm-6">
               <input type="text" class="form-control" placeholder="Enter a website URL">
+              <span class="help-block hide">The URL you entered is not valid. Please enter a valid URL.</span>
             </div>
           </div>
           <div class="form-group">
-            <input type="submit" class="btn btn-primary btn-lg" value="Get URL Metrics"/>
+            <button type="button" class="btn btn-primary btn-lg">Get URL Metrics</button>
           </div>
         </form>
       </div>
