@@ -3,6 +3,30 @@
 @font-path:         "bower_components/patternfly/dist/fonts";
 @icon-font-path:    "bower_components/patternfly/components/bootstrap/fonts/";
 
+//navbar changes to make it taller ==========================================================
+
+@media (min-width: @grid-float-breakpoint) {
+
+  .navbar-header{
+    padding: 5px 0;
+  }
+  
+  .navbar-pf .navbar-utility  > li > a {
+  padding: 12px 10px;}
+  
+  .navbar-pf .navbar-utility li.dropdown > .dropdown-toggle .pficon-user{
+    top: 12px;
+  }
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+  .navbar-pf {
+    padding-top: 1px;
+  }
+}
+
+//initial page
+
 .container {
   text-align: center;
 }
