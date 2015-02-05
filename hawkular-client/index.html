@@ -86,13 +86,19 @@
         <h2>Collect metrics from a website that you want to monitor.</h2>
         <form class="form-horizontal">
           <div class="form-group input">
-            <div class="col-sm-6">
-              <input type="text" class="form-control input-lg" placeholder="Enter a website URL">
-              <span class="help-block hide">The URL you entered is not valid. Please enter a valid URL.</span>
+            <div class="col-lg-6 col-sm-8 col-xs-12 align-center">
+              <div class="input-group">
+                <input type="text" class="form-control input-lg" placeholder="Enter a website URL">
+                <span class="help-block hide">The URL you entered is not valid. Please enter a valid URL.</span>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary btn-lg" type="button">Get Metrics</button>
+                </span>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg">Get URL Metrics</button>
+          <div class="form-group loading hide">
+            <div class="spinner spinner-lg"></div>
+            <button type="button" class="btn btn-link">Cancel</button>
           </div>
         </form>
       </div>
