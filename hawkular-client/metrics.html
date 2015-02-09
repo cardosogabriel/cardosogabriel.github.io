@@ -16,7 +16,7 @@
     
   </head>
   
-  <body class="pg-insert-url">
+  <body class="pg-metrics">
     <nav class="navbar navbar-default navbar-pf" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
@@ -80,26 +80,33 @@
       </div>
     </nav>
     
-    <div class="container">
-      <h1>Welcome Brian!</h1>
-      <h2>Collect metrics from a website that you want to monitor.</h2>
-      <form class="form-horizontal">
-        <div class="form-group input">
-          <div class="col-lg-6 col-sm-8 col-xs-12 align-center">
-            <div class="input-group">
-              <input type="text" class="form-control input-lg" placeholder="Enter a website URL">
-              <span class="help-block hide">The URL you entered is not valid. Please enter a valid URL.</span>
-              <span class="input-group-btn">
-                <button class="btn btn-primary btn-lg" type="button">Get Metrics</button>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="form-group loading hide">
-          <div class="spinner spinner-lg"></div>
-          <button type="button" class="btn btn-link">Cancel</button>
-        </div>
-      </form>
+    <div class="content">
+      <div class="container">
+        <h1>http://www.myawesomewebsite.com</h1>
+        <ul class="metrics-boxes">
+          <li>
+            <a href="#availability">
+              <h2>Availability</h2>
+              <img src="img/mo-availability.jpg" alt="Provisional image">
+            </a>
+          </li>
+          <li>
+            <a href="#responsiveness">
+              <h2>Responsiveness</h2>
+              <span class="data one-line">4785 ms</span>
+            </a>
+          </li>
+          <li>
+            <a href="#downtime">
+              <h2>Up/down time</h2>
+              <div class="data two-lines">
+                <div class="upper-line"><i class="fa fa-arrow-up"></i> 30 days up</div>
+                <div><i class="fa fa-arrow-down"></i> 1 down</div>
+              </div>
+            </a>
+          </li>
+        </ul>        
+      </div>
     </div>
     
   </body>
