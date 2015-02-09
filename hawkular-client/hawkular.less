@@ -62,13 +62,20 @@ h2 {
   }
 }
 
-.input-group .form-control.input-lg {
-  height: 32px;
-  margin-bottom: 5px;
-}
+.input-group {
+  
+  .form-control.input-lg {
+    margin-bottom: 5px;
+    height: 32px;
+  }
+  
+  .input-group-btn {
+    vertical-align: top;
 
-.input-group-btn {
-  vertical-align: top;
+    .btn {
+      line-height: 1.2857142857;
+    }
+  }
 }
 
 .help-block {
@@ -85,9 +92,15 @@ h2 {
 @media (max-width: @grid-float-breakpoint-max) {
   .input-group {
     display: block;
-  }
-  
-  .btn-primary {
-    margin-top: @grid-gutter-width/4;
+    
+    .input-group-btn {
+      clear: both;
+      display: block;
+      width: 100%;
+    }
+    
+    .btn-primary {
+      margin-top: @grid-gutter-width/4;
+    }
   }
 }
