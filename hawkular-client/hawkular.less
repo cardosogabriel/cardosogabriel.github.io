@@ -29,7 +29,7 @@
 
 .container {
   text-align: center;
-  margin-top: @grid-gutter-width*3;
+  margin-top: @grid-gutter-width/4;
 }
 
 h1 {
@@ -37,18 +37,32 @@ h1 {
   margin-top: 0;
 }
 
-ul li {
-  list-style: none;
-}
+.input-group-lg {
+    
+  .input-group-btn {
+    vertical-align: top;
 
+    .btn {
+      line-height: 1.2857142857;
+    }
+  }
+}
 
 //initial page
 
 .pg-insert-url {
   
+  .container {
+    margin-top: @grid-gutter-width*3;
+  }
+  
   h1 {
     background: url(img/ic-welcome.png) no-repeat center bottom;
     padding-bottom: @grid-gutter-width*2;
+  }
+  
+  .input-group .form-control.input-lg {
+    margin-bottom: 5px;
   }
 }
 
@@ -73,22 +87,6 @@ h2 {
   
   .form-control {
     width: inherit;
-  }
-}
-
-.input-group {
-  
-  .form-control.input-lg {
-    margin-bottom: 5px;
-    height: 32px;
-  }
-  
-  .input-group-btn {
-    vertical-align: top;
-
-    .btn {
-      line-height: 1.2857142857;
-    }
   }
 }
 
@@ -121,35 +119,78 @@ h2 {
 
 //metrics page
 
-.pg-metrics {
-  
+.panel-top {
+  background-color: #ededed;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  padding: @grid-gutter-width/8*3 0;
+}
+
+.update-info {
+  color: @gray-light;
+  font-style: italic;
+}
+
+.pg-metrics h1 {
+  clear: both;
+  margin-top: @grid-gutter-width/4*3;
+  margin-bottom: @grid-gutter-width;
 }
 
 .metrics-boxes {
   display: table;
+  margin: 0 auto;
+  max-width: 860px;
   width: 100%;
   
   li {
-    display: table-cell;
-    background-color: #f2f2f2;
     border-left: 10px solid #fff;
     border-right: 10px solid #fff;
-    
+    display: table-cell;
+    margin: 0 10px;
+    width: calc(~"100% / 3");
+        
     a {
+      border: 3px solid #eee;
       display: block;
-      padding: 20px;
-      min-height: 210px;
       
+      .metric-box-content {
+        height: 245px;
+      }
+
+      h2 {
+        background-color: #eee;
+        color: #333;
+        display: block;
+        line-height: 45px;
+        margin: 2px 2px @grid-gutter-width 2px;
+      }
+      
+      .nav-arrow {
+        background: #eee url(img/ic-arrow-down.png) no-repeat center center;
+        display: block;
+        height: 60px;
+      }
+
       &:hover,
       &:active,
       &:focus {
         text-decoration: none;
       }
       
-      h2 {
-        margin-top: 0;
+      &:hover {
+        border-color: #76bbdc;
+
+        .nav-arrow {
+          background-color: #76bbdc;
+        }
       }
     }
+    
+    &.availability {
+      background: url(img/mo-availability.jpg) no-repeat center 88px;
+    }
+
     
     .data {
       font-size: 30px;
