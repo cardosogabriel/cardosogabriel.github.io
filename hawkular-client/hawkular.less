@@ -117,7 +117,18 @@ h2 {
   }
 }
 
-//metrics page
+//overview section
+
+.pg-metrics > section {
+  min-height: 602px; // to be injected via angular
+}
+
+.container.overview {
+  margin-top: 105px;
+  @media (min-width: 1200px) {
+    width: 860px;
+  }
+}
 
 .panel-top {
   background-color: #ededed;
@@ -126,28 +137,30 @@ h2 {
   padding: @grid-gutter-width/8*3 0;
 }
 
-.update-info {
-  color: @gray-light;
-  font-style: italic;
-}
-
 .pg-metrics h1 {
   clear: both;
-  margin-top: @grid-gutter-width/4*3;
+  margin-top: @grid-gutter-width;
   margin-bottom: @grid-gutter-width;
 }
 
+.update-info {
+  color: @gray-light;
+  font-style: italic;
+  margin-right: @grid-gutter-width/4;
+}
+
 .metrics-boxes {
+  clear: both;
   display: table;
   margin: 0 auto;
   max-width: 860px;
   width: 100%;
   
   li {
-    border-left: 10px solid #fff;
-    border-right: 10px solid #fff;
+    border-left: @grid-gutter-width/4 solid white;
+    border-right: @grid-gutter-width/4 solid white;
     display: table-cell;
-    margin: 0 10px;
+    margin: 0 @grid-gutter-width/4;
     width: calc(~"100% / 3");
         
     a {
@@ -187,11 +200,6 @@ h2 {
       }
     }
     
-    &.availability {
-      background: url(img/mo-availability.jpg) no-repeat center 88px;
-    }
-
-    
     .data {
       font-size: 30px;
       font-weight: 100;
@@ -219,5 +227,24 @@ h2 {
 
 .fa-arrow-down {
   color: #cb0102;
+}
+
+.next-page {
+  display: inline-block;
+  color: @gray-light;
+  font-size: 22px;
+  margin-top: @grid-gutter-width*2;
+}
+
+// response-time section
+
+.content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.graph {
+  margin-top: 20px;
+  width: 100%;
 }
 

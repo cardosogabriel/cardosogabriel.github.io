@@ -16,5 +16,4 @@ jQuery(function($){
     $('.loading').addClass('hide');
     $('.btn-primary').removeClass('disabled');
   });
-    
 });
