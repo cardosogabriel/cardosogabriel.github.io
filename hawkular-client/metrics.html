@@ -12,12 +12,14 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+    
     <script type="text/javascript" src="js/hawkular.js"></script>
     
   </head>
   
   <body class="pg-metrics">
-    <nav class="navbar navbar-default navbar-pf" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-pf" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -78,36 +80,90 @@
           </li>
         </ul>
       </div>
+      <div class="panel-top clearfix">
+        <div class="col-md-3 col-sm-4">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control input-lg" value="http://example-app.com">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-lg" type="button"><i class="fa fa-chevron-right"></i></button>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+        <div class="col-md-3 col-sm-4 pull-right">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control input-lg" value="3 Feb - 10 Feb, 2015">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-lg" type="button"><i class="fa fa-calendar"></i></button>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+      </div>
     </nav>
-    
-    <div class="content">
-      <div class="container">
-        <h1>http://www.myawesomewebsite.com</h1>
-        <ul class="metrics-boxes">
-          <li>
-            <a href="#availability">
+
+    <section class="container overview">
+      
+      <h1>Metrics Overview</h1>
+      <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
+      <ul class="list-unstyled metrics-boxes">
+        <li class="availability">
+          <a href="#availability">
+            <div class="metric-box-content">
               <h2>Availability</h2>
-              <img src="img/mo-availability.jpg" alt="Provisional image">
-            </a>
-          </li>
-          <li>
-            <a href="#responsiveness">
-              <h2>Responsiveness</h2>
-              <span class="data one-line">4785 ms</span>
-            </a>
-          </li>
-          <li>
-            <a href="#downtime">
+              <div class="data one-line">99.992<span>%</span></div>
+            </div>
+            <span class="nav-arrow"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#response-time" id="link-response-time">
+            <div class="metric-box-content">
+              <h2>Response Time</h2>
+              <div class="data one-line">2.762 s</div>
+            </div>
+            <span class="nav-arrow"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#downtime">
+            <div class="metric-box-content">
               <h2>Up/down time</h2>
               <div class="data two-lines">
                 <div class="upper-line"><i class="fa fa-arrow-up"></i> 30 days up</div>
                 <div><i class="fa fa-arrow-down"></i> 1 down</div>
               </div>
-            </a>
-          </li>
-        </ul>        
+            </div>
+            <span class="nav-arrow"></span>
+          </a>
+        </li>
+      </ul>        
+      
+      <a href="#response-time" class="next-page">
+        <span class="hide">Go to response time</span>
+        <i class="fa fa-chevron-down"></i>
+      </a>  
+      
+    </section>
+    
+    <section class="response-time" id="response-time">
+      <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#"><i class="fa fa-dashboard"></i>Overview</a></li>
+          <li><a href="#"><i class="fa fa-circle-o-notch"></i>Availability</a></li>
+          <li class="active"><a href="#"><i class="fa fa-line-chart"></i>Response Time</a></li>
+          <li><a href="#"><i class="fa fa-arrow-up"></i>Up/Downtime</a></li>
+        </ul>
       </div>
-    </div>
+      
+      <div class="col-sm-9 col-md-10 content">
+        <h1>Metrics Overview</h1>
+        <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
+        <ul class="nav nav-tabs nav-tabs-pf">
+          <li class="active"><a href="#">Response Time</a></li>
+          <li><a href="#">Responsiveness</a></li>
+        </ul>
+        <img class="graph" src="img/graph.png" alt="graph" width="611" height="197">
+      </div>
+    </section>
     
   </body>
 </html>

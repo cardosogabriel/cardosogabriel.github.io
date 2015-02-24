@@ -29,7 +29,7 @@
 
 .container {
   text-align: center;
-  margin-top: @grid-gutter-width*3;
+  margin-top: @grid-gutter-width/4;
 }
 
 h1 {
@@ -37,18 +37,32 @@ h1 {
   margin-top: 0;
 }
 
-ul li {
-  list-style: none;
-}
+.input-group-lg {
+    
+  .input-group-btn {
+    vertical-align: top;
 
+    .btn {
+      line-height: 1.2857142857;
+    }
+  }
+}
 
 //initial page
 
 .pg-insert-url {
   
+  .container {
+    margin-top: @grid-gutter-width*3;
+  }
+  
   h1 {
     background: url(img/ic-welcome.png) no-repeat center bottom;
     padding-bottom: @grid-gutter-width*2;
+  }
+  
+  .input-group .form-control.input-lg {
+    margin-bottom: 5px;
   }
 }
 
@@ -73,22 +87,6 @@ h2 {
   
   .form-control {
     width: inherit;
-  }
-}
-
-.input-group {
-  
-  .form-control.input-lg {
-    margin-bottom: 5px;
-    height: 32px;
-  }
-  
-  .input-group-btn {
-    vertical-align: top;
-
-    .btn {
-      line-height: 1.2857142857;
-    }
   }
 }
 
@@ -119,35 +117,86 @@ h2 {
   }
 }
 
-//metrics page
+//overview section
 
-.pg-metrics {
-  
+.pg-metrics > section {
+  min-height: 602px; // to be injected via angular
+}
+
+.container.overview {
+  margin-top: 105px;
+  @media (min-width: 1200px) {
+    width: 860px;
+  }
+}
+
+.panel-top {
+  background-color: #ededed;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  padding: @grid-gutter-width/8*3 0;
+}
+
+.pg-metrics h1 {
+  clear: both;
+  margin-top: @grid-gutter-width;
+  margin-bottom: @grid-gutter-width;
+}
+
+.update-info {
+  color: @gray-light;
+  font-style: italic;
+  margin-right: @grid-gutter-width/4;
 }
 
 .metrics-boxes {
+  clear: both;
   display: table;
+  margin: 0 auto;
+  max-width: 860px;
   width: 100%;
   
   li {
+    border-left: @grid-gutter-width/4 solid white;
+    border-right: @grid-gutter-width/4 solid white;
     display: table-cell;
-    background-color: #f2f2f2;
-    border-left: 10px solid #fff;
-    border-right: 10px solid #fff;
-    
+    margin: 0 @grid-gutter-width/4;
+    width: calc(~"100% / 3");
+        
     a {
+      border: 3px solid #eee;
       display: block;
-      padding: 20px;
-      min-height: 210px;
       
+      .metric-box-content {
+        height: 245px;
+      }
+
+      h2 {
+        background-color: #eee;
+        color: #333;
+        display: block;
+        line-height: 45px;
+        margin: 2px 2px @grid-gutter-width 2px;
+      }
+      
+      .nav-arrow {
+        background: #eee url(img/ic-arrow-down.png) no-repeat center center;
+        display: block;
+        height: 60px;
+      }
+
       &:hover,
       &:active,
       &:focus {
         text-decoration: none;
       }
       
-      h2 {
-        margin-top: 0;
+      &:hover {
+        border-color: #76bbdc;
+
+        .nav-arrow {
+          background-color: #76bbdc;
+        }
       }
     }
     
@@ -178,5 +227,24 @@ h2 {
 
 .fa-arrow-down {
   color: #cb0102;
+}
+
+.next-page {
+  display: inline-block;
+  color: @gray-light;
+  font-size: 22px;
+  margin-top: @grid-gutter-width*2;
+}
+
+// response-time section
+
+.content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.graph {
+  margin-top: 20px;
+  width: 100%;
 }
 
