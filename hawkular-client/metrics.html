@@ -102,40 +102,33 @@
 
     <section class="container overview">
       
-      <h1>Metrics Overview</h1>
-      <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
-      <ul class="list-unstyled metrics-boxes">
-        <li class="availability">
-          <a href="#availability">
-            <div class="metric-box-content">
+      <div class="page-container">
+      
+        <h1>Metrics Overview</h1>
+        <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
+        <ul class="list-unstyled metrics-boxes">
+          <li class="availability green">
+            <a href="#up-downtime">
               <h2>Availability</h2>
               <div class="data one-line">99.992<span>%</span></div>
-            </div>
-            <span class="nav-arrow"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#response-time" id="link-response-time">
-            <div class="metric-box-content">
+            </a>
+          </li>
+          <li class="response-time orange">
+            <a href="#response-time">
               <h2>Response Time</h2>
-              <div class="data one-line">2.762 s</div>
-            </div>
-            <span class="nav-arrow"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#downtime">
-            <div class="metric-box-content">
+              <div class="data one-line">2762 ms</div>
+            </a>
+            <p class="additional-info">10% of the requests took more than 3000 ms.</p>
+          </li>
+          <li class="up-downtime green">
+            <a href="#up-downtime">
               <h2>Up/down time</h2>
-              <div class="data two-lines">
-                <div class="upper-line"><i class="fa fa-arrow-up"></i> 30 days up</div>
-                <div><i class="fa fa-arrow-down"></i> 1 down</div>
-              </div>
-            </div>
-            <span class="nav-arrow"></span>
-          </a>
-        </li>
-      </ul>        
+              <div class="data one-line">99<span>%</span> up</div>
+            </a>
+          </li>
+        </ul>     
+      
+      </div>   
       
       <a href="#response-time" class="next-page">
         <span class="hide">Go to response time</span>
@@ -155,13 +148,30 @@
       </div>
       
       <div class="col-sm-9 col-md-10 content">
-        <h1>Metrics Overview</h1>
+        <h1>Response Time</h1>
         <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
-        <ul class="nav nav-tabs nav-tabs-pf">
-          <li class="active"><a href="#">Response Time</a></li>
-          <li><a href="#">Responsiveness</a></li>
-        </ul>
-        <img class="graph" src="img/graph.png" alt="graph" width="611" height="197">
+        <div class="graph-info">
+          <ul class="list-inline four">
+            <li>
+              <span class="data">800 ms</span>
+              <span class="item">Fastest</span>
+            </li>
+            <li>
+              <span class="data">2762 ms</span>
+              <span class="item">Average</span>
+            </li>
+            <li>
+              <span class="data">5687 ms</span>
+              <span class="item">Slowest</span>
+            </li>
+            <li>
+              <span class="data">90%</span>
+              <span class="item">Responsiveness</span>
+            </li>
+          </ul>  
+        </div>  
+
+        <img class="graph" src="img/graph.png" alt="graph">
       </div>
     </section>
     

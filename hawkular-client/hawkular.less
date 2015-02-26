@@ -121,12 +121,9 @@ h2 {
 
 .pg-metrics > section {
   min-height: 602px; // to be injected via angular
-}
-
-.container.overview {
-  margin-top: 105px;
-  @media (min-width: 1200px) {
-    width: 860px;
+  
+  h1 {
+    margin-bottom: @grid-gutter-width/2;
   }
 }
 
@@ -137,10 +134,23 @@ h2 {
   padding: @grid-gutter-width/8*3 0;
 }
 
-.pg-metrics h1 {
+.container.overview {
+  display: table;
+  margin-top: 103px;
+  position: relative;
+  @media (min-width: 1200px) {
+    width: 860px;
+  }
+  
+  .page-container {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.overview h1 {
   clear: both;
-  margin-top: @grid-gutter-width;
-  margin-bottom: @grid-gutter-width;
+  margin-top: -@grid-gutter-width*2;
 }
 
 .update-info {
@@ -161,52 +171,77 @@ h2 {
     border-right: @grid-gutter-width/4 solid white;
     display: table-cell;
     margin: 0 @grid-gutter-width/4;
+    position: relative;
     width: calc(~"100% / 3");
         
     a {
-      border: 3px solid #eee;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
       display: block;
+      height: 245px;
       
-      .metric-box-content {
-        height: 245px;
-      }
-
       h2 {
-        background-color: #eee;
         color: #333;
         display: block;
         line-height: 45px;
-        margin: 2px 2px @grid-gutter-width 2px;
+        margin-top: @grid-gutter-width/4*3;
       }
       
-      .nav-arrow {
-        background: #eee url(img/ic-arrow-down.png) no-repeat center center;
-        display: block;
-        height: 60px;
-      }
-
-      &:hover,
-      &:active,
-      &:focus {
-        text-decoration: none;
-      }
-      
+      &:focus,
       &:hover {
-        border-color: #76bbdc;
-
-        .nav-arrow {
-          background-color: #76bbdc;
-        }
+        text-decoration: none;
       }
     }
     
+    &.availability a {
+      background-image: url(img/overview-availability.png);
+    }
+    
+    &.response-time a {
+      background-image: url(img/overview-response-time.png);
+    }
+
+    &.up-downtime a {
+      background-image: url(img/overview-up-downtime.png);
+    }
+    
+    &.green {
+      
+      #gradient > .vertical(#fbfdfa;#f1f8f0);
+
+       a {
+        border-color: #409c49;
+        
+        .data {
+          color: #409c49;
+        }
+      }
+    }
+
+    &.orange {
+      
+      #gradient > .vertical(#fffcfa;#fef5ed);
+
+       a {
+        border-color: #e56c2a;
+        
+        .data {
+          color: #e56c2a;
+        }
+      }
+    }
+
     .data {
-      font-size: 30px;
+      font-size: 36px;
       font-weight: 100;
       color: #404040;
       
       &.one-line {
-        line-height: 120px;
+        line-height: @grid-gutter-width;
       }
       
       &.two-lines {
@@ -218,22 +253,26 @@ h2 {
         }
       }
     }
+    
+    .additional-info {
+      font-style: italic;
+      line-height: 1.2;
+      position: absolute;
+      text-align: left;
+      top: 255px;
+    }
   }
 }
 
-.fa-arrow-up {
-  color: #3b9b31;
-}
-
-.fa-arrow-down {
-  color: #cb0102;
-}
-
 .next-page {
-  display: inline-block;
+  bottom: @grid-gutter-width;
   color: @gray-light;
+  display: inline-block;
   font-size: 22px;
-  margin-top: @grid-gutter-width*2;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 // response-time section
@@ -241,6 +280,50 @@ h2 {
 .content {
   margin: 0 auto;
   text-align: center;
+}
+
+.response-time h1 {
+  margin-top: @grid-gutter-width;
+}
+
+.graph-info {
+   
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   clear: both;
+   #gradient > .vertical(#feffff;#eeeeee);
+   
+   .list-inline {
+     
+     margin: 0;
+     padding: 12px 0;
+
+     li {
+      border-right: 1px solid #ddd;
+      display: inline-block;
+      text-align: center;
+      
+      &:last-child {
+        border-right: none;
+      }
+      
+      .data {
+        display: block;
+        font-size: 20px;
+        font-weight: 100;
+        line-height: 1.3;
+      }
+      
+      .item {
+        display: block;
+        font-size: 12px;
+      }
+    }
+      
+    &.four li {
+      width: calc(~"25% - 3px");
+    }
+  }
 }
 
 .graph {
