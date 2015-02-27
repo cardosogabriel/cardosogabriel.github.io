@@ -1,0 +1,129 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "variables.less";
+
+html {
+  background: url(../img/background-repeat.jpg) repeat-y center top;
+  background-size: 100% auto;
+}
+
+body {
+  background: url(../img/background-top.jpg) no-repeat center top;
+  background-size: 100% auto;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-weight: 100;
+}
+
+h1 {
+  background: url(../img/just-love-heading.png) no-repeat center top;
+  background-size: 751px 374px;
+  height: 374px;
+  margin: @grid-gutter-width*3 auto @grid-gutter-width*2.5;
+  text-indent: -9999999px;
+  width: 751px;
+  
+  + h2 {
+    margin-top: 0;
+  }
+}
+
+h2 {
+  font-size: 60px;
+}
+
+.date-place {
+  margin-top: @grid-gutter-width*2.25;
+  
+  time {
+    font-size: 33px;
+    text-transform: uppercase;
+  }
+  
+  .place {
+    display: block;
+    font-size: 25px;
+  }
+}
+
+.carousel {
+  margin-top: @grid-gutter-width*2.5;
+}
+
+quote {
+  display: block;
+  font-size: 88px;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 1.2;
+  margin-top: @grid-gutter-width*4.5;
+}
+
+.author {
+  color: @brand-primary;
+  display: block;
+  font-size: 36px;
+  font-style: italic;
+  margin-top: @grid-gutter-width/2;
+}
+
+.text-content {
+  margin: @grid-gutter-width*4.5 auto 0 auto;
+  max-width: 740px;
+
+  p {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 37.5px;
+    text-align: justify;
+  }  
+}
+
+.schedule {
+  margin-top: @grid-gutter-width*5;
+  
+  h3 {
+    background: url(../img/ic-calendar.png) no-repeat center top;
+    background-size: 150px;
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: @grid-gutter-width*1.5;
+    padding-top: @grid-gutter-width*9;
+  }
+}
+
+.note {
+  background: url(../img/bg-note.jpg) repeat left top;
+  margin: @grid-gutter-width*2.5 auto 0 auto;
+  max-width: 740px;
+  padding: @grid-gutter-width*2 @grid-gutter-width*3;
+  position: relative;
+  
+  &.magenta {
+    color: #c61c57;
+  }
+  
+  div.date {
+    line-height: 1;
+    opacity: 0.5;
+    position: absolute;
+    right: @grid-gutter-width/2;
+    top: @grid-gutter-width/2;
+    
+    .day {
+      font-size: 50px;
+      font-weight: bold;
+    }
+    
+    .text {
+      display: block;
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
