@@ -10,6 +10,18 @@ body {
   background: url(../img/background-top.jpg) no-repeat center top;
   background-size: 100% auto;
   text-align: center;
+  padding-bottom: 0;
+}
+
+.container {
+  @media (min-width: @screen-sm) and (max-width: @screen-md-max) {
+    padding: 0;
+    width: 100%;
+  }
+  
+  @media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
+    padding: 0 @grid-gutter-width;
+  }
 }
 
 h1,
@@ -24,6 +36,11 @@ h1 {
   margin: @grid-gutter-width*3 auto @grid-gutter-width*2.5;
   text-indent: -9999999px;
   width: 751px;
+  
+  @media (max-width: @screen-xs-max) {
+    background-size: 100% auto;
+    width: 100%;  
+  }
   
   + h2 {
     margin-top: 0;
@@ -50,12 +67,16 @@ h2 {
 
 .carousel {
   margin-top: @grid-gutter-width*2.5;
+  
+  @media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
+    margin-left: -@grid-gutter-width;    
+    margin-right: -@grid-gutter-width;    
+  }
 }
 
-quote {
+.quote {
   display: block;
   font-size: 88px;
-  font-style: italic;
   font-weight: 100;
   line-height: 1.2;
   margin-top: @grid-gutter-width*4.5;
@@ -100,7 +121,7 @@ h3 {
 .note {
   background: url(../img/bg-note.jpg) repeat left top;
   margin: @grid-gutter-width*2.5 auto 0 auto;
-  max-width: 820px;
+  max-width: 768px;
   padding: @grid-gutter-width*2.25 @grid-gutter-width*3;
   position: relative;
   
@@ -136,7 +157,7 @@ h3 {
     }
   }
   
-  time {
+  .time {
     background: url(../img/line-separator.svg) no-repeat center bottom;
     background-size: 400px auto;
     display: block;
@@ -223,7 +244,6 @@ img.spn {
   background-color: #212b6f;
   margin-top: @grid-gutter-width*5;
   padding-top: @grid-gutter-width*2;
-  padding-bottom: @grid-gutter-width;
   position: relative;
   text-align: center;
   
@@ -274,5 +294,16 @@ img.spn {
   
   li {
     margin: 0 @grid-gutter-width/2;
+  }
+}
+
+.copyright {
+  background-color: #131841;
+  font-size: 12px;
+  line-height: 4;
+  margin-top: @grid-gutter-width*2;
+  
+  p {
+    margin-bottom: 0;
   }
 }
