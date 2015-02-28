@@ -6565,7 +6565,6 @@ h1 {
 @media (max-width: 767px) {
   h1 {
     background-size: 100% auto;
-    height: 100%;
     width: 100%;
   }
 }
@@ -6752,14 +6751,18 @@ img.spn {
   width: 189px;
 }
 .footer-links-container {
-  margin: 80px auto 0;
-  width: 600px;
+  margin-top: 80px;
 }
 .footer-links {
-  float: left;
-  margin: 0 25px;
-  text-align: left;
-  width: 150px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .footer-links {
+    margin-bottom: 40px;
+  }
+  .footer-links:last-child {
+    margin-bottom: 0;
+  }
 }
 .footer-links h4 {
   color: #f7941d;
@@ -6789,4 +6792,33 @@ img.spn {
 }
 .copyright p {
   margin-bottom: 0;
+}
+.modal-content {
+  background-color: #6a1d51;
+  border: 1px solid #c79d73;
+  border-radius: 2px;
+  box-shadow: rgba(255, 255, 255, 0) 1px 1px 3px 0px;
+  text-align: left;
+}
+.modal-header {
+  border-bottom: none;
+  padding: 30px 30px 0;
+}
+.modal-body {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+.modal-body p {
+  margin-bottom: 20px;
+}
+.close {
+  color: #ffffff;
+  text-shadow: 0 1px 0 #000000;
+}
+.close:hover,
+.close:focus {
+  color: #ffffff;
 }

@@ -261,15 +261,19 @@ img.spn {
 }
 
 .footer-links-container {
-  margin: @grid-gutter-width*4 auto 0;
-  width: @grid-gutter-width*30;
+  margin-top: @grid-gutter-width*4;
 }
 
 .footer-links {
-  float: left;
-  margin: 0 @grid-gutter-width*1.25;
-  text-align: left;
-  width: @grid-gutter-width*7.5;
+  text-align: center;
+  
+  @media (max-width: @screen-xs-max) {
+    margin-bottom: @grid-gutter-width*2;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   h4 {
     color: @brand-primary;
@@ -305,5 +309,40 @@ img.spn {
   
   p {
     margin-bottom: 0;
+  }
+}
+
+.modal-content {
+  background-color: rgb(106, 29, 81);
+  border: 1px solid rgb(199, 157, 115);
+  border-radius: 2px;
+  box-shadow: rgba(255, 255, 255, 0) 1px 1px 3px 0px;
+  text-align: left;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding: @grid-gutter-width*1.5 @grid-gutter-width*1.5 0;
+}
+
+.modal-body {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: @grid-gutter-width*1.5;
+  padding-right: @grid-gutter-width*1.5;
+  padding-top: @grid-gutter-width;
+  
+  p {
+    margin-bottom: @grid-gutter-width;
+  }
+}
+
+.close {
+  color: #ffffff;
+  text-shadow: 0 1px 0 #000000;
+  
+  &:hover,
+  &:focus {
+    color: #ffffff;
   }
 }

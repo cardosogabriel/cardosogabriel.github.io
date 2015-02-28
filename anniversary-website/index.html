@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="less/anniversary.css">
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/js/carousel.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/js/modal.js"></script>
   </head>
   
   <body>
@@ -27,18 +28,26 @@
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
         </ol>
       
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img src="img/festival-Image.jpg" alt="Devotees in a Bhakti Marga event" width="3000" height="1654">
+            <img src="img/festival-Image1.jpg" alt="Devotees dancing" width="3000" height="1654">
           </div>
           <div class="item">
-            <img src="img/festival-Image.jpg" alt="Devotees in a Bhakti Marga event" width="3000" height="1654">
+            <img src="img/festival-Image2.jpg" alt="Devotees playing Bhajans" width="3000" height="1654">
           </div>
           <div class="item">
-            <img src="img/festival-Image.jpg" alt="Devotees in a Bhakti Marga event" width="3000" height="1654">
+            <img src="img/festival-Image3.jpg" alt="Swami Vishwananda and his devotees" width="3000" height="1654">
+          </div>
+          <div class="item">
+            <img src="img/festival-Image4.jpg" alt="Swami Vishwananda" width="3000" height="1654">
+          </div>
+          <div class="item">
+            <img src="img/festival-Image5.jpg" alt="Devotees" width="3000" height="1654">
           </div>
         </div>
       
@@ -187,30 +196,30 @@
 
     <footer class="site-footer">
       <a href="http://www.bhaktimarga.org" target="_blank" class="logo">Bhakti Marga</a>  
-      <div class="footer-links-container clearfix">
-        <div class="footer-links">
+      <div class="footer-links-container row clearfix">
+        <div class="footer-links col-md-offset-3 col-md-2 col-sm-4">
           <h4>About</h4>
           <ul class="list-unstyled">
             <li><a href="http://www.bhaktimarga.org/about/swami" target="_blank">Sri Swami Vishwananda</a></li>
             <li><a href="http://www.bhaktimarga.org/" target="_blank">Bhakti Marga</a></li>
-            <li><a href="http://shreepeethanilaya.blogspot.de/" target="_blank">Shree Peetha Nilaya</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#modal-spn">Shree Peetha Nilaya</a></li>
           </ul>          
         </div>
-        <div class="footer-links">
+        <div class="footer-links col-md-2 col-sm-4">
           <h4>Acts</h4>
           <ul class="list-unstyled">
-            <li><a href="http://www.bhaktimarga.org/activities/music" target="_blank">Bhakti Sounds</a></li>
-            <li><a href="#" target="_blank">Kirtanyas</a></li>
-            <li><a href="#" target="_blank">Karthigesan</a></li>
-            <li><a href="#" target="_blank">Other</a></li>
+            <li><a href="https://www.youtube.com/watch?v=RXKZLTwSq4o&list=PLRJzEHCmzsf3bsSH4e1wf7jSG0HWQsfha&index=22" target="_blank">Bhakti Sounds</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ygk0OcgS35c" target="_blank">Kirtanyas</a></li>
+            <li><a href="https://www.youtube.com/watch?v=IKorvaF9irw&index=5&list=PLRJzEHCmzsf3bsSH4e1wf7jSG0HWQsfha" target="_blank">Karthigesan</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#modal-other">Other</a></li>
           </ul>          
         </div>
-        <div class="footer-links">
+        <div class="footer-links col-md-2 col-sm-4">
           <h4>Resources</h4>
           <ul class="list-unstyled">
-            <li><a href="#" target="_blank">Register</a></li>
-            <li><a href="#" target="_blank">Accomodation</a></li>
-            <li><a href="#" target="_blank">Contact</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#modal-register">Register</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#modal-accomodation">Accomodation</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#modal-contact">Contact</a></li>
           </ul>          
         </div>
       </div><!-- .footer-links-container -->
@@ -226,9 +235,97 @@
       <div class="copyright">
         <p>Copyright © by <strong>Bhakti Event GmbH</strong>. All rights reserved.</p>
       </div>
-      
-      
     </footer>    
+    
+    <!-- Modal boxes -->
+
+    <div class="modal fade" id="modal-spn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Shree Peetha Nilaya</h4>
+          </div>
+          <div class="modal-body">
+            <p>It is in Germany that Bhakti Marga has its headquarters. In the beautiful countryside of the Tanus region lies Shree Peetha Nilaya (“abode of the Divine Mother”). The Centre and Ashram is the main hub of Bhakti Marga and the work of Swamiji.</p>
+            <p>It’s a place of nonstop spirituality. Residents and guests come together daily to participate in prayers, meditation, singing, Seva and to share their Love of the Divine with one another. Large festivals are held monthly with participants from around the world; creating a dynamic atmosphere of transformation and spiritual development that provides each seeker with what they are searching for.</p>
+            <ul class="list-unstyled">
+              <li>Shree Peetha Nilaya</li>
+              <li>Am Geisberg 1-8</li>
+              <li>65321 Springen – Germany</li>
+              <li>Email: <a href="mailto:welcome@bhaktimarga.org">welcome@bhaktimarga.org</a></li>
+              <li>Tel: <a href="tel:+49061246059000">+49 (0) 6124 605 9000</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="modal-other" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Other</h4>
+          </div>
+          <div class="modal-body">
+            <p>In addition to the bands mentioned in the festival schedule there will be various other music performers and special guests performing and giving Satsang on various subjects of spirituality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Register</h4>
+          </div>
+          <div class="modal-body">
+            <p>The Just Love Festival is free of charge and open to everyone. To register for the event please click on the following link: <a href="http://bookings.bhaktievent.de/" target="_blank">http://bookings.bhaktievent.de/</a></p>
+Unfortunately the rooms at the Centre are fully booked for the event. All guests intending to come for the event should contact hotels / guest houses through the following link: <a href="http://www.travelshare.bhaktimarga.org/" target="_blank">http://www.travelshare.bhaktimarga.org/</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-accomodation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Register</h4>
+          </div>
+          <div class="modal-body">
+            <p>Unfortunately the rooms at the Centre are fully booked for the event. All guests intending to come for the event should contact hotels / guest houses through the following link: <a href="http://www.travelshare.bhaktimarga.org/" target="_blank">http://www.travelshare.bhaktimarga.org/</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Register</h4>
+          </div>
+          <div class="modal-body">
+            <p>If you have any questions, please contact us:</p>
+            <ul class="list-unstyled">
+              <li>Phone: <a href="tel:+49061246059000">+49 (0) 6124 605 9000</a> (between 14:00 – 17:00, Tuesday – Saturday, German standard time)</li>
+              <li>Email: <a href="mailto:welcome@bhaktimarga.org">welcome@bhaktimarga.org</a></li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
     
   </body>
 </html>
