@@ -100,7 +100,7 @@ h2 {
   margin-top: 1em;
   
   @media (max-width: @screen-xs) { // 480px
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 
@@ -110,22 +110,38 @@ h2 {
   font-size: 3.6em;
   font-style: italic;
   margin-top: @grid-gutter-width/2;  
+  
+  @media (max-width: @screen-xs) { // 480px
+    font-size: 24px;  
+  }
 }
 
 .text-content {
   margin: 9em auto 0 auto;
   max-width: 660px;
   
+  @media (max-width: @screen-xs) { // 480px
+    margin-top: @grid-gutter-width*2.25;
+  }
+  
   p {
     font-size: 2.5em;
     line-height: 1.5;
     margin-bottom: 1.5em;
     text-align: justify;    
+
+    @media (max-width: @screen-xs) { // 480px
+      font-size: 18px;
+    }
   }  
 }
 
 .schedule {
   margin-top: 10em;
+  
+  @media (max-width: @screen-xs) { // 480px
+    margin-top: 7.5em;
+  }
   
   h3 {
     background: url(../img/ic-calendar.png) no-repeat center top;
@@ -148,7 +164,7 @@ h3 {
   position: relative;
   
   @media (max-width: @screen-xs-max) { // 767px
-    font-size: 0.75em;
+    font-size: 0.66666666666667em;
     padding-left: @grid-gutter-width;
     padding-right: @grid-gutter-width;
   }
@@ -211,6 +227,10 @@ h3 {
     font-size: 3em;
     width: 100%;
     
+    @media (max-width: @screen-xs) { // 480px
+      font-size: 4em;  
+    }
+    
     td {
       padding-top: 0.66666666666667em;
       vertical-align: top;
@@ -219,6 +239,10 @@ h3 {
     .date {
       padding-right: 10px;
       text-align: right;
+      
+      @media (max-width: @screen-xs) { // 480px
+        text-align: left;
+      }
     }
     
     .event {
@@ -239,11 +263,12 @@ h3 {
   }
 }
 
-img.spn {
-  height: auto;
+.spn-mask {
   margin-top: 9em;
+  overflow: hidden;
+  text-align: center;
   width: 100%;
-  
+
   @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) { //480px - 767px
     margin-left: -20px;    
     margin-right: -20px;    
@@ -254,6 +279,22 @@ img.spn {
     margin-left: -10px;
     margin-right: -10px;
     width: calc(~"100% + 20px");
+  }
+  
+}
+
+img.spn {
+  height: auto;
+  width: 100%;
+  
+  @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) { //480px - 767px
+    margin-left: -25%;
+    width: 150%;
+  }
+
+  @media (max-width: @screen-xs-min) {
+    margin-left: -50%;
+    width: 200%;
   }
 }
 

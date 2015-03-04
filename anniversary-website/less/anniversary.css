@@ -6623,7 +6623,7 @@ h2 {
 }
 @media (max-width: 480px) {
   .quote {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 .author {
@@ -6633,9 +6633,19 @@ h2 {
   font-style: italic;
   margin-top: 10px;
 }
+@media (max-width: 480px) {
+  .author {
+    font-size: 24px;
+  }
+}
 .text-content {
   margin: 9em auto 0 auto;
   max-width: 660px;
+}
+@media (max-width: 480px) {
+  .text-content {
+    margin-top: 45px;
+  }
 }
 .text-content p {
   font-size: 2.5em;
@@ -6643,8 +6653,18 @@ h2 {
   margin-bottom: 1.5em;
   text-align: justify;
 }
+@media (max-width: 480px) {
+  .text-content p {
+    font-size: 18px;
+  }
+}
 .schedule {
   margin-top: 10em;
+}
+@media (max-width: 480px) {
+  .schedule {
+    margin-top: 7.5em;
+  }
 }
 .schedule h3 {
   background: url(../img/ic-calendar.png) no-repeat center top;
@@ -6665,7 +6685,7 @@ h3 {
 }
 @media (max-width: 767px) {
   .note {
-    font-size: 0.75em;
+    font-size: 0.66666666666667em;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -6718,6 +6738,11 @@ h3 {
   font-size: 3em;
   width: 100%;
 }
+@media (max-width: 480px) {
+  .note .event-list {
+    font-size: 4em;
+  }
+}
 .note .event-list td {
   padding-top: 0.66666666666667em;
   vertical-align: top;
@@ -6725,6 +6750,11 @@ h3 {
 .note .event-list .date {
   padding-right: 10px;
   text-align: right;
+}
+@media (max-width: 480px) {
+  .note .event-list .date {
+    text-align: left;
+  }
 }
 .note .event-list .event {
   font-weight: 500;
@@ -6741,23 +6771,40 @@ h3 {
   font-size: 0.66666666666667em;
   font-weight: normal;
 }
-img.spn {
-  height: auto;
+.spn-mask {
   margin-top: 9em;
+  overflow: hidden;
+  text-align: center;
   width: 100%;
 }
 @media (min-width: 480px) and (max-width: 767px) {
-  img.spn {
+  .spn-mask {
     margin-left: -20px;
     margin-right: -20px;
     width: calc(100% + 40px);
   }
 }
 @media (max-width: 480px) {
-  img.spn {
+  .spn-mask {
     margin-left: -10px;
     margin-right: -10px;
     width: calc(100% + 20px);
+  }
+}
+img.spn {
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  img.spn {
+    margin-left: -25%;
+    width: 150%;
+  }
+}
+@media (max-width: 480px) {
+  img.spn {
+    margin-left: -50%;
+    width: 200%;
   }
 }
 .ten-year {
