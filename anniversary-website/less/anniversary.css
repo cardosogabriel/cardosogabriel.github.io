@@ -6843,6 +6843,8 @@ img.spn {
 @media (max-width: 480px) {
   .btn-lg,
   .btn-group-lg > .btn {
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
   }
 }
@@ -6903,7 +6905,7 @@ img.spn {
   margin-top: 30px;
 }
 .social li {
-  margin: 0 10px;
+  margin: 0 1em;
 }
 .copyright {
   background-color: #131841;
