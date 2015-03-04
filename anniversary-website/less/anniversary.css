@@ -6536,8 +6536,24 @@ html {
 body {
   background: url(../img/background-top.jpg) no-repeat center top;
   background-size: 100% auto;
+  font-size: 100%;
   text-align: center;
   padding-bottom: 0;
+}
+@media (max-width: 1199px) {
+  body {
+    background-size: 1200px auto;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    background-size: 160% auto;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 75%;
+  }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
   .container {
@@ -6555,16 +6571,14 @@ h2 {
   font-weight: 100;
 }
 h1 {
-  background: url(../img/just-love-heading.png) no-repeat center top;
-  background-size: 751px 374px;
-  height: 374px;
-  margin: 60px auto 50px;
-  text-indent: -9999999px;
-  width: 751px;
+  font-size: 1em;
+  margin: 6em auto 5em;
+}
+h1 img {
+  width: 713px;
 }
 @media (max-width: 767px) {
-  h1 {
-    background-size: 100% auto;
+  h1 img {
     width: 100%;
   }
 }
@@ -6572,21 +6586,21 @@ h1 + h2 {
   margin-top: 0;
 }
 h2 {
-  font-size: 60px;
+  font-size: 6em;
 }
 .date-place {
-  margin-top: 45px;
+  margin-top: 4.5em;
 }
 .date-place time {
-  font-size: 33px;
+  font-size: 3.3em;
   text-transform: uppercase;
 }
 .date-place .place {
   display: block;
-  font-size: 25px;
+  font-size: 2.5em;
 }
 .carousel {
-  margin-top: 50px;
+  margin-top: 5em;
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .carousel {
@@ -6594,32 +6608,43 @@ h2 {
     margin-right: -20px;
   }
 }
+@media (max-width: 480px) {
+  .carousel {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
 .quote {
   display: block;
-  font-size: 88px;
+  font-size: 8.8em;
   font-weight: 100;
   line-height: 1.2;
-  margin-top: 90px;
+  margin-top: 1em;
+}
+@media (max-width: 480px) {
+  .quote {
+    font-size: 44px;
+  }
 }
 .author {
   color: #f7941d;
   display: block;
-  font-size: 36px;
+  font-size: 3.6em;
   font-style: italic;
   margin-top: 10px;
 }
 .text-content {
-  margin: 90px auto 0 auto;
+  margin: 9em auto 0 auto;
   max-width: 660px;
 }
 .text-content p {
-  font-size: 25px;
+  font-size: 2.5em;
   line-height: 1.5;
-  margin-bottom: 37.5px;
+  margin-bottom: 1.5em;
   text-align: justify;
 }
 .schedule {
-  margin-top: 100px;
+  margin-top: 10em;
 }
 .schedule h3 {
   background: url(../img/ic-calendar.png) no-repeat center top;
@@ -6628,15 +6653,22 @@ h2 {
   padding-top: 180px;
 }
 h3 {
-  font-size: 50px;
+  font-size: 5em;
   font-weight: 100;
 }
 .note {
   background: url(../img/bg-note.jpg) repeat left top;
-  margin: 50px auto 0 auto;
-  max-width: 768px;
-  padding: 45px 60px;
+  margin: 5em auto 0 auto;
+  max-width: 713px;
+  padding: 4.5em;
   position: relative;
+}
+@media (max-width: 767px) {
+  .note {
+    font-size: 0.75em;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .note.magenta {
   color: #c61c57;
@@ -6655,12 +6687,12 @@ h3 {
   top: 10px;
 }
 .note div.date .day {
-  font-size: 50px;
+  font-size: 5em;
   font-weight: bold;
 }
 .note div.date .text {
   display: block;
-  font-size: 30px;
+  font-size: 3em;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -6674,20 +6706,20 @@ h3 {
 }
 .note .time .weekday {
   display: block;
-  font-size: 37.5px;
+  font-size: 3.75em;
   font-weight: 500;
 }
 .note .time .date {
   display: block;
-  font-size: 42px;
+  font-size: 4.2em;
   font-weight: bold;
 }
 .note .event-list {
-  font-size: 30px;
+  font-size: 3em;
   width: 100%;
 }
 .note .event-list td {
-  padding-top: 40px;
+  padding-top: 0.66666666666667em;
   vertical-align: top;
 }
 .note .event-list .date {
@@ -6700,36 +6732,72 @@ h3 {
   text-align: left;
   width: 69%;
 }
+@media (min-width: 480px) and (max-width: 640px) {
+  .note .event-list .event {
+    width: 60%;
+  }
+}
 .note .event-list .event .additional-info {
-  font-size: 20px;
+  font-size: 0.66666666666667em;
   font-weight: normal;
 }
 img.spn {
   height: auto;
-  margin-top: 90px;
+  margin-top: 9em;
   width: 100%;
 }
+@media (min-width: 480px) and (max-width: 767px) {
+  img.spn {
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+  }
+}
+@media (max-width: 480px) {
+  img.spn {
+    margin-left: -10px;
+    margin-right: -10px;
+    width: calc(100% + 20px);
+  }
+}
 .ten-year {
-  margin-top: 100px;
+  margin-top: 9em;
+}
+@media (max-width: 640px) {
+  .ten-year img {
+    height: auto;
+    width: 64%;
+  }
 }
 .text-center p {
   text-align: center;
 }
 .register {
   background: url(../img/line-separator.svg) no-repeat center top;
-  background-size: 660px auto;
-  margin-top: 80px;
-  padding-top: 70px;
+  background-size: 713px auto;
+  margin-top: 8em;
+  padding-top: 7em;
+}
+@media (max-width: 767px) {
+  .register {
+    background-size: 100% auto;
+  }
 }
 .register .text-content {
-  margin-top: 40px;
+  margin-top: 4em;
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  font-size: 30px;
-  margin-top: 20px;
+  font-size: 3em;
+  margin-top: 0.66666666666667em;
   padding-left: 100px;
   padding-right: 100px;
+}
+@media (max-width: 480px) {
+  .btn-lg,
+  .btn-group-lg > .btn {
+    width: 100%;
+  }
 }
 .site-footer {
   border-top: 15px solid #a43b80;
@@ -6752,6 +6820,12 @@ img.spn {
 }
 .footer-links-container {
   margin-top: 80px;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .footer-links-container {
+    font-size: 1.33333333333333em;
+  }
 }
 .footer-links {
   text-align: center;
@@ -6767,7 +6841,7 @@ img.spn {
 .footer-links h4 {
   color: #f7941d;
   font-family: 'Trajan W08 Regular';
-  font-size: 17px;
+  font-size: 1.7em;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -6776,7 +6850,7 @@ img.spn {
 }
 .footer-links li a {
   color: #f5e7d3;
-  font-size: 13px;
+  font-size: 1.3em;
 }
 .social {
   margin-top: 30px;
@@ -6786,9 +6860,14 @@ img.spn {
 }
 .copyright {
   background-color: #131841;
-  font-size: 12px;
+  font-size: 1.2em;
   line-height: 4;
   margin-top: 40px;
+}
+@media (max-width: 480px) {
+  .copyright {
+    font-size: 1.6em;
+  }
 }
 .copyright p {
   margin-bottom: 0;
@@ -6805,7 +6884,7 @@ img.spn {
   padding: 30px 30px 0;
 }
 .modal-body {
-  font-size: 16px;
+  font-size: 1.6em;
   line-height: 1.5;
   padding-left: 30px;
   padding-right: 30px;
