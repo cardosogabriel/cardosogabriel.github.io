@@ -6843,13 +6843,11 @@ img.spn {
 @media (max-width: 480px) {
   .btn-lg,
   .btn-group-lg > .btn {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 12px 0;
     width: 100%;
   }
 }
 .site-footer {
-  border-top: 15px solid #a43b80;
   background-color: #212b6f;
   margin-top: 100px;
   padding-top: 40px;
@@ -6864,7 +6862,7 @@ img.spn {
   margin-left: -95px;
   position: absolute;
   text-indent: -99999px;
-  top: -60px;
+  top: -53px;
   width: 189px;
 }
 .footer-links-container {
@@ -6907,6 +6905,29 @@ img.spn {
 .social li {
   margin: 0 1em;
 }
+.social li a {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: block;
+  height: 50px;
+  text-indent: -999999px;
+  width: 50px;
+}
+.social li a:hover {
+  background-position: center bottom;
+}
+.social li.facebook a {
+  background-image: url(../img/social-facebook.svg);
+}
+.social li.twitter a {
+  background-image: url(../img/social-twitter.svg);
+}
+.social li.google-plus a {
+  background-image: url(../img/social-google-plus.svg);
+}
+.social li.youtube a {
+  background-image: url(../img/social-youtube.svg);
+}
 .copyright {
   background-color: #131841;
   font-size: 1.2em;
@@ -6922,7 +6943,7 @@ img.spn {
   margin-bottom: 0;
 }
 .modal-content {
-  background-color: #6a1d51;
+  background-color: #212b6f;
   border: 1px solid #c79d73;
   border-radius: 2px;
   box-shadow: rgba(255, 255, 255, 0) 1px 1px 3px 0px;
@@ -6930,7 +6951,10 @@ img.spn {
 }
 .modal-header {
   border-bottom: none;
-  padding: 30px 30px 0;
+  padding: 15px 15px 0 30px;
+}
+.modal-header h4 {
+  margin-top: 15px;
 }
 .modal-body {
   font-size: 1.6em;
@@ -6938,6 +6962,11 @@ img.spn {
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 20px;
+}
+@media (max-width: 480px) {
+  .modal-body {
+    font-size: 2.13333333333333em;
+  }
 }
 .modal-body p {
   margin-bottom: 20px;

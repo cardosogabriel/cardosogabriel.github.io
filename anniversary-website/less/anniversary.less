@@ -336,15 +336,13 @@ img.spn {
   padding-right: @grid-gutter-width*5;
   
   @media (max-width: @screen-xs) { //480px
-    padding-left: 0;
-    padding-right: 0;
+    padding: 12px 0;
     width: 100%; 
   }
 
 }
 
 .site-footer {
-  border-top: 15px solid #a43b80;
   background-color: #212b6f;
   margin-top: @grid-gutter-width*5;
   padding-top: @grid-gutter-width*2;
@@ -359,7 +357,7 @@ img.spn {
     margin-left: -95px;
     position: absolute;
     text-indent: -99999px;
-    top: -60px;
+    top: -53px;
     width: 189px;
   }
 }
@@ -407,6 +405,35 @@ img.spn {
   
   li {
     margin: 0 1em;
+  
+    a {
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      display: block;
+      height: 50px;
+      text-indent: -999999px;
+      width: 50px;
+      
+      &:hover {
+        background-position: center bottom;
+      }
+    }
+    
+    &.facebook a {
+      background-image: url(../img/social-facebook.svg);
+    }
+
+    &.twitter a {
+      background-image: url(../img/social-twitter.svg);
+    }
+
+    &.google-plus a {
+      background-image: url(../img/social-google-plus.svg);
+    }
+
+    &.youtube a {
+      background-image: url(../img/social-youtube.svg);
+    }
   }
 }
 
@@ -426,7 +453,7 @@ img.spn {
 }
 
 .modal-content {
-  background-color: rgb(106, 29, 81);
+  background-color: #212b6f;
   border: 1px solid rgb(199, 157, 115);
   border-radius: 2px;
   box-shadow: rgba(255, 255, 255, 0) 1px 1px 3px 0px;
@@ -435,7 +462,11 @@ img.spn {
 
 .modal-header {
   border-bottom: none;
-  padding: @grid-gutter-width*1.5 @grid-gutter-width*1.5 0;
+  padding: 15px 15px 0 30px;
+  
+  h4 {
+    margin-top: 15px;
+  }
 }
 
 .modal-body {
@@ -444,6 +475,10 @@ img.spn {
   padding-left: @grid-gutter-width*1.5;
   padding-right: @grid-gutter-width*1.5;
   padding-top: @grid-gutter-width;
+  
+  @media (max-width: @screen-xs) { // 480px
+    font-size: 2.13333333333333em;  
+  }
   
   p {
     margin-bottom: @grid-gutter-width;
