@@ -168,6 +168,11 @@ h3 {
     padding-left: @grid-gutter-width;
     padding-right: @grid-gutter-width;
   }
+  
+  @media (max-width: @screen-xs-min) { //480px
+    margin-left: -@grid-gutter-width/2;
+    margin-right: -@grid-gutter-width/2;
+  }
     
   &.magenta {
     color: #c61c57;
@@ -299,7 +304,7 @@ img.spn {
 }
 
 .ten-year {
-  margin-top: 9em;
+  margin-top: 8em;
   
   img {
     

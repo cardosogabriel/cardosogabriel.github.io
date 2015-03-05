@@ -6690,6 +6690,12 @@ h3 {
     padding-right: 20px;
   }
 }
+@media (max-width: 480px) {
+  .note {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
 .note.magenta {
   color: #c61c57;
 }
@@ -6808,7 +6814,7 @@ img.spn {
   }
 }
 .ten-year {
-  margin-top: 9em;
+  margin-top: 8em;
 }
 @media (max-width: 640px) {
   .ten-year img {
