@@ -6971,6 +6971,9 @@ img.spn {
 .modal-body p {
   margin-bottom: 20px;
 }
+.modal-body a {
+  word-wrap: break-word;
+}
 .close {
   color: #ffffff;
   text-shadow: 0 1px 0 #000000;
