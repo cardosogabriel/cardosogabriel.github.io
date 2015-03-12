@@ -87,7 +87,7 @@
             <span class="input-group-btn">
               <button class="btn btn-default btn-lg" type="button"><i class="fa fa-chevron-right"></i></button>
             </span>
-          </div><!-- /input-group -->
+          </div>
         </div>
         <div class="col-md-3 col-sm-4 pull-right">
           <div class="input-group input-group-lg">
@@ -95,124 +95,56 @@
             <span class="input-group-btn">
               <button class="btn btn-default btn-lg" type="button"><i class="fa fa-calendar"></i></button>
             </span>
-          </div><!-- /input-group -->
+          </div>
         </div>
       </div>
     </nav>
 
-    <!-- Overview -->
-
-    <section class="container overview" id="overview">
-      
-      <div class="page-container">
-      
-        <h1>Metrics Overview</h1>
-        <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
-        <ul class="list-unstyled metrics-boxes">
-          <li class="availability green">
-            <a href="#up-downtime">
-              <h2>Availability</h2>
-              <div class="data one-line">99.992<span>%</span></div>
-            </a>
-          </li>
-          <li class="response-time orange">
-            <a href="#response-time">
-              <h2>Response Time</h2>
-              <div class="data one-line">2762 ms</div>
-            </a>
-            <p class="additional-info">10% of the requests took more than 3000 ms.</p>
-          </li>
-          <li class="up-downtime green">
-            <a href="#up-downtime">
-              <h2>Up/down time</h2>
-              <div class="data one-line">99<span>%</span> up</div>
-            </a>
-          </li>
-        </ul>     
-      
-      </div>   
-      
-      <a href="#response-time" class="next-page">
-        <span class="hide">Go to response time</span>
-        <i class="fa fa-chevron-down"></i>
-      </a>  
-      
-    </section>
     
     <!-- Navigation -->
     
-    <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left">
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li>
-        <li><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
-        <li class="active"><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
-        <li><a href="#alerts"><i class="fa fa-flag"></i>Alerts</a></li>
-      </ul>
-    </div>
+    <div class="row below-topbar">
     
-    <!-- Response Time -->
-    
-    <section class="response-time" id="response-time">
-      
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 content">
-        <h1>Response Time</h1>
-        <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p>
-        <div class="graph-info">
-          <ul class="list-inline four">
-            <li>
-              <span class="data">800 ms</span>
-              <span class="item">Fastest</span>
-            </li>
-            <li>
-              <span class="data">2762 ms</span>
-              <span class="item">Average</span>
-            </li>
-            <li>
-              <span class="data">5687 ms</span>
-              <span class="item">Slowest</span>
-            </li>
-            <li>
-              <span class="data">90%</span>
-              <span class="item">Responsiveness</span>
-            </li>
-          </ul>  
-        </div>  
-
-        <img class="graph" src="img/graph.png" alt="graph">
-      </div>
-    </section>
-    
-    <!-- Alerts -->
-    
-    <section class="alerts" id="alerts">
-      
-      <div class="col-sm-6 col-sm-offset-3 content">
-        <h1>Alerts</h1>
+      <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left sidebar-pf-dark sidebar-pf-big-icons">
         
-        <form class="form-horizontal">
-          <fieldset>
-            <legend>General</legend>
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="email">Email</label>
-              <div class="col-sm-10">
-                <input type="text" id="email" class="form-control">
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend>Response Time</legend>
-            <div class="form-group">
-              <label class="col-sm-2 control-label" for="sart">Slowest Acceptable Response Time</label>
-              <div class="col-sm-10">
-                <input type="text" id="sart" class="form-control">
-              </div>
-            </div>
-          </fieldset>
-        </form>
+        <ul class="nav nav-pills nav-stacked nav-dark nav-big-icons">
+          <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li>
+          <li><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
+          <li class="active"><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
+          <li><a href="#alerts"><i class="fa fa-flag"></i>Alerts</a></li>
+        </ul>
+      </div>
       
-    </section>
-    
-    
+      <!-- Response Time -->
+      
+      <div class="col-sm-9 col-md-10 content response-time">
+        <h1>Response Time</h1>
+        
+        <div class="panel panel-default graph-summary">
+          <div class="row">
+            <div class="col-md-4 summary-item">
+              <span class="data">879 <span>ms</span></span>
+              <span class="item">Average</span>
+            </div>
+            <div class="col-md-4 summary-item">
+              <span class="data">2345 <span>ms</span></span>
+              <span class="item">Median</span>
+            </div>
+            <div class="col-md-4 summary-item">
+              <span class="data">2786 <span>ms</span></span>
+              <span class="item">95th percentile</span>
+            </div>
+          </div>
+        </div>
+        
+<!--         <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p> -->
+
+        <div class="panel panel-default graph">
+          <img src="img/graph.png" alt="graph">
+        </div>
+        
+      </div>
+    </div>
     
   </body>
 </html>
