@@ -9,7 +9,7 @@
 @sidebar-pf-dark-bg:                                                #292e34;
 @sidebar-pf-dark-border-color:                                      #262626;
 
-//navbar changes to make it taller ==========================================================
+//navbar changes to make it taller
 
 @media (min-width: @grid-float-breakpoint) {
 
@@ -31,12 +31,12 @@
   }
 }
 
-//general styles
+//content general styles
 
 .below-topbar {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 103px; //height of the topbar
+  margin-top: 102px; //height of the topbar
 }
 
 .container {
@@ -68,7 +68,7 @@ h1 {
   border: none;
 }
 
-//initial page
+//initial screen
 
 .pg-insert-url {
   
@@ -137,6 +137,90 @@ h2 {
   }
 }
 
+// primary navigation 
+
+.navbar-selector > li {
+  padding-left: 0;
+  padding-right: 0;
+  
+  .dropdown-menu {
+    width: 110%;
+  }
+  
+  &.date-range {
+    
+    .fa {
+      color: #72767b;
+      font-size: 16px;
+      margin-right: @grid-gutter-width/4;
+    }
+
+    .input {
+      border-bottom: 1px solid #383838;
+      color: #dbdada;
+      display: inline-block;
+      font-size: 13px;
+      margin-right: @grid-gutter-width/2;
+      margin-top: 20px;
+      min-width: 200px;
+      
+      &:hover {
+        cursor: pointer;
+        border-bottom: 2px solid @brand-primary;
+        
+      }
+      
+      span {
+        color: #919090;
+        font-size: 11px;
+      }
+    }  
+    
+    &.open .input {
+      border-bottom: 2px solid @brand-primary;
+    }
+  }
+  
+  .dropdown-menu {
+    margin-right: @grid-gutter-width/2;
+    min-width: 300px;
+  }
+  
+  .dropdown-menu-content {
+    padding: 15px 0 15px 15px;
+    
+    .label {
+      color: @gray-dark;
+      display: inline-block;
+      padding-left: 0;
+    }
+    
+    .btn-group {
+      display: inline-block;
+    }
+  }
+}
+
+.navbar-pf .navbar-primary.navbar-selector li.context > a {
+  background-image: none;
+  font-size: 16px;
+  font-weight: normal;
+    
+  &.additional-info span {
+    color: #72767a;
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 8px;
+  }
+  
+  .caret {
+    position: absolute;
+    right: 20px;
+    top: 24px;
+  }
+}
+
 // sidebar
 
 .sidebar-pf-dark {
@@ -195,7 +279,7 @@ h2 {
   }  
 }
 
-//overview section
+//overview screen
 
 .pg-metrics > section {
   margin-top: 0;
@@ -408,6 +492,43 @@ h2 {
 .graph {
   padding: @grid-gutter-width/2*1.5;
   text-align: center;
+  
+  .legend {
+    font-size: 11px;
+    
+    span {
+      margin-right: @grid-gutter-width/2;
+    }
+    
+    .fa {
+      font-size: 7px;
+      margin-right: 5px;
+      vertical-align: middle;
+      
+      &.primary {
+        color: @brand-primary;
+      }
+      
+      &.danger {
+        color: @brand-danger;
+      }
+    }
+  }
+  
+  .update {
+    font-size: 10px;
+    
+    .fa {
+      color: #74797d;
+      font-size: 16px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  }
+  
+  img {
+    margin-top: @grid-gutter-width/4;
+  }
 }
 
 // form
