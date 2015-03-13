@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+  	<link rel="stylesheet/less" type="text/css" href="hawkular.less" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
+    
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    
+  </head>
+  
+  <body class="pg-metrics">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary navbar-selector navbar-dark row">
+          <li class="dropdown context col-sm-3 col-md-2">
+            <a href="#" class="dropdown-toggle additional-info" data-toggle="dropdown">
+              Super Application
+              <span>www.superapplication.com</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="active">
+                <a href="#">Super Application</a>
+              </li>
+              <li>
+                <a href="#">Second Application</a>
+              </li>
+              <li>
+                <a href="#">Third Application</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">Add Application...</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="pull-right date-range dropdown">
+            <i class="fa fa-calendar"></i>
+            <div class="input" data-toggle="dropdown">
+              Last week <span class="additional-info">(7 - 14 Feb, 2015)</span>
+            </div>
+              
+            <div class="dropdown-menu infotip bottom-right">
+              <div class="arrow"></div>
+              <div class="dropdown-menu-content">
+                <span class="label">Last</span>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">1h</button>
+                  <button type="button" class="btn btn-default">12h</button>
+                  <button type="button" class="btn btn-default">Day</button>
+                  <button type="button" class="btn btn-default active">Week</button>
+                  <button type="button" class="btn btn-default">Month</button>
+                  <button type="button" class="btn btn-default">Year</button>
+                </div>
+              </div>  
+            </div>
+              
+            </div>
+          </li>
+        </ul>      
+      </div>
+    </nav>
+    
+    <div class="row below-topbar">
+
+      <!-- Sidebar -->
+    
+      <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left sidebar-pf-dark sidebar-pf-big-icons">
+        
+        <ul class="nav nav-pills nav-stacked nav-dark nav-big-icons">
+          <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li>
+          <li><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
+          <li class="active"><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
+          <li><a href="#alerts"><i class="fa fa-flag"></i>Alerts</a></li>
+        </ul>
+      </div>
+      
+      <!-- Response Time -->
+      
+      <div class="col-sm-9 col-md-10 content response-time">
+        <h1>Response Time</h1>
+        
+        <div class="panel panel-default graph-summary">
+          <div class="row">
+            <div class="col-md-4 summary-item">
+              <span class="data">879 <span>ms</span></span>
+              <span class="item">Average</span>
+            </div>
+            <div class="col-md-4 summary-item">
+              <span class="data">2345 <span>ms</span></span>
+              <span class="item">Median</span>
+            </div>
+            <div class="col-md-4 summary-item">
+              <span class="data">2786 <span>ms</span></span>
+              <span class="item">95th percentile</span>
+            </div>
+          </div>
+        </div>
+        
+<!--         <p class="update-info pull-right"><i class="fa fa-refresh"></i> Last update 3 minutes ago</p> -->
+
+        <div class="panel panel-default graph">
+          <div class="legend pull-left">
+            <span><i class="fa fa-circle primary"></i>Response Time</span>
+            <span><i class="fa fa-circle danger"></i>Response Time (above the threshold)</span>
+          </div>
+          <div class="update pull-right">
+            <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
+          </div>
+          
+          <img src="img/graph.png" alt="graph">
+        </div>
+        
+      </div>
+    </div>
+    
+  </body>
+</html>
