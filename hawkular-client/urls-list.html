@@ -48,14 +48,14 @@
     
     <div class="container text-center">
       <h1>Welcome Back Brian!</h1>
-      <form class="form-horizontal">
+      <form class="form-horizontal add-url">
         <div class="form-group input">
-          <div class="col-lg-4 col-sm-6 col-xs-12 align-center">
+          <div class="col-lg-5 col-sm-6 align-center">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Enter a website URL">
               <span class="help-block hide">The URL you entered is not valid. Please enter a valid URL.</span>
               <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Get Metrics</button>
+                <button class="btn btn-primary" type="button">Add URL</button>
               </span>
             </div>
           </div>
@@ -76,68 +76,69 @@
           Current Response Time
         </div>
         <div class="col-md-4">
-          Up/down status
+          Current Availability
         </div>
       </div>
       
       <div class="panel panel-default summary url-info">
-        <div class="row overview">
+        <div class="row row-table">
           <div class="col-md-4 summary-item">
             <span class="url-link"><a href="#">http:my-example-URL</a></span>
-            <span class="update"><i class="fa fa-refresh"></i>17:00 GMT</span>
+            <button class="btn btn-link trigger"><i class="fa fa-plus-square-o" data-toggle="tooltip" data-placement="top" title="Expand/collapse"></i>Last 24 hours</button>
           </div>
           <div class="col-md-4 summary-item">
             <span class="data">100 <span>ms</span></span>
           </div>
           <div class="col-md-4 summary-item">
             <span class="data"><i class="fa fa-arrow-up"></i>Up</span></span>
-            <button class="btn btn-link trigger"><i class="fa fa-plus-square-o"></i></button>
+            <span class="update"><i class="fa fa-refresh" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
           </div>
         </div>
       </div>
 
       <div class="panel panel-default summary url-info panel-expanded">
-        <div class="row overview">
+        <div class="row row-table">
           <div class="col-md-4 summary-item">
             <span class="url-link"><a href="#">http:my-example-URL</a><i class="fa fa-flag" data-toggle="tooltip" data-placement="top" title="Some alert happened"></i></span>
-            <span class="update"><i class="fa fa-refresh"></i>17:00 GMT</span>
+            <button class="btn btn-link trigger activated"><i class="fa fa-minus-square-o" data-toggle="tooltip" data-placement="top" title="Expand/collapse"></i>Last 24 hours</button>
           </div>
           <div class="col-md-4 summary-item">
             <span class="data">100 <span>ms</span></span>
           </div>
           <div class="col-md-4 summary-item">
             <span class="data"><i class="fa fa-arrow-up"></i>Up</span></span>
-            <button class="btn btn-link trigger"><i class="fa fa-minus-square-o"></i></button>
+            <span class="update"><i class="fa fa-refresh" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
           </div>
         </div>
-        <div class="time">
-          Last 24 hours
-        </div>
-        <div class="alert-status text-left">
-          <i class="fa fa-flag"></i>Something bad happened on Feb 1 at 12:00 ET
-        </div>
-        <div class="row panel-expanded-content">
-          <div class="col-md-4 summary-item">
-            <img src="img/availability.png" alt="availability" width="119" height="117">
+        <hr/>
+        <div class="row row-table panel-expanded-content">
+          <div class="col-md-4 summary-item text-left">
+            <ul class="list-unstyled alert-status">
+              <li><i class="fa fa-flag"></i>Today, 12:01 PM: <strong>server down</strong></li>
+              <li><i class="fa fa-flag"></i>Yesterday, 10:54 PM: <strong>high response time</strong></li>
+            </ul>
+              <a href="#alerts">View All Alerts (5)</a>
           </div>
           <div class="col-md-4 summary-item">
             <div class="top-area">
               <img src="img/overview-graph.png" alt="overview-graph" width="237" height="44">
             </div>
             <div class="bottom-area">
-              <span class="data">165 <span>ms (avg)</span></span>
-              <span class="item">Average</span>
+              <span class="data">165 <span>ms</span></span>
+              <span class="item">Average Response Time</span>
             </div>
             
           </div>
           <div class="col-md-4 summary-item">
             <div class="top-area">
-              <span class="data"><i class="fa fa-arrow-up"></i>Up 23 h 55 min</span></span>
+              <span class="data"><i class="fa fa-arrow-down"></i>Down 5 min</span>
+              
             </div>
             <div class="bottom-area">
-              <span class="data"><i class="fa fa-arrow-down"></i>Down 5 min</span></span>
+              <span class="data">99.998 <span>%</span></span>
+              <span class="item">Availability</span>
             </div>
-            <button class="btn btn-link delete"><i class="fa fa-trash-o"></i></button>
+            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash-o"></i></button>
 
           </div>
         </div>

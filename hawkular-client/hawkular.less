@@ -8,6 +8,7 @@
 @body-bg:                                                           #f5f5f5;
 @sidebar-pf-dark-bg:                                                #292e34;
 @sidebar-pf-dark-border-color:                                      #262626;
+@danger-bg:                                                         rgba(204,0,0,0.07);
 
 //navbar changes to make it taller
 
@@ -63,11 +64,14 @@ h1 {
   border: none;
 }
 
-.btn-link .fa {
-  color: @gray-light;
+.btn-link {
   
-  &:hover {
-    color: @brand-primary;
+  .fa {
+    color: @gray-light;
+  }
+  
+  &:hover .fa {
+    color: @gray-dark;
   }
 }
 
@@ -275,6 +279,10 @@ h2 {
         border-bottom-color: inherit;
         border-top-color: transparent;
       }
+      
+      &:focus {
+        background-color: @sidebar-pf-dark-bg;
+      }
   
       .fa {
         color: #72767a;
@@ -282,6 +290,7 @@ h2 {
         font-size: 24px;
         width: 100%;
       }
+      
     }
     
     &.active > a {
@@ -336,12 +345,6 @@ h2 {
 
 .overview h1 {
   clear: both;
-}
-
-.update-info {
-  color: @gray-light;
-  font-style: italic;
-  margin-right: @grid-gutter-width/4;
 }
 
 .metrics-boxes {
@@ -501,6 +504,10 @@ h2 {
     border-right: none;
   }
   
+  &.text-left {
+    padding-left: @grid-gutter-width/4*5;
+  }
+
   .data {
     display: block;
     font-size: 24px;
@@ -513,6 +520,7 @@ h2 {
   }
   
   .item {
+    color: @gray;
     display: block;
     font-size: 12px;
   }
@@ -562,16 +570,17 @@ h2 {
 
 // URLs list screen
 
-.sc-urls-list {
+.form-horizontal.add-url {
+  margin-bottom: @grid-gutter-width;
   
-  .form-horizontal {
-    margin-bottom: @grid-gutter-width;
+  .input-group-btn {
+    vertical-align: top;
   }
 }
 
 .urls-list-labels {
   color: @gray-light;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   
   .text-left {
     padding-left: @grid-gutter-width;
@@ -582,28 +591,49 @@ h2 {
   }
 }
 
-.url-info {
+.row-table {
+  display: table;
+  width: calc(~"100% + 40px");
 
-  .overview .summary-item {
-    display: table;
-    min-height: 52px;
-    padding: 0 @grid-gutter-width/2;
-    
+  .summary-item {
+    display: table-cell;
+    float: none;
+    height: @grid-gutter-width/2*3;
+    padding: 0 @grid-gutter-width/4*3;
+    vertical-align: middle;
+  }
+}
+
+.url-info {
+  
+  .summary-item {
+    border-right-color: transparent;
+    position: relative;
+
     &:first-child {
       padding-left: @grid-gutter-width/4*5;
       text-align: left;
-    }
+    }      
     
-    .data {
-      display: table-cell;
-      vertical-align: middle;
+    .btn-link.trigger {
+      color: @gray-dark;
+      margin-left: -6px;
+
+      .fa {
+        font-size: 14px;
+      }
+      
+      &.activated {
+        font-weight: bold;
+      }
     }
+
   }
   
   .url-link {
     display: block;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     
     .fa-flag {
       color: @brand-danger;
@@ -613,9 +643,12 @@ h2 {
   }
   
   .update {
-    color: @gray-light;
+    position: absolute;
+    right: 30px;
+    top: -8px;
     
     .fa {
+      color: @gray-light;
       font-size: 16px;
       margin-right: 5px;
     }
@@ -625,62 +658,48 @@ h2 {
     font-size: inherit;
     margin-right: @grid-gutter-width/4;
   }
-  
-  .trigger {
-    position: absolute;
-    right: 30px;
-    top: 12px;
-    
-    .fa {
-      font-size: 14px;
-    }
-  }
-  
 }
 
-.panel-expanded {
-  .time {
-    border-top: 1px solid @table-border-color;
-    font-style: italic;
-    font-weight: 600;
-    margin-top: 15px;
-    padding-top: 15px;
-  }
-  .alert-status {
-    margin-left: @grid-gutter-width/4*3;
-    margin-top: 5px;
-  }
+.panel-expanded hr {
+  border-color: @table-border-color;
+  margin: 12px 30px 10px;
 }
 
 .panel-expanded-content {
+  color: @gray;
   padding-bottom: 15px;
-  padding-top: @grid-gutter-width/2;
+  padding-top: 15px;
+  
+  .summary-item {
+    border-right-color: @table-border-color;
+    padding-top: 0;
+    vertical-align: top;
+    
+    &.text-left {
+      text-align: left;
+      
+      .alert-status {
+        li {
+          background-color: @danger-bg;
+          margin-bottom: @grid-gutter-width/4;
+          padding: 3px 8px;
+        }
+      }
+    }
+  }
   
   .top-area {
-    border-bottom: 1px solid @table-border-color;
-    margin-bottom: @grid-gutter-width/4;
-    padding-bottom: @grid-gutter-width/4;
-    
-    img {
-      margin-top: 7px;
-    }
+    height: 44px;
+    margin-bottom: 15px;
     
     .data {
-      margin-top: 24px;
+      line-height: 44px;
     }
   }
-  
-  .summary-item:last-child {
-    padding-right: 50px;
-  }
-  
-  .data {
-    font-size: 20px;
-  }
-  
+    
   .delete {
     position: absolute;
-    bottom: -36px;
-    right: 30px;
+    bottom: -20px;
+    right: 22px;
   }
 }
