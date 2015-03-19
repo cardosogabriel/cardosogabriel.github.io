@@ -9,16 +9,15 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
-    <script type="text/javascript" src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     
     <script type="text/javascript" src="js/hawkular.js"></script>
     
   </head>
   
-  <body class="pg-metrics">
+  <body class="sc-url">
     <nav class="navbar navbar-default navbar-fixed-top navbar-pf" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
@@ -88,7 +87,6 @@
                   <button type="button" class="btn btn-default">Year</button>
                 </div>
               </div>  
-            </div>
               
             </div>
           </li>
@@ -112,40 +110,150 @@
       
       <!-- Response Time -->
       
-      <div class="col-sm-9 col-md-10 container response-time">
-        <h1>Response Time</h1>
+      <div class="col-sm-9 col-md-10 container">
         
-        <div class="panel panel-default summary">
-          <div class="row">
-            <div class="col-md-4 summary-item">
-              <span class="data">879 <span>ms</span></span>
-              <span class="item">Average</span>
-            </div>
-            <div class="col-md-4 summary-item">
-              <span class="data">2345 <span>ms</span></span>
-              <span class="item">Median</span>
-            </div>
-            <div class="col-md-4 summary-item">
-              <span class="data">2786 <span>ms</span></span>
-              <span class="item">95th percentile</span>
-            </div>
-          </div>
-        </div>
+        <section class="response-time">
         
-        <div class="panel panel-default graph">
-          <div class="legend pull-left">
-            <span><i class="fa fa-circle primary"></i>Response Time</span>
-            <span><i class="fa fa-circle danger"></i>Response Time (above the threshold)</span>
-          </div>
-          <div class="update pull-right">
-            <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
+          <h1>Response Time</h1>
+          
+          <div class="panel panel-default summary">
+            <div class="row">
+              <div class="col-md-4 summary-item">
+                <span class="data">879 <span>ms</span></span>
+                <span class="item">Average</span>
+              </div>
+              <div class="col-md-4 summary-item">
+                <span class="data">2345 <span>ms</span></span>
+                <span class="item">Median</span>
+              </div>
+              <div class="col-md-4 summary-item">
+                <span class="data">2786 <span>ms</span></span>
+                <span class="item">95th percentile</span>
+              </div>
+            </div>
           </div>
           
-          <img src="img/graph.png" alt="graph">
-        </div>
+          <div class="panel panel-default graph">
+            <div class="legend pull-left">
+              <span><i class="fa fa-circle primary"></i>Response Time</span>
+              <span><i class="fa fa-circle danger"></i>Response Time (above the threshold)</span>
+            </div>
+            <div class="update pull-right">
+              <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
+            </div>
+            
+            <img src="img/graph.png" alt="graph">
+          </div>
+          
+        </section><!-- .response-time -->
         
-      </div>
-    </div>
-    
+        <section class="alerts">
+        
+          <h1>Alerts</h1>
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#">Activity</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>          
+<!--
+          
+          <p class="info-top"><strong>3 alerts</strong> last week.</p>
+
+          <div class="alerts-activity">
+
+            <div class="panel panel-default alert alert-danger">
+              <div class="alert-icon">
+                <i class="fa fa-arrow-down"></i>
+              </div>
+              <div class="date">
+                12 Feb, 5:35 PM
+              </div>
+              <div class="event">
+                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+              </div>
+            </div>          
+  
+            <div class="panel panel-default alert alert-danger">
+              <div class="alert-icon">
+                <i class="fa fa-line-chart"></i>
+              </div>
+              <div class="date">
+                11 Feb, 3:53 PM
+              </div>
+              <div class="event">
+                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+              </div>
+            </div>          
+            
+          </div>
+-->
+          
+          <div class="alert-settings">
+            
+            <form class="form-horizontal">
+              <fieldset>
+                <legend>Preferences</legend>
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="email">Email</label>
+                  <div class="col-md-6">
+                    <input type="text" id="email" class="form-control">
+                    <span class="help-block">Send alerts to this email address.</span>                  
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Response Time</legend>
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="email">Threshold and duration</label>
+                  <div class="col-md-6 inline-row">
+                    <div class="input-group time">
+                      <input type="text" class="form-control" placeholder="Threshold">
+                      <span class="input-group-addon">ms</span>
+                    </div>
+                    <span class="between-inputs">for</span>
+                    <div class="input-group time">
+                      <input type="text" class="form-control" placeholder="Duration">
+                      <select class="selectpicker">
+                        <option>miliseconds</option>
+                        <option>seconds</option>
+                        <option>minutes</option>
+                        <option>hours</option>
+                      </select>
+                      
+                    </div>
+                    
+                    
+                    <span class="help-block">Send alerts when the response time is above over 2000 ms for more than 3 minutes.</span>                  
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Downtime</legend>
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="email">Duration</label>
+                  <div class="col-md-6 inline-row">
+                    <div class="input-group time">
+                      <input type="text" class="form-control" placeholder="Threshold">
+                      <span class="input-group-addon">ms</span>
+                    </div>
+                    <span class="help-block">Send alerts when the downtime lasts more than 2 minutes.</span>                  
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                  <button type="button" class="btn btn-primary">Save</button>
+                  <button type="button" class="btn btn-default">Cancel</button>
+                </div>
+              </div>
+            </form>            
+          
+          </div><!-- alert settings -->
+
+        </section>
+
+
+        
+      </div><!-- .container -->
+    </div><!-- .below-topbar -->
   </body>
 </html>
