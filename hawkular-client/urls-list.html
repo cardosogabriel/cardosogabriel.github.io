@@ -11,7 +11,9 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>    
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
     <script type="text/javascript" src="js/hawkular.js"></script>
     
   </head>
@@ -68,7 +70,7 @@
       
       <div class="row urls-list-labels">
         <div class="col-md-4 text-left">
-          <button class="btn btn-link">
+          <button class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Sort">
             URL <b class="caret"></b>
           </button>
         </div>
@@ -91,7 +93,7 @@
           </div>
           <div class="col-md-4 summary-item">
             <span class="data"><i class="fa fa-arrow-up"></i>Up</span>
-            <span class="update"><i class="fa fa-refresh" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
+            <span class="update"><i class="fa fa-clock-o" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
           </div>
         </div>
       </div>
@@ -107,7 +109,7 @@
           </div>
           <div class="col-md-4 summary-item">
             <span class="data"><i class="fa fa-arrow-up"></i>Up</span>
-            <span class="update"><i class="fa fa-refresh" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
+            <span class="update"><i class="fa fa-clock-o" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
           </div>
         </div>
         <hr/>

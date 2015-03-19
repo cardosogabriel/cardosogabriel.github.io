@@ -11,6 +11,7 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>    
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
     
     <script type="text/javascript" src="js/hawkular.js"></script>
@@ -45,25 +46,28 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-primary navbar-selector navbar-dark row">
-          <li class="dropdown context col-sm-3 col-md-2">
-            <a href="#" class="dropdown-toggle additional-info" data-toggle="dropdown">
-              Super Application
-              <span>www.superapplication.com</span>
+          <li class="col-sm-3 col-md-2">
+            <a href="urls-list.html">URLs List</a>
+          </li>
+          
+          <li class="dropdown context">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              www.superapplication.com
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li class="active">
-                <a href="#">Super Application</a>
+                <a href="#">www.superapplication.com</a>
               </li>
               <li>
-                <a href="#">Second Application</a>
+                <a href="#">www.anotherapplication.com</a>
               </li>
               <li>
-                <a href="#">Third Application</a>
+                <a href="#">www.thirdapplication.com</a>
               </li>
               <li class="divider"></li>
               <li>
-                <a href="#">Add Application...</a>
+                <a href="urls-list.html">View all URLs</a>
               </li>
             </ul>
           </li>
@@ -98,20 +102,56 @@
 
       <!-- Sidebar -->
     
-      <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left sidebar-pf-dark sidebar-pf-big-icons">
+      <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left sidebar-pf-dark sidebar-pf-big-icons sidebar-pf-fixed">
         
         <ul class="nav nav-pills nav-stacked nav-dark nav-big-icons">
-          <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li>
+<!--           <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li> -->
           <li><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
           <li class="active"><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
           <li><a href="#alerts"><i class="fa fa-flag"></i>Alerts</a></li>
         </ul>
       </div>
       
-      <!-- Response Time -->
       
-      <div class="col-sm-9 col-md-10 container">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 container">
         
+        <!-- Availability -->
+        
+        <section class="availability">
+        
+          <h1>Availability</h1>
+          
+          <div class="panel panel-default summary">
+            <div class="row">
+              <div class="col-md-3 summary-item">
+                <span class="data">99.995 <span>%</span></span>
+                <span class="item">Availability</span>
+              </div>
+              <div class="col-md-3 summary-item">
+                <span class="data">30 <span>s</span></span>
+                <span class="item">Total Downtime Duration</span>
+              </div>
+              <div class="col-md-3 summary-item">
+                <span class="data">Feb. 3, 2015</span>
+                <span class="item">Last Downtime</span>
+              </div>
+              <div class="col-md-3 summary-item">
+                <span class="data">1 <span>event</span></span>
+                <span class="item">Downtime Events</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default graph">
+            <div class="update pull-right">
+              <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
+            </div>
+            
+            <img src="img/graph-availability.png" alt="graph">
+          </div>
+          
+        </section><!-- .availability -->
+
         <section class="response-time">
         
           <h1>Response Time</h1>
@@ -151,10 +191,9 @@
         
           <h1>Alerts</h1>
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#">Activity</a></li>
-            <li><a href="#">Settings</a></li>
+            <li class="active activity"><a href="#">Activity</a></li>
+            <li class="settings"><a href="#">Settings</a></li>
           </ul>          
-<!--
           
           <p class="info-top"><strong>3 alerts</strong> last week.</p>
 
@@ -185,9 +224,8 @@
             </div>          
             
           </div>
--->
           
-          <div class="alert-settings">
+          <div class="alert-settings hide">
             
             <form class="form-horizontal">
               <fieldset>
@@ -203,6 +241,21 @@
               <fieldset>
                 <legend>Response Time</legend>
                 <div class="form-group">
+                  <label class="col-md-2 control-label" for="email">Status</label>
+                  <div class="col-md-6">
+                    <div class="onoffswitch">
+                      <input type="checkbox" id="access" name="access" class="onoffswitch-checkbox ng-valid ng-dirty" checked="" ng-model="userModel.profile.enabled">
+                      <label class="onoffswitch-label" for="access">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
                   <label class="col-md-2 control-label" for="email">Threshold and duration</label>
                   <div class="col-md-6 inline-row">
                     <div class="input-group time">
@@ -210,7 +263,7 @@
                       <span class="input-group-addon">ms</span>
                     </div>
                     <span class="between-inputs">for</span>
-                    <div class="input-group time">
+                    <div class="input-group duration">
                       <input type="text" class="form-control" placeholder="Duration">
                       <select class="selectpicker">
                         <option>miliseconds</option>
@@ -218,22 +271,39 @@
                         <option>minutes</option>
                         <option>hours</option>
                       </select>
-                      
                     </div>
-                    
-                    
-                    <span class="help-block">Send alerts when the response time is above over 2000 ms for more than 3 minutes.</span>                  
+                    <span class="help-block">Send alerts when the response time is over 2000 ms for more than 3 minutes.</span>                  
                   </div>
                 </div>
               </fieldset>
               <fieldset>
                 <legend>Downtime</legend>
                 <div class="form-group">
+                  <label class="col-md-2 control-label" for="email">Status</label>
+                  <div class="col-md-6">
+                    <div class="onoffswitch">
+                      <input type="checkbox" id="access" name="access" class="onoffswitch-checkbox ng-valid ng-dirty" checked="" ng-model="userModel.profile.enabled">
+                      <label class="onoffswitch-label" for="access">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
                   <label class="col-md-2 control-label" for="email">Duration</label>
                   <div class="col-md-6 inline-row">
-                    <div class="input-group time">
-                      <input type="text" class="form-control" placeholder="Threshold">
-                      <span class="input-group-addon">ms</span>
+                    <div class="input-group duration">
+                      <input type="text" class="form-control" placeholder="Duration">
+                      <select class="selectpicker">
+                        <option>miliseconds</option>
+                        <option>seconds</option>
+                        <option>minutes</option>
+                        <option>hours</option>
+                      </select>
                     </div>
                     <span class="help-block">Send alerts when the downtime lasts more than 2 minutes.</span>                  
                   </div>
