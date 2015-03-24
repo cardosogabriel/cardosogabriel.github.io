@@ -5,7 +5,8 @@
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta name="description" content="Hawkular console by Red Hat">
-  	<link rel="stylesheet/less" type="text/css" href="hawkular.less" />
+    <link rel="shortcut icon" href="https://www.patternfly.org/wp-content/themes/patternfly/library/ico/favicon.ico">  	
+    <link rel="stylesheet/less" type="text/css" href="hawkular.less">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
 
@@ -106,8 +107,8 @@
         
         <ul class="nav nav-pills nav-stacked nav-dark nav-big-icons">
 <!--           <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li> -->
-          <li><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
-          <li class="active"><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
+          <li class="active"><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
+          <li><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
           <li><a href="#alerts"><i class="fa fa-flag"></i>Alerts</a></li>
         </ul>
       </div>
@@ -117,7 +118,7 @@
         
         <!-- Availability -->
         
-        <section class="availability">
+        <section class="availability" id="availability">
         
           <h1>Availability</h1>
           
@@ -152,7 +153,7 @@
           
         </section><!-- .availability -->
 
-        <section class="response-time">
+        <section class="response-time" id="response-time">
         
           <h1>Response Time</h1>
           
@@ -187,7 +188,7 @@
           
         </section><!-- .response-time -->
         
-        <section class="alerts">
+        <section class="alerts" id="alerts">
         
           <h1>Alerts</h1>
           <ul class="nav nav-tabs">
