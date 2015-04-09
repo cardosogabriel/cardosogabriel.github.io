@@ -191,14 +191,13 @@
         <section class="alerts" id="alerts">
         
           <h1>Alerts</h1>
-          <ul class="nav nav-tabs">
-            <li class="active activity"><a href="#">Activity</a></li>
-            <li class="settings"><a href="#">Settings</a></li>
-          </ul>          
-          
-          <p class="info-top"><strong>3 alerts</strong> last week.</p>
 
-          <div class="alerts-activity">
+          <div class="info-top clearfix">
+            <p class="settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></p>
+            <p class="pull-right"><strong>3 alerts</strong> last week.</p>
+          </div>
+
+          <div class="alerts-activity clearfix">
 
             <div class="panel panel-default alert alert-danger">
               <div class="alert-icon">
@@ -226,104 +225,123 @@
             
           </div>
           
-          <div class="alert-settings hide">
-            
-            <form class="form-horizontal">
-              <fieldset>
-                <legend>Preferences</legend>
-                <div class="form-group">
-                  <label class="col-md-2 control-label" for="email">Email</label>
-                  <div class="col-md-6">
-                    <input type="text" id="email" class="form-control">
-                    <span class="help-block">Send alerts to this email address.</span>                  
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>Response Time</legend>
-                <div class="form-group onffswitch-form-group">
-                  <label class="col-md-2 control-label" for="email">Status</label>
-                  <div class="onoffswitch-container">
-                    <div class="onoffswitch">
-                      <input type="checkbox" id="rt" class="onoffswitch-checkbox">
-                      <label class="onoffswitch-label" for="rt">
-                        <span class="onoffswitch-inner">
-                          <span class="onoffswitch-active ng-binding">ON</span>
-                          <span class="onoffswitch-inactive ng-binding">OFF</span>
-                        </span>
-                        <span class="onoffswitch-switch"></span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-2 control-label" for="email">Threshold and duration</label>
-                  <div class="col-md-6 inline-row">
-                    <div class="input-group time">
-                      <input type="text" class="form-control" placeholder="Threshold">
-                      <span class="input-group-addon">ms</span>
-                    </div>
-                    <span class="between-inputs">for</span>
-                    <div class="input-group duration">
-                      <input type="text" class="form-control" placeholder="Duration">
-                      <select class="selectpicker">
-                        <option>miliseconds</option>
-                        <option>seconds</option>
-                        <option>minutes</option>
-                        <option>hours</option>
-                      </select>
-                    </div>
-                    <span class="help-block">Send alerts when the response time is over 2000 ms for more than 3 minutes.</span>                  
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>Downtime</legend>
-                <div class="form-group onffswitch-form-group">
-                  <label class="col-md-2 control-label" for="email">Status</label>
-                  <div class="onoffswitch-container">
-                    <div class="onoffswitch">
-                      <input type="checkbox" id="rt" class="onoffswitch-checkbox">
-                      <label class="onoffswitch-label" for="rt">
-                        <span class="onoffswitch-inner">
-                          <span class="onoffswitch-active ng-binding">ON</span>
-                          <span class="onoffswitch-inactive ng-binding">OFF</span>
-                        </span>
-                        <span class="onoffswitch-switch"></span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-2 control-label" for="email">Duration</label>
-                  <div class="col-md-6 inline-row">
-                    <div class="input-group duration">
-                      <input type="text" class="form-control" placeholder="Duration">
-                      <select class="selectpicker">
-                        <option>miliseconds</option>
-                        <option>seconds</option>
-                        <option>minutes</option>
-                        <option>hours</option>
-                      </select>
-                    </div>
-                    <span class="help-block">Send alerts when the downtime lasts more than 2 minutes.</span>                  
-                  </div>
-                </div>
-              </fieldset>
-              <div class="form-group">
-                <div class="col-md-10 col-md-offset-2">
-                  <button type="button" class="btn btn-primary">Save</button>
-                  <button type="button" class="btn btn-default">Cancel</button>
-                </div>
-              </div>
-            </form>            
-          
-          </div><!-- alert settings -->
-
         </section>
 
-
         
+        <div class="modal fade" id="modal-alert-settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <span class="pficon pficon-close"></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Alert Settings</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <fieldset>
+                    <legend>Contact</legend>
+                    <p>Receive email notifications in the following address when the alert conditions are met.</p>
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="email">Email</label>
+                      <div class="col-md-6">
+                        <input type="text" id="email" class="form-control">
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Response Time</legend>
+                    <div class="form-group onffswitch-form-group">
+                      <label class="col-md-3 control-label" for="rt">Status</label>
+                      <div class="onoffswitch-container">
+                        <div class="onoffswitch">
+                          <input type="checkbox" id="rt" class="onoffswitch-checkbox">
+                          <label class="onoffswitch-label" for="rt">
+                            <span class="onoffswitch-inner">
+                              <span class="onoffswitch-active ng-binding">ON</span>
+                              <span class="onoffswitch-inactive ng-binding">OFF</span>
+                            </span>
+                            <span class="onoffswitch-switch"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="time">Time (maximum)</label>
+                      <div class="col-md-9 inline-row">
+                        <div class="input-group input-time">
+                          <input type="text" class="form-control" placeholder="Time" id="time">
+                          <span class="input-group-addon">miliseconds</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-3 control-label">Notification Rate</label>
+                      <div class="col-md-9">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="notification" id="every-time" value="option1" checked>
+                            Every time the maximum time is exceeded.
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="notification" id="greater-time" value="option2">
+                            Only when exceeded for greater than
+                          </label>
+                        </div>
+                        <div class="input-group input-time indented">
+                          <input type="text" class="form-control" placeholder="Duration">
+                          <select class="selectpicker">
+                            <option>seconds</option>
+                            <option>minutes</option>
+                            <option>hours</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Downtime</legend>
+                    <div class="form-group onffswitch-form-group">
+                      <label class="col-md-3 control-label" for="dt">Status</label>
+                      <div class="onoffswitch-container">
+                        <div class="onoffswitch">
+                          <input type="checkbox" id="dt" class="onoffswitch-checkbox">
+                          <label class="onoffswitch-label" for="dt">
+                            <span class="onoffswitch-inner">
+                              <span class="onoffswitch-active ng-binding">ON</span>
+                              <span class="onoffswitch-inactive ng-binding">OFF</span>
+                            </span>
+                            <span class="onoffswitch-switch"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="duration">Duration (maximum)</label>
+                      <div class="col-md-9 inline-row">
+                        <div class="input-group input-time">
+                          <input type="text" class="form-control" placeholder="Duration" id="duration">
+                          <select class="selectpicker">
+                            <option>seconds</option>
+                            <option>minutes</option>
+                            <option>hours</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+                
       </div><!-- .container -->
     </div><!-- .below-topbar -->
   </body>
