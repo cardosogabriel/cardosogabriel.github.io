@@ -55,6 +55,12 @@ section > h1 {
   margin-bottom: @grid-gutter-width/2;
 }
 
+h2 {
+  font-size: ceil(@font-size-base + 1);
+  font-weight: 900;
+  margin-bottom:@grid-gutter-width/8*3;
+}
+
 .input-group-lg {
 
   .input-group-btn {
@@ -86,6 +92,7 @@ section > h1 {
 }
 
 .fa {
+  color: @gray-light;
   font-size: 16px;
   margin-right: 5px;
 }
@@ -129,7 +136,7 @@ section > h1 {
   margin-bottom: 5px;
 }
 
-h2 {
+section h2 {
   font-size: ceil(@font-size-base * 1.5);
   margin-bottom: @grid-gutter-width/2;
 }
@@ -585,6 +592,17 @@ hr.panel-expanded {
     display: block;
     font-size: 12px;
   }
+  
+  a,
+  a .item {
+    color: @link-color;
+  }
+  
+  a:hover,
+  a:hover .item {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
 }
 
 .graph {
@@ -767,6 +785,19 @@ hr.panel-expanded {
   .indented {
     margin-left: 20px;
     margin-top: 5px;
+  }
+}
+
+// Application servers
+
+.sc-application-servers {
+  margin-top: 82px;
+  position: relative;
+
+  .update {
+    position: absolute;
+    right: 20px;
+    top: 10px;
   }
 }
 
