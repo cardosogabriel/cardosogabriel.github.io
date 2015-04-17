@@ -7,6 +7,10 @@
 
 html {
   background: #c47518 url('@{image-path}/background-center.jpg') no-repeat center top;
+  
+  @media (max-width: @screen-xs-max) { // 767px
+    background-size: 290% auto;  
+  }
 }
 
 body {
@@ -64,6 +68,11 @@ h1 {
 
 h2 {
   font-size: 6em;
+  
+  @media (max-width: @screen-xs) { //480px
+    font-size: 5.8em;
+  }
+  
 }
 
 .date-place {
@@ -170,12 +179,7 @@ h3 {
     padding-left: @grid-gutter-width;
     padding-right: @grid-gutter-width;
   }
-  
-  @media (max-width: @screen-xs-min) { //480px
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-    
+      
   &.magenta {
     color: #c61c57;
   }
