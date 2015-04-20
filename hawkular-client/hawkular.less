@@ -173,7 +173,8 @@ a:hover .fa-flag {
 }
 
 section h2 {
-  font-size: ceil(@font-size-base * 1.5);
+  font-size: ceil(@font-size-base * 1.6666666667);
+  font-weight: 100;
   margin-bottom: @grid-gutter-width/2;
 }
 
@@ -303,6 +304,7 @@ section h2 {
     }
     
     &.date-range {
+      
       .fa {
         color: #72767b;
       }
@@ -312,11 +314,24 @@ section h2 {
         color: @gray-lighter;
         margin-right: @grid-gutter-width/2;
         margin-top: @grid-gutter-width/2;
+        
+        &:hover {
+          border-bottom-color: @link-color;
+        }
+      }
+      
+      &.open .input {
+        border-bottom-color: @link-color;
       }
       
       span {
         color: @gray-light;
       }
+    }
+    
+    .dropdown-menu {
+      margin-right: @grid-gutter-width/2;
+      margin-top: -@grid-gutter-width/4;
     }
   }
 }
@@ -356,9 +371,10 @@ section h2 {
 }
 
 .dropdown-menu {
-  margin-right: @grid-gutter-width/2;
+  left: auto;
   margin-top: @grid-gutter-width/4;
   min-width: 305px;
+  right: 0;
 }
 
 .dropdown-menu-content {
@@ -724,7 +740,7 @@ hr.panel-expanded {
 }
 
 .panel {
-
+  
   &.alert-danger {
     background-color: @danger-bg;
     
@@ -735,6 +751,7 @@ hr.panel-expanded {
 
   &.alert {
     font-size: 13px;
+    margin-bottom: 15px;
     padding: 15px 25px;
     
     > div {
@@ -851,8 +868,9 @@ hr.panel-expanded {
 
 .screen-top-bar {
   position: fixed;
-  z-index: 10000;
+  top: 82px;
   width: 100%;
+  z-index: 10000;
 }
 
 .white-bar {
@@ -894,12 +912,38 @@ hr.panel-expanded {
     margin-bottom: -5px;
   }
   
+  .nav-tabs-pf > li > a {
+    padding-bottom: 13px;
+    padding-top: 13px;  
+  } 
+   
   .nav-tabs > li.active > a, 
   .nav-tabs > li.active > a:active, 
   .nav-tabs > li.active > a:focus, 
   .nav-tabs > li.active > a:hover {
     background-color: transparent;
   } 
+}
+
+.sc-application-server {
+  margin-top: 181px;
+  
+  section h2 {
+    margin-top: -212px;
+    padding-top: 212px;
+  }
+}
+
+section {
+  margin-bottom: @grid-gutter-width/4*3;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
 }
 
 // on off switch
