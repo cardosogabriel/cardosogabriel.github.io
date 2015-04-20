@@ -112,16 +112,13 @@ a:hover .fa-flag {
   color: @brand-danger;
 }
 
+
+
 // Tables
 
 .table > thead > tr > th,
 .table > tbody > tr > td {
   padding: 4px 10px 5px;
-}
-
-.table-checkbox tr > th:first-child,
-.table-checkbox tr > td:first-child {
-  width: 30px;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td {
@@ -131,11 +128,21 @@ a:hover .fa-flag {
 .table-striped > tbody > tr.selected > td {
   background-color: @link-color;
   color: white;
+  
+  a {
+    color: white;
+  }
 }
 
 .label {
   padding: 1px 8px;
   border-radius: 3px;
+}
+
+.label-alert.pull-right {
+  font-size: 10px;
+  padding: 4px 5px 3px;
+  margin-top: 2px;
 }
 
 //initial screen
@@ -294,61 +301,81 @@ section h2 {
         top: 24px;
       }
     }
-
+    
     &.date-range {
-
       .fa {
         color: #72767b;
-        font-size: 16px;
-        margin-right: @grid-gutter-width/4;
       }
-
+      
       .input {
-        border-bottom: 1px solid @gray-dark;
+        border-bottom-color: @gray-dark;
         color: @gray-lighter;
-        display: inline-block;
-        font-size: 13px;
         margin-right: @grid-gutter-width/2;
-        margin-top: 20px;
-        min-width: 200px;
-
-        &:hover {
-          cursor: pointer;
-          border-bottom: 2px solid @brand-primary;
-        }
-
-        span {
-          color: @gray-light;
-          font-size: 11px;
-        }
+        margin-top: @grid-gutter-width/2;
       }
-
-      &.open .input {
-        border-bottom: 2px solid @brand-primary;
-      }
-    }
-
-    .dropdown-menu {
-      margin-right: @grid-gutter-width/2;
-      min-width: 300px;
-    }
-
-    .dropdown-menu-content {
-      padding: 15px 0 15px 15px;
-
-      .label {
-        color: @gray-dark;
-        display: inline-block;
-        padding-left: 0;
-      }
-
-      .btn-group {
-        display: inline-block;
+      
+      span {
+        color: @gray-light;
       }
     }
   }
 }
 
+.date-range {
+  
+  text-align: right;
+
+  .fa {
+    font-size: 16px;
+    margin-right: @grid-gutter-width/4;
+  }
+
+  .input {
+    border-bottom-color: @gray-lighter;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    display: inline-block;
+    font-size: 13px;
+    min-width: 200px;
+    text-align: left;
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 2px solid @link-color;
+    }
+
+    span {
+      color: @gray-light;
+      font-size: 11px;
+    }
+  }
+
+  &.open .input {
+    border-bottom: 2px solid @link-color;
+  }
+}
+
+.dropdown-menu {
+  margin-right: @grid-gutter-width/2;
+  margin-top: @grid-gutter-width/4;
+  min-width: 305px;
+}
+
+.dropdown-menu-content {
+  padding: 15px;
+
+  .label {
+    color: @gray-dark;
+    display: inline-block;
+    padding-left: 0;
+  }
+
+  .btn-group {
+    display: inline-block;
+  }
+}
+    
+    
 // sidebar
 
 .sidebar-pf-fixed {
@@ -568,7 +595,6 @@ section h2 {
     font-size: inherit;
     margin-right: @grid-gutter-width/4;
   }
-  
 }
 
 hr.panel-expanded {
@@ -803,7 +829,6 @@ hr.panel-expanded {
       float: left;
       width: 100px;
     }
-    
   }
   
   .indented {
@@ -820,6 +845,61 @@ hr.panel-expanded {
   .update {
     margin-top: @grid-gutter-width/2;
   }
+}
+
+// Application server screen
+
+.screen-top-bar {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+}
+
+.white-bar {
+  background-color: white;
+  border-bottom: 1px solid #ededed;
+  
+  .container {
+    padding: 15px 30px;
+  }
+  
+  .back {
+    display: inline-block;
+  }
+      
+  h1 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .back,
+  .date-range {
+    margin-top: 3px;
+  }
+}
+
+.gray-bar {
+  background-color: #fafafa;
+  border-bottom: 1px solid @table-border-color;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+  
+  .container {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .nav-tabs {
+    border-bottom: 0;
+    display: inline-block;
+    margin-bottom: -5px;
+  }
+  
+  .nav-tabs > li.active > a, 
+  .nav-tabs > li.active > a:active, 
+  .nav-tabs > li.active > a:focus, 
+  .nav-tabs > li.active > a:hover {
+    background-color: transparent;
+  } 
 }
 
 // on off switch
