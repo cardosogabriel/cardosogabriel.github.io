@@ -55,11 +55,16 @@ section > h1 {
   margin-bottom: @grid-gutter-width/2;
 }
 
-h2 {
+h3 {
   color: @gray;
   font-size: ceil(@font-size-base + 1);
   font-weight: bold;
   margin-bottom:@grid-gutter-width/8*3;
+  margin-top: @grid-gutter-width/4;
+}
+
+h2 + h3 {
+  margin-top: 0;
 }
 
 .input-group-lg {
@@ -81,6 +86,7 @@ h2 {
 
   .fa {
     color: @gray-light;
+    vertical-align: middle;
   }
 
   &:hover .fa {
@@ -139,10 +145,14 @@ a:hover .fa-flag {
   border-radius: 3px;
 }
 
-.label-alert.pull-right {
-  font-size: 10px;
-  padding: 4px 5px 3px;
-  margin-top: 2px;
+.label-alert {
+  font-size: 9px;
+  font-weight: bold;
+  padding: 2px 4px;
+}
+
+.table .label-alert {
+  margin-top: 4px;
 }
 
 //initial screen
@@ -346,7 +356,7 @@ section h2 {
   }
 
   .input {
-    border-bottom-color: @gray-lighter;
+    border-bottom-color: #dddddd;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     display: inline-block;
@@ -566,7 +576,6 @@ section h2 {
         font-weight: bold;
       }
     }
-
   }
   
   .url-link {
@@ -735,8 +744,6 @@ hr.panel-expanded {
 
 .info-top {
   font-size: 13px;
-  margin-top: @grid-gutter-width/2;
-  margin-bottom: @grid-gutter-width/4;
 }
 
 .panel {
@@ -753,6 +760,10 @@ hr.panel-expanded {
     font-size: 13px;
     margin-bottom: 15px;
     padding: 15px 25px;
+    
+    &:last-child {
+      margin-bottom: 20px;
+    }
     
     > div {
       display: inline-block;
@@ -874,23 +885,19 @@ hr.panel-expanded {
 
 // Application server screen
 
-.screen-top-bar {
-  position: fixed;
-  top: 82px;
-  width: 100%;
-  z-index: 10000;
-}
-
-.white-bar {
-  background-color: white;
-  border-bottom: 1px solid #ededed;
+.screen-top-nav {
   
   .container {
     padding: 15px 30px;
   }
   
+  .top-row {
+    margin-bottom: @grid-gutter-width/4;
+  }
+  
   .back {
     display: inline-block;
+    font-size: @font-size-base + 1;
   }
       
   h1 {
@@ -902,27 +909,26 @@ hr.panel-expanded {
   .date-range {
     margin-top: 3px;
   }
-}
-
-.gray-bar {
-  background-color: #fafafa;
-  border-bottom: 1px solid @table-border-color;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
   
-  .container {
-    padding: 0;
+  .nav-tabs-container {
+    border-bottom: 1px solid @table-border-color;
     text-align: center;
   }
   
   .nav-tabs {
-    border-bottom: 0;
+    border-bottom: none;
     display: inline-block;
     margin-bottom: -5px;
+    text-align: center;
   }
   
   .nav-tabs-pf > li > a {
     padding-bottom: 13px;
     padding-top: 13px;  
+    
+    .label-alert {
+      margin-left: 8px;
+    }
   } 
    
   .nav-tabs > li.active > a, 
@@ -934,11 +940,25 @@ hr.panel-expanded {
 }
 
 .sc-application-server {
-  margin-top: 181px;
   
   section h2 {
     margin-top: -212px;
     padding-top: 212px;
+  }
+}
+
+.btn-link.trigger {
+  color: #333333;
+  margin-left: -6px;
+}
+
+h3 .btn-link {
+  font-weight: bold;
+  margin-bottom: -7px;
+  margin-top: -7px;
+  
+  span {
+    font-weight: normal;
   }
 }
 
@@ -952,6 +972,10 @@ section {
   h2 {
     margin-top: 0;
   }
+}
+
+.info-top .settings {
+  margin-top: @grid-gutter-width/8;
 }
 
 // on off switch
