@@ -46,11 +46,19 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active">
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li>
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul> 
       </div>
     </nav>
     
     <div class="container text-center">
-      <h1>Welcome Back Brian!</h1>
+      <h1>Hello Brian!</h1>
       <form class="form-horizontal add-url">
         <div class="form-group input">
           <div class="col-lg-5 col-sm-6 align-center">
@@ -83,10 +91,11 @@
         </div>
       </div>
       
-      <div class="panel panel-default summary url-info panel-expanded">
+      <div class="panel panel-default summary url-info">
         <div class="row row-table">
           <div class="col-md-4 summary-item">
             <span class="url-link"><a href="url.html">http:my-example-URL</a></span>
+            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
             <button class="btn btn-link trigger" data-toggle="tooltip" data-placement="top" title="Expand/collapse"><i class="fa fa-plus-square-o"></i>Last 24 hours</button>
           </div>
           <div class="col-md-4 summary-item">
@@ -94,14 +103,13 @@
           </div>
           <div class="col-md-4 summary-item">
             <span class="data"><i class="fa fa-arrow-up"></i>Up</span>
-            <span class="update"><i class="fa fa-clock-o" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
+            <span class="time" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:01</span>
           </div>
         </div>
         <hr/>
         <div class="row row-table panel-expanded-content">
           <div class="col-md-4 summary-item no-alerts">
-            <span class="no-alerts">No alerts. The URL is doing great :)</span>
-            
+            <span class="no-alerts">No alerts.</span>
           </div>
           <div class="col-md-4 summary-item">
             <div class="top-area">
@@ -111,19 +119,15 @@
               <span class="data">165 <span>ms</span></span>
               <span class="item">Average Response Time</span>
             </div>
-            
           </div>
           <div class="col-md-4 summary-item">
             <div class="top-area">
               <span class="data"><i class="fa fa-arrow-up"></i>Always Up</span>
-              
             </div>
             <div class="bottom-area">
               <span class="data">100 <span>%</span></span>
               <span class="item">Availability</span>
             </div>
-            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
-
           </div>
         </div>
       </div>
@@ -132,6 +136,7 @@
         <div class="row row-table">
           <div class="col-md-4 summary-item">
             <span class="url-link"><a href="url.html">http:my-example-URL</a><i class="fa fa-flag" data-toggle="tooltip" data-placement="top" title="Some alert happened"></i></span>
+            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
             <button class="btn btn-link trigger activated" data-toggle="tooltip" data-placement="top" title="Expand/collapse"><i class="fa fa-minus-square-o"></i>Last 24 hours</button>
           </div>
           <div class="col-md-4 summary-item">
@@ -139,7 +144,7 @@
           </div>
           <div class="col-md-4 summary-item">
             <span class="data"><i class="fa fa-arrow-up"></i>Up</span>
-            <span class="update"><i class="fa fa-clock-o" data-toggle="tooltip" data-placement="top" title="Last update"></i>17:00 GMT</span>
+            <span class="time" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:01</span>
           </div>
         </div>
         <hr/>
@@ -170,7 +175,6 @@
               <span class="data">99.998 <span>%</span></span>
               <span class="item">Availability</span>
             </div>
-            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
 
           </div>
         </div>

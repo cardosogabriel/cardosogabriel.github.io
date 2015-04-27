@@ -19,8 +19,8 @@
     
   </head>
   
-  <body class="sc-url">
-    <nav class="navbar navbar-default navbar-fixed-top navbar-pf" role="navigation">
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -46,303 +46,276 @@
             </ul>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-primary navbar-selector navbar-dark row">
-          <li class="col-sm-3 col-md-2">
-            <a href="urls-list.html">URLs List</a>
+        
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active">
+            <a href="urls-list.html">URLs</a>
           </li>
-          
-          <li class="dropdown context">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              www.superapplication.com
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="active">
-                <a href="#">www.superapplication.com</a>
-              </li>
-              <li>
-                <a href="#">www.anotherapplication.com</a>
-              </li>
-              <li>
-                <a href="#">www.thirdapplication.com</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="urls-list.html">View all URLs</a>
-              </li>
-            </ul>
-          </li>
-          
-          <li class="pull-right date-range dropdown">
-            <i class="fa fa-calendar"></i>
-            <div class="input" data-toggle="dropdown">
-              Last week <span class="additional-info">(7 - 14 Feb, 2015)</span>
-            </div>
-              
-            <div class="dropdown-menu infotip bottom-right">
-              <div class="arrow"></div>
-              <div class="dropdown-menu-content">
-                <span class="label">Last</span>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default">1h</button>
-                  <button type="button" class="btn btn-default">12h</button>
-                  <button type="button" class="btn btn-default">Day</button>
-                  <button type="button" class="btn btn-default active">Week</button>
-                  <button type="button" class="btn btn-default">Month</button>
-                  <button type="button" class="btn btn-default">Year</button>
-                </div>
-              </div>  
-              
-            </div>
+          <li>
+            <a href="applications-list.html">Application Servers</a>
           </li>
         </ul>      
       </div>
     </nav>
     
-    <div class="row below-topbar">
-
-      <!-- Sidebar -->
-    
-      <div class="col-sm-3 col-md-2 sidebar-pf sidebar-pf-left sidebar-pf-dark sidebar-pf-big-icons sidebar-pf-fixed">
-        
-        <ul class="nav nav-pills nav-stacked nav-dark nav-big-icons">
-<!--           <li><a href="#overview"><i class="fa fa-dashboard"></i>Overview</a></li> -->
-          <li class="active"><a href="#availability"><i class="fa fa-arrow-up"></i>Availability</a></li>
-          <li><a href="#response-time"><i class="fa fa-line-chart"></i>Response Time</a></li>
-          <li><a href="#alerts"><i class="fa fa-flag"></i>Alerts</a></li>
-        </ul>
-      </div>
-      
-      
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 container">
-        
-        <!-- Availability -->
-        
-        <section class="availability" id="availability">
-        
-          <h1>Availability</h1>
-          
-          <div class="panel panel-default summary">
-            <div class="row">
-              <div class="col-md-3 summary-item">
-                <span class="data">99.995 <span>%</span></span>
-                <span class="item">Availability</span>
-              </div>
-              <div class="col-md-3 summary-item">
-                <span class="data">30 <span>s</span></span>
-                <span class="item">Total Downtime Duration</span>
-              </div>
-              <div class="col-md-3 summary-item">
-                <span class="data">Feb. 3, 2015</span>
-                <span class="item">Last Downtime</span>
-              </div>
-              <div class="col-md-3 summary-item">
-                <span class="data">1 <span>event</span></span>
-                <span class="item">Downtime Events</span>
-              </div>
-            </div>
+    <div class="screen-top-nav">
+      <div class="container">
+        <div class="row top-row">
+          <div class="col-md-4">
+            <a href="urls-list.html" class="back">&laquo; All URLs</a>
           </div>
-          
-          <div class="panel panel-default graph">
-            <div class="update pull-right">
-              <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
-            </div>
-            
-            <img src="img/graph-availability.png" alt="graph">
+          <div class="col-md-4">
+            <h1>myURL</h1>
           </div>
-          
-        </section><!-- .availability -->
-
-        <section class="response-time" id="response-time">
-        
-          <h1>Response Time</h1>
-          
-          <div class="panel panel-default summary">
-            <div class="row">
-              <div class="col-md-4 summary-item">
-                <span class="data">879 <span>ms</span></span>
-                <span class="item">Average</span>
+          <div class="col-md-4">
+            <div class="date-range dropdown">
+              <i class="fa fa-calendar"></i>
+              <div class="input" data-toggle="dropdown">
+                Last week <span class="additional-info">(7 - 14 Feb, 2015)</span>
               </div>
-              <div class="col-md-4 summary-item">
-                <span class="data">2345 <span>ms</span></span>
-                <span class="item">Median</span>
-              </div>
-              <div class="col-md-4 summary-item">
-                <span class="data">2786 <span>ms</span></span>
-                <span class="item">95th percentile</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="panel panel-default graph">
-            <div class="legend pull-left">
-              <span><i class="fa fa-circle primary"></i>Response Time</span>
-              <span><i class="fa fa-circle danger"></i>Response Time (above the threshold)</span>
-            </div>
-            <div class="update pull-right">
-              <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
-            </div>
-            
-            <img src="img/graph.png" alt="graph">
-          </div>
-          
-        </section><!-- .response-time -->
-        
-        <section class="alerts" id="alerts">
-        
-          <h1>Alerts</h1>
-
-          <div class="info-top clearfix">
-            <p class="settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></p>
-            <p class="pull-right"><strong>3 alerts</strong> last week.</p>
-          </div>
-
-          <div class="alerts-activity clearfix">
-
-            <div class="panel panel-default alert alert-danger">
-              <div class="alert-icon">
-                <i class="fa fa-arrow-down"></i>
-              </div>
-              <div class="date">
-                12 Feb, 5:35 PM
-              </div>
-              <div class="event">
-                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
-              </div>
-            </div>          
-  
-            <div class="panel panel-default alert alert-danger">
-              <div class="alert-icon">
-                <i class="fa fa-line-chart"></i>
-              </div>
-              <div class="date">
-                11 Feb, 3:53 PM
-              </div>
-              <div class="event">
-                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
-              </div>
-            </div>          
-            
-          </div>
-          
-        </section>
-
-        
-        <div class="modal fade" id="modal-alert-settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                  <span class="pficon pficon-close"></span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Alert Settings</h4>
-              </div>
-              <div class="modal-body">
-                <form class="form-horizontal">
-                  <fieldset>
-                    <legend>Contact</legend>
-                    <p>Receive email notifications in the following address when the alert conditions are met.</p>
-                    <div class="form-group">
-                      <label class="col-md-3 control-label" for="email">Email</label>
-                      <div class="col-md-6">
-                        <input type="text" id="email" class="form-control">
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Response Time</legend>
-                    <div class="form-group onffswitch-form-group">
-                      <label class="col-md-3 control-label" for="rt">Status</label>
-                      <div class="onoffswitch-container">
-                        <div class="onoffswitch">
-                          <input type="checkbox" id="rt" class="onoffswitch-checkbox">
-                          <label class="onoffswitch-label" for="rt">
-                            <span class="onoffswitch-inner">
-                              <span class="onoffswitch-active ng-binding">ON</span>
-                              <span class="onoffswitch-inactive ng-binding">OFF</span>
-                            </span>
-                            <span class="onoffswitch-switch"></span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-3 control-label" for="time">Time (maximum)</label>
-                      <div class="col-md-9 inline-row">
-                        <div class="input-group input-addon">
-                          <input type="text" class="form-control" placeholder="Time" id="time">
-                          <span class="input-group-addon">miliseconds</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-3 control-label">Notification Rate</label>
-                      <div class="col-md-9">
-                        <div class="radio">
-                          <label>
-                            <input type="radio" name="notification" id="every-time" value="option1" checked>
-                            Every time the maximum time is exceeded.
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" name="notification" id="greater-time" value="option2">
-                            Only when exceeded for greater than
-                          </label>
-                        </div>
-                        <div class="input-group input-select indented">
-                          <input type="text" class="form-control" placeholder="Duration">
-                          <select class="selectpicker">
-                            <option>seconds</option>
-                            <option>minutes</option>
-                            <option>hours</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Downtime</legend>
-                    <div class="form-group onffswitch-form-group">
-                      <label class="col-md-3 control-label" for="dt">Status</label>
-                      <div class="onoffswitch-container">
-                        <div class="onoffswitch">
-                          <input type="checkbox" id="dt" class="onoffswitch-checkbox">
-                          <label class="onoffswitch-label" for="dt">
-                            <span class="onoffswitch-inner">
-                              <span class="onoffswitch-active ng-binding">ON</span>
-                              <span class="onoffswitch-inactive ng-binding">OFF</span>
-                            </span>
-                            <span class="onoffswitch-switch"></span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-md-3 control-label" for="duration">Duration (maximum)</label>
-                      <div class="col-md-9 inline-row">
-                        <div class="input-group input-select">
-                          <input type="text" class="form-control" placeholder="Duration" id="duration">
-                          <select class="selectpicker">
-                            <option>seconds</option>
-                            <option>minutes</option>
-                            <option>hours</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Save</button>
+              <div class="dropdown-menu infotip bottom-right">
+                <div class="arrow"></div>
+                <div class="dropdown-menu-content">
+                  <span class="label">Last</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default">1h</button>
+                    <button type="button" class="btn btn-default">12h</button>
+                    <button type="button" class="btn btn-default">Day</button>
+                    <button type="button" class="btn btn-default active">Week</button>
+                    <button type="button" class="btn btn-default">Month</button>
+                    <button type="button" class="btn btn-default">Year</button>
+                  </div>
+                </div>  
               </div>
             </div>
           </div>
         </div>
-                
-      </div><!-- .container -->
-    </div><!-- .below-topbar -->
+      </div>
+    </div>
+    
+    <div class="container">
+      
+      <section class="alerts" id="alerts">
+      
+        <h2>Alerts</h2>
+
+        <div class="info-top clearfix">
+          <p class="settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></p>
+          <p class="pull-right"><strong>3 alerts</strong> last week.</p>
+        </div>
+
+        <div class="alerts-activity clearfix">
+
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-arrow-down"></i>
+            </div>
+            <div class="date">
+              12 Feb, 5:35 PM
+            </div>
+            <div class="event">
+              Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+            </div>
+          </div>          
+
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-line-chart"></i>
+            </div>
+            <div class="date">
+              11 Feb, 3:53 PM
+            </div>
+            <div class="event">
+              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            </div>
+          </div>          
+          
+        </div>
+        
+      </section>
+      
+      <!-- Availability -->
+      
+      <section class="availability" id="availability">
+      
+        <h2>Availability</h2>
+        
+        <div class="panel panel-default summary">
+          <div class="row">
+            <div class="col-md-3 summary-item">
+              <span class="data">99.995 <span>%</span></span>
+              <span class="item">Availability</span>
+            </div>
+            <div class="col-md-3 summary-item">
+              <span class="data">30 <span>s</span></span>
+              <span class="item">Total Downtime Duration</span>
+            </div>
+            <div class="col-md-3 summary-item">
+              <span class="data">Feb. 3, 2015</span>
+              <span class="item">Last Downtime</span>
+            </div>
+            <div class="col-md-3 summary-item">
+              <span class="data">1 <span>event</span></span>
+              <span class="item">Downtime Events</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel panel-default graph">
+          <img src="img/graph-availability.png" alt="graph">
+        </div>
+        
+      </section><!-- .availability -->
+
+      <section class="response-time" id="response-time">
+      
+        <h2>Response Time</h2>
+        
+        <div class="panel panel-default summary">
+          <div class="row">
+            <div class="col-md-4 summary-item">
+              <span class="data">879 <span>ms</span></span>
+              <span class="item">Average</span>
+            </div>
+            <div class="col-md-4 summary-item">
+              <span class="data">2345 <span>ms</span></span>
+              <span class="item">Median</span>
+            </div>
+            <div class="col-md-4 summary-item">
+              <span class="data">2786 <span>ms</span></span>
+              <span class="item">95th percentile</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel panel-default graph">
+          <div class="legend pull-left">
+            <span><i class="fa fa-circle primary"></i>Response Time</span>
+            <span><i class="fa fa-circle danger"></i>Response Time (above the threshold)</span>
+          </div>
+          <div class="update pull-right">
+            <i class="fa fa-clock-o"></i><strong>Last update</strong> 5 minutes ago
+          </div>
+          
+          <img src="img/graph.png" alt="graph">
+        </div>
+        
+      </section><!-- .response-time -->
+            
+      <div class="modal fade" id="modal-alert-settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                <span class="pficon pficon-close"></span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Alert Settings</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Contact</legend>
+                  <p>Receive email notifications in the following address when the alert conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" for="email">Email</label>
+                    <div class="col-md-6">
+                      <input type="text" id="email" class="form-control">
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Response Time</legend>
+                  <div class="form-group onffswitch-form-group">
+                    <label class="col-md-3 control-label" for="rt">Status</label>
+                    <div class="onoffswitch-container">
+                      <div class="onoffswitch">
+                        <input type="checkbox" id="rt" class="onoffswitch-checkbox">
+                        <label class="onoffswitch-label" for="rt">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" for="time">Time (maximum)</label>
+                    <div class="col-md-9 inline-row">
+                      <div class="input-group input-addon">
+                        <input type="text" class="form-control" placeholder="Time" id="time">
+                        <span class="input-group-addon">miliseconds</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Notification Rate</label>
+                    <div class="col-md-9">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="notification" id="every-time" value="option1" checked>
+                          Every time the maximum time is exceeded.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="notification" id="greater-time" value="option2">
+                          Only when exceeded for greater than
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="text" class="form-control" placeholder="Duration">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option>minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Downtime</legend>
+                  <div class="form-group onffswitch-form-group">
+                    <label class="col-md-3 control-label" for="dt">Status</label>
+                    <div class="onoffswitch-container">
+                      <div class="onoffswitch">
+                        <input type="checkbox" id="dt" class="onoffswitch-checkbox">
+                        <label class="onoffswitch-label" for="dt">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" for="duration">Duration (maximum)</label>
+                    <div class="col-md-9 inline-row">
+                      <div class="input-group input-select">
+                        <input type="text" class="form-control" placeholder="Duration" id="duration">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option>minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+              
+    </div><!-- .container -->
   </body>
 </html>
