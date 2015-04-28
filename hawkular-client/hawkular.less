@@ -54,6 +54,10 @@ h2 {
   font-size: ceil(@font-size-base * 1.67);
   font-weight: 100;
   margin-bottom: @grid-gutter-width/2;
+  
+  + h3 {
+    margin-top: 0;
+  }
 }
 
 h3 {
@@ -62,10 +66,10 @@ h3 {
   font-weight: bold;
   margin-bottom:@grid-gutter-width/8*3;
   margin-top: @grid-gutter-width/4;
-}
 
-h2 + h3 {
-  margin-top: 0;
+  + .update {
+    margin-top: @grid-gutter-width/4;
+  }
 }
 
 .input-group-lg {
@@ -763,10 +767,6 @@ hr.panel-expanded {
 
 // URL SCREEN
 
-.availability {
-  margin-top: @grid-gutter-width/2;
-}
-
 .graph {
   padding: @grid-gutter-width/2*1.5;
   text-align: center;
@@ -868,14 +868,6 @@ hr.panel-expanded {
   .nav-tabs > li.active > a:hover {
     background-color: transparent;
   } 
-}
-
-.sc-application-server {
-  
-  section h2 {
-    margin-top: -212px;
-    padding-top: 212px;
-  }
 }
 
 .btn-link.trigger {

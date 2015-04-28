@@ -1,7 +1,10 @@
-jQuery(function($){
+$(document).ready(function(){
+	tabsBrowsing();
+	insertUrl();
+});
 
-  //Insert url form
-  
+//Insert url form
+insertUrl = function(){
   $('.btn-primary').click(function(){
     $(this).addClass('disabled');
     $('.loading').removeClass('hide');
@@ -18,22 +21,36 @@ jQuery(function($){
     $('.loading').addClass('hide');
     $('.btn-primary').removeClass('disabled');
   });
-  
-  //Active jump-link
-  
-  $('.gray-bar .nav-tabs li').click(function(){
-    $(this).parent().find('li').removeClass('active');
-    $(this).addClass('active');
-  });
-    
-  //Initialize Boostrap-select
-  
-  $('.selectpicker').selectpicker();  
+};
 
-  //Initialize Bootstrap tooltip
+//Tabs browsing
+tabsBrowsing = function(){
+  $('.nav-tabs li a').click(function(evt){
+    $(this).parent().parent().find('li').removeClass('active');
+    $(this).parent().addClass('active');
+    var tc = $(this).attr('class');
+    $('.screen-content .tab-content').addClass('hide');
+    $('.screen-content #'+tc).removeClass('hide');
+  });
+};
+
   
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-   
-});
+/*
+nextArrowControl = function(){
+	$('.nextPage').click(function(evt) {
+		$("#menu li").removeClass('active');
+		var href = $(this).attr('href');
+		var idNxt = $(href).attr('role');
+		$('#menu li#'+idNxt).addClass('active');
+	});
+};
+*/
+
+    
+//Initialize Boostrap-select
+$('.selectpicker').selectpicker();  
+
+//Initialize Bootstrap tooltip
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

@@ -28,7 +28,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="index.html">
           <img src="img/brand.svg" alt="Hawkular" />
         </a>
       </div>
@@ -90,55 +90,22 @@
             </div>
           </div>
         </div>
+        <div class="nav-tabs-container">
+          <ul class="nav nav-tabs nav-tabs-pf">
+            <li class="active"><a href="#" class="availability">Availability</a></li>
+            <li><a href="#" class="response-time">Response Time <span class="label label-danger label-alert pull-right">3</span></a></li>
+            <li><a href="#" class="alerts">Alerts</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </div><!-- .screen-top-nav -->
     
-    <div class="container">
+    <div class="container screen-content">
       
-      <section class="alerts" id="alerts">
+      <section id="availability" class="tab-content">
       
-        <h2>Alerts</h2>
-
-        <div class="info-top clearfix">
-          <p class="settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></p>
-          <p class="pull-right"><strong>3 alerts</strong> last week.</p>
-        </div>
-
-        <div class="alerts-activity clearfix">
-
-          <div class="panel panel-default alert alert-danger">
-            <div class="alert-icon">
-              <i class="fa fa-arrow-down"></i>
-            </div>
-            <div class="date">
-              12 Feb, 5:35 PM
-            </div>
-            <div class="event">
-              Server <strong>down</strong> for 4 minutes (until 5:39 PM).
-            </div>
-          </div>          
-
-          <div class="panel panel-default alert alert-danger">
-            <div class="alert-icon">
-              <i class="fa fa-line-chart"></i>
-            </div>
-            <div class="date">
-              11 Feb, 3:53 PM
-            </div>
-            <div class="event">
-              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
-            </div>
-          </div>          
-          
-        </div>
-        
-      </section>
-      
-      <!-- Availability -->
-      
-      <section class="availability" id="availability">
-      
-        <h2>Availability</h2>
+        <h3 class="pull-left">Availability Status (Last hour)</h3>
+        <span class="update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
         
         <div class="panel panel-default summary">
           <div class="row">
@@ -161,15 +128,46 @@
           </div>
         </div>
         
+        <div class="info-top clearfix">
+          <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link trigger"><i class="fa fa-plus-square-o"></i> Alerts <span>(2 of 10)</span></button></h3>
+          <span class="settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+        </div>
+        <div class="alerts-activity clearfix">
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              12 Feb, 5:35 PM
+            </div>
+            <div class="event">
+              Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+            </div>
+          </div>          
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              11 Feb, 3:53 PM
+            </div>
+            <div class="event">
+              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            </div>
+          </div>          
+        </div>
+        
+        <h3>Availability</h3>
         <div class="panel panel-default graph">
           <img src="img/graph-availability.png" alt="graph">
         </div>
         
-      </section><!-- .availability -->
+      </section>
 
-      <section class="response-time" id="response-time">
+      <section id="response-time" class="tab-content hide">
       
-        <h2>Response Time</h2>
+        <h3 class="pull-left">Response Time Status (Last hour)</h3>
+        <span class="update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
         
         <div class="panel panel-default summary">
           <div class="row">
@@ -188,6 +186,25 @@
           </div>
         </div>
         
+        <div class="info-top clearfix">
+          <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link trigger"><i class="fa fa-plus-square-o"></i> Alerts <span>(1)</span></button></h3>
+          <span class="settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+        </div>
+        <div class="alerts-activity clearfix">
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              12 Feb, 5:35 PM
+            </div>
+            <div class="event">
+              Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+            </div>
+          </div>          
+        </div>
+        
+        <h3>Response Time</h3>
         <div class="panel panel-default graph">
           <div class="legend pull-left">
             <span><i class="fa fa-circle primary"></i>Response Time</span>
@@ -200,7 +217,73 @@
           <img src="img/graph.png" alt="graph">
         </div>
         
-      </section><!-- .response-time -->
+      </section>
+      
+      <section id="alerts" class="tab-content hide">
+        
+        <div class="info-top clearfix">
+          <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse">Alerts <span>(29)</span></h3>
+          <span class="settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+        </div>
+        <div class="alerts-activity clearfix">
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              12 Feb, 5:35 PM
+            </div>
+            <div class="event">
+              Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+            </div>
+          </div>          
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              11 Feb, 3:53 PM
+            </div>
+            <div class="event">
+              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            </div>
+          </div>          
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              11 Feb, 3:53 PM
+            </div>
+            <div class="event">
+              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            </div>
+          </div>          
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              11 Feb, 3:53 PM
+            </div>
+            <div class="event">
+              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            </div>
+          </div>          
+          <div class="panel panel-default alert alert-danger">
+            <div class="alert-icon">
+              <i class="fa fa-flag"></i>
+            </div>
+            <div class="date">
+              11 Feb, 3:53 PM
+            </div>
+            <div class="event">
+              <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            </div>
+          </div>          
+        </div>
+        
+      </section>
             
       <div class="modal fade" id="modal-alert-settings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
