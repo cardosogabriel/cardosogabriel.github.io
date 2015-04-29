@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	tabsBrowsing();
 	insertUrl();
+	tabsBrowsing();
 });
 
 //Insert url form
@@ -35,22 +35,14 @@ tabsBrowsing = function(){
 };
 
   
-/*
-nextArrowControl = function(){
-	$('.nextPage').click(function(evt) {
-		$("#menu li").removeClass('active');
-		var href = $(this).attr('href');
-		var idNxt = $(href).attr('role');
-		$('#menu li#'+idNxt).addClass('active');
-	});
-};
-*/
 
     
 //Initialize Boostrap-select
-$('.selectpicker').selectpicker();  
+$(function () {
+  $('.selectpicker').selectpicker();
+})  
 
 //Initialize Bootstrap tooltip
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
 })
