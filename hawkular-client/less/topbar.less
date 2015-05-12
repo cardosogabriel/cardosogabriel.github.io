@@ -1,24 +1,19 @@
 .screen-top-nav {
   
   margin-bottom: @grid-gutter-width/2;
-      
-  .top-row {
-    margin-bottom: @grid-gutter-width/4;
-  }
-  
+        
   .back {
     display: inline-block;
     font-size: @font-size-base + 1;
+  }
+  
+  .heading {
+    margin-bottom: @grid-gutter-width/4;
   }
       
   h1 {
     text-align: center;
     margin-bottom: 0;
-  }
-
-  .back,
-  .date-range {
-    margin-top: 5px;
   }
   
   .nav-tabs-container {
@@ -29,7 +24,7 @@
   .nav-tabs {
     border-bottom: none;
     display: inline-block;
-    margin-bottom: -5px;
+    margin-bottom: -3px;
     text-align: center;
   }
   
@@ -66,6 +61,8 @@
     border-bottom-style: solid;
     display: inline-block;
     font-size: ceil(@font-size-base + 1);
+    line-height: 1.5;
+    margin-bottom: 1px;
     min-width: 200px;
     text-align: left;
     
@@ -76,6 +73,7 @@
     &:hover {
       cursor: pointer;
       border-bottom: 2px solid @link-color;
+      margin-bottom: 0;
     }
 
     span {
