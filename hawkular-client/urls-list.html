@@ -59,9 +59,9 @@
     
     <div class="container">
       <h1 class="text-center">Hello Brian!</h1>
-      <form class="form-horizontal add-url">
+      <form class="form-horizontal hk-add-url">
         <div class="form-group input">
-          <div class="col-lg-5 col-sm-6 align-center">
+          <div class="col-lg-5 col-sm-6 hk-align-center">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Enter a website URL">
               <span class="help-block hide">The URL you entered is not valid. Please enter a valid URL.</span>
@@ -77,108 +77,102 @@
         </div>
       </form>
       
-      <div class="row urls-list-labels">
+      <div class="row hk-urls-list-labels">
         <div class="col-sm-4 text-left">
           <button class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Sort">
             URL <b class="caret"></b>
           </button>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-center">
           Current Response Time
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-center">
           Current Availability
         </div>
       </div>
       
-      <div class="panel panel-default summary url-info">
+      <div class="panel panel-default hk-summary hk-url-info">
         <div class="row row-table">
-          <div class="col-sm-4 summary-item">
-            <span class="url-link"><a href="url.html">http:my-example-URL</a></span>
-            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
-            <button class="btn btn-link trigger" data-toggle="tooltip" data-placement="top" title="Expand/collapse"><i class="fa fa-plus-square-o"></i>Last 24 hours</button>
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-url-link"><a href="url.html">http:my-example-URL</a><i class="fa fa-flag" data-toggle="tooltip" data-placement="top" title="Some alert happened"></i></span>
+            <button class="btn btn-link hk-delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
+            <button class="btn btn-link hk-trigger" data-toggle="tooltip" data-placement="top" title="Expand/collapse"><i class="fa fa-plus-square-o"></i>Last 24 hours</button>
           </div>
-          <div class="col-sm-4 summary-item">
-            <span class="data">100 <span>ms</span></span>
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-data">100 <span>ms</span></span>
           </div>
-          <div class="col-sm-4 summary-item">
-            <span class="data"><i class="fa fa-arrow-up"></i>Up</span>
-            <span class="time" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:01</span>
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-data"><i class="fa fa-arrow-up"></i>Up</span>
+            <span class="hk-time" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:01</span>
           </div>
         </div>
         <hr/>
-        <div class="row row-table panel-expanded-content">
-          <div class="col-sm-4 summary-item no-alerts">
-            <span class="no-alerts">No alerts.</span>
+        <div class="row row-table hk-panel-expanded-content">
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-no-alerts">No alerts.</span>
           </div>
-          <div class="col-sm-4 summary-item">
-            <div class="top-area">
+          <div class="col-sm-4 hk-summary-item">
+            <div class="hk-top-area">
               <img src="img/overview-graph.png" alt="overview-graph" width="237" height="44">
             </div>
-            <div class="bottom-area">
-              <span class="data">165 <span>ms</span></span>
-              <span class="item">Average Response Time</span>
+            <div>
+              <span class="hk-data">165 <span>ms</span></span>
+              <span class="hk-item">Average Response Time</span>
             </div>
           </div>
-          <div class="col-sm-4 summary-item">
-            <div class="top-area">
-              <span class="data"><i class="fa fa-arrow-up"></i>Always Up</span>
+          <div class="col-sm-4 hk-summary-item">
+            <div class="hk-top-area">
+              <span class="hk-data"><i class="fa fa-arrow-up"></i>Always Up</span>
             </div>
-            <div class="bottom-area">
-              <span class="data">100 <span>%</span></span>
-              <span class="item">Availability</span>
+            <div>
+              <span class="hk-data">100 <span>%</span></span>
+              <span class="hk-item">Availability</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="panel panel-default summary url-info panel-expanded">
+      <div class="panel panel-default hk-summary hk-url-info">
         <div class="row row-table">
-          <div class="col-sm-4 summary-item">
-            <span class="url-link"><a href="url.html">http:my-example-URL</a><i class="fa fa-flag" data-toggle="tooltip" data-placement="top" title="Some alert happened"></i></span>
-            <button class="btn btn-link delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
-            <button class="btn btn-link trigger activated" data-toggle="tooltip" data-placement="top" title="Expand/collapse"><i class="fa fa-minus-square-o"></i>Last 24 hours</button>
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-url-link"><a href="url.html">http:my-example-URL</a><i class="fa fa-flag" data-toggle="tooltip" data-placement="top" title="Some alert happened"></i></span>
+            <button class="btn btn-link hk-delete" data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-trash-o"></i></button>
+            <button class="btn btn-link hk-trigger" data-toggle="tooltip" data-placement="top" title="Expand/collapse"><i class="fa fa-plus-square-o"></i>Last 24 hours</button>
           </div>
-          <div class="col-sm-4 summary-item">
-            <span class="data">100 <span>ms</span></span>
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-data">100 <span>ms</span></span>
           </div>
-          <div class="col-sm-4 summary-item">
-            <span class="data"><i class="fa fa-arrow-up"></i>Up</span>
-            <span class="time" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:01</span>
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-data"><i class="fa fa-arrow-up"></i>Up</span>
+            <span class="hk-time" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:01</span>
           </div>
         </div>
         <hr/>
-        <div class="row row-table panel-expanded-content">
-          <div class="col-sm-4 summary-item">
-            <ul class="list-unstyled alert-status">
-              <li><i class="fa fa-flag"></i>Today, 12:01 PM: <strong>server down</strong></li>
-              <li><i class="fa fa-flag"></i>Yesterday, 10:54 PM: <strong>high response time</strong></li>
-            </ul>
-              <a href="#alerts" class="alerts-link">View All Alerts (5)</a>
+        <div class="row row-table hk-panel-expanded-content">
+          <div class="col-sm-4 hk-summary-item">
+            <span class="hk-no-alerts">No alerts.</span>
           </div>
-          <div class="col-sm-4 summary-item">
-            <div class="top-area">
+          <div class="col-sm-4 hk-summary-item">
+            <div class="hk-top-area">
               <img src="img/overview-graph.png" alt="overview-graph" width="237" height="44">
             </div>
-            <div class="bottom-area">
-              <span class="data">165 <span>ms</span></span>
-              <span class="item">Average Response Time</span>
+            <div>
+              <span class="hk-data">165 <span>ms</span></span>
+              <span class="hk-item">Average Response Time</span>
             </div>
-            
           </div>
-          <div class="col-sm-4 summary-item">
-            <div class="top-area">
-              <span class="data"><i class="fa fa-arrow-down"></i>Down 5 min</span>
-              
+          <div class="col-sm-4 hk-summary-item">
+            <div class="hk-top-area">
+              <span class="hk-data"><i class="fa fa-arrow-up"></i>Always Up</span>
             </div>
-            <div class="bottom-area">
-              <span class="data">99.998 <span>%</span></span>
-              <span class="item">Availability</span>
+            <div>
+              <span class="hk-data">100 <span>%</span></span>
+              <span class="hk-item">Availability</span>
             </div>
-
           </div>
         </div>
-      </div>      
+      </div>
+
     </div>
     
   </body>

@@ -29,13 +29,10 @@ tabsBrowsing = function(){
     $(this).parent().parent().find('li').removeClass('active');
     $(this).parent().addClass('active');
     var tc = $(this).attr('class');
-    $('.screen-content .tab-content').addClass('hide');
-    $('.screen-content #'+tc).removeClass('hide');
+    $('.hk-screen-content .hk-tab-content').addClass('hide');
+    $('.hk-screen-content #'+tc).removeClass('hide');
   });
 };
-
-  
-
     
 //Initialize Boostrap-select
 $(function () {
