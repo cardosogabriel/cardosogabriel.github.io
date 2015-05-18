@@ -69,8 +69,8 @@
     <div class="container">
       <div class="hk-application-servers">
         <h1 class="text-center">Brian's application servers</h1>
-        <h3 class="pull-left">Aggregate Status (Last 24 hrs)</h3>
-        <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+        <h3 class="pull-left">Aggregate Status</h3>
+        <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
         <div class="panel panel-default hk-summary">
           <div class="row">
             <div class="col-sm-3 hk-summary-item">
@@ -98,7 +98,7 @@
         <table class="datatable table table-striped table-bordered table-checkbox">
           <thead>
             <tr>
-              <th>Application Server Name <span class="label label-default label-alert pull-right">2</span></th>
+              <th>Application Server Name <span class="label label-default label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Total alerts">2</span></th>
               <th>Type</th>
               <th>Host</th>
               <th>State</th>
@@ -107,7 +107,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><a href="application.html">Server name 1</a> <span class="label label-danger label-alert pull-right">1</span></td>
+              <td><a href="application.html">Server name 1</a> <a href="#" class="pull-right"><span class="label label-danger label-alert" data-toggle="tooltip" data-placement="top" title="Server alerts">1</span></a></td>
               <td>EAP</td>
               <td>tori.corp.redhat.com</td>
               <td class="center">Running</td>
@@ -121,7 +121,7 @@
               <td class="center"><span class="label label-primary">Production</span></td>
             </tr>
             <tr>
-              <td><a href="application.html">Server name 3</a> <span class="label label-danger label-alert pull-right">1</span></td>
+              <td><a href="application.html">Server name 3</a> <a href="#" class="pull-right"><span class="label label-danger label-alert" data-toggle="tooltip" data-placement="top" title="Server alerts">1</span></a></td>
               <td>Tomcat</td>
               <td>tori.corp.redhat.com</td>
               <td class="center">Failed</td>
