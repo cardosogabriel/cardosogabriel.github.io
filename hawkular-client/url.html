@@ -105,7 +105,7 @@
       
         <section id="hk-availability" class="hk-tab-content">
         
-          <h3 class="pull-left">Availability Status (Last hour)</h3>
+          <h3 class="pull-left">Availability Status</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           
           <div class="panel panel-default hk-summary">
@@ -158,8 +158,15 @@
             </div>          
           </div>
           
-          <h3>Availability</h3>
+          <div class="hk-info-top clearfix">
+            <h3 class="pull-left">Metrics</h3>
+            <div class="hk-update pull-right">
+              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+            </div>
+          </div>
+
           <div class="panel panel-default hk-graph">
+            <h2>Availability</h2>
             <img src="img/graph-availability.png" alt="graph">
           </div>
           
@@ -205,14 +212,18 @@
             </div>          
           </div>
           
-          <h3>Response Time</h3>
+          <div class="hk-info-top clearfix">
+            <h3 class="pull-left">Metrics</h3>
+            <div class="hk-update pull-right">
+              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+            </div>
+          </div>
+
           <div class="panel panel-default hk-graph">
+            <h2>Response Time</h2>
             <div class="hk-legend pull-left">
               <span><i class="fa fa-circle hk-primary"></i>Response Time</span>
               <span><i class="fa fa-circle hk-danger"></i>Response Time (above the threshold)</span>
-            </div>
-            <div class="hk-update pull-right">
-              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="Update chart"><i class="fa fa-refresh"></i></button>
             </div>
             
             <img src="img/graph.png" alt="graph">
