@@ -100,9 +100,9 @@
         </div>
         <div class="hk-nav-tabs-container">
           <ul class="nav nav-tabs nav-tabs-pf">
-            <li><a href="#" class="hk-alerts">Alerts</a></li>
-            <li class="active"><a href="#" class="hk-jvm-metrics">JVM <span class="label label-danger label-alert pull-right">3</span></a></li>
-            <li><a href="#" class="hk-deployments">Web</a></li>
+            <li class="active"><a href="#" class="hk-alerts">Alerts</a></li>
+            <li><a href="#" class="hk-jvm">JVM <span class="label label-danger label-alert pull-right">3</span></a></li>
+            <li><a href="#" class="hk-web">Web</a></li>
             <li><a href="#" class="hk-datasources">JMS</a></li>
             <li><a href="#" class="hk-datasources">Transactions</a></li>
             <li><a href="#" class="hk-datasources">Datasources</a></li>
@@ -114,10 +114,44 @@
     <div class="container">
       <div class="hk-screen-content">
             
-        <section id="hk-jvm-metrics" class="hk-tab-content">
+        <section id="hk-alerts" class="hk-tab-content">
+          
+          <div class="hk-info-top clearfix">
+            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse">Alerts <span>(29)</span></h3>
+            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+          </div>
+          
+          <div class="clearfix">
+            <div class="panel panel-default alert alert-danger">
+              <div class="hk-alert-icon">
+                <i class="fa fa-flag"></i>
+              </div>
+              <div class="hk-date">
+                12 Feb, 5:35 PM
+              </div>
+              <div class="hk-event">
+                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+              </div>
+            </div>          
+            <div class="panel panel-default alert alert-danger">
+              <div class="hk-alert-icon">
+                <i class="fa fa-flag"></i>
+              </div>
+              <div class="hk-date">
+                11 Feb, 3:53 PM
+              </div>
+              <div class="hk-event">
+                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+              </div>
+            </div>          
+          </div>
+          
+        </section>
+            
+        <section id="hk-jvm" class="hk-tab-content hide">
           
           <h3 class="pull-left">JVM Status</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
             <div class="row">
               <div class="col-sm-3 hk-summary-item">
@@ -186,33 +220,33 @@
           
         </section><!-- .jvm-metrics -->
         
-        <section id="hk-deployments" class="hk-tab-content hide">
+        <section id="hk-web" class="hk-tab-content hide">
           
-          <h3 class="pull-left">Deployments</h3>
+          <h3 class="pull-left">JVM Status</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
             <div class="row">
               <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">-Xmx</span>
-                <span class="hk-item">Max. Heap</span>
-              </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">20 GB</span>
-                <span class="hk-item">Avg. Heap Usage</span>
-              </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">22:00</span>
-                <span class="hk-item">Last Garbage Collection</span>
-              </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">3</span>
+                <span class="hk-data">10 <i class="fa fa-flag"></i></span>
                 <span class="hk-item">Alerts</span>
+              </div>
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">800</span>
+                <span class="hk-item">Active Sessions (Average)</span>
+              </div>
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">700 ms</span>
+                <span class="hk-item">Response Time (Average)</span>
+              </div>
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">1005</span>
+                <span class="hk-item">Threads Servicing Requests (Avg.)</span>
               </div>
             </div>
           </div>
           
           <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Alerts <span>(1)</span></button></h3>
+            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Alerts <span>(2 of 10)</span></button></h3>
             <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
           </div>
           <div class="clearfix">
@@ -224,12 +258,84 @@
                 12 Feb, 5:35 PM
               </div>
               <div class="hk-event">
-                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+                <strong>408 Request Timeout</strong>: For some reason the server took too much time processing your request.
+              </div>
+            </div>          
+            <div class="panel panel-default alert alert-danger">
+              <div class="hk-alert-icon">
+                <i class="fa fa-flag"></i>
+              </div>
+              <div class="hk-date">
+                11 Feb, 3:53 PM
+              </div>
+              <div class="hk-event">
+                <strong>408 Request Timeout</strong>: For some reason the server took too much time processing your request.
               </div>
             </div>          
           </div>
+
+          <div class="hk-info-top clearfix">
+            <h3 class="pull-left">Metrics</h3>
+            <div class="hk-update pull-right">
+              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+            </div>
+          </div>
                   
-        </section>
+          <div class="panel panel-default hk-graph">
+            <h2>Web: Sessions, Requests and Response Time</h2>
+            <div class="row hk-legend text-left">
+              <div class="col-md-3 col-lg-2">
+                <h4>Sessions</h4>
+                <div class="hk-graphselector hk-blue">
+                  <input type="checkbox" id="max-active" checked="checked"> 
+                  <label for="max-active"><span>Max Active Sessions</span></label>
+                </div>
+                <div class="hk-graphselector hk-orange">
+                  <input type="checkbox" id="expired"> 
+                  <label for="expired"><span>Expired Sessions</span></label>
+                </div>
+<!--
+                <label>
+                  <input type="checkbox"> <i class="fa fa-circle hk-orange"></i><span>Expired Sessions</span>
+                </label>
+-->
+              </div>
+              <div class="col-md-3 col-lg-2 margin-heading">
+                <div class="hk-graphselector hk-green">
+                  <input type="checkbox" id="active"> 
+                  <label for="active"><span>Active Sessions</span></label>
+                </div>
+                <div class="hk-graphselector hk-red">
+                  <input type="checkbox" id="rejected"> 
+                  <label for="rejected"><span>Rejected Sessions</span></label>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2">
+                <h4>Container</h4>
+                <div class="hk-graphselector hk-purple">
+                  <input type="checkbox" id="request"> 
+                  <label for="request"><span>Request Threads</span></label>
+                </div>
+                <div class="hk-graphselector hk-yellow">
+                  <input type="checkbox" id="pending"> 
+                  <label for="pending"><span>Pending Requests</span></label>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-2">
+                <h4>Requests</h4>
+                <div class="hk-graphselector hk-gray">
+                  <input type="checkbox" id="response"> 
+                  <label for="response"><span>Response Time</span></label>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+          
+        </section><!-- .web -->
+
+
   
         <section id="hk-datasources" class="hk-tab-content hide">
           
@@ -266,38 +372,6 @@
                   
         </section>
         
-        <section id="hk-alerts" class="hk-tab-content hide">
-          
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse">Alerts <span>(29)</span></h3>
-            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-          </div>
-          <div class="clearfix">
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                12 Feb, 5:35 PM
-              </div>
-              <div class="hk-event">
-                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
-              </div>
-            </div>          
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                11 Feb, 3:53 PM
-              </div>
-              <div class="hk-event">
-                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
-              </div>
-            </div>          
-          </div>
-          
-        </section>
 
       </div>
     </div><!-- .container -->
