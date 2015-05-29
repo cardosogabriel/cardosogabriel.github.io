@@ -60,10 +60,6 @@ h3 {
   float: none;
 }
 
-.panel {
-  border: none;
-}
-
 .btn-link, a {
 
   .fa {
@@ -446,6 +442,8 @@ a:hover .fa-spinner {
 
 .panel {
   
+  border: none;  
+  
   &.alert-danger {
     background-color: @danger-bg;
     
@@ -482,6 +480,15 @@ a:hover .fa-spinner {
       margin-right: 20px;
       min-width: 120px;
     }
+  }
+}
+
+.blank-slate-pf {
+  .panel;
+  
+  .fa {
+    color: inherit;
+    font-size: inherit;
   }
 }
 
@@ -792,11 +799,6 @@ a:hover .fa-spinner {
     }
   }
 }
-
-      .hk-blue {
-        color: @brand-primary;
-      }
-
 
 // application servers screen
 
