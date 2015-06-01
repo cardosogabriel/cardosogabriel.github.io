@@ -771,13 +771,39 @@ a:hover .fa-spinner {
         display: none;
         
         &:checked + label:before {
-          content: "";
-          font-family: FontAwesome;
           font-size: 8px;
           line-height: 10px;
           text-align: center;
           text-indent: 1px;
         }
+      }
+      
+      &.hk-blue input[type=checkbox]:checked + label:before {
+        background-color: @brand-primary;
+      }
+      
+      &.hk-red input[type=checkbox]:checked + label:before {
+        background-color: @brand-danger;
+      }
+  
+      &.hk-orange input[type=checkbox]:checked + label:before {
+        background-color: #f57f20;
+      }
+      
+      &.hk-gray input[type=checkbox]:checked + label:before {
+        background-color: #515252;
+      }
+      
+      &.hk-green input[type=checkbox]:checked + label:before {
+        background-color: #49a547;
+      }
+      
+      &.hk-purple input[type=checkbox]:checked + label:before {
+        background-color: #95489c;
+      }
+      
+      &.hk-yellow input[type=checkbox]:checked + label:before {
+        background-color: #d5d026;
       }
     }
   }
