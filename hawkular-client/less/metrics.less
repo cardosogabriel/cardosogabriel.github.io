@@ -162,8 +162,26 @@ a:hover .fa-spinner {
     padding: 0 4px;
   }
   
-  td.state .fa {
-    font-size: 20px;
+  td.state {
+    .fa {
+      font-size: 20px;
+      text-align: center;
+      width: 21px;
+    }
+    
+    p {
+      margin-bottom: 0;
+    }
+    
+    .spinner.spinner-inline {
+      vertical-align: top;
+      margin-right: 8px;
+    }
+    
+    span.fetching {
+      color: @gray-light;
+    }
+    
   }
 }  
 
