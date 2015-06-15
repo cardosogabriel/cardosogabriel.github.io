@@ -12,7 +12,9 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>    
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
     <script type="text/javascript" src="js/hawkular.js"></script>
     
   </head>
@@ -44,11 +46,24 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active">
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li>
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul> 
       </div>
     </nav>
     
     <div class="container">
-      <div class="hk-fade-in text-center hk-urls-list">
+      <div class="text-center hk-urls-list hk-spinner-container">
+        <div class="spinner spinner-lg"></div>
+        <p class="hk-spinner-legend-below">Loading...</p>
+      </div>
+      
+      <div class="hk-fade-in text-center hk-urls-list hk-urls-empty hide">
         <h1>Hello Brian!</h1>
         <i class="fa fa-line-chart"></i>
         <h2>Collect metrics from a website that you want to monitor.</h2>
