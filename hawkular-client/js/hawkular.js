@@ -1,7 +1,18 @@
 $(document).ready(function(){
+	initialLoading();
 	insertUrl();
 	tabsBrowsing();
 });
+
+//Initial loading
+initialLoading = function(){
+  setInterval(function () {
+    $('.hk-spinner-container').addClass('hide');
+    $('.hk-urls-empty').removeClass('hide');
+  },4000);
+};
+
+
 
 //Insert url form
 insertUrl = function(){
