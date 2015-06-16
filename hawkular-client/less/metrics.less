@@ -167,11 +167,12 @@ a:hover .fa-spinner {
 }
 
 .table-striped > tbody > tr.selected > td {
-  background-color: @link-color;
-  color: white;
-
-  a {
-    color: white;
+  background-color: rgba(0,153,211,0.1);
+  
+  &.success, 
+  &.danger, 
+  &.warning {
+    background-color: rgba(0,153,211,0.1);
   }
 }
 

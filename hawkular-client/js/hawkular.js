@@ -2,6 +2,7 @@ $(document).ready(function(){
 	initialLoading();
 	insertUrl();
 	tabsBrowsing();
+	tableSelect();
 });
 
 //Initial loading
@@ -11,8 +12,6 @@ initialLoading = function(){
     $('.hk-urls-empty').removeClass('hide');
   },4000);
 };
-
-
 
 //Insert url form
 insertUrl = function(){
@@ -44,6 +43,14 @@ tabsBrowsing = function(){
     $('.hk-screen-content #'+tc).removeClass('hide');
   });
 };
+
+//Table Select 
+tableSelect = function(){
+  $('input[type=checkbox]').click(function(){
+    $(this).parent().parent().toggleClass('selected');  
+  });  
+};
+
     
 //Initialize Boostrap-select
 $(function () {
