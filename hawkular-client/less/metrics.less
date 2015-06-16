@@ -167,12 +167,17 @@ a:hover .fa-spinner {
 }
 
 .table-striped > tbody > tr.selected > td {
-  background-color: rgba(0,153,211,0.1);
+  background-color: @brand-primary;
+  color: white;
   
   &.success, 
   &.danger, 
   &.warning {
-    background-color: rgba(0,153,211,0.1);
+    background-color: @brand-primary;
+  }
+  
+  .fa {
+    color: white;
   }
 }
 
@@ -193,14 +198,6 @@ a:hover .fa-spinner {
       
       &.fa-square {
         font-size: 18px;
-      }
-      
-      &.fa-check-circle-o {
-        color: @brand-success;
-      }
-      
-      &.fa-times-circle-o {
-        color: @brand-danger;
       }
     }
 
@@ -232,6 +229,14 @@ a:hover .fa-spinner {
       margin-top: -2px; 
     }
   }
+}
+
+&.fa-check-circle-o {
+  color: @brand-success;
+}
+
+&.fa-times-circle-o {
+  color: @brand-danger;
 }
 
 .dataTables_header {
@@ -545,16 +550,14 @@ a:hover .fa-spinner {
 
   &.alert-danger {
     background-color: @danger-bg;
-
-    .fa {
-      color: @brand-danger;
-    }
   }
 
   &.alert {
+    display: table;
     font-size: ceil(@font-size-base + 1);
     margin-bottom: @grid-gutter-width/8*3;
     padding: @grid-gutter-width/3 @grid-gutter-width/2;
+    width: 100%;
 
     &:last-child {
       margin-bottom: 20px;
@@ -578,6 +581,25 @@ a:hover .fa-spinner {
     .hk-date {
       margin-right: 20px;
       min-width: 120px;
+    }
+    
+    .alert-resolver {
+      cursor: pointer;
+      display: table-cell;
+      padding-left: 1em;
+      width: 16px;
+
+      .fa {
+        margin-right: 0;
+        width: 16px;
+      }
+
+      .fa-check-square-o {
+  
+        &:hover {
+          color: @link-hover-color;
+        }
+      }
     }
   }
 }
@@ -1114,34 +1136,4 @@ section {
 #toast-container > .toast-error:after {
   content: "";
   color: #cc0000;
-}
-
-.alert {
-
-  .hk-event {
-    padding-right: 1em;
-  }
-
-  .alert-resolver {
-    position: absolute;
-    padding-left: 1em;
-    width: 2em;
-    right: 1em;
-    cursor: pointer;
-
-    a > i.fa.fa-square-o {
-      color: @gray;
-    }
-
-    a i.fa-check-square-o {
-
-      &:hover {
-        color: @link-hover-color;
-      }
-    }
-
-    a i.fa-check-square-o {
-      color: @link-hover-color;
-    }
-  }
 }
