@@ -166,6 +166,17 @@ a:hover .fa-spinner {
   }
 }
 
+.table-checkbox > tbody > tr:hover > td {
+  background: #d6ecfa;
+  cursor: pointer;
+  
+  &.success, 
+  &.danger, 
+  &.warning {
+    background: #d6ecfa;
+  }
+}
+
 .table-striped > tbody > tr.selected > td {
   background-color: @brand-primary;
   color: white;

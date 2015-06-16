@@ -46,9 +46,9 @@ tabsBrowsing = function(){
 
 //Table Select 
 tableSelect = function(){
-  $('input[type=checkbox]').click(function(){
-    $(this).parent().parent().toggleClass('selected');  
-  });  
+  $('.table-checkbox td').click(function(){
+    $(this).parent().toggleClass('selected');  
+  });
 };
 
     
