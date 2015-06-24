@@ -222,7 +222,7 @@
         <section id="hk-web" class="hk-tab-content hide">
           
           <h3 class="pull-left">JVM Status</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
             <div class="row">
               <div class="col-sm-3 hk-summary-item">
@@ -328,7 +328,6 @@
                 </div>
               </div>
             </div>
-            
           </div>
           
         </section><!-- .web -->
@@ -453,40 +452,200 @@
   
         <section id="hk-datasources" class="hk-tab-content hide">
           
-          <h3 class="pull-left">Datasources</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
-          <div class="panel panel-default hk-summary">
-            <div class="row">
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">2 <i class="fa fa-flag"></i></span>
-                <span class="hk-item">Alerts</span>
-              </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">1270 MB</span>
-                <span class="hk-item">Average Heap Usage</span>
-              </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">5 s</span>
-                <span class="hk-item">Last Garbage Collection (Duration)</span>
-              </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">2000 MB</span>
-                <span class="hk-item">Maximum Heap</span>
+          <div class="hk-resource-container">
+            
+            <h3 class="pull-left">MyDatasource 1</h3>
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <div class="panel panel-default hk-summary">
+              <div class="row">
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">2 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Datasources Alerts</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">73%</span>
+                  <span class="hk-item">Connections Used (%)</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">7 Available (of 28)</span>
+                  <span class="hk-item">Available Connections (of total)</span>
+                </div>
               </div>
             </div>
-          </div>
+            <div class="hk-panel-collapse-area hk-collapsed hk-transition">
+              <a href="#"><span>View Metrics</span><i class="fa fa-angle-down"></i></a>
+            </div>
+            
+            <div class="hk-collapsible-area hk-transition hide">
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+              </div>
+              <div class="clearfix">
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    12 Feb, 5:35 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>          
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    11 Feb, 3:53 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>          
+              </div>
+              
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left">Metrics</h3>
+                <div class="hk-update pull-right">
+                  <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+                </div>
+              </div>
+              <div class="panel panel-default hk-graph">
+                <h2>Availability and Responsiveness</h2> 
+                <img src="img/graph-av-rp.png" alt="graph-av-rp">
+                <div class="row hk-legend hk-legend-inline text-left">
+                  <div class="col-md-7 col-lg-6">
+                    <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
+                    <div class="hk-graphselector hk-blue">
+                      <input type="checkbox" id="available1" checked="checked"> 
+                      <label for="available1"><span>Available Connections</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-green">
+                      <input type="checkbox" id="connections1"> 
+                      <label for="connections1"><span>Connections in Use</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-gray">
+                      <input type="checkbox" id="timed1"> 
+                      <label for="timed1"><span>Timed-out Connections</span></label>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-6">
+                    <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
+                    <div class="hk-graphselector hk-yellow">
+                      <input type="checkbox" id="wait1"> 
+                      <label for="wait1"><span>Wait Time (Avg.)</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-purple">
+                      <input type="checkbox" id="creation1"> 
+                      <label for="creation1"><span>Creation Time (Avg.)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- .hk-resource-container -->
+
+          <div class="hk-resource-container">
+            
+            <h3 class="pull-left">MyDatasource 1</h3>
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <div class="panel panel-default hk-summary">
+              <div class="row">
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">2 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Datasources Alerts</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">73%</span>
+                  <span class="hk-item">Connections Used (%)</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">7 Available (of 28)</span>
+                  <span class="hk-item">Available Connections (of total)</span>
+                </div>
+              </div>
+            </div>
+            <div class="hk-panel-collapse-area hk-collapsed">
+              <a href="#"><span>View Metrics</span><i class="fa fa-angle-down"></i></a>
+            </div>
+            
+            <div class="hk-collapsible-area hide">
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+              </div>
+              <div class="clearfix">
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    12 Feb, 5:35 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>          
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    11 Feb, 3:53 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>          
+              </div>
+
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left">Metrics</h3>
+                <div class="hk-update pull-right">
+                  <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+                </div>
+              </div>
+              <div class="panel panel-default hk-graph">
+                <h2>Availability and Responsiveness</h2>
+                <img src="img/graph-av-rp.png" alt="graph-av-rp">
+                <div class="row hk-legend hk-legend-inline text-left">
+                  <div class="col-md-7 col-lg-6">
+                    <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
+                    <div class="hk-graphselector hk-blue">
+                      <input type="checkbox" id="available2" checked="checked"> 
+                      <label for="available2"><span>Available Connections</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-green">
+                      <input type="checkbox" id="connections2"> 
+                      <label for="connections2"><span>Connections in Use</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-gray">
+                      <input type="checkbox" id="timed2"> 
+                      <label for="timed2"><span>Timed-out Connections</span></label>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-6">
+                    <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
+                    <div class="hk-graphselector hk-yellow">
+                      <input type="checkbox" id="wait2"> 
+                      <label for="wait2"><span>Wait Time (Avg.)</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-purple">
+                      <input type="checkbox" id="creation2"> 
+                      <label for="creation2"><span>Creation Time (Avg.)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Alerts <span>(0)</span></button></h3>
-            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-          </div>
-          <div class="clearfix">
-            <p>No alerts.</p>
-          </div>
-                  
+          </div><!-- .hk-resource-container -->
+          
         </section>
         
-
       </div>
     </div><!-- .container -->
     

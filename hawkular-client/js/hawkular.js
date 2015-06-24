@@ -3,6 +3,7 @@ $(document).ready(function(){
 	insertUrl();
 	tabsBrowsing();
 	tableSelect();
+	datasourceCollapse();
 });
 
 //Initial loading
@@ -51,6 +52,19 @@ tableSelect = function(){
   });
 };
 
+//Datasource collapse
+datasourceCollapse = function(){
+  $('.hk-panel-collapse-area a').click(function(){
+    $(this).parent().toggleClass('hk-collapsed');
+    $(this).children('span').text(function(i, text){
+      return text === "Hide Metrics" ? "View Metrics" : "Hide Metrics";
+    });
+    $(this).children('.fa').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
+    $(this).parent().parent().find('.hk-collapsible-area').toggleClass('hide');
+    return false;  
+  });
+};
+ 
     
 //Initialize Boostrap-select
 $(function () {

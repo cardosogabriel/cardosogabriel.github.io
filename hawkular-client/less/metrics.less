@@ -150,6 +150,10 @@ a:hover .fa-spinner {
   padding: 7px 10px 8px;
 }
 
+.table > tbody > tr > td > a:hover {
+  text-decoration: underline;
+}
+
 .table-striped > tbody > tr:nth-child(odd) > td {
   background-color: white;
   
@@ -799,12 +803,18 @@ a:hover .fa-spinner {
     color: #9d9fa1;
 }
 
-// URL screen
+// Graphs and Legends
 
 .hk-graph {
   clear: left;
-  padding: @grid-gutter-width/2*1.5;
+  padding: @grid-gutter-width/2;
   text-align: center;
+  
+  h2 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
 
   .hk-legend {
     font-size: ceil(@font-size-base - 1);
@@ -853,8 +863,12 @@ a:hover .fa-spinner {
       }
 
       h4 {
-        font-size: @font-size-base;
+        font-size: @font-size-base - 1;
         font-weight: bold;
+        
+        img {
+          margin-left: 5px;
+        }
       }
 
       input[type=checkbox] {
@@ -864,6 +878,18 @@ a:hover .fa-spinner {
       .margin-heading {
         margin-top: @grid-gutter-width/2;
         padding-top: ceil(@font-size-base * 1.1);
+      }
+    }
+    
+    &.hk-legend-inline {
+      
+      > div > div {
+        display: inline-block;
+        margin-right: 30px;
+        
+        label span {
+          margin-right: 0;
+        }
       }
     }
 
@@ -890,6 +916,7 @@ a:hover .fa-spinner {
 
         span {
           color: @gray-dark;
+          font-weight: 400;
         }
       }
 
@@ -941,21 +968,14 @@ a:hover .fa-spinner {
       }
     }
   }
-
-  .hk-update {
-    margin-right: -7px;
-    margin-top: -3px;
-
-    .fa {
-      margin-right: 0;
-    }
-  }
-
-  img {
+  
+  > img {
     margin-top: @grid-gutter-width/4;
-
-    @media (max-width: @screen-sm-max) {
-      width: 100%;
+    width: 100%;
+    
+    + .hk-legend {
+      margin-left: 38px;
+      margin-top: 10px;
     }
   }
 }
@@ -1026,6 +1046,67 @@ section {
   + .dataTables_wrapper {
     margin-top: 0;
   }
+}
+
+// datasources tab
+
+.hk-panel-collapse-area {
+  
+  border-bottom: 1px solid @table-border-color;
+  margin-bottom: 15px;
+  margin-top: -19px;
+  text-align: center;
+  padding: 2px 0;
+  
+  &.hk-transition {
+    -webkit-transition: background 0.3s ease;
+  	-moz-transition: background 0.3s ease;
+  	transition: background 0.3s ease;
+  }
+  
+  a {
+    color: @gray;
+    
+    &:hover {
+      color: @link-hover-color;
+    }
+    
+    .fa {
+      margin-left: 5px;
+    }
+  }
+  
+  &.hk-collapsed {
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+  }
+}
+
+.hk-resource-container {
+  margin-bottom: @grid-gutter-width/2;
+}
+
+.hk-collapsible-area .hk-info-top {
+  margin-top: -10px;
+  
+  h3,
+  .hk-trigger {
+    font-weight: normal;
+  }
+}
+
+.hk-collapsible-area.hk-transition {
+  display: block!important;
+  max-height: 650px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease;
+	-moz-transition: max-height 0.3s ease;
+	transition: max-height 0.3s ease;
+}
+
+.hk-collapsible-area.hide.hk-transition {
+  max-height: 0;
 }
 
 
