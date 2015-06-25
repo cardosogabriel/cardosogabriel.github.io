@@ -818,13 +818,11 @@ a:hover .fa-spinner {
 
   .hk-legend {
     font-size: ceil(@font-size-base - 1);
+    margin-left: 38px;
+    margin-top: 15px;
 
     span {
       margin-right: @grid-gutter-width/2;
-    }
-
-    .fa {
-      font-size: ceil(@font-size-base * 0.75);
     }
 
     .hk-blue {
@@ -853,6 +851,33 @@ a:hover .fa-spinner {
 
     .hk-yellow {
       color: #d5d026;
+    }
+    
+    .fa-circle {
+      font-size: ceil(@font-size-base * 0.75);
+    }
+    
+    .hk-legend-square {
+      display: inline-block;
+      margin-right: 5px;
+      height: 9px;
+      width: 9px;  
+      
+      &.hk-red {
+        background-color: @brand-danger;
+      }
+      
+      &.hk-red-light {
+        background-color: #feedee;
+      }
+
+      &.hk-gray-light {
+        background-color: #b5b5b5;
+      }
+
+      &.hk-green {
+        background-color: #49a547;
+      }
     }
 
     &.row {
@@ -972,11 +997,6 @@ a:hover .fa-spinner {
   > img {
     margin-top: @grid-gutter-width/4;
     width: 100%;
-    
-    + .hk-legend {
-      margin-left: 38px;
-      margin-top: 10px;
-    }
   }
 }
 

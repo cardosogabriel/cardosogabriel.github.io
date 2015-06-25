@@ -119,7 +119,7 @@
         <section id="hk-availability" class="hk-tab-content hide">
         
           <h3 class="pull-left">Availability Status</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="bottom" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           
           <div class="panel panel-default hk-summary">
             <div class="row">
@@ -181,6 +181,11 @@
           <div class="panel panel-default hk-graph">
             <h2>Availability</h2>
             <img src="img/graph-availability.png" alt="graph">
+            <div class="hk-legend text-left">
+              <span><span class="hk-legend-square hk-green"></span>Available</span>
+              <span><span class="hk-legend-square hk-red"></span>Down</span>
+              <span><span class="hk-legend-square hk-gray-light"></span>Not Available</span>
+            </div>
           </div>
           
         </section>
@@ -234,12 +239,11 @@
 
           <div class="panel panel-default hk-graph">
             <h2>Response Time</h2>
-            <div class="hk-legend pull-left">
-              <span><i class="fa fa-circle hk-blue"></i>Response Time</span>
-              <span><i class="fa fa-circle hk-red"></i>Response Time (above the threshold)</span>
-            </div>
-            
             <img src="img/graph.png" alt="graph">
+            <div class="hk-legend text-left">
+              <span><i class="fa fa-circle hk-blue"></i>Response Time</span>
+              <span><span class="hk-legend-square hk-red-light"></span>Response Time (above the threshold)</span>
+            </div>
           </div>
           
         </section>
