@@ -113,7 +113,7 @@ a:hover .fa-repeat {
 .fa-arrow-down,
 a .fa-arrow-down,
 a:hover .fa-arrow-down {
-  color: @gray-light;
+  color: @brand-danger;
 }
 
 .fa-chain-broken,
@@ -511,7 +511,7 @@ a:hover .fa-spinner {
       vertical-align: inherit;
     }
     
-    .spinner {
+    &.spinner {
       margin-bottom: 7px;
       margin-top: 5px;
     }
@@ -820,6 +820,14 @@ a:hover .fa-spinner {
     font-size: ceil(@font-size-base - 1);
     margin-left: 38px;
     margin-top: 15px;
+    
+    &.hk-availability {
+      margin-left: 47px;
+    }
+    
+    &.hk-response-time {
+      margin-left: 57px;
+    }
 
     span {
       margin-right: @grid-gutter-width/2;
@@ -860,15 +868,15 @@ a:hover .fa-spinner {
     .hk-legend-square {
       display: inline-block;
       margin-right: 5px;
-      height: 9px;
-      width: 9px;  
+      height: 10px;
+      width: 10px;  
       
       &.hk-red {
         background-color: @brand-danger;
       }
       
       &.hk-red-light {
-        background-color: #feedee;
+        background-color: #fce6dc;
       }
 
       &.hk-gray-light {
@@ -1014,6 +1022,12 @@ a:hover .fa-spinner {
 
   .dataTables_wrapper {
     margin-top: 15px;
+  }
+
+  .fa-arrow-down,
+  a .fa-arrow-down,
+  a:hover .fa-arrow-down {
+    color: @gray-light;
   }
 }
 
