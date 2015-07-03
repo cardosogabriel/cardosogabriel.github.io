@@ -9,7 +9,7 @@ $(document).ready(function(){
 //Initial loading
 initialLoading = function(){
   setInterval(function () {
-    $('.hk-spinner-container').addClass('hide');
+    $('.hk-urls-list.hk-spinner-container').addClass('hide');
     $('.hk-urls-empty').removeClass('hide');
   },4000);
 };
@@ -19,7 +19,7 @@ insertUrl = function(){
   $('.btn-primary').click(function(){
     $(this).addClass('disabled');
     $('.loading').removeClass('hide');
-    
+
     setInterval(function () {
       $('.form-group').addClass('has-error');
       $('.btn-primary').removeClass('disabled');
@@ -27,7 +27,7 @@ insertUrl = function(){
       $('.loading').addClass('hide');
     },4000);
   });
-  
+
   $('.btn-link').click(function(){
     $('.loading').addClass('hide');
     $('.btn-primary').removeClass('disabled');
@@ -45,10 +45,10 @@ tabsBrowsing = function(){
   });
 };
 
-//Table Select 
+//Table Select
 tableSelect = function(){
   $('.table-checkbox td').click(function(){
-    $(this).parent().toggleClass('selected');  
+    $(this).parent().toggleClass('selected');
   });
 };
 
@@ -61,15 +61,15 @@ datasourceCollapse = function(){
     });
     $(this).children('.fa').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
     $(this).parent().parent().find('.hk-collapsible-area').toggleClass('hide');
-    return false;  
+    return false;
   });
 };
- 
-    
+
+
 //Initialize Boostrap-select
 $(function () {
   $('.selectpicker').selectpicker();
-})  
+})
 
 //Initialize Bootstrap tooltip
 $(function () {
