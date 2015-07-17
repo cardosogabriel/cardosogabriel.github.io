@@ -146,6 +146,12 @@ a:hover .fa-spinner {
   margin-top: @grid-gutter-width/8;
 }
 
+.alert-success,
+.alert-warning,
+.alert-error {
+  background-color: transparent;
+}
+
 // tables
 
 .table > thead > tr > th,
@@ -635,10 +641,59 @@ a:hover .fa-spinner {
   margin-top: @grid-gutter-width/2;
 }
 
-// alert settings modal
+// Modal boxes
 
-.modal-body fieldset p {
-  margin-top: -10px;
+.modal-body {
+
+  fieldset p {
+    margin-top: -10px;
+  }
+
+  p.required-info {
+    color: @gray-light;
+    margin-top: -5px;
+    margin-bottom: 15px;
+  }
+
+  .hk-form-verify {
+
+    .hk-form-buttons {
+      margin-bottom: 5px;
+    }
+
+    .editable-container {
+      border: 1px solid #ddd;
+      clear: both;
+      padding-top: 15px;
+
+      + .checkbox {
+        margin-top: 5px;
+      }
+    }
+
+    .hk-input-text {
+      line-height: 1.66666667;
+    }
+
+    &.hk-form-read-only {
+      .hk-discard-confirm-buttons,
+      .form-group input {
+        display: none;
+      }
+    }
+
+    &.hk-form-edit {
+      .hk-rename-button,
+      .form-group .hk-input-text {
+        display: none;
+      }
+    }
+  }
+
+  p + .hk-spinner-container,
+  p + .alert {
+    margin-top: @grid-gutter-width/2;
+  }
 }
 
 .alert-settings .form-horizontal {
@@ -886,7 +941,7 @@ a:hover .fa-spinner {
       }
 
       &.hk-red-light {
-        background-color: #fce6dc;
+        background-color: #feedee;
       }
 
       &.hk-gray-light {
@@ -1131,7 +1186,7 @@ section {
 
 .hk-collapsible-area {
   display: block!important;
-  max-height: 650px;
+  max-height: 950px;
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease;
 	-moz-transition: max-height 0.3s ease;
@@ -1167,7 +1222,7 @@ section {
   width: 800px;
 }
 
-#metrics-chart {
+.metrics-chart {
   height: 270px;
 }
 

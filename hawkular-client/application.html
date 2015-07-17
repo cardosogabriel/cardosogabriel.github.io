@@ -5,29 +5,29 @@
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta name="description" content="Hawkular console by Red Hat">
-    <link rel="shortcut icon" href="img/favicon.ico">  	
+    <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>    
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.js"></script>
 
     <script type="text/javascript" src="js/hawkular.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
     <script>
       // Initialize Datatables
-            
-      $(document).ready(function() { 
+
+      $(document).ready(function() {
         $('.datatable').dataTable( {
         });
       });
-      
-    </script>      
+
+    </script>
   </head>
-  
+
   <body>
     <nav class="navbar navbar-default navbar-pf" role="navigation">
       <div class="navbar-header">
@@ -62,10 +62,10 @@
           <li class="active">
             <a href="applications-list.html">Application Servers</a>
           </li>
-        </ul>      
+        </ul>
       </div>
     </nav>
-    
+
     <div class="hk-screen-top-nav">
       <div class="container">
         <div class="row hk-top-row">
@@ -88,7 +88,7 @@
                     <button type="button" class="btn btn-default">Month</button>
                     <button type="button" class="btn btn-default">Year</button>
                   </div>
-                </div>  
+                </div>
               </div>
             </div>
           </div>
@@ -109,17 +109,17 @@
         </div>
       </div>
     </div><!-- .screen-top-nav -->
-    
+
     <div class="container">
       <div class="hk-screen-content">
-            
+
         <section id="hk-alerts" class="hk-tab-content">
-          
+
           <div class="hk-info-top clearfix">
             <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse">Alerts <span>(29)</span></h3>
             <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
           </div>
-          
+
           <div class="clearfix">
             <div class="panel panel-default alert alert-danger">
               <div class="hk-alert-icon">
@@ -131,7 +131,7 @@
               <div class="hk-event">
                 Server <strong>down</strong> for 4 minutes (until 5:39 PM).
               </div>
-            </div>          
+            </div>
             <div class="panel panel-default alert alert-danger">
               <div class="hk-alert-icon">
                 <i class="fa fa-flag"></i>
@@ -142,13 +142,13 @@
               <div class="hk-event">
                 <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
               </div>
-            </div>          
+            </div>
           </div>
-          
+
         </section>
-            
+
         <section id="hk-jvm" class="hk-tab-content hide">
-          
+
           <h3 class="pull-left">JVM Status</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
@@ -171,7 +171,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="hk-info-top clearfix">
             <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> JVM Alerts <span>(2 of 10)</span></button></h3>
             <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
@@ -187,7 +187,7 @@
               <div class="hk-event">
                 Server <strong>down</strong> for 4 minutes (until 5:39 PM).
               </div>
-            </div>          
+            </div>
             <div class="panel panel-default alert alert-danger">
               <div class="hk-alert-icon">
                 <i class="fa fa-flag"></i>
@@ -198,7 +198,7 @@
               <div class="hk-event">
                 <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
               </div>
-            </div>          
+            </div>
           </div>
 
           <div class="hk-info-top clearfix">
@@ -207,7 +207,7 @@
               <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
             </div>
           </div>
-                  
+
           <div class="panel panel-default hk-graph">
             <h2>JVM Heap Usage</h2>
             <div class="hk-legend text-left">
@@ -216,11 +216,11 @@
               <span><i class="fa fa-circle hk-gray"></i>Commited</span>
             </div>
           </div>
-          
+
         </section><!-- .jvm-metrics -->
-        
+
         <section id="hk-web" class="hk-tab-content hide">
-          
+
           <h3 class="pull-left">JVM Status</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
@@ -243,7 +243,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="hk-info-top clearfix">
             <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Alerts <span>(2 of 10)</span></button></h3>
             <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
@@ -259,7 +259,7 @@
               <div class="hk-event">
                 <strong>408 Request Timeout</strong>: For some reason the server took too much time processing your request.
               </div>
-            </div>          
+            </div>
             <div class="panel panel-default alert alert-danger">
               <div class="hk-alert-icon">
                 <i class="fa fa-flag"></i>
@@ -270,7 +270,7 @@
               <div class="hk-event">
                 <strong>408 Request Timeout</strong>: For some reason the server took too much time processing your request.
               </div>
-            </div>          
+            </div>
           </div>
 
           <div class="hk-info-top clearfix">
@@ -279,56 +279,56 @@
               <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
             </div>
           </div>
-                  
+
           <div class="panel panel-default hk-graph">
             <h2>Web: Sessions, Requests and Response Time</h2>
             <div class="row hk-legend text-left">
               <div class="col-md-3 col-lg-2">
                 <h4>Sessions</h4>
                 <div class="hk-graphselector hk-blue">
-                  <input type="checkbox" id="max-active" checked="checked"> 
+                  <input type="checkbox" id="max-active" checked="checked">
                   <label for="max-active"><span>Max Active Sessions</span></label>
                 </div>
                 <div class="hk-graphselector hk-orange">
-                  <input type="checkbox" id="expired"> 
+                  <input type="checkbox" id="expired">
                   <label for="expired"><span>Expired Sessions</span></label>
                 </div>
               </div>
               <div class="col-md-3 col-lg-2 margin-heading">
                 <div class="hk-graphselector hk-green">
-                  <input type="checkbox" id="active"> 
+                  <input type="checkbox" id="active">
                   <label for="active"><span>Active Sessions</span></label>
                 </div>
                 <div class="hk-graphselector hk-red">
-                  <input type="checkbox" id="rejected"> 
+                  <input type="checkbox" id="rejected">
                   <label for="rejected"><span>Rejected Sessions</span></label>
                 </div>
               </div>
               <div class="col-md-3 col-lg-2">
                 <h4>Container</h4>
                 <div class="hk-graphselector hk-purple">
-                  <input type="checkbox" id="request"> 
+                  <input type="checkbox" id="request">
                   <label for="request"><span>Request Threads</span></label>
                 </div>
                 <div class="hk-graphselector hk-yellow">
-                  <input type="checkbox" id="pending"> 
+                  <input type="checkbox" id="pending">
                   <label for="pending"><span>Pending Requests</span></label>
                 </div>
               </div>
               <div class="col-md-3 col-lg-2">
                 <h4>Requests</h4>
                 <div class="hk-graphselector hk-gray">
-                  <input type="checkbox" id="response"> 
+                  <input type="checkbox" id="response">
                   <label for="response"><span>Response Time</span></label>
                 </div>
               </div>
             </div>
           </div>
-          
+
         </section><!-- .web -->
 
         <section id="hk-deployments" class="hk-tab-content hide">
-          
+
           <h3 class="pull-left">Deployment Status</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
@@ -351,7 +351,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="hk-info-top clearfix">
             <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
             <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
@@ -367,7 +367,7 @@
               <div class="hk-event">
                 <strong>Alert Summary</strong>: alert details.
               </div>
-            </div>          
+            </div>
             <div class="panel panel-default alert alert-danger">
               <div class="hk-alert-icon">
                 <i class="fa fa-flag"></i>
@@ -378,13 +378,13 @@
               <div class="hk-event">
                 <strong>Alert Summary</strong>: alert details.
               </div>
-            </div>          
+            </div>
           </div>
 
           <div class="hk-info-top clearfix">
           <h3>Deployments</h3>
             <div class="actions-table">
-              <button class="btn btn-primary add" type="button">Add Deployment</button>
+              <button class="btn btn-primary add" type="button" data-toggle="modal" data-target="#add-deployment">Add Deployment</button>
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
                   Actions
@@ -400,7 +400,7 @@
               </div>
             </div>
           </div>
-                  
+
           <table class="datatable table table-striped table-bordered table-checkbox">
             <thead>
               <tr>
@@ -408,7 +408,7 @@
                 <th>Current State</th>
                 <th>Deployments <span class="label label-default label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Total alerts">10</span></th>
                 <th>Enabled/Disabled</th>
-                <th>Computer Health</th>
+                <th>Computed Health</th>
               </tr>
             </thead>
             <tbody>
@@ -442,13 +442,13 @@
               </tr>
             </tbody>
           </table>
-          
+
         </section><!-- .deployments -->
-  
+
         <section id="hk-datasources" class="hk-tab-content hide">
-          
+
           <div class="hk-resource-container">
-            
+
             <h3 class="pull-left">MyDatasource 1</h3>
             <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
             <div class="panel panel-default hk-summary">
@@ -470,7 +470,7 @@
             <div class="hk-panel-collapse-area hk-collapsed">
               <a href="#"><span>View Metrics</span><i class="fa fa-angle-down"></i></a>
             </div>
-            
+
             <div class="hk-collapsible-area hide">
               <div class="hk-info-top clearfix">
                 <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
@@ -487,7 +487,7 @@
                   <div class="hk-event">
                     <strong>Alert Summary</strong>: alert details.
                   </div>
-                </div>          
+                </div>
                 <div class="panel panel-default alert alert-danger">
                   <div class="hk-alert-icon">
                     <i class="fa fa-flag"></i>
@@ -498,103 +498,7 @@
                   <div class="hk-event">
                     <strong>Alert Summary</strong>: alert details.
                   </div>
-                </div>          
-              </div>
-              
-              <div class="hk-info-top clearfix">
-                <h3 class="pull-left">Metrics</h3>
-                <div class="hk-update pull-right">
-                  <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
                 </div>
-              </div>
-              <div class="panel panel-default hk-graph">
-                <h2>Availability and Responsiveness</h2> 
-                <img src="img/graph-av-rp.png" alt="graph-av-rp">
-                <div class="row hk-legend hk-legend-inline text-left">
-                  <div class="col-md-7 col-lg-6">
-                    <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
-                    <div class="hk-graphselector hk-blue">
-                      <input type="checkbox" id="available1" checked="checked"> 
-                      <label for="available1"><span>Available Connections</span></label>
-                    </div>
-                    <div class="hk-graphselector hk-green">
-                      <input type="checkbox" id="connections1"> 
-                      <label for="connections1"><span>Connections in Use</span></label>
-                    </div>
-                    <div class="hk-graphselector hk-gray">
-                      <input type="checkbox" id="timed1"> 
-                      <label for="timed1"><span>Timed-out Connections</span></label>
-                    </div>
-                  </div>
-                  <div class="col-md-5 col-lg-6">
-                    <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
-                    <div class="hk-graphselector hk-yellow">
-                      <input type="checkbox" id="wait1"> 
-                      <label for="wait1"><span>Wait Time (Avg.)</span></label>
-                    </div>
-                    <div class="hk-graphselector hk-purple">
-                      <input type="checkbox" id="creation1"> 
-                      <label for="creation1"><span>Creation Time (Avg.)</span></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- .hk-resource-container -->
-
-          <div class="hk-resource-container">
-            
-            <h3 class="pull-left">MyDatasource 1</h3>
-            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
-            <div class="panel panel-default hk-summary">
-              <div class="row">
-                <div class="col-sm-4 hk-summary-item">
-                  <span class="hk-data">2 <i class="fa fa-flag"></i></span>
-                  <span class="hk-item">Datasources Alerts</span>
-                </div>
-                <div class="col-sm-4 hk-summary-item">
-                  <span class="hk-data">73%</span>
-                  <span class="hk-item">Connections Used (%)</span>
-                </div>
-                <div class="col-sm-4 hk-summary-item">
-                  <span class="hk-data">7 Available (of 28)</span>
-                  <span class="hk-item">Available Connections (of total)</span>
-                </div>
-              </div>
-            </div>
-            <div class="hk-panel-collapse-area hk-collapsed">
-              <a href="#"><span>View Metrics</span><i class="fa fa-angle-down"></i></a>
-            </div>
-            
-            <div class="hk-collapsible-area hide">
-              <div class="hk-info-top clearfix">
-                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
-                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-              </div>
-              <div class="clearfix">
-                <div class="panel panel-default alert alert-danger">
-                  <div class="hk-alert-icon">
-                    <i class="fa fa-flag"></i>
-                  </div>
-                  <div class="hk-date">
-                    12 Feb, 5:35 PM
-                  </div>
-                  <div class="hk-event">
-                    <strong>Alert Summary</strong>: alert details.
-                  </div>
-                </div>          
-                <div class="panel panel-default alert alert-danger">
-                  <div class="hk-alert-icon">
-                    <i class="fa fa-flag"></i>
-                  </div>
-                  <div class="hk-date">
-                    11 Feb, 3:53 PM
-                  </div>
-                  <div class="hk-event">
-                    <strong>Alert Summary</strong>: alert details.
-                  </div>
-                </div>          
               </div>
 
               <div class="hk-info-top clearfix">
@@ -610,39 +514,234 @@
                   <div class="col-md-7 col-lg-6">
                     <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
                     <div class="hk-graphselector hk-blue">
-                      <input type="checkbox" id="available2" checked="checked"> 
+                      <input type="checkbox" id="available1" checked="checked">
+                      <label for="available1"><span>Available Connections</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-green">
+                      <input type="checkbox" id="connections1">
+                      <label for="connections1"><span>Connections in Use</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-gray">
+                      <input type="checkbox" id="timed1">
+                      <label for="timed1"><span>Timed-out Connections</span></label>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-6">
+                    <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
+                    <div class="hk-graphselector hk-yellow">
+                      <input type="checkbox" id="wait1">
+                      <label for="wait1"><span>Wait Time (Avg.)</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-purple">
+                      <input type="checkbox" id="creation1">
+                      <label for="creation1"><span>Creation Time (Avg.)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- .hk-resource-container -->
+
+          <div class="hk-resource-container">
+
+            <h3 class="pull-left">MyDatasource 1</h3>
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <div class="panel panel-default hk-summary">
+              <div class="row">
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">2 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Datasources Alerts</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">73%</span>
+                  <span class="hk-item">Connections Used (%)</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">7 Available (of 28)</span>
+                  <span class="hk-item">Available Connections (of total)</span>
+                </div>
+              </div>
+            </div>
+            <div class="hk-panel-collapse-area hk-collapsed">
+              <a href="#"><span>View Metrics</span><i class="fa fa-angle-down"></i></a>
+            </div>
+
+            <div class="hk-collapsible-area hide">
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+              </div>
+              <div class="clearfix">
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    12 Feb, 5:35 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    11 Feb, 3:53 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>
+              </div>
+
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left">Metrics</h3>
+                <div class="hk-update pull-right">
+                  <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+                </div>
+              </div>
+              <div class="panel panel-default hk-graph">
+                <h2>Availability and Responsiveness</h2>
+                <img src="img/graph-av-rp.png" alt="graph-av-rp">
+                <div class="row hk-legend hk-legend-inline text-left">
+                  <div class="col-md-7 col-lg-6">
+                    <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
+                    <div class="hk-graphselector hk-blue">
+                      <input type="checkbox" id="available2" checked="checked">
                       <label for="available2"><span>Available Connections</span></label>
                     </div>
                     <div class="hk-graphselector hk-green">
-                      <input type="checkbox" id="connections2"> 
+                      <input type="checkbox" id="connections2">
                       <label for="connections2"><span>Connections in Use</span></label>
                     </div>
                     <div class="hk-graphselector hk-gray">
-                      <input type="checkbox" id="timed2"> 
+                      <input type="checkbox" id="timed2">
                       <label for="timed2"><span>Timed-out Connections</span></label>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-6">
                     <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
                     <div class="hk-graphselector hk-yellow">
-                      <input type="checkbox" id="wait2"> 
+                      <input type="checkbox" id="wait2">
                       <label for="wait2"><span>Wait Time (Avg.)</span></label>
                     </div>
                     <div class="hk-graphselector hk-purple">
-                      <input type="checkbox" id="creation2"> 
+                      <input type="checkbox" id="creation2">
                       <label for="creation2"><span>Creation Time (Avg.)</span></label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          
+
           </div><!-- .hk-resource-container -->
-          
         </section>
-        
+
       </div>
     </div><!-- .container -->
-    
+
+    <!-- Modal boxes -->
+
+    <div class="modal fade" id="add-deployment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add Deployment</h4>
+          </div>
+
+          <div class="modal-body first">
+            <p><strong>Step 1 of 3: Select a Deployment File</strong></p>
+            <p class="required-info">* All fields are required.</p>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="deployment-file">Deployment File</label>
+                <div class="col-sm-9">
+                  <input type="file" class="form-control" id="deployment-file">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer first">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Next &#62;</button>
+          </div>
+
+          <div class="modal-body second hide">
+            <p><strong>Step 2 of 3: Verify File</strong></p>
+            <div class="hk-form-verify hk-form-read-only">
+              <div class="hk-form-buttons pull-right">
+                <div class="hk-rename-button">
+                  <button class="btn btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Rename"><i class="fa fa-pencil"></i></button>
+                </div>
+                <div class="hk-discard-confirm-buttons">
+                  <button class="btn btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Discard"><i class="fa fa-close"></i></button>
+                  <button class="btn btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Confirm"><i class="fa fa-check"></i></button>
+                </div>
+              </div>
+              <form class="form-horizontal">
+                <div class="editable-container">
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="name">Name</label>
+                    <div class="col-sm-7">
+                      <span class="hk-input-text">deploymentfile2.war</span>
+                      <input type="text" class="form-control" id="name" value="deploymentfile2.war">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="runtime-name">Runtime Name</label>
+                    <div class="col-sm-7">
+                      <span class="hk-input-text">deploymentfile2.war</span>
+                      <input type="text" class="form-control text" id="runtime-name" value="deploymentfile2.war">
+                    </div>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Do not enable, during deployment. <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" data-original-title="Enabling activates the deployment."></i>
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer second hide">
+            <button type="button" class="btn btn-default">&#60; Back</button>
+            <button type="button" class="btn btn-primary">Next &#62;</button>
+          </div>
+
+          <div class="modal-body third hide">
+            <p><strong>Step 3 of 3: Upload and Deploy</strong></p>
+            <div class="text-center hk-spinner-container">
+              <div class="spinner spinner-lg"></div>
+            </div>
+          </div>
+          <div class="modal-footer third hide">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" disabled="disabled">Next &#62;</button>
+          </div>
+
+          <div class="modal-body fourth hide">
+            <p><strong>Step 3 of 3: Upload and Deploy</strong></p>
+            <div class="alert alert-success">
+              <span class="pficon pficon-ok"></span>
+              <strong>Success!</strong> The file was successfully uploaded and deployed.
+            </div>
+          </div>
+          <div class="modal-footer fourth hide">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
   </body>
 </html>

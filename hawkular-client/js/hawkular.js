@@ -4,6 +4,7 @@ $(document).ready(function(){
 	tabsBrowsing();
 	tableSelect();
 	datasourceCollapse();
+	modalDeployment();
 });
 
 //Initial loading
@@ -16,7 +17,7 @@ initialLoading = function(){
 
 //Insert url form
 insertUrl = function(){
-  $('.btn-primary').click(function(){
+  $('.hk-urls-list .btn-primary').click(function(){
     $(this).addClass('disabled');
     $('.loading').removeClass('hide');
 
@@ -64,6 +65,46 @@ datasourceCollapse = function(){
     return false;
   });
 };
+
+//Modal deployment
+modalDeployment = function(){
+  $('.hk-form-verify .hk-rename-button .btn').click(function(){
+    $(this).parent().parent().parent().removeClass('hk-form-read-only').addClass('hk-form-edit');
+  });
+  $('.hk-form-verify .hk-discard-confirm-buttons .btn').click(function(){
+    $(this).parent().parent().parent().addClass('hk-form-read-only').removeClass('hk-form-edit');
+  });
+
+  $('.modal-footer.first .btn-primary').click(function(){
+    $(this).parent().parent().find('.first').addClass('hide');
+    $(this).parent().parent().find('.second').removeClass('hide');
+  });
+  $('.modal-footer.second .btn-default').click(function(){
+    $(this).parent().parent().find('.first').removeClass('hide');
+    $(this).parent().parent().find('.second').addClass('hide');
+  });
+  $('.modal-footer.second .btn-primary').click(function(){
+    $(this).parent().parent().find('.second').addClass('hide');
+    $(this).parent().parent().find('.third').removeClass('hide');
+
+    setInterval(function () {
+      $('#add-deployment .third').addClass('hide');
+      $('#add-deployment .fourth').removeClass('hide');
+    },4000);
+
+  });
+  $('.modal-footer.third .btn-default').click(function(){
+    $(this).parent().parent().find('.second').removeClass('hide');
+    $(this).parent().parent().find('.third').addClass('hide');
+  });
+
+
+
+
+
+
+};
+
 
 
 //Initialize Boostrap-select
