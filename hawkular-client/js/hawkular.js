@@ -5,6 +5,7 @@ $(document).ready(function(){
 	tableSelect();
 	datasourceCollapse();
 	modalDeployment();
+	modalTimeout();
 });
 
 //Initial loading
@@ -97,15 +98,12 @@ modalDeployment = function(){
     $(this).parent().parent().find('.second').removeClass('hide');
     $(this).parent().parent().find('.third').addClass('hide');
   });
-
-
-
-
-
-
 };
 
-
+//Modal time-out
+modalTimeout = function(){
+  $('.modal#time-out').modal();
+};
 
 //Initialize Boostrap-select
 $(function () {
