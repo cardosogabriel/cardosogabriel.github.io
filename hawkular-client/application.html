@@ -653,16 +653,16 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
               <span class="pficon pficon-close"></span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">JVM Alert Settings</h4>
+            <h4 class="modal-title">JVM Alert Settings</h4>
           </div>
           <div class="modal-body">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#">Heap Usage</a></li>
-              <li><a href="#">Non-Heap Usage</a></li>
-              <li><a href="#">Garbage Collection</a></li>
+              <li class="active"><a href="#" class="hk-heap">Heap Usage</a></li>
+              <li><a href="#" class="hk-non-heap">Non-Heap Usage</a></li>
+              <li><a href="#" class="hk-garbage">Garbage Collection</a></li>
             </ul>
 
-            <div class="tab-container heap">
+            <div id="hk-heap" class="hk-tab-content">
               <p>Configure conditions settings for Heap usage alerts and notifications.</p>
               <form class="form-horizontal">
                 <fieldset>
@@ -724,14 +724,14 @@
                     <label class="col-sm-3 control-label">Create Alert</label>
                     <div class="col-sm-9">
                       <div class="radio">
-                        <label for="every-time">
-                          <input type="radio" name="alert" id="every-time" value="option1" checked>
+                        <label for="every-time-heap">
+                          <input type="radio" name="alert-heap" id="every-time-heap" value="option1" checked>
                           Every time conditions are met.
                         </label>
                       </div>
                       <div class="radio">
-                        <label for="greater-time">
-                          <input type="radio" name="alert" id="greater-time" value="option2">
+                        <label for="greater-time-heap">
+                          <input type="radio" name="alert-heap" id="greater-time-heap" value="option2">
                           Only when conditions are met for greater than:
                         </label>
                       </div>
@@ -744,17 +744,212 @@
                         </select>
                       </div>
                     </div>
+                  </div>
                 </fieldset>
                 <fieldset>
                   <legend>Notification</legend>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="email">Send an email to</label>
+                    <label class="col-sm-3 control-label" for="email-heap">Send an email to</label>
                     <div class="col-sm-9">
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" checked="checked" id="email"> name@domain.com
+                          <input type="checkbox" checked="checked" id="email-heap"> name@domain.com
                         </label>
-                        <span class="input-detail"><a href="#">Change email</a></span>
+                        <span class="input-detail"><a href="#">Edit email</a></span>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-non-heap" class="hk-tab-content hide">
+              <p>Configure conditions settings for Non-Heap usage alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Threshold Conditions</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Maximum usage</label>
+                    <div class="col-sm-6">
+                      <span class="hk-input-text">500 MB</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="usage-greater">Usage greater than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group percentage">
+                        <input type="number" min="0" max="100" value="80" class="form-control" id="usage-greater">
+                        <div class="input-group-addon">%</div>
+                      </div>
+                      <span class="input-detail">(400 MB)</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="usage-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="usage-less">Usage less than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group percentage">
+                        <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less">
+                        <div class="input-group-addon">%</div>
+                      </div>
+                      <span class="input-detail">(100 MB)</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-less-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="usage-less-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-nh">
+                          <input type="radio" name="alert" id="every-time-nh" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-nh">
+                          <input type="radio" name="alert" id="greater-time-nh" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-nh">Send an email to</label>
+                    <div class="col-sm-9">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" checked="checked" id="email-nh"> name@domain.com
+                        </label>
+                        <span class="input-detail"><a href="#">Edit email</a></span>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-garbage" class="hk-tab-content hide">
+              <p>Configure conditions settings for Non-Heap usage alerts and notifications. Static text that states GC policies. Diff GC's have diff attributes.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Garbage Collection Duration</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="major">Major duration greater than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group miliseconds">
+                        <input type="number" min="0" value="200" class="form-control" id="major">
+                        <div class="input-group-addon">ms</div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="major-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="major-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="minor">Minor duration greater than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group miliseconds">
+                        <input type="number" min="0" value="100" class="form-control" id="minor">
+                        <div class="input-group-addon">ms</div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-less-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="usage-less-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-g">
+                          <input type="radio" name="alert" id="every-time-g" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-g">
+                          <input type="radio" name="alert" id="greater-time-g" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-g">Send an email to</label>
+                    <div class="col-sm-9">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" checked="checked" id="email-g"> name@domain.com
+                        </label>
+                        <span class="input-detail"><a href="#">Edit email</a></span>
                       </div>
                     </div>
                   </div>
@@ -780,7 +975,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
               <span class="pficon pficon-close"></span>
             </button>
-            <h4 class="modal-title" id="myModalLabel">Add Deployment</h4>
+            <h4 class="modal-title">Add Deployment</h4>
           </div>
 
           <div class="modal-body first">

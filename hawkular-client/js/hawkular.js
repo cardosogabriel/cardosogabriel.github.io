@@ -38,12 +38,20 @@ insertUrl = function(){
 
 //Tabs browsing
 tabsBrowsing = function(){
-  $('.nav-tabs li a').click(function(evt){
+  $('.hk-nav-tabs-container .nav-tabs li a').click(function(evt){
     $(this).parent().parent().find('li').removeClass('active');
     $(this).parent().addClass('active');
     var tc = $(this).attr('class');
     $('.hk-screen-content .hk-tab-content').addClass('hide');
     $('.hk-screen-content #'+tc).removeClass('hide');
+  });
+
+  $('.modal-body .nav-tabs li a').click(function(evt){
+    $(this).parent().parent().find('li').removeClass('active');
+    $(this).parent().addClass('active');
+    var tm = $(this).attr('class');
+    $('.modal-body .hk-tab-content').addClass('hide');
+    $('.modal-body #'+tm).removeClass('hide');
   });
 };
 
