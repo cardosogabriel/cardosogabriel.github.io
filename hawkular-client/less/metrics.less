@@ -645,12 +645,13 @@ a:hover .fa-spinner {
   margin-top: @grid-gutter-width/2;
 }
 
-// Modal boxes
+
+// Modal Add Deployment
 
 .modal-body {
 
   fieldset p {
-    margin-top: -10px;
+    margin-top: -@grid-gutter-width/4;
   }
 
   p.required-info {
@@ -675,10 +676,6 @@ a:hover .fa-spinner {
       }
     }
 
-    .hk-input-text {
-      line-height: 1.66666667;
-    }
-
     &.hk-form-read-only {
       .hk-discard-confirm-buttons,
       .form-group input {
@@ -700,81 +697,134 @@ a:hover .fa-spinner {
   }
 }
 
-.alert-settings .form-horizontal {
-  margin-top: @grid-gutter-width/2;
+// Modals alert settings
+
+.modal-alert .modal-footer {
+  margin-top: 0;
 }
 
-.form-horizontal {
+.modal-body {
 
-  fieldset {
-    margin-bottom: 5px;
-    position: relative;
-  }
+  .nav-tabs {
 
-  legend {
-    font-size: ceil(@font-size-base * 1.25);
-  }
-
-  .onffswitch-form-group {
-    margin-bottom: 0;
-    position: relative;
-
-    .control-label {
-      display: none;
+    > li.active > a {
+      background-color: white;
     }
   }
 
-  .onoffswitch-container {
-    position: absolute;
-    right: 20px;
-    top: -52px;
-    width: 62px;
+  .tab-container {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1.5em 1.5em 0;
   }
 
-  label {
-    padding-right: 0;
+  .alert-settings .form-horizontal {
+    margin-top: @grid-gutter-width/2;
   }
 
-  .help-block {
-    margin-top: 5px;
+  p + .form-horizontal {
+    margin-top: @grid-gutter-width/2;
   }
 
-  .inline-row {
+  .form-horizontal {
 
-    > div,
-    > span {
+    fieldset {
+      margin-bottom: 5px;
+      position: relative;
+    }
+
+    legend {
+      border-bottom: none;
+      border-top: 1px solid #e5e5e5;
+      font-size: @font-size-base;
+      font-weight: bold;
+      padding-top: @grid-gutter-width/4;
+    }
+
+    label {
+      padding-right: 0;
+    }
+
+    .hk-input-text {
+      line-height: 1.66666667;
+    }
+
+    .input-group.percentage {
       float: left;
-      margin-right: @grid-gutter-width/4;
+      max-width: 80px;
     }
 
-    .between-inputs {
-      line-height: 26px;
-    }
-  }
-
-  .input-addon {
-    width: 175px;
-  }
-
-  .input-select {
-
-    width: 175px;
-
-    input.form-control {
-      width: 75px;
+    .input-detail {
+      color: @gray-light;
+      line-height: 1.66666667;
+      margin-left: @grid-gutter-width/4;
     }
 
-    .bootstrap-select {
-      float: left;
-      width: 100px;
-    }
-  }
 
-  .indented {
-    margin-left: 20px;
-    margin-top: 5px;
+
+
+
+
+
+
+    .onffswitch-form-group {
+      margin-bottom: 0;
+      position: relative;
+
+      .control-label {
+        display: none;
+      }
+    }
+
+    .onoffswitch-container {
+      position: absolute;
+      right: 20px;
+      top: -52px;
+      width: 62px;
+    }
+
+
+    .help-block {
+      margin-top: @grid-gutter-width/8;
+    }
+
+    .inline-row {
+
+      > div,
+      > span {
+        float: left;
+        margin-right: @grid-gutter-width/4;
+      }
+
+      .between-inputs {
+        line-height: 26px;
+      }
+    }
+
+    .input-addon {
+      width: 180px;
+    }
+
+    .input-select {
+
+      width: 180px;
+
+      input.form-control {
+        width: 80px;
+      }
+
+      .bootstrap-select {
+        float: left;
+        width: 100px;
+      }
+    }
+
+    .indented {
+      margin-left: 20px;
+      margin-top: 5px;
+    }
   }
 }
+
 
 // on off switch
 
