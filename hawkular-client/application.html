@@ -699,14 +699,14 @@
                     <label class="col-sm-3 control-label" for="usage-less">Usage less than</label>
                     <div class="col-sm-5">
                       <div class="input-group percentage">
-                        <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less">
+                        <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less" disabled="disabled">
                         <div class="input-group-addon">%</div>
                       </div>
                       <span class="input-detail">(100 MB)</span>
                     </div>
                     <div class="col-sm-4">
                       <div class="onoffswitch pull-right">
-                        <input type="checkbox" id="usage-less-switch" class="onoffswitch-checkbox" checked="checked">
+                        <input type="checkbox" id="usage-less-switch" class="onoffswitch-checkbox">
                         <label class="onoffswitch-label" for="usage-less-switch">
                           <span class="onoffswitch-inner">
                             <span class="onoffswitch-active ng-binding">ON</span>
@@ -890,6 +890,7 @@
                       </div>
                     </div>
                   </div>
+<!--
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="minor">Minor duration greater than</label>
                     <div class="col-sm-5">
@@ -911,6 +912,7 @@
                       </div>
                     </div>
                   </div>
+-->
                 </fieldset>
                 <fieldset>
                   <legend>Alert</legend>
