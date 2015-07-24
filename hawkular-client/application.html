@@ -117,7 +117,6 @@
 
           <div class="hk-info-top clearfix">
             <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse">Alerts <span>(29)</span></h3>
-            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
           </div>
 
           <div class="clearfix">
@@ -202,7 +201,7 @@
           </div>
 
           <div class="hk-info-top clearfix">
-            <h3 class="pull-left">Metrics</h3>
+            <h3 class="pull-left">JVM Metrics</h3>
             <div class="hk-update pull-right">
               <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
             </div>
@@ -221,7 +220,7 @@
 
         <section id="hk-web" class="hk-tab-content hide">
 
-          <h3 class="pull-left">JVM Status</h3>
+          <h3 class="pull-left">Web Status</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <div class="panel panel-default hk-summary">
             <div class="row">
@@ -245,8 +244,8 @@
           </div>
 
           <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> JVM Alerts <span>(2 of 10)</span></button></h3>
-            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-jvm-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Web Alerts <span>(2 of 10)</span></button></h3>
+            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-web-settings"><i class="fa fa-cog"></i>Web Alert Settings</a></span>
           </div>
           <div class="clearfix">
             <div class="panel panel-default alert alert-danger">
@@ -274,7 +273,7 @@
           </div>
 
           <div class="hk-info-top clearfix">
-            <h3 class="pull-left">Metrics</h3>
+            <h3 class="pull-left">Web Metrics</h3>
             <div class="hk-update pull-right">
               <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
             </div>
@@ -676,7 +675,7 @@
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="usage-greater">Usage greater than</label>
                     <div class="col-sm-5">
-                      <div class="input-group percentage">
+                      <div class="input-group hk-input-small">
                         <input type="number" min="0" max="100" value="80" class="form-control" id="usage-greater">
                         <div class="input-group-addon">%</div>
                       </div>
@@ -698,7 +697,7 @@
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="usage-less">Usage less than</label>
                     <div class="col-sm-5">
-                      <div class="input-group percentage">
+                      <div class="input-group hk-input-small">
                         <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less" disabled="disabled">
                         <div class="input-group-addon">%</div>
                       </div>
@@ -748,8 +747,9 @@
                 </fieldset>
                 <fieldset>
                   <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="email-heap">Send an email to</label>
+                    <label class="col-sm-3 control-label" for="email-heap">Email</label>
                     <div class="col-sm-6">
                       <input type="text" id="email-heap" class="form-control" value="email@domain.com">
                     </div>
@@ -772,7 +772,7 @@
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="usage-greater-nh">Usage greater than</label>
                     <div class="col-sm-5">
-                      <div class="input-group percentage">
+                      <div class="input-group hk-input-small">
                         <input type="number" min="0" max="100" value="80" class="form-control" id="usage-greater-nh">
                         <div class="input-group-addon">%</div>
                       </div>
@@ -794,7 +794,7 @@
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="usage-less-nh">Usage less than</label>
                     <div class="col-sm-5">
-                      <div class="input-group percentage">
+                      <div class="input-group hk-input-small">
                         <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less-nh">
                         <div class="input-group-addon">%</div>
                       </div>
@@ -844,8 +844,9 @@
                 </fieldset>
                 <fieldset>
                   <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="email-nh">Send an email to</label>
+                    <label class="col-sm-3 control-label" for="email-nh">Email</label>
                     <div class="col-sm-6">
                       <input type="text" id="email-nh" class="form-control" value="email@domain.com">
                     </div>
@@ -855,14 +856,14 @@
             </div>
 
             <div id="hk-garbage" class="hk-tab-content hide">
-              <p>Configure conditions settings for Non-Heap usage alerts and notifications. Static text that states GC policies. Diff GC's have diff attributes.</p>
+              <p>Configure conditions settings for Garbage Collection alerts and notifications.</p>
               <form class="form-horizontal">
                 <fieldset>
                   <legend>Duration (major)</legend>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="major">Greater than</label>
                     <div class="col-sm-5">
-                      <div class="input-group miliseconds">
+                      <div class="input-group hk-input-small">
                         <input type="number" min="0" value="200" class="form-control" id="major">
                         <div class="input-group-addon">ms</div>
                       </div>
@@ -880,29 +881,6 @@
                       </div>
                     </div>
                   </div>
-<!--
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label" for="minor">Minor duration greater than</label>
-                    <div class="col-sm-5">
-                      <div class="input-group miliseconds">
-                        <input type="number" min="0" value="100" class="form-control" id="minor">
-                        <div class="input-group-addon">ms</div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="onoffswitch pull-right">
-                        <input type="checkbox" id="minor-switch" class="onoffswitch-checkbox" checked="checked">
-                        <label class="onoffswitch-label" for="minor-switch">
-                          <span class="onoffswitch-inner">
-                            <span class="onoffswitch-active ng-binding">ON</span>
-                            <span class="onoffswitch-inactive ng-binding">OFF</span>
-                          </span>
-                          <span class="onoffswitch-switch"></span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
--->
                 </fieldset>
                 <fieldset>
                   <legend>Alert</legend>
@@ -934,8 +912,9 @@
                 </fieldset>
                 <fieldset>
                   <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="email-g">Send an email to</label>
+                    <label class="col-sm-3 control-label" for="email-g">Email</label>
                     <div class="col-sm-6">
                       <input type="text" id="email-g" class="form-control" value="email@domain.com">
                     </div>
@@ -949,6 +928,345 @@
                       </div>
                     </div>
 -->
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Web Settings -->
+
+    <div class="modal fade modal-alert" id="modal-web-settings" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">Web Alert Settings</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#" class="hk-web-sessions">Sessions</a></li>
+              <li><a href="#" class="hk-web-container">Container</a></li>
+              <li><a href="#" class="hk-web-requests">Requests</a></li>
+            </ul>
+
+            <div id="hk-web-sessions" class="hk-tab-content">
+              <p>Configure conditions settings for Sessions alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Active Sessions Thresholds</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="ws-min">Minimum</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="ws-min">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="ws-min-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="ws-min-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="ws-max">Maximum</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="5000" class="form-control hk-input-small" id="ws-max">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="ws-max-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="ws-max-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Expired Sessions</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="ws-exceeding">Sessions Exceeding</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="65" class="form-control hk-input-small" id="ws-exceeding">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="ws-exceeding-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="ws-exceeding-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Rejected Sessions</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="wrs-exceeding">Sessions Exceeding</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="65" class="form-control hk-input-small" id="wrs-exceeding">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="wrs-exceeding-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="wrs-exceeding-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-ws">
+                          <input type="radio" name="alert" id="every-time-ws" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-ws">
+                          <input type="radio" name="alert" id="greater-time-ws" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-ws">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-ws" class="form-control" value="email@domain.com">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-web-container" class="hk-tab-content hide">
+              <p>Configure conditions settings for Container Request Thread alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Current Request Thresholds</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="wc-min">Minimum</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="wc-min">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="wc-min-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="wc-min-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="wc-max">Maximum</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="5000" class="form-control hk-input-small" id="wc-max">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="wc-max-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="wc-max-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Pending Requests</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="wcpr-min">Minimum</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="wcpr-min">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="wcpr-min-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="wcpr-min-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="wcpr-max">Maximum</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="5000" class="form-control hk-input-small" id="wcpr-max">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="wcpr-max-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="wcpr-max-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-wcpr">
+                          <input type="radio" name="alert" id="every-time-wcpr" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-wcpr">
+                          <input type="radio" name="alert" id="greater-time-wcpr" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-wcpr">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-wcpr" class="form-control" value="email@domain.com">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-web-requests" class="hk-tab-content hide">
+              <p>Configure conditions settings for Request alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Request Alerts</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="wr-greater">Greater than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="wr-greater">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="wr-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="wr-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-wr">
+                          <input type="radio" name="alert" id="every-time-wr" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-wr">
+                          <input type="radio" name="alert" id="greater-time-wr" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-wr">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-wr" class="form-control" value="email@domain.com">
+                    </div>
                   </div>
                 </fieldset>
               </form>
