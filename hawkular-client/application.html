@@ -454,7 +454,7 @@
               <div class="row">
                 <div class="col-sm-4 hk-summary-item">
                   <span class="hk-data">2 <i class="fa fa-flag"></i></span>
-                  <span class="hk-item">Datasources Alerts</span>
+                  <span class="hk-item">Datasource Alerts</span>
                 </div>
                 <div class="col-sm-4 hk-summary-item">
                   <span class="hk-data">73%</span>
@@ -472,8 +472,8 @@
 
             <div class="hk-collapsible-area hide">
               <div class="hk-info-top clearfix">
-                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
-                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Datasource Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-datasource-settings"><i class="fa fa-cog"></i>Datasource Alert Settings</a></span>
               </div>
               <div class="clearfix">
                 <div class="panel panel-default alert alert-danger">
@@ -568,8 +568,8 @@
 
             <div class="hk-collapsible-area hide">
               <div class="hk-info-top clearfix">
-                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
-                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-alert-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Datasource Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-datasource-settings"><i class="fa fa-cog"></i>Datasource Alert Settings</a></span>
               </div>
               <div class="clearfix">
                 <div class="panel panel-default alert alert-danger">
@@ -1266,6 +1266,184 @@
                     <label class="col-sm-3 control-label" for="email-wr">Email</label>
                     <div class="col-sm-6">
                       <input type="text" id="email-wr" class="form-control" value="email@domain.com">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal Datasource Settings -->
+
+    <div class="modal fade modal-alert" id="modal-datasource-settings" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">Web Datasource Settings</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#" class="hk-ds-connection">Connection Availability</a></li>
+              <li><a href="#" class="hk-ds-responsiveness">Responsiveness</a></li>
+            </ul>
+
+            <div id="hk-ds-connection" class="hk-tab-content">
+              <p>Configure conditions settings for Connection Availability alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Available Connections</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="dsc-connections">Less than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="dsc-connections">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="dsc-connections-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="dsc-connections-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-dsc">
+                          <input type="radio" name="alert" id="every-time-dsc" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-dsc">
+                          <input type="radio" name="alert" id="greater-time-dsc" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-dsc">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-dsc" class="form-control" value="email@domain.com">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-ds-responsiveness" class="hk-tab-content hide">
+              <p>Configure conditions settings for Responsiveness alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Wait Time</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="dsr-greater">Greater than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="dsr-greater">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="dsr-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="dsr-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Creation Time</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="dsrc-greater">Greater than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="dsrc-greater">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="dsrc-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="dsrc-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-dsr">
+                          <input type="radio" name="alert" id="every-time-dsr" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-dsr">
+                          <input type="radio" name="alert" id="greater-time-dsr" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-dsr">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-dsr" class="form-control" value="email@domain.com">
                     </div>
                   </div>
                 </fieldset>
