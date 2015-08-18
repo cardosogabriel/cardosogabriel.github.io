@@ -73,65 +73,68 @@
       <div class="hk-alert-center">
         <h1 class="text-center">Alert Center</h1>
         <div class="hk-info-top clearfix">
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21:20</span>
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
         </div>
-        <div class="panel panel-default hk-panel-table-list">
-          <div class="hk-table-container">
-            <div class="hk-actions-table">
-              <button class="btn btn-default" type="button">Resolve</button>
-            </div>
-            <table class="datatable table table-striped table-bordered table-checkbox hk-table-list">
-              <thead>
-                <tr>
-                  <th><input type="checkbox"/></th>
-                  <th>State</th>
-                  <th>Host Name</th>
-                  <th>Resource Type</th>
-                  <th>Alert Message</th>
-                  <th>Created</th>
-                  <th>Resolved</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="resolved">
-                  <td><input type="checkbox"/></td>
-                  <td>Resolved</td>
-                  <td>Host1</td>
-                  <td>URL</td>
-                  <td>Resolve alert message</td>
-                  <td>15 Jul 2015, 05:00</td>
-                  <td>15 Jul 2015, 10:31</td>
-                </tr>
-                <tr class="open">
-                  <td><input type="checkbox"/></td>
-                  <td>Open</td>
-                  <td>Host2</td>
-                  <td>Wildfly</td>
-                  <td>Open alert message</td>
-                  <td>15 Jul 2015, 05:00</td>
-                  <td>n/a</td>
-                </tr>
-                <tr class="resolved">
-                  <td><input type="checkbox"/></td>
-                  <td>Resolved</td>
-                  <td>Host1</td>
-                  <td>URL</td>
-                  <td>Resolve alert message</td>
-                  <td>15 Jul 2015, 05:00</td>
-                  <td>15 Jul 2015, 10:31</td>
-                </tr>
-                <tr class="open">
-                  <td><input type="checkbox"/></td>
-                  <td>Open</td>
-                  <td>Host2</td>
-                  <td>Wildfly</td>
-                  <td>Open alert message</td>
-                  <td>15 Jul 2015, 05:00</td>
-                  <td>n/a</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="hk-table-container">
+          <div class="hk-actions-table">
+            <button class="btn btn-primary" type="button">Resolve</button>
           </div>
+          <table class="datatable table table-striped table-bordered hk-table-list">
+            <thead>
+              <tr>
+                <th><input type="checkbox"/></th>
+                <th>State</th>
+                <th>Host Name</th>
+                <th>Resource Type</th>
+                <th>Alert Message</th>
+                <th>Created</th>
+                <th>Resolved</th>
+                <th class="hide"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="resolved">
+                <td><input type="checkbox"/></td>
+                <td>Resolved</td>
+                <td>Host1</td>
+                <td>URL</td>
+                <td>Resolve alert message</td>
+                <td>15 Jul 2015, 05:00</td>
+                <td>15 Jul 2015, 10:31</td>
+                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+              </tr>
+              <tr class="open">
+                <td><input type="checkbox"/></td>
+                <td>Open</td>
+                <td>Host2</td>
+                <td>Wildfly</td>
+                <td>Open alert message</td>
+                <td>15 Jul 2015, 05:00</td>
+                <td>n/a</td>
+                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+              </tr>
+              <tr class="resolved">
+                <td><input type="checkbox"/></td>
+                <td>Resolved</td>
+                <td>Host1</td>
+                <td>URL</td>
+                <td>Resolve alert message</td>
+                <td>15 Jul 2015, 05:00</td>
+                <td>15 Jul 2015, 10:31</td>
+                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+              </tr>
+              <tr class="open">
+                <td><input type="checkbox"/></td>
+                <td>Open</td>
+                <td>Host2</td>
+                <td>Wildfly</td>
+                <td>Open alert message</td>
+                <td>15 Jul 2015, 05:00</td>
+                <td>n/a</td>
+                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div><!-- .container -->

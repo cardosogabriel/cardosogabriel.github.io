@@ -146,6 +146,11 @@ a:hover .fa-spinner {
   margin-top: @grid-gutter-width/8;
 }
 
+.hk-input-text {
+  line-height: 1.66666667;
+}
+
+
 // tables
 
 .table > thead > tr > th,
@@ -158,6 +163,9 @@ a:hover .fa-spinner {
 }
 
 .table-striped > tbody {
+
+  background-color: white;
+
   > tr:nth-child(odd) > td {
     background-color: white;
 
@@ -287,10 +295,6 @@ a:hover .fa-spinner {
   }
 }
 
-.hk-panel-table-list {
-  padding: 1px 20px;
-}
-
 .hk-table-container {
   position: relative;
 
@@ -302,27 +306,19 @@ a:hover .fa-spinner {
   }
 }
 
-.hk-panel-table-list {
-  .dataTables_header,
-  .dataTables_footer {
-    border-left: none;
-    border-right: none;
-  }
+.hk-alert-center .hk-table-container .dataTables_wrapper {
+  margin-top: 10px;
 }
 
-.hk-table-list {
-  &.table-bordered,
-  &.table-bordered > thead > tr > th,
-  &.table-bordered > tbody > tr > th,
-  &.table-bordered > tfoot > tr > th,
-  &.table-bordered > thead > tr > td,
-  &.table-bordered > tbody > tr > td,
-  &.table-bordered > tfoot > tr > td {
-    border-left: none;
-    border-right: none;
-  }
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border-left: none;
+  border-right: none;
 }
-
 
 
 // transitions
@@ -493,7 +489,7 @@ a:hover .fa-spinner {
 
   .hk-url-heading {
     margin-bottom: 1px;
-    padding: @grid-gutter-width/4 @grid-gutter-width/3;
+    padding: @grid-gutter-width/4 0;
 
     a {
       font-size: ceil(@font-size-base * 1.333333);
@@ -670,8 +666,7 @@ a:hover .fa-spinner {
 }
 
 .panel.hk-alert-details {
-  padding-top: 30px;
-  padding-bottom: 15px;
+  padding: 10px;
 }
 
 .hk-alert-center-detail .hk-panel-table-list {
@@ -1270,10 +1265,6 @@ section {
 }
 
 
-// dev styles
-
-// bootstrap select quick&dirty workaround
-
 .hk-alerts {
   .input-group-btn {
     width: auto;
@@ -1337,10 +1328,6 @@ section {
       padding-right: 0;
     }
 
-    .hk-input-text {
-      line-height: 1.66666667;
-    }
-
     .input-group {
       float: left;
 
@@ -1359,9 +1346,6 @@ section {
       margin-left: @grid-gutter-width/4;
     }
 
-
-
-
     .onffswitch-form-group {
       margin-bottom: 0;
       position: relative;
@@ -1377,7 +1361,6 @@ section {
       top: -52px;
       width: 62px;
     }
-
 
     .help-block {
       margin-top: @grid-gutter-width/8;

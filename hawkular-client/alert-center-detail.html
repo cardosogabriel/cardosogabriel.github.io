@@ -68,67 +68,55 @@
           <h3 class="pull-left">Alert Details</h3>
         </div>
         <div class="panel panel-default clearfix hk-alert-details">
-          <div class="form-horizontal">
-            <div class="form-group">
-              <label class="col-sm-3 control-label">State</label>
-              <div class="col-sm-6">
-                <span class="label label-default">Acknowledged</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Created</label>
-              <div class="col-sm-6">
-                <span class="hk-input-text">15 Jul 2015, 21:33</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Resolved</label>
-              <div class="col-sm-6">
-                <span class="hk-input-text">n/a</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Host Name</label>
-              <div class="col-sm-6">
-                <span class="hk-input-text">Host003</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Resource Type</label>
-              <div class="col-sm-6">
-                <span class="hk-input-text">URL</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-3 control-label">Alert Message</label>
-              <div class="col-sm-6">
-                <span class="hk-input-text">Some message here.</span>
-              </div>
-            </div>
+          <div class="text-right">
+            <button class="btn btn-primary" type="button">Resolve</button>
+          </div>
+          <div class="col-sm-6">
+            <dl class="dl-horizontal">
+              <dt>State</dt>
+              <dd>Open</dd>
+              <dt>Created</dt>
+              <dd>15 Jul 2015, 21:33</dd>
+              <dt>Resolved</dt>
+              <dd>n/a</dd>
+            </dl>
+          </div>
+          <div class="col-sm-6">
+            <dl class="dl-horizontal">
+              <dt>Host Name</dt>
+              <dd>Host003</dd>
+              <dt>Resource Type</dt>
+              <dd>URL</dd>
+              <dt>Alert Message</dt>
+              <dd>Some message here.</dd>
+            </dl>
           </div>
         </div>
 
         <div class="hk-info-top clearfix">
           <h3 class="pull-left">Notification History</h3>
         </div>
-        <div class="panel panel-default hk-panel-table-list">
-          <table class="table table-striped table-bordered hk-table-list">
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Type</th>
-                <th>Recipients</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="resolved">
-                <td><span class="hide">2015-08-15 21:55</span>15 Aug 2015, 21:55</td>
-                <td>Email</td>
-                <td>jdoe@redhat.com</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="table table-striped table-bordered hk-table-list">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Type</th>
+              <th>Recipients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15 Aug 2015, 21:55</td>
+              <td>Email</td>
+              <td>jdoe@redhat.com</td>
+            </tr>
+            <tr>
+              <td>12 Aug 2015, 09:34</td>
+              <td>SMS</td>
+              <td>508-555-1212</td>
+            </tr>
+          </tbody>
+        </table>
 
         <div class="hk-info-top clearfix">
           <h3 class="pull-left">Metrics</h3>
