@@ -172,6 +172,7 @@ a:hover .fa-spinner {
   &.open .dropdown-toggle.btn-default {
     background-color: #eeeeee;
     border-color: #b7b7b7;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1)
   }
 
   .fa {
@@ -339,18 +340,32 @@ a:hover .fa-spinner {
   }
 }
 
-.hk-alert-center .hk-table-container .dataTables_wrapper {
-  margin-top: 10px;
+.hk-alert-center .hk-table-container {
+  .dataTables_wrapper {
+    margin-top: 10px;
+  }
+
+/*
+  .dataTables_header {
+    background-color: white;
+    border-left: none;
+    border-right: none;
+    border-bottom: @list-group-border;
+  }
+*/
 }
 
 .hk-table-alerts {
 
   background-color: white;
-  font-size: ceil(@font-size-base + 1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  border-left: none;
-  border-right: none;
-  border: none;
+
+  &.hk-alerts-contextual {
+    border-left: none;
+    border-right: none;
+    border: none;
+    font-size: ceil(@font-size-base + 1);
+  }
 
   &.table-bordered > thead > tr > th,
   &.table-bordered > tbody > tr > th,
@@ -360,13 +375,9 @@ a:hover .fa-spinner {
   &.table-bordered > tfoot > tr > td {
     border-left: none;
     border-right: none;
-    border-top: none;
-    border-bottom: none;
   }
 
-  &.table-bordered > tbody > tr + tr > td {
-    border-top: 1px solid @list-group-border;
-  }
+
 
   &.table > thead > tr > th,
   &.table > tbody > tr > td {
@@ -384,6 +395,10 @@ a:hover .fa-spinner {
   .hk-alert-open .fa-flag {
     color: @brand-danger;
   }
+}
+
+.dataTables_header {
+
 }
 
 
