@@ -377,7 +377,16 @@ a:hover .fa-spinner {
     border-right: none;
   }
 
+  &.hk-alerts-contextual > tbody > tr {
+     > td {
+      border-bottom: none;
+      border-top: none;
+    }
 
+    &:last-child > td {
+      border-top: 1px solid @table-border-color;
+    }
+  }
 
   &.table > thead > tr > th,
   &.table > tbody > tr > td {
@@ -608,7 +617,7 @@ a:hover .fa-spinner {
 }
 
 .hk-summary-item {
-  border-right: 1px solid @list-group-border;
+  border-right: 1px solid @table-border-color;
   color: @gray;
   display: inline-block;
   padding: @grid-gutter-width/2 @grid-gutter-width/4*3;
