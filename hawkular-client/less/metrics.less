@@ -155,6 +155,31 @@ a:hover .fa-spinner {
 }
 
 
+// buttons
+
+.dropdown.clean {
+  .btn-default {
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .btn-default:hover,
+  .btn-default:focus,
+  .btn-default:active,
+  .btn-default.active,
+  &.open .dropdown-toggle.btn-default {
+    background-color: #eeeeee;
+    border-color: #b7b7b7;
+  }
+
+  .fa {
+    margin-right: 5px;
+  }
+}
+
+
 // tables
 
 .table > thead > tr > th,
@@ -164,6 +189,14 @@ a:hover .fa-spinner {
 
 .table > tbody > tr > td > a:hover {
   text-decoration: underline;
+}
+
+.table > tbody > tr.hk-alert-open {
+  background-color: rgba(204, 0, 0, 0.07);
+
+  &:nth-child(odd) > td {
+    background-color: transparent;
+  }
 }
 
 .table-striped > tbody {
@@ -186,12 +219,8 @@ a:hover .fa-spinner {
     }
   }
 
-  > tr.open {
-    background-color: rgba(204, 0, 0, 0.07);
-
-    &:nth-child(odd) > td {
-      background-color: transparent;
-    }
+  > tr.open:nth-child(odd) > td {
+    background-color: transparent;
   }
 }
 
@@ -314,14 +343,47 @@ a:hover .fa-spinner {
   margin-top: 10px;
 }
 
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
+.hk-table-alerts {
+
+  background-color: white;
+  font-size: ceil(@font-size-base + 1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border-left: none;
   border-right: none;
+  border: none;
+
+  &.table-bordered > thead > tr > th,
+  &.table-bordered > tbody > tr > th,
+  &.table-bordered > tfoot > tr > th,
+  &.table-bordered > thead > tr > td,
+  &.table-bordered > tbody > tr > td,
+  &.table-bordered > tfoot > tr > td {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  &.table-bordered > tbody > tr + tr > td {
+    border-top: 1px solid @list-group-border;
+  }
+
+  &.table > thead > tr > th,
+  &.table > tbody > tr > td {
+    padding: @grid-gutter-width/3 @grid-gutter-width/2;
+  }
+
+  .fa-flag {
+    font-size: 20px;
+  }
+
+  tr.hk-alert-resolved .fa-flag {
+    color: @gray-light;
+  }
+
+  .hk-alert-open .fa-flag {
+    color: @brand-danger;
+  }
 }
 
 
@@ -531,7 +593,7 @@ a:hover .fa-spinner {
 }
 
 .hk-summary-item {
-  border-right: 1px solid @table-border-color;
+  border-right: 1px solid @list-group-border;
   color: @gray;
   display: inline-block;
   padding: @grid-gutter-width/2 @grid-gutter-width/4*3;
@@ -1192,7 +1254,6 @@ section {
 }
 
 .hk-info-top {
-
   position: relative;
 
   .hk-settings {
@@ -1202,6 +1263,10 @@ section {
   .btn-link {
     margin-top: -7px;
     margin-right: -11px;
+  }
+
+  .pull-left:first-child {
+    margin-right: @grid-gutter-width/2;
   }
 
   + .dataTables_wrapper {

@@ -48,6 +48,9 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
           <li class="active">
             <a href="urls-list.html">URLs</a>
           </li>
@@ -143,32 +146,56 @@
 
           <div class="hk-info-top clearfix">
             <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Availability Alerts <span>(2 of 10)</span></button></h3>
-            <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-availability-settings"><i class="fa fa-cog"></i>Availability Alert Settings</a></span>
-          </div>
-          <div class="clearfix">
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                12 Feb, 5:35 PM
-              </div>
-              <div>
-                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
-              </div>
-            </div>
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                11 Feb, 3:53 PM
-              </div>
-              <div>
-                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+            <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-availability-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+            <div class="pull-right">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked"> Show only open alerts
+                </label>
               </div>
             </div>
           </div>
+
+          <table class="table table-bordered hk-table-alerts">
+            <tbody>
+              <tr class="hk-alert-open">
+                <td>
+                  <div class="dropdown clean">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                      <i class="fa fa-flag"></i> Open
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Resolved</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>Server <strong>down</strong> for 4 minutes (until 5:39 PM).</td>
+                <td>15 Jul 2015, 05:00</td>
+                <td></td>
+                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+              </tr>
+              <tr class="hk-alert-resolved">
+                <td>
+                  <div class="dropdown clean">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                      <i class="fa fa-flag"></i> Resolved
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
+                      <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">Resolved</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>Server <strong>down</strong> for 4 minutes (until 5:39 PM).</td>
+                <td>15 Jul 2015, 05:00</td>
+                <td>15 Jul 2015, 10:31</td>
+                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+              </tr>
+            </tbody>
+          </table>
 
           <div class="hk-info-top clearfix">
             <h3 class="pull-left">Metrics</h3>
