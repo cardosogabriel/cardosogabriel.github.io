@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script>
+      // Initialize Datatables
+
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+        });
+      });
+
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li>
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li class="active">
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hk-screen-top-nav">
+      <div class="container">
+        <div class="row hk-top-row">
+          <div class="col-xs-6">
+            <a href="applications-list.html" class="back">&laquo; All Application Servers</a>
+          </div>
+          <div class="col-xs-6">
+            <div class="hk-date-range dropdown">
+              <i class="fa fa-calendar"></i>
+              <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+              <div class="dropdown-menu infotip bottom-right">
+                <div class="arrow"></div>
+                <div class="dropdown-menu-content">
+                  <span class="hk-label">Last</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default">1h</button>
+                    <button type="button" class="btn btn-default">12h</button>
+                    <button type="button" class="btn btn-default">Day</button>
+                    <button type="button" class="btn btn-default active">Week</button>
+                    <button type="button" class="btn btn-default">Month</button>
+                    <button type="button" class="btn btn-default">Year</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hk-heading">
+          <h1>Eavy Machine</h1>
+        </div>
+        <div class="hk-nav-tabs-container">
+          <ul class="nav nav-tabs nav-tabs-pf">
+            <li><a href="application-alerts.html" class="hk-alerts">All Alerts</a></li>
+            <li class="active"><a href="application-jvm.html" class="hk-jvm">JVM <span class="label label-danger label-alert pull-right">3</span></a></li>
+            <li><a href="application-web.html" class="hk-web">Web</a></li>
+            <li><a href="application-deployments.html" class="hk-deployments">Deployments</a></li>
+            <li><a href="application-datasources.html" class="hk-datasources">Datasources</a></li>
+            <li><a href="#" class="hk-datasources">Transactions</a></li>
+            <li><a href="#" class="hk-datasources">JMS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- .screen-top-nav -->
+
+    <div class="container">
+      <div class="hk-screen-content">
+
+        <section id="hk-jvm" class="hk-tab-content">
+
+          <h3 class="pull-left">JVM Status</h3>
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+          <div class="panel panel-default hk-summary">
+            <div class="row">
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">10 <i class="fa fa-flag"></i></span>
+                <span class="hk-item">JVM Alerts</span>
+              </div>
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">1270 MB</span>
+                <span class="hk-item">Average Heap Usage</span>
+              </div>
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">5 s</span>
+                <span class="hk-item">Last Garbage Collection (Duration)</span>
+              </div>
+              <div class="col-sm-3 hk-summary-item">
+                <span class="hk-data">2000 MB</span>
+                <span class="hk-item">Maximum Heap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hk-info-top clearfix">
+            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> JVM Alerts <span>(2 of 10)</span></button></h3>
+            <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-jvm-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+          </div>
+          <div class="clearfix">
+            <div class="panel panel-default alert alert-danger">
+              <div class="hk-alert-icon">
+                <i class="fa fa-flag"></i>
+              </div>
+              <div class="hk-date">
+                12 Feb, 5:35 PM
+              </div>
+              <div class="hk-event">
+                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
+              </div>
+            </div>
+            <div class="panel panel-default alert alert-danger">
+              <div class="hk-alert-icon">
+                <i class="fa fa-flag"></i>
+              </div>
+              <div class="hk-date">
+                11 Feb, 3:53 PM
+              </div>
+              <div class="hk-event">
+                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
+              </div>
+            </div>
+          </div>
+
+          <div class="hk-info-top clearfix">
+            <h3 class="pull-left">JVM Metrics</h3>
+            <div class="hk-update pull-right">
+              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+            </div>
+          </div>
+
+          <div class="panel panel-default hk-graph">
+            <h2>JVM Heap Usage</h2>
+            <div class="hk-legend text-left">
+              <span><i class="fa fa-circle hk-primary"></i>Used</span>
+              <span><i class="fa fa-circle hk-orange"></i>Maximum</span>
+              <span><i class="fa fa-circle hk-gray"></i>Commited</span>
+            </div>
+          </div>
+
+        </section><!-- .jvm-metrics -->
+
+      </div>
+    </div><!-- .container -->
+
+
+    <!-- Modal JVM Settings -->
+
+    <div class="modal fade modal-alert" id="modal-jvm-settings" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">JVM Alert Settings</h4>
+          </div>
+          <div class="modal-body hk-alert-settings">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#" class="hk-heap">Heap Usage</a></li>
+              <li><a href="#" class="hk-non-heap">Non-Heap Usage</a></li>
+              <li><a href="#" class="hk-garbage">Garbage Collection</a></li>
+            </ul>
+
+            <div id="hk-heap" class="hk-tab-content">
+              <p>Configure conditions settings for Heap usage alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Threshold Conditions</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Maximum usage</label>
+                    <div class="col-sm-6">
+                      <span class="hk-input-text">500 MB</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="usage-greater">Usage greater than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group hk-input-small">
+                        <input type="number" min="0" max="100" value="80" class="form-control" id="usage-greater">
+                        <div class="input-group-addon">%</div>
+                      </div>
+                      <span class="input-detail">(400 MB)</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="usage-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="usage-less">Usage less than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group hk-input-small">
+                        <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less" disabled="disabled">
+                        <div class="input-group-addon">%</div>
+                      </div>
+                      <span class="input-detail">(100 MB)</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-less-switch" class="onoffswitch-checkbox">
+                        <label class="onoffswitch-label" for="usage-less-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-heap">
+                          <input type="radio" name="alert-heap" id="every-time-heap" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-heap">
+                          <input type="radio" name="alert-heap" id="greater-time-heap" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-heap">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-heap" class="form-control" value="email@domain.com">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-non-heap" class="hk-tab-content hide">
+              <p>Configure conditions settings for Non-Heap usage alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Threshold Conditions</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Maximum usage</label>
+                    <div class="col-sm-6">
+                      <span class="hk-input-text">500 MB</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="usage-greater-nh">Usage greater than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group hk-input-small">
+                        <input type="number" min="0" max="100" value="80" class="form-control" id="usage-greater-nh">
+                        <div class="input-group-addon">%</div>
+                      </div>
+                      <span class="input-detail">(400 MB)</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-greater-switch-nh" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="usage-greater-switch-nh">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="usage-less-nh">Usage less than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group hk-input-small">
+                        <input type="number" min="0" max="100" value="20" class="form-control" id="usage-less-nh">
+                        <div class="input-group-addon">%</div>
+                      </div>
+                      <span class="input-detail">(100 MB)</span>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="usage-less-switch-nh" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="usage-less-switch-nh">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-nh">
+                          <input type="radio" name="alert" id="every-time-nh" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-nh">
+                          <input type="radio" name="alert" id="greater-time-nh" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-nh">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-nh" class="form-control" value="email@domain.com">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-garbage" class="hk-tab-content hide">
+              <p>Configure conditions settings for Garbage Collection alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Duration (major)</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="major">Greater than</label>
+                    <div class="col-sm-5">
+                      <div class="input-group hk-input-small">
+                        <input type="number" min="0" value="200" class="form-control" id="major">
+                        <div class="input-group-addon">ms</div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="major-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="major-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-g">
+                          <input type="radio" name="alert" id="every-time-g" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-g">
+                          <input type="radio" name="alert" id="greater-time-g" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-g">Email</label>
+                    <div class="col-sm-6">
+                      <input type="text" id="email-g" class="form-control" value="email@domain.com">
+                    </div>
+<!--
+                    <div class="col-sm-9">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" checked="checked" id="email-g"> name@domain.com
+                        </label>
+                        <span class="input-detail"><a href="#">Edit email</a></span>
+                      </div>
+                    </div>
+-->
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
