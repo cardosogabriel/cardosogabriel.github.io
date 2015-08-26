@@ -4,7 +4,9 @@ $(document).ready(function(){
 	tabsBrowsing();
 	tableSelect();
 	datasourceCollapse();
+	modalWizard();
 	modalDeployment();
+	modalDrivers();
 	modalTimeout();
 });
 
@@ -13,7 +15,7 @@ initialLoading = function(){
   setInterval(function () {
     $('.hk-urls-list.hk-spinner-container').addClass('hide');
     $('.hk-urls-empty').removeClass('hide');
-  },4000);
+  },3000);
 };
 
 //Insert url form
@@ -27,7 +29,7 @@ insertUrl = function(){
       $('.btn-primary').removeClass('disabled');
       $('.help-block').removeClass('hide');
       $('.loading').addClass('hide');
-    },4000);
+    },3000);
   });
 
   $('.btn-link').click(function(){
@@ -75,6 +77,30 @@ datasourceCollapse = function(){
   });
 };
 
+//Modal Wizard
+modalWizard = function(){
+  $('.modal-footer.hk-first .btn-default').click(function(){
+    $(this).parent().parent().find('.hk-zero').removeClass('hide');
+    $(this).parent().parent().find('.hk-first').addClass('hide');
+  });
+  $('.modal-footer.hk-first .btn-primary').click(function(){
+    $(this).parent().parent().find('.hk-first').addClass('hide');
+    $(this).parent().parent().find('.hk-second').removeClass('hide');
+  });
+  $('.modal-footer.hk-second .btn-default').click(function(){
+    $(this).parent().parent().find('.hk-first').removeClass('hide');
+    $(this).parent().parent().find('.hk-second').addClass('hide');
+  });
+  $('.modal-footer.hk-second .btn-primary').click(function(){
+    $(this).parent().parent().find('.hk-second').addClass('hide');
+    $(this).parent().parent().find('.hk-third').removeClass('hide');
+  });
+  $('.modal-footer.hk-third .btn-default').click(function(){
+    $(this).parent().parent().find('.hk-second').removeClass('hide');
+    $(this).parent().parent().find('.hk-third').addClass('hide');
+  });
+}
+
 //Modal deployment
 modalDeployment = function(){
   $('.hk-form-verify .hk-rename-button .btn').click(function(){
@@ -83,28 +109,19 @@ modalDeployment = function(){
   $('.hk-form-verify .hk-discard-confirm-buttons .btn').click(function(){
     $(this).parent().parent().parent().addClass('hk-form-read-only').removeClass('hk-form-edit');
   });
-
-  $('.modal-footer.first .btn-primary').click(function(){
-    $(this).parent().parent().find('.first').addClass('hide');
-    $(this).parent().parent().find('.second').removeClass('hide');
-  });
-  $('.modal-footer.second .btn-default').click(function(){
-    $(this).parent().parent().find('.first').removeClass('hide');
-    $(this).parent().parent().find('.second').addClass('hide');
-  });
-  $('.modal-footer.second .btn-primary').click(function(){
-    $(this).parent().parent().find('.second').addClass('hide');
-    $(this).parent().parent().find('.third').removeClass('hide');
-
+  $('.modal#add-deployment .modal-footer.hk-second .btn-primary').click(function(){
     setInterval(function () {
-      $('#add-deployment .third').addClass('hide');
-      $('#add-deployment .fourth').removeClass('hide');
+      $('#add-deployment .hk-third').addClass('hide');
+      $('#add-deployment .hk-fourth').removeClass('hide');
     },4000);
-
   });
-  $('.modal-footer.third .btn-default').click(function(){
-    $(this).parent().parent().find('.second').removeClass('hide');
-    $(this).parent().parent().find('.third').addClass('hide');
+};
+
+//Modal drivers
+modalDrivers = function(){
+  $('#btn-add-driver').click(function(){
+    $(this).parent().parent().parent().find('.hk-zero').addClass('hide');
+    $(this).parent().parent().parent().find('.hk-first').removeClass('hide');
   });
 };
 

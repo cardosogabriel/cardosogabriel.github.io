@@ -73,6 +73,22 @@ h3 {
   }
 }
 
+.btn-icon .fa {
+  display: block;
+}
+
+.hk-btn-icon {
+
+  .fa {
+    color: @brand-primary;
+    margin-right: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .btn-default .fa {
   color: @gray;
   margin-right: 0;
@@ -406,10 +422,28 @@ a:hover .fa-spinner {
   }
 }
 
-.dataTables_header {
+.hk-table-list {
+  border: 1px solid @table-border-color;
 
+  &.table > tbody > tr {
+     > td {
+     border-top-color: @list-group-border;
+    }
+
+    &:first-child > td {
+      border: none;
+    }
+  }
 }
 
+td.hk-actions-one {
+  text-align: center;
+  width: 30px;
+}
+
+.hk-table-detailed tr td:hover {
+  cursor: pointer;
+}
 
 // transitions
 
@@ -785,11 +819,7 @@ a:hover .fa-spinner {
   margin-top: @grid-gutter-width/2;
 }
 
-// alert settings modals
-
-.modal-body fieldset p {
-  margin-top: -10px;
-}
+// forms
 
 .hk-alert-settings .form-horizontal {
   margin-top: @grid-gutter-width/2;
@@ -803,7 +833,14 @@ a:hover .fa-spinner {
   }
 
   legend {
+    border-bottom: none;
+    border-top: 1px solid #e5e5e5;
     font-size: ceil(@font-size-base * 1.25);
+    padding-top: @grid-gutter-width/4;
+
+    &.hk-no-border {
+      border: none;
+    }
   }
 
   .onffswitch-form-group {
@@ -826,8 +863,20 @@ a:hover .fa-spinner {
     padding-right: 0;
   }
 
+  .input-group {
+    float: left;
+
+    &.hk-input-small {
+      max-width: 100px;
+    }
+  }
+
+  .hk-input-small {
+    max-width: 75px;
+  }
+
   .help-block {
-    margin-top: 5px;
+    margin-top: @grid-gutter-width/8;
   }
 
   .inline-row {
@@ -865,6 +914,14 @@ a:hover .fa-spinner {
     margin-left: 20px;
     margin-top: 5px;
   }
+
+  p + .form-group {
+    margin-top: @grid-gutter-width/2
+  }
+}
+
+p + .form-horizontal {
+  margin-top:20px;
 }
 
 .modal-backdrop {
@@ -874,6 +931,14 @@ a:hover .fa-spinner {
 .hk-alert-settings + .modal-footer {
   margin-top: 0;
   padding-top: 0;
+}
+
+.hk-required-info {
+  color: @gray-light;
+}
+
+.hk-required {
+  color: @brand-danger;
 }
 
 
@@ -1377,13 +1442,17 @@ section {
   }
 }
 
-.hk-alert-settings {
-  .input-group-btn {
-    width: auto;
-  }
+// Alerts
+
+.alert-success {
+  background-color: transparent;
+}
+
+// Modal
+
+.modal-body {
 
   .nav-tabs {
-
     margin-left: -15px;
     margin-right: -15px;
     padding-left: 15px;
@@ -1400,7 +1469,15 @@ section {
     padding: 1.5em 1.5em 0;
   }
 
-  .hk-alert-settings .form-horizontal {
+  fieldset p {
+    margin-top: -10px;
+  }
+
+  .input-group-btn {
+    width: auto;
+  }
+
+  .form-horizontal {
     margin-top: @grid-gutter-width/2;
   }
 
@@ -1410,58 +1487,10 @@ section {
 
   .form-horizontal {
 
-    fieldset {
-      margin-bottom: 5px;
-      position: relative;
-    }
-
-    legend {
-      border-bottom: none;
-      border-top: 1px solid #e5e5e5;
-      font-size: ceil(@font-size-base * 1.25);
-      padding-top: @grid-gutter-width/4;
-    }
-
-    label {
-      padding-right: 0;
-    }
-
-    .input-group {
-      float: left;
-
-      &.hk-input-small {
-        max-width: 100px;
-      }
-    }
-
-    .hk-input-small {
-      max-width: 75px;
-    }
-
     .input-detail {
       color: @gray-light;
       line-height: 1.66666667;
       margin-left: @grid-gutter-width/4;
-    }
-
-    .onffswitch-form-group {
-      margin-bottom: 0;
-      position: relative;
-
-      .control-label {
-        display: none;
-      }
-    }
-
-    .onoffswitch-container {
-      position: absolute;
-      right: 20px;
-      top: -52px;
-      width: 62px;
-    }
-
-    .help-block {
-      margin-top: @grid-gutter-width/8;
     }
 
     .inline-row {
@@ -1508,11 +1537,18 @@ section {
   }
 }
 
-// Modal
+#modal-jbdc-drivers .btn-table-list-container {
+  margin-top: @grid-gutter-width/2;
+}
 
 #modal-jbdc-drivers .btn-primary + .hk-table-list {
   margin-top: @grid-gutter-width/4;
 }
+
+.hk-btn-distant {
+  margin-right: @grid-gutter-width/2;
+}
+
 
 // Access portal
 
