@@ -295,77 +295,75 @@
             <h4 class="modal-title">Availability Alert Settings</h4>
           </div>
           <div class="modal-body">
-            <div class="hk-tab-content">
-              <p>Configure conditions settings for Availability alerts and notifications.</p>
-              <form class="form-horizontal">
-                <fieldset>
-                  <legend>Downtime</legend>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label" for="dw-duration">Duration (maximum)</label>
-                    <div class="col-sm-5 inline-row">
-                      <div class="input-group input-select">
-                        <input type="text" class="form-control" placeholder="Duration" id="dw-duration" value="5">
-                        <select class="selectpicker">
-                          <option>seconds</option>
-                          <option selected="selected">minutes</option>
-                          <option>hours</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="onoffswitch pull-right">
-                        <input type="checkbox" id="dw-duration-switch" class="onoffswitch-checkbox" checked="checked">
-                        <label class="onoffswitch-label" for="dw-duration-switch">
-                          <span class="onoffswitch-inner">
-                            <span class="onoffswitch-active ng-binding">ON</span>
-                            <span class="onoffswitch-inactive ng-binding">OFF</span>
-                          </span>
-                          <span class="onoffswitch-switch"></span>
-                        </label>
-                      </div>
+            <p>Configure conditions settings for Availability alerts and notifications.</p>
+            <form class="form-horizontal">
+              <fieldset>
+                <legend>Downtime</legend>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="dw-duration">Duration (maximum)</label>
+                  <div class="col-sm-5 inline-row">
+                    <div class="input-group input-select">
+                      <input type="text" class="form-control" placeholder="Duration" id="dw-duration" value="5">
+                      <select class="selectpicker">
+                        <option>seconds</option>
+                        <option selected="selected">minutes</option>
+                        <option>hours</option>
+                      </select>
                     </div>
                   </div>
-                </fieldset>
-                <fieldset>
-                  <legend>Alert</legend>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">Create Alert</label>
-                    <div class="col-sm-9">
-                      <div class="radio">
-                        <label for="every-time-dwd">
-                          <input type="radio" name="alert" id="every-time-dwd" value="option1" checked>
-                          Every time conditions are met.
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label for="greater-time-dwd">
-                          <input type="radio" name="alert" id="greater-time-dwd" value="option2">
-                          Only when conditions are met for greater than:
-                        </label>
-                      </div>
-                      <div class="input-group input-select indented">
-                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
-                        <select class="selectpicker">
-                          <option>seconds</option>
-                          <option selected="selected">minutes</option>
-                          <option>hours</option>
-                        </select>
-                      </div>
+                  <div class="col-sm-4">
+                    <div class="onoffswitch pull-right">
+                      <input type="checkbox" id="dw-duration-switch" class="onoffswitch-checkbox" checked="checked">
+                      <label class="onoffswitch-label" for="dw-duration-switch">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
                     </div>
                   </div>
-                </fieldset>
-                <fieldset>
-                  <legend>Notification</legend>
-                  <p>Receive an email notification every time the conditions are met.</p>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label" for="email-dwd">Email</label>
-                    <div class="col-sm-6">
-                      <input type="text" id="email-dwd" class="form-control" value="email@domain.com">
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Alert</legend>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Create Alert</label>
+                  <div class="col-sm-9">
+                    <div class="radio">
+                      <label for="every-time-dwd">
+                        <input type="radio" name="alert" id="every-time-dwd" value="option1" checked>
+                        Every time conditions are met.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="greater-time-dwd">
+                        <input type="radio" name="alert" id="greater-time-dwd" value="option2">
+                        Only when conditions are met for greater than:
+                      </label>
+                    </div>
+                    <div class="input-group input-select indented">
+                      <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                      <select class="selectpicker">
+                        <option>seconds</option>
+                        <option selected="selected">minutes</option>
+                        <option>hours</option>
+                      </select>
                     </div>
                   </div>
-                </fieldset>
-              </form>
-            </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Notification</legend>
+                <p>Receive an email notification every time the conditions are met.</p>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="email-dwd">Email</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="email-dwd" class="form-control" value="email@domain.com">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
 
           </div>
           <div class="modal-footer">
@@ -389,77 +387,75 @@
             <h4 class="modal-title">Response Time Alert Settings</h4>
           </div>
           <div class="modal-body">
-            <div class="hk-tab-content">
-              <p>Configure conditions settings for Response Time alerts and notifications.</p>
-              <form class="form-horizontal">
-                <fieldset>
-                  <legend>Response Time</legend>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label" for="rt-time">Time (maximum)</label>
-                    <div class="col-sm-5 inline-row">
-                      <div class="input-group input-select">
-                        <input type="text" class="form-control" placeholder="Duration" id="rt-time" value="5">
-                        <select class="selectpicker">
-                          <option>seconds</option>
-                          <option selected="selected">minutes</option>
-                          <option>hours</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="onoffswitch pull-right">
-                        <input type="checkbox" id="rt-duration-switch" class="onoffswitch-checkbox" checked="checked">
-                        <label class="onoffswitch-label" for="rt-duration-switch">
-                          <span class="onoffswitch-inner">
-                            <span class="onoffswitch-active ng-binding">ON</span>
-                            <span class="onoffswitch-inactive ng-binding">OFF</span>
-                          </span>
-                          <span class="onoffswitch-switch"></span>
-                        </label>
-                      </div>
+            <p>Configure conditions settings for Response Time alerts and notifications.</p>
+            <form class="form-horizontal">
+              <fieldset>
+                <legend>Response Time</legend>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="rt-time">Time (maximum)</label>
+                  <div class="col-sm-5 inline-row">
+                    <div class="input-group input-select">
+                      <input type="text" class="form-control" placeholder="Duration" id="rt-time" value="5">
+                      <select class="selectpicker">
+                        <option>seconds</option>
+                        <option selected="selected">minutes</option>
+                        <option>hours</option>
+                      </select>
                     </div>
                   </div>
-                </fieldset>
-                <fieldset>
-                  <legend>Alert</legend>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">Create Alert</label>
-                    <div class="col-sm-9">
-                      <div class="radio">
-                        <label for="every-time-rt">
-                          <input type="radio" name="alert" id="every-time-rt" value="option1" checked>
-                          Every time conditions are met.
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label for="greater-time-rt">
-                          <input type="radio" name="alert" id="greater-time-rt" value="option2">
-                          Only when conditions are met for greater than:
-                        </label>
-                      </div>
-                      <div class="input-group input-select indented">
-                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
-                        <select class="selectpicker">
-                          <option>seconds</option>
-                          <option selected="selected">minutes</option>
-                          <option>hours</option>
-                        </select>
-                      </div>
+                  <div class="col-sm-4">
+                    <div class="onoffswitch pull-right">
+                      <input type="checkbox" id="rt-duration-switch" class="onoffswitch-checkbox" checked="checked">
+                      <label class="onoffswitch-label" for="rt-duration-switch">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
                     </div>
                   </div>
-                </fieldset>
-                <fieldset>
-                  <legend>Notification</legend>
-                  <p>Receive an email notification every time the conditions are met.</p>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label" for="email-rt">Email</label>
-                    <div class="col-sm-6">
-                      <input type="text" id="email-rt" class="form-control" value="email@domain.com">
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Alert</legend>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Create Alert</label>
+                  <div class="col-sm-9">
+                    <div class="radio">
+                      <label for="every-time-rt">
+                        <input type="radio" name="alert" id="every-time-rt" value="option1" checked>
+                        Every time conditions are met.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="greater-time-rt">
+                        <input type="radio" name="alert" id="greater-time-rt" value="option2">
+                        Only when conditions are met for greater than:
+                      </label>
+                    </div>
+                    <div class="input-group input-select indented">
+                      <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                      <select class="selectpicker">
+                        <option>seconds</option>
+                        <option selected="selected">minutes</option>
+                        <option>hours</option>
+                      </select>
                     </div>
                   </div>
-                </fieldset>
-              </form>
-            </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Notification</legend>
+                <p>Receive an email notification every time the conditions are met.</p>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="email-rt">Email</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="email-rt" class="form-control" value="email@domain.com">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
 
           </div>
           <div class="modal-footer">
