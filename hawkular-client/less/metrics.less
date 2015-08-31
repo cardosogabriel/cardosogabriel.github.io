@@ -987,7 +987,21 @@ a:hover .fa-spinner {
   }
 }
 
-.table-striped > tbody > tr.selected > td {
+/* In case of the whole line selectable
+
+.hk-table-select > tbody > tr:hover > td {
+  background-color: #d4edfa;
+  cursor: pointer;
+
+  &.success,
+  &.danger,
+  &.warning {
+    background-color: #d4edfa;
+  }
+}
+*/
+
+.hk-table-select > tbody > tr.hk-selected > td {
   background-color: @brand-primary;
   color: white;
 
@@ -999,17 +1013,6 @@ a:hover .fa-spinner {
 
   .fa {
     color: white;
-  }
-}
-
-.table-checkbox > tbody > tr:hover > td {
-  background-color: #d4edfa;
-  cursor: pointer;
-
-  &.success,
-  &.danger,
-  &.warning {
-    background-color: #d4edfa;
   }
 }
 
@@ -1172,6 +1175,11 @@ td.hk-actions-one {
 
 .hk-table-detailed tr td:hover {
   cursor: pointer;
+}
+
+.hk-td-radio,
+.hk-td-checkbox {
+  width: 20px;
 }
 
 

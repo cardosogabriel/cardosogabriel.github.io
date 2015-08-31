@@ -124,7 +124,7 @@
           <div class="hk-resource-container">
 
             <h3 class="pull-left">MyDatasource 1</h3>
-            <span class="pull-left" style="display: inline-block;margin-top: 10px; margin-left: 10px;"><a href="#" data-toggle="modal" data-target="#modal-jbdc-drivers"> JBDC Drivers</a></span>
+            <span class="pull-left" style="display: inline-block;margin-top: 10px; margin-left: 10px;"><a href="#" data-toggle="modal" data-target="#modal-jbdc-drivers"> Add Datasource</a></span>
             <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
             <div class="panel panel-default hk-summary">
               <div class="row">
@@ -505,24 +505,30 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
               <span class="pficon pficon-close"></span>
             </button>
-            <h4 class="modal-title">JBDC Drivers</h4>
+            <h4 class="modal-title">Add Datasource</h4>
           </div>
-          <div class="modal-body hk-zero hide">
-            <p>To connect to a JBDC datasource, your datasource vendor's JBDC drivers need to be installed an configured.</p>
-            <p>Add a new driver of modify an existing driver:</p>
+          <div class="modal-body hk-zero">
+            <p>To connect to a datasource, your datasource vendor's drivers need to be installed and configured.</p>
+            <p>Add a new driver of select from an existing one.</p>
             <div class="btn-table-list-container">
-              <button class="btn btn-primary" type="button" id="btn-add-driver">Add Driver</button>
-              <table class="table hk-table-list hk-table-detailed">
+              <table class="table hk-table-list hk-table-detailed hk-table-select">
                 <tbody>
-                  <tr class="link">
+                  <tr>
+                    <td class="hk-td-radio">
+                      <input type="radio" name="driver"/>
+                    </td>
                     <td>
                       Driver Name One
                     </td>
                     <td class="hk-actions-one">
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-eye"></i></button>
                       <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="Remove"><i class="fa fa-trash-o"></i></button>
                     </td>
                   </tr>
                   <tr class="link">
+                    <td class="hk-td-radio">
+                      <input type="radio" name="driver"/>
+                    </td>
                     <td>
                       Driver Name Two
                     </td>
@@ -601,7 +607,7 @@
             <button type="button" class="btn btn-primary" data-dismiss="modal">Add Driver</button>
           </div>
 
-          <div class="modal-body fourth">
+          <div class="modal-body fourth hide">
 <!--             <p><strong>Step 3 of 3</strong></p> -->
             <form class="form-horizontal">
               <fieldset>
@@ -641,7 +647,7 @@
               </fieldset>
             </form>
           </div>
-          <div class="modal-footer fourth">
+          <div class="modal-footer fourth hide">
             <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
           </div>
 

@@ -59,8 +59,12 @@ tabsBrowsing = function(){
 
 //Table Select
 tableSelect = function(){
-  $('.table-checkbox td').click(function(){
-    $(this).parent().toggleClass('selected');
+  $('.hk-table-select input[type="checkbox"]').click(function(){
+    $(this).parent().parent().toggleClass('hk-selected');
+  });
+  $('.hk-table-select input[type="radio"]').click(function(){
+    $(this).parent().parent().parent().find('tr').removeClass('hk-selected');
+    $(this).parent().parent().toggleClass('hk-selected');
   });
 };
 
