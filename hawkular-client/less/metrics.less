@@ -77,7 +77,8 @@ h3 {
 
 // Alerts
 
-.alert-success {
+.alert-success,
+.alert-warning {
   background-color: transparent;
 }
 
@@ -1168,9 +1169,16 @@ a:hover .fa-spinner {
   }
 }
 
-td.hk-actions-one {
+td[class*="hk-actions-"] {
   text-align: center;
+}
+
+td.hk-actions-one {
   width: 30px;
+}
+
+td.hk-actions-two {
+  width: 100px;
 }
 
 .hk-table-detailed tr td:hover {

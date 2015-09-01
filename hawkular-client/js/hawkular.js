@@ -103,6 +103,22 @@ modalWizard = function(){
     $(this).parent().parent().find('.hk-second').removeClass('hide');
     $(this).parent().parent().find('.hk-third').addClass('hide');
   });
+  $('.modal-footer.hk-third .btn-primary').click(function(){
+    $(this).parent().parent().find('.hk-third').addClass('hide');
+    $(this).parent().parent().find('.hk-fourth').removeClass('hide');
+  });
+  $('.modal-footer.hk-fourth .btn-default').click(function(){
+    $(this).parent().parent().find('.hk-third').removeClass('hide');
+    $(this).parent().parent().find('.hk-fourth').addClass('hide');
+  });
+  $('.modal-footer.hk-fourth .btn-primary').click(function(){
+    $(this).parent().parent().find('.hk-fourth').addClass('hide');
+    $(this).parent().parent().find('.hk-fifth').removeClass('hide');
+  });
+  $('.modal-footer.hk-fifth .btn-default').click(function(){
+    $(this).parent().parent().find('.hk-fourth').removeClass('hide');
+    $(this).parent().parent().find('.hk-fifth').addClass('hide');
+  });
 }
 
 //Modal deployment
