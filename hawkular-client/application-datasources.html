@@ -124,8 +124,18 @@
           <div class="hk-resource-container">
 
             <h3 class="pull-left">MyDatasource 1</h3>
-            <span class="pull-left" style="display: inline-block;margin-top: 10px; margin-left: 10px;"><a href="#" data-toggle="modal" data-target="#modal-jbdc-drivers"> Add Driver</a></span>
-            <span class="pull-left" style="display: inline-block;margin-top: 10px; margin-left: 10px;"><a href="#" data-toggle="modal" data-target="#modal-add-datasource"> Add Datasource</a></span>            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <div class="pull-right">
+              <span class="hk-update" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><a href="#" data-toggle="modal" data-target="#modal-add-datasource">Datasource</a></li>
+                  <li><a href="#" data-toggle="modal" data-target="#modal-jbdc-drivers">Driver</a></li>
+                </ul>
+              </div>
+            </div>
             <div class="panel panel-default hk-summary">
               <div class="row">
                 <div class="col-sm-4 hk-summary-item">
