@@ -792,7 +792,7 @@
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="datasource-type" checked>
+                    <input type="radio" name="datasource-type">
                     Non-XA Datasource
                     <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Non-XA datasources are used for applications which do not use transactions, or applications which use transactions with a single database."><i class="fa fa-info-circle"></i></a>
                   </label>
@@ -803,6 +803,12 @@
                 <div>
                   <select class="selectpicker">
                     <option>Custom</option>
+                    <option>PostgreSQL XA Datasource</option>
+                    <option>MySQL XA Datasource</option>
+                    <option>Oracle XA Datasource</option>
+                    <option>Microsoft SQLServer XA Datasource</option>
+                    <option>IBM DB2 XA Datasource</option>
+                    <option>Sybase XA Datasource</option>
                   </select>
                 </div>
               </div>
@@ -1001,6 +1007,14 @@
                   </label>
                   <div class="col-sm-6">
                     <span class="hk-input-text">com.mysql</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Datasource Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Specify the security domain wich defines the javax.security.auth."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">My Datasource</span>
                   </div>
                 </div>
               </fieldset>
