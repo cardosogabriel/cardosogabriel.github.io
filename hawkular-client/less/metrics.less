@@ -454,6 +454,39 @@ h3 {
 }
 
 
+// Control Actions Bar
+
+.hk-control-actions-bar {
+
+  margin-bottom: @grid-gutter-width/2;
+
+  .form-control {
+    display: inline-block;
+    width: 275px;
+  }
+
+  .hk-container-separator {
+    border-right: 1px solid @table-border-color;
+    float: left;
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+
+  .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    margin-bottom: 0;
+    width: 100px;
+  }
+
+  .btn + .btn {
+    margin-left: 12px;
+  }
+
+  + .hk-update {
+    margin-top: 5px;
+  }
+}
+
+
 // Forms
 
 .input-group-lg {
@@ -866,6 +899,29 @@ a:hover .fa-spinner {
 .panel {
 
   border: none;
+
+  .panel-heading {
+    border-color: @list-group-border;
+    background-color: transparent;
+
+    .hk-heading {
+      color: inherit;
+      font-weight: 600;
+    }
+
+    .dropdown {
+      margin-top: -5px;
+
+      .btn:hover,
+      .btn:focus {
+        color: @link-hover-color;
+      }
+
+      &.pull-right {
+        margin-right: -10px;
+      }
+    }
+  }
 
   &.alert-danger {
     background-color: @danger-bg;
