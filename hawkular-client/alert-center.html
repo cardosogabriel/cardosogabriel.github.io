@@ -68,70 +68,96 @@
         </ul>
       </div>
     </nav>
+    <div class="hk-alert-center">
 
-    <div class="container">
-      <div class="hk-alert-center">
-        <h1 class="text-center">Alert Center</h1>
+      <div class="hk-screen-top-nav">
+        <div class="container">
+          <div class="row hk-top-row">
+            <div class="col-xs-6 col-xs-offset-6">
+              <div class="hk-date-range dropdown">
+                <i class="fa fa-calendar"></i>
+                <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+                <div class="dropdown-menu infotip bottom-right">
+                  <div class="arrow"></div>
+                  <div class="dropdown-menu-content">
+                    <span class="hk-label">Last</span>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1h</button>
+                      <button type="button" class="btn btn-default">12h</button>
+                      <button type="button" class="btn btn-default">Day</button>
+                      <button type="button" class="btn btn-default active">Week</button>
+                      <button type="button" class="btn btn-default">Month</button>
+                      <button type="button" class="btn btn-default">Year</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-heading">
+            <h1 class="text-center">Alert Center</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
         <div class="hk-info-top clearfix">
+          <h3 class="pull-left">Alerts (129)</h3>
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
         </div>
         <div class="hk-table-container">
           <div class="hk-actions-table">
+            <button class="btn btn-default" type="button">Acknowledge</button>
             <button class="btn btn-primary" type="button">Resolve</button>
           </div>
-          <table class="datatable table table-bordered hk-table-alerts hk-table-detailed">
+          <table class="datatable table table-bordered hk-table-alerts hk-table-detailed hk-table-select">
             <thead>
               <tr>
                 <th><input type="checkbox"/></th>
                 <th>State</th>
-                <th>Host Name</th>
-                <th>Resource Type</th>
-                <th>Alert Message</th>
+                <th>Severity</th>
+                <th>Description</th>
                 <th>Created</th>
-                <th>Resolved</th>
-                <th class="hide"></th>
+                <th>Resource Path</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               <tr class="hk-alert-resolved">
                 <td><input type="checkbox"/></td>
                 <td>Resolved</td>
-                <td>Host1</td>
-                <td>URL</td>
-                <td>Resolve alert message</td>
+                <td>Medium</td>
+                <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
-                <td>15 Jul 2015, 10:31</td>
-                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+                <td>/e;test/.../deployment=hawkular-console.war</td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
               </tr>
               <tr class="hk-alert-open">
                 <td><input type="checkbox"/></td>
                 <td>Open</td>
-                <td>Host2</td>
-                <td>Wildfly</td>
-                <td>Open alert message</td>
+                <td>Medium</td>
+                <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
-                <td>n/a</td>
-                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+                <td>/e;test/.../deployment=hawkular-console.war</td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
               </tr>
               <tr class="hk-alert-resolved">
                 <td><input type="checkbox"/></td>
                 <td>Resolved</td>
-                <td>Host1</td>
-                <td>URL</td>
-                <td>Resolve alert message</td>
+                <td>Medium</td>
+                <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
-                <td>15 Jul 2015, 10:31</td>
-                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+                <td>/e;test/.../deployment=hawkular-console.war</td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
               </tr>
               <tr class="hk-alert-open">
                 <td><input type="checkbox"/></td>
                 <td>Open</td>
-                <td>Host2</td>
-                <td>Wildfly</td>
-                <td>Open alert message</td>
+                <td>Medium</td>
+                <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
-                <td>n/a</td>
-                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+                <td>/e;test/.../deployment=hawkular-console.war</td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
               </tr>
             </tbody>
           </table>

@@ -1,52 +1,52 @@
 .hk-screen-top-nav {
-  
-  margin-bottom: @grid-gutter-width/2;
-        
+
   .hk-back {
     display: inline-block;
     font-size: @font-size-base + 1;
     margin-top: @grid-gutter-width/8;
   }
-        
+
   h1 {
     text-align: center;
     margin-bottom: @grid-gutter-width/4;
     margin-top: @grid-gutter-width/4;
   }
-  
+
   .hk-nav-tabs-container {
     border-bottom: 1px solid @table-border-color;
+    margin-bottom: @grid-gutter-width/2;
     text-align: center;
   }
-  
+
   .nav-tabs {
     border-bottom: none;
     display: inline-block;
     margin-bottom: -3px;
     text-align: center;
   }
-  
+
   .nav-tabs-pf > li > a {
     padding-bottom: 13px;
-    padding-top: 13px;  
-    
+    padding-top: 13px;
+
     .label-alert {
       margin-left: 8px;
     }
-  } 
-   
-  .nav-tabs > li.active > a, 
-  .nav-tabs > li.active > a:active, 
-  .nav-tabs > li.active > a:focus, 
+  }
+
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:active,
+  .nav-tabs > li.active > a:focus,
   .nav-tabs > li.active > a:hover {
     background-color: transparent;
-  } 
+  }
 }
+
 
 // date range
 
 .hk-date-range {
-  
+
   text-align: right;
 
   .fa {
@@ -54,7 +54,7 @@
   }
 
   .hk-input {
-    
+
     padding: 2px 6px;
     line-height: 1.66666667;
     background-color: white;
@@ -69,14 +69,14 @@
     font-size: ceil(@font-size-base + 2);
     min-width: 200px;
     text-align: left;
-    
+
     @media (max-width: @screen-sm-max) {
-      min-width: 190px;   
+      min-width: 190px;
     }
 
     &:hover {
       cursor: pointer;
-      border-color:#7bb2dd    
+      border-color:#7bb2dd
     }
 
     span {
@@ -86,7 +86,7 @@
   }
 
   &.open .hk-input {
-    border-color: @brand-primary;    
+    border-color: @brand-primary;
   }
 
   .dropdown-menu {
@@ -95,17 +95,17 @@
     min-width: 305px;
     right: 0;
   }
-  
+
   .dropdown-menu-content {
     padding: 15px;
-  
+
     .hk-label {
       color: @gray-dark;
       display: inline-block;
       margin-right: @grid-gutter-width/4;
       padding-left: 0;
     }
-  
+
     .btn-group {
       display: inline-block;
     }

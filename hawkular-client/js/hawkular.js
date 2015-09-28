@@ -93,16 +93,16 @@ datasourceCollapse = function(){
 
 //Modal deployment
 modalDeployment = function(){
-  $('.hk-form-verify .hk-rename-button .btn').click(function(){
-    $(this).parent().parent().parent().removeClass('hk-form-read-only').addClass('hk-form-edit');
+  $('.hk-form-verify .hk-read-only .btn').click(function(){
+    $(this).parent().parent().parent().removeClass('hk-form-read-only').addClass('hk-form-editable');
   });
-  $('.hk-form-verify .hk-discard-confirm-buttons .btn').click(function(){
-    $(this).parent().parent().parent().addClass('hk-form-read-only').removeClass('hk-form-edit');
+  $('.hk-form-verify .hk-editable .btn').click(function(){
+    $(this).parent().parent().parent().addClass('hk-form-read-only').removeClass('hk-form-editable');
   });
-  $('.modal#add-deployment .modal-footer.hk-second .btn-primary').click(function(){
+  $('.modal#add-deployment .modal-footer.hk-2 .btn-primary').click(function(){
     setInterval(function () {
-      $('#add-deployment .hk-third').addClass('hide');
-      $('#add-deployment .hk-fourth').removeClass('hide');
+      $('#add-deployment .hk-3').addClass('hide');
+      $('#add-deployment .hk-4').removeClass('hide');
     },4000);
   });
 };

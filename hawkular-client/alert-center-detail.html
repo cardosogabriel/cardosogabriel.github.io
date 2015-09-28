@@ -17,6 +17,11 @@
 
     <script type="text/javascript" src="js/hawkular.js"></script>
     <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('[data-toggle=popover]').popover()
+      });
+    </script>
   </head>
 
   <body>
@@ -60,63 +65,97 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="hk-alert-center-detail">
-        <h1 class="text-center">Alert Center</h1>
+    <div class="hk-alert-center-detail">
+
+      <div class="hk-screen-top-nav">
+        <div class="container">
+          <div class="row hk-top-row">
+            <div class="col-xs-6">
+              <a href="alert-center.html" class="back">&laquo; Alert Center List</a>
+            </div>
+            <div class="col-xs-6">
+              <div class="hk-date-range dropdown">
+                <i class="fa fa-calendar"></i>
+                <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+                <div class="dropdown-menu infotip bottom-right">
+                  <div class="arrow"></div>
+                  <div class="dropdown-menu-content">
+                    <span class="hk-label">Last</span>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1h</button>
+                      <button type="button" class="btn btn-default">12h</button>
+                      <button type="button" class="btn btn-default">Day</button>
+                      <button type="button" class="btn btn-default active">Week</button>
+                      <button type="button" class="btn btn-default">Month</button>
+                      <button type="button" class="btn btn-default">Year</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-heading">
+            <h1>Alert Center</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
 
         <div class="hk-info-top clearfix">
           <h3 class="pull-left">Alert Details</h3>
         </div>
         <div class="panel panel-default clearfix hk-alert-details">
-          <div class="text-right">
-            <button class="btn btn-primary" type="button">Resolve</button>
-          </div>
-          <div class="col-sm-6">
-            <dl class="dl-horizontal">
-              <dt>State</dt>
-              <dd><span class="label label-default">Open</span></dd>
-              <dt>Created</dt>
-              <dd>15 Jul 2015, 21:33</dd>
-              <dt>Resolved</dt>
-              <dd>n/a</dd>
-            </dl>
-          </div>
-          <div class="col-sm-6">
-            <dl class="dl-horizontal">
-              <dt>Host Name</dt>
-              <dd>Host003</dd>
-              <dt>Resource Type</dt>
-              <dd>URL</dd>
-              <dt>Alert Message</dt>
-              <dd>Some message here.</dd>
-            </dl>
-          </div>
+          <h2>Trigger description text as a header here but need to have a character max...</h2>
+          <dl class="dl-horizontal">
+            <dt>State</dt>
+            <dd><span class="hk-open">Open</span></dd>
+            <dt>Severity</dt>
+            <dd>Medium</dd>
+            <dt>Description
+              <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Trigger description"><i class="fa fa-info-circle"></i></a>
+            </dt>
+            <dd>Trigger description text here</dd>
+            <dt>Created</dt>
+            <dd>15 Jul 2015, 21:33</dd>
+            <dt>Resource Path
+              <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="e = environment, f = feed, r = the resource id"><i class="fa fa-info-circle"></i></a>
+            </dt>
+            <dd>/e;test/f;308083738390e9/deployment=hawkular-console.war</dd>
+            <dt><span class="hide">Actions</span>
+            <dd>
+              <button class="btn btn-default" type="button">Acknowledge</button>
+              <button class="btn btn-primary" type="button">Resolve</button>
+            </dd>
+          </dl>
         </div>
 
         <div class="hk-info-top clearfix">
           <h3 class="pull-left">Notification History</h3>
         </div>
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Type</th>
-              <th>Recipients</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>15 Aug 2015, 21:55</td>
-              <td>Email</td>
-              <td>jdoe@redhat.com</td>
-            </tr>
-            <tr>
-              <td>12 Aug 2015, 09:34</td>
-              <td>SMS</td>
-              <td>508-555-1212</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="hk-table-container">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Recipients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>15 Aug 2015, 21:55</td>
+                <td>Email</td>
+                <td>jdoe@redhat.com</td>
+              </tr>
+              <tr>
+                <td>12 Aug 2015, 09:34</td>
+                <td>SMS</td>
+                <td>508-555-1212</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="hk-info-top clearfix">
           <h3 class="pull-left">Metrics</h3>
