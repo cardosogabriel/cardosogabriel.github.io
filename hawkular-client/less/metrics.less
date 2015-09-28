@@ -74,17 +74,20 @@ h3 {
 
 .dl-horizontal {
   dt {
-    margin-bottom: 5px;
     @media (min-width: @screen-sm-min) {
       text-align: left;
     }
   }
 
-  dd .btn {
-    margin-top: 15px;
+  dd {
+    margin-bottom: 5px;
 
-    &:first-child {
-      margin-right: 5px;
+   .btn {
+      margin-top: 15px;
+
+      &:first-child {
+        margin-right: 10px;
+      }
     }
   }
 }
