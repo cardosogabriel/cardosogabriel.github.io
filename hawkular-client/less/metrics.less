@@ -1,6 +1,5 @@
-// Variables Override
+// Variables
 
-@body-bg:                                                           #f5f5f5;
 @danger-bg:                                                         rgba(204,0,0,0.07);
 
 
@@ -9,6 +8,7 @@
 \*------------------------------------*/
 
 body {
+  background-color: #f5f5f5;
   line-height: 1.4;
   padding-bottom: @grid-gutter-width/2;
 }
@@ -94,6 +94,14 @@ h3 {
 
 .info-top {
   font-size: ceil(@font-size-base + 1);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.hk-spinner-container-alone {
+  margin-top: @grid-gutter-width*5.5;
 }
 
 
@@ -226,7 +234,7 @@ h3 {
 
   .hk-graph-container  {
     margin: 0 auto;
-    width: 750px;
+    //width: 750px;
 
     &.hk-graph-availability svg { /* top 40px, bottom 30px, align center */
       margin-bottom: -18px;
@@ -235,7 +243,7 @@ h3 {
     }
 
     &.hk-graph-metrics {
-      height: 262px;
+      //height: 262px;
 
       svg {
         margin-bottom: -13px;
@@ -245,7 +253,7 @@ h3 {
     }
 
     &.hk-graph-jvm {
-      height: 262px;
+      //height: 262px;
 
       svg {
         margin-bottom: -13px;
@@ -264,26 +272,28 @@ h3 {
     font-size: ceil(@font-size-base - 1);
     margin-bottom: 10px;
     margin-left: 38px;
-    margin-top: 15px;
+    margin-top: 30px;
 
     &.hk-legend-availability {
-      margin-left: 248px;
+      //margin-left: 248px;
+      margin-left: 12%;
 
-      @media (max-width: @screen-md-max) {
-        margin-left: 148px;
-      }
+      //@media (max-width: @screen-md-max) {
+      //  margin-left: 148px;
+      //}
     }
-
+    // TODO: be reviewed by Gabriel
     &.hk-legend-metrics {
-      margin-left: 270px;
+      //margin-left: 270px;
+      margin-left: 12%;
 
-      @media (max-width: @screen-md-max) {
-        margin-left: 170px;
-      }
+      //@media (max-width: @screen-md-max) {
+      //  margin-left: 170px;
+      //}
     }
 
     &.hk-legend-inline {
-      margin-top: 8px;
+      margin-top: 24px;
 
       > div {
         padding-left: 0;
@@ -637,6 +647,10 @@ p + .form-horizontal {
 
 .hk-required {
   color: @brand-danger;
+}
+
+.form-actions .btn + .btn {
+  margin-left: @grid-gutter-width/8;
 }
 
 
@@ -1037,10 +1051,6 @@ a:hover .fa-spinner {
       }
     }
   }
-
-  h2 {
-    margin-top: 12px;
-  }
 }
 
 .hk-info-top + .hk-panel-table-list {
@@ -1226,6 +1236,10 @@ a:hover .fa-spinner {
   .hk-actions-table {
     top: 6px;
   }
+
+  .dataTables_wrapper {
+    margin: 0;
+  }
 }
 
 .hk-alert-center .hk-table-container {
@@ -1234,7 +1248,8 @@ a:hover .fa-spinner {
   }
 }
 
-.hk-table-alerts {
+.hk-table-alerts,
+.hk-table-clean {
 
   &.hk-alerts-contextual {
     border-left: none;
@@ -1685,6 +1700,10 @@ section {
 
   .hk-settings {
     margin-top: @grid-gutter-width/4;
+
+    a + a {
+      margin-left: @grid-gutter-width/2;
+    }
   }
 
   .btn-link {
@@ -1745,7 +1764,7 @@ section {
 
 .hk-collapsible-area {
   display: block!important;
-  max-height: 950px;
+  max-height: 1120px;
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease;
 	-moz-transition: max-height 0.3s ease;
