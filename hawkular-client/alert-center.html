@@ -106,9 +106,24 @@
           <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
         </div>
         <div class="hk-table-container">
+          <div class="hk-actions-table-search">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Display Resolved Alerts
+              </label>
+            </div>
+          </div>
           <div class="hk-actions-table">
-            <button class="btn btn-default" type="button">Acknowledge</button>
-            <button class="btn btn-primary" type="button">Resolve</button>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                Change State
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Acknowledge</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Resolve</a></li>
+              </ul>
+            </div>
           </div>
           <table class="datatable table table-bordered hk-table-alerts hk-table-detailed hk-table-select">
             <thead>
@@ -130,7 +145,7 @@
                 <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
                 <td>/e;test/.../deployment=hawkular-console.war</td>
-                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
               </tr>
               <tr class="hk-alert-open">
                 <td><input type="checkbox"/></td>
@@ -139,7 +154,7 @@
                 <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
                 <td>/e;test/.../deployment=hawkular-console.war</td>
-                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
               </tr>
               <tr class="hk-alert-resolved">
                 <td><input type="checkbox"/></td>
@@ -148,7 +163,7 @@
                 <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
                 <td>/e;test/.../deployment=hawkular-console.war</td>
-                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
               </tr>
               <tr class="hk-alert-open">
                 <td><input type="checkbox"/></td>
@@ -157,7 +172,7 @@
                 <td>Response Time Something</td>
                 <td>15 Jul 2015, 05:00</td>
                 <td>/e;test/.../deployment=hawkular-console.war</td>
-                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-arrow-circle-o-right"></i></a></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
               </tr>
             </tbody>
           </table>

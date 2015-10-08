@@ -105,70 +105,105 @@
         <div class="hk-info-top clearfix">
           <h3 class="pull-left">Alert Details</h3>
         </div>
-        <div class="panel panel-default clearfix hk-alert-details">
-          <h2>Trigger description text as a header here but need to have a character max...</h2>
-          <dl class="dl-horizontal">
-            <dt>State</dt>
-            <dd><span class="hk-open">Open</span></dd>
-            <dt>Severity</dt>
-            <dd>Medium</dd>
-            <dt>Description
-              <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Trigger description"><i class="fa fa-info-circle"></i></a>
-            </dt>
-            <dd>Trigger description text here</dd>
-            <dt>Created</dt>
-            <dd>15 Jul 2015, 21:33</dd>
-            <dt>Resource Path
-              <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="e = environment, f = feed, r = the resource id"><i class="fa fa-info-circle"></i></a>
-            </dt>
-            <dd>/e;test/f;308083738390e9/deployment=hawkular-console.war</dd>
-            <dt><span class="hide">Actions</span>
-            <dd>
-              <button class="btn btn-default" type="button">Acknowledge</button>
-              <button class="btn btn-primary" type="button">Resolve</button>
-            </dd>
-          </dl>
-        </div>
 
-        <div class="hk-info-top clearfix">
-          <h3 class="pull-left">Notification History</h3>
-        </div>
-        <div class="hk-table-container">
-          <table class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Type</th>
-                <th>Recipients</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>15 Aug 2015, 21:55</td>
-                <td>Email</td>
-                <td>jdoe@redhat.com</td>
-              </tr>
-              <tr>
-                <td>12 Aug 2015, 09:34</td>
-                <td>SMS</td>
-                <td>508-555-1212</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="hk-info-top clearfix">
-          <h3 class="pull-left">Metrics</h3>
-        </div>
-        <div class="panel panel-default hk-graph">
-
-          <div class="hk-legend text-left">
-            <span><i class="fa fa-circle hk-primary"></i>Used</span>
-            <span><i class="fa fa-circle hk-orange"></i>Maximum</span>
-            <span><i class="fa fa-circle hk-gray"></i>Commited</span>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading">
+                <h2>Trigger description text as a header here but need to have a character max...</h2>
+              </div>
+              <div class="panel-body">
+                <form class="form-horizontal">
+                  <fieldset>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="status">State</label>
+                      <div class="col-sm-6">
+                        <select class="selectpicker" id="status">
+                          <option>Open</option>
+                          <option>Acknowledged</option>
+                          <option>Resolved</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Severity</label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">Medium</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Description
+                        <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Trigger description"><i class="fa fa-info-circle"></i></a>
+                      </label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here.</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Created</label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">15 Jul 2015, 21:33</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Resource Path
+                        <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="e = environment, f = feed, r = the resource id"><i class="fa fa-info-circle"></i></a>
+                      </label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">/e;test/f;308083738390e9/deployment=hawkular-console.war</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Comments</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" rows="2"></textarea>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+                <div class="form-actions col-sm-10 col-sm-offset-2">
+                  <button class="btn btn-default" type="button">Cancel</button>
+                  <button class="btn btn-primary" type="button">Save</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
+          <div class="col-md-3">
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading">
+                <h2>Notifications</h2>
+              </div>
+              <div class="panel-body">
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-envelope-o"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <span class="email">jdoe@redhat.com</span>
+                      <span class="type">Email</span>
+                      <span class="date">15 Aug 2015, 21:55</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-mobile"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <span class="email">(508) 555-1212</span>
+                      <span class="type">SMS</span>
+                      <span class="date">15 Aug 2015, 21:55</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div><!-- .container -->
 
