@@ -116,9 +116,14 @@
                 <form class="form-horizontal">
                   <fieldset>
                     <div class="form-group">
+                        <div class="col-sm-2">
+                          <button class="btn btn-primary hk-edit" type="button">Edit</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
                       <label class="col-sm-2 control-label" for="status">State</label>
                       <div class="col-sm-6">
-                        <select class="selectpicker" id="status">
+                        <select class="selectpicker" id="status" disabled>
                           <option>Open</option>
                           <option>Acknowledged</option>
                           <option>Resolved</option>
@@ -156,14 +161,14 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Comments</label>
                       <div class="col-sm-10">
-                        <textarea class="form-control" rows="2"></textarea>
+                        <textarea class="form-control" rows="2" disabled></textarea>
                       </div>
                     </div>
                   </fieldset>
                 </form>
                 <div class="form-actions col-sm-10 col-sm-offset-2">
-                  <button class="btn btn-default" type="button">Cancel</button>
-                  <button class="btn btn-primary" type="button">Save</button>
+                  <button class="btn btn-default" type="button" disabled>Cancel</button>
+                  <button class="btn btn-primary" type="button" disabled>Save</button>
                 </div>
               </div>
             </div>
