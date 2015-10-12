@@ -156,46 +156,48 @@
             </div>
           </div>
 
-          <table class="table table-bordered hk-table-alerts hk-alerts-contextual">
-            <tbody>
-              <tr class="hk-alert-open">
-                <td>
-                  <div class="dropdown clean">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                      <i class="fa fa-flag"></i> Open
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Resolved</a></li>
-                    </ul>
-                  </div>
-                </td>
-                <td>Server <strong>down</strong> for 4 minutes (until 5:39 PM).</td>
-                <td>15 Jul 2015, 05:00</td>
-                <td>n/a</td>
-                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
-              </tr>
-              <tr class="hk-alert-resolved">
-                <td>
-                  <div class="dropdown clean">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                      <i class="fa fa-flag"></i> Resolved
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
-                      <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">Resolved</a></li>
-                    </ul>
-                  </div>
-                </td>
-                <td>Server <strong>down</strong> for 4 minutes (until 5:39 PM).</td>
-                <td>15 Jul 2015, 05:00</td>
-                <td>15 Jul 2015, 10:31</td>
-                <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
-              </tr>
-            </tbody>
-          </table>
+          <div class="hk-table-container">
+            <table class="table table-bordered hk-table-alerts hk-alerts-contextual">
+              <tbody>
+                <tr class="hk-alert-open">
+                  <td>
+                    <div class="dropdown clean">
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="fa fa-flag"></i> Open
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Resolved</a></li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>Server <strong>down</strong> for 4 minutes (until 5:39 PM).</td>
+                  <td>15 Jul 2015, 05:00</td>
+                  <td>n/a</td>
+                  <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+                </tr>
+                <tr class="hk-alert-resolved">
+                  <td>
+                    <div class="dropdown clean">
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="fa fa-flag"></i> Resolved
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open</a></li>
+                        <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">Resolved</a></li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>Server <strong>down</strong> for 4 minutes (until 5:39 PM).</td>
+                  <td>15 Jul 2015, 05:00</td>
+                  <td>15 Jul 2015, 10:31</td>
+                  <th class="hide"><a href="alert-center-detail.html">View Details</a></th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div class="hk-info-top clearfix">
             <h3 class="pull-left">Metrics</h3>
@@ -358,8 +360,20 @@
                 <p>Receive an email notification every time the conditions are met.</p>
                 <div class="form-group">
                   <label class="col-sm-3 control-label" for="email-dwd">Email</label>
-                  <div class="col-sm-6">
+                  <div class="col-sm-5">
                     <input type="text" id="email-dwd" class="form-control" value="email@domain.com">
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="onoffswitch pull-right">
+                      <input type="checkbox" id="av-email-switch" class="onoffswitch-checkbox" checked="checked">
+                      <label class="onoffswitch-label" for="av-email-switch">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -450,8 +464,20 @@
                 <p>Receive an email notification every time the conditions are met.</p>
                 <div class="form-group">
                   <label class="col-sm-3 control-label" for="email-rt">Email</label>
-                  <div class="col-sm-6">
+                  <div class="col-sm-5">
                     <input type="text" id="email-rt" class="form-control" value="email@domain.com">
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="onoffswitch pull-right">
+                      <input type="checkbox" id="rt-email-switch" class="onoffswitch-checkbox" checked="checked">
+                      <label class="onoffswitch-label" for="rt-email-switch">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </fieldset>

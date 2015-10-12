@@ -772,6 +772,15 @@ a:hover .fa-spinner {
 
   .form-horizontal {
     margin-top: @grid-gutter-width/2;
+
+    &:first-child {
+      margin-top: @grid-gutter-width/4;
+
+      legend {
+        border-top: none;
+        padding-top: 0;
+      }
+    }
   }
 
   p + .form-horizontal {
