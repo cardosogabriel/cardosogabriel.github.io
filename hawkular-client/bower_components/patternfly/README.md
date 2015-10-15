@@ -1,8 +1,11 @@
 # [PatternFly](https://www.patternfly.org) reference implementation
 
-This reference implementation of PatternFly is based on [Bootstrap v3](http://getbootstrap.com/).  Think of PatternFly as a "skinned" version of Bootstrap with additional components and customizations.
+This reference implementation of PatternFly is based on [Bootstrap v3](http://getbootstrap.com/).  Think of PatternFly as a "skinned" version of Bootstrap with additional components and customizations. For information on how to quickly get started using PatternFly, see the [Quick Start Guide](QUICKSTART.md).
 
-## Install with Bower
+
+# Installation
+
+### Install with Bower
 
 PatternFly can be installed and managed through [Bower](http://bower.io/). To do so, either add `patternfly` as a dependency in your `bower.json` or run the following:
 
@@ -10,17 +13,25 @@ PatternFly can be installed and managed through [Bower](http://bower.io/). To do
 bower install patternfly
 ```
 
-## RPM
+### Install with npm
 
-PatternFly is also available as an RPM.  See https://copr.fedoraproject.org/coprs/patternfly/patternfly1/.
+PatternFly can be installed and managed through [npm](https://www.npmjs.com/).  To do so, run the following:
 
-## AngularJS
+```
+npm install patternfly
+```
 
-A set of [common AngularJS directives](https://github.com/patternfly/angular-patternfly) for use with PatternFly is available.
+### RPM
 
-## Sass and/or Rails
+PatternFly is also available as an RPM.  See https://copr.fedoraproject.org/coprs/patternfly/patternfly2/.
+
+### Sass and/or Rails
 
 A [Sass port of PatternFly](https://github.com/patternfly/patternfly-sass) is available, as is a [Sass-based Rails Gem](https://rubygems.org/gems/patternfly-sass).
+
+### AngularJS
+
+A set of [common AngularJS directives](https://github.com/patternfly/angular-patternfly) for use with PatternFly is available.
 
 ## Dependencies
 
@@ -84,7 +95,7 @@ In development, styling is written and managed through multiple lesscss files. I
 
     grunt build
 
-This task will compile and minify the lesscss files into a single CSS file located at `dist/css/patternfly.min.css`.
+This task will compile and minify the lesscss files into CSS files located at `dist/css/patternfly.min.css` and `dist/css/patternfly-additional.min.css`.
 
 ### PatternFlyIcons Font
 
@@ -98,11 +109,11 @@ The HTML pages in `tests/` are generated using Jekyll.  Do *not* edit these file
 
 ## Release
 
-PatternFly is released through the Bower package manager and RPM. 
+PatternFly is released through the Bower, npm, and RPM. 
 
-### Bower
+### Bower and npm
 
-The Bower package manager determines available versions and installs based upon git tags. To release a new version version of PatternFly, edit `bower.json`, `package.json`, and `MAKEFILE` accordingly.
+To release a new version version of PatternFly, edit `bower.json`, `package.json`, and `MAKEFILE` accordingly.
 
 Update the version listed in `bower.json` by editing the file and changing the line:
 
@@ -138,7 +149,13 @@ git tag <new_version>
 git push && git push --tags
 ```
 
-The new version will now be automatically available via Bower.
+The Bower package manager determines available versions and installs based upon git tags, so the new version will now be automatically available via Bower.
+
+To publish a new version to npm, run:
+
+```
+npm publish
+```
 
 ### RPM
 
@@ -162,11 +179,13 @@ Build the RPM:
 rpmbuild -ba patternfly.spec
 ```
 
-Upload the source RPM [1] to a public web server.
+Commit the source RPM [1] to [https://github.com/patternfly/patternfly-srpms](https://github.com/patternfly/patternfly-srpms).
 
 [1] e.g., ~/rpmbuild/SRPMS/patternfly1-1.1.1-1.fc20.src.rpm
 
-Ask @rhamilto or @EmilyDirsh to add a new build on [Fedora Copr](https://copr.fedoraproject.org/coprs/patternfly/patternfly1/add_build/) using the URL created in the previous step.
+Serve the commited source RPM via [RawGit](https://rawgit.com).
+
+Ask @rhamilto or @gregsheremeta to add a new build on [Fedora Copr](https://copr.fedoraproject.org/coprs/patternfly/patternfly2) using the URL created in the previous step.
 
 Edit `MAKEFILE` as follows and commit the change:
 
@@ -183,11 +202,13 @@ See [https://www.patternfly.org](https://www.patternfly.org) and [http://getboot
 
 ### Browser and Device Support
 
-Since PatternFly is based on Bootstrap, PatternFly supports [the same browsers as Bootstrap](http://getbootstrap.com/getting-started/#support), plus the latest version of [Firefox for Linux](https://support.mozilla.org/en-US/kb/install-firefox-linux).
+Since PatternFly is based on Bootstrap, PatternFly supports [the same browsers as Bootstrap](http://getbootstrap.com/getting-started/#support) **excluding Internet Explorer 8**, plus the latest version of [Firefox for Linux](https://support.mozilla.org/en-US/kb/install-firefox-linux).
+
+*Important:*  starting with the v2.0.0 release, **PatternFly no longer supports Internet Explorer 8**.
 
 ### Product Backlog
 
-See [https://trello.com/b/Hz3Nmwk4/patternfly-reference-implementation](https://trello.com/b/Hz3Nmwk4/patternfly-reference-implementation).
+See [https://patternfly.atlassian.net/secure/RapidBoard.jspa?projectKey=PTNFLY&rapidView=4&view=planning](https://patternfly.atlassian.net/secure/RapidBoard.jspa?projectKey=PTNFLY&rapidView=4&view=planning).
 
 ## License
 

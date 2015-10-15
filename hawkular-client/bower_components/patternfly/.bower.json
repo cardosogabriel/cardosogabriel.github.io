@@ -1,12 +1,13 @@
 {
-  "name": "PatternFly",
-  "version": "1.1.4",
+  "name": "patternfly",
+  "version": "2.4.0",
   "authors": "Red Hat",
   "license": "Apache-2.0",
   "homepage": "https://www.patternfly.org",
   "main": [
     "dist/js/patternfly.js",
-    "dist/css/patternfly.css"
+    "dist/css/patternfly.css",
+    "dist/css/patternfly-additions.css"
   ],
   "ignore": [
     "**/.*",
@@ -15,7 +16,6 @@
     "app/components",
     "test",
     "tests",
-    "tests-src",
     "package.json",
     "Gruntfile.js",
     "PatternFlyIcons-webfont.json",
@@ -23,25 +23,30 @@
     "patternfly.spec.in"
   ],
   "devDependencies": {
-    "bootstrap": "~3.1.1",
+    "bootstrap": "~3.3.5",
     "bootstrap-combobox": "~1.1.6",
-    "bootstrap-select": "~1.5.4",
-    "bootstrap-treeview": "~1.0.1",
-    "datatables": "~1.10.4",
-    "datatables-colreorder": "~1.1.2",
-    "datatables-colvis": "~1.1.1",
-    "font-awesome": "~4.2.0",
-    "google-code-prettify": "~1.0.3",
-    "html5shiv": "~3.7.2",
-    "respond": "~1.4.2"
+    "bootstrap-datepicker": "~1.4.0",
+    "bootstrap-select": "~1.7.3",
+    "bootstrap-switch": "~3.3.2",
+    "bootstrap-touchspin": "~3.0.3",
+    "bootstrap-treeview": "~1.2.0",
+    "c3": "~0.4.10",
+    "datatables": "~1.10.7",
+    "datatables-colreorder": "~1.1.3",
+    "datatables-colvis": "~1.1.2",
+    "font-awesome": "~4.3.0",
+    "google-code-prettify": "~1.0.4",
+    "jquery": "~2.1.4",
+    "matchHeight": "~0.6.0"
   },
-  "_release": "1.1.4",
+  "_release": "2.4.0",
   "_resolution": {
     "type": "version",
-    "tag": "v1.1.4",
-    "commit": "4f42d89ec12c52e94818b4e16a4a94fd2ac62874"
+    "tag": "v2.4.0",
+    "commit": "a72edf01d55ca1484aaa25ca78abd3616fff4f2e"
   },
   "_source": "git://github.com/patternfly/patternfly.git",
-  "_target": "~1.1.3",
-  "_originalSource": "patternfly"
+  "_target": "~2.4.0",
+  "_originalSource": "patternfly",
+  "_direct": true
 }
