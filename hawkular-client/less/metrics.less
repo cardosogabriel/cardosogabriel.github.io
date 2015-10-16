@@ -765,6 +765,10 @@ a:hover .fa-spinner {
   color: @brand-danger;
 }
 
+.hk-warning {
+  color: @brand-warning;
+}
+
 
 // Modal Boxes
 
@@ -1198,6 +1202,42 @@ a:hover .fa-spinner {
 
 .container > .blank-slate-pf:first-child {
   margin-top: @grid-gutter-width/2;
+}
+
+.hk-box-v-item {
+
+  .hk-icon-container {
+    text-align: center;
+    width: 24px;
+
+    &:first-child {
+      padding-right: 5px;
+    }
+
+    &:last-child {
+      padding-left: 5px;
+      vertical-align: middle;
+    }
+  }
+
+  .hk-info-heading {
+    margin-bottom: 5px;
+
+    &:not(.hk-acknowledged) {
+      font-weight: bold;
+    }
+  }
+
+  .hk-info-info {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .hk-display-alerts {
+  }
 }
 
 
@@ -1927,37 +1967,6 @@ section {
 }
 
 
-// Alert Details screen
-
-.hk-alert-center-detail {
-
-  .hk-icon-container {
-    padding-right: 10px;
-    text-align: center;
-    width: 24px;
-  }
-
-  .hk-info-container span {
-    display: block;
-
-    &.email {
-      font-weight: bold;
-      margin-bottom: 2px;
-    }
-
-    &.type {
-      margin-bottom: 5px;
-    }
-  }
-
-  .form-actions {
-    .btn:first-child {
-      margin-left: -14px;
-    }
-  }
-}
-
-
 // Application overview screen
 
 .hk-dashboard-block {
@@ -1985,8 +1994,17 @@ section {
     width: 25%;
   }
 
+  .hk-info {
+    height: 69px; // might change in responsive
+    vertical-align: bottom;
+  }
+
   .hk-block-title {
     margin-left: 25%;
+  }
+
+  p.card-pf-aggregate-status-notifications {
+    margin-bottom: 0;
   }
 }
 

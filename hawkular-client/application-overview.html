@@ -222,26 +222,80 @@
                     <div class="hk-info">
                       <p class="card-pf-aggregate-status-notifications">
                         <span class="card-pf-aggregate-status-notification">
-                          <a href="#">
-                            <span class="pficon pficon-error-circle-o"></span>4
-                          </a>
+                          <i class="fa fa-times-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="Failed"></i>1
                         </span>
                         <span class="card-pf-aggregate-status-notification">
-                          <a href="#">
-                            <span class="pficon pficon-warning-triangle-o"></span>1
-                          </a>
+                          <i class="fa fa-square" data-toggle="tooltip" data-placement="top" data-original-title="Stopped"></i>1
+                        </span>
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-check-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="OK"></i>8
                         </span>
                       </p>
                     </div>
                   </div>
                   <div class="hk-block-title">JVM (Average Heap Usage per MB)</div>
                 </div>
+                <div class="col-md-6 hk-dashboard-block">
+                  <div class="hk-data-info">
+                    <div class="hk-data">842</div>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-web.png" alt="chart-dash-web">
+                    </div>
+                  </div>
+                  <div class="hk-block-title">Web Sessions</div>
+                </div>
               </div>
             </div>
 
-          </div>
+          </div><!-- .col-md-6 -->
 
           <div class="col-md-3">
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading">
+                <h2>Server Alerts</h2>
+              </div>
+              <div class="panel-body">
+
+                <div class="hk-box-v-item">
+                  <div class="checkbox hk-display-alerts">
+                    <label>
+                      <input type="checkbox"> Display resolved alerts
+                    </label>
+                  </div>
+                </div>
+
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle hk-warning"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Open</div>
+                      <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading hk-acknowledged">Acknowledged</div>
+                      <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
