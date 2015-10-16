@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="bower_components/patternfly/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script>
+      // Initialize Datatables
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+        });
+      });
+
+      $(document).ready(function() {
+        $('[data-toggle=popover]').popover()
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li>
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li class="active">
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hk-screen-top-nav">
+      <div class="container">
+        <div class="row hk-top-row">
+          <div class="col-xs-6">
+            <a href="applications-list.html" class="back">&laquo; All Application Servers</a>
+          </div>
+          <div class="col-xs-6">
+            <div class="hk-date-range dropdown">
+              <i class="fa fa-calendar"></i>
+              <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+              <div class="dropdown-menu infotip bottom-right">
+                <div class="arrow"></div>
+                <div class="dropdown-menu-content">
+                  <span class="hk-label">Last</span>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default">1h</button>
+                    <button type="button" class="btn btn-default">12h</button>
+                    <button type="button" class="btn btn-default">Day</button>
+                    <button type="button" class="btn btn-default active">Week</button>
+                    <button type="button" class="btn btn-default">Month</button>
+                    <button type="button" class="btn btn-default">Year</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hk-heading">
+          <h1>Eavy Machine</h1>
+        </div>
+        <div class="hk-nav-tabs-container">
+          <ul class="nav nav-tabs nav-tabs-pf">
+            <li><a href="application-alerts.html" class="hk-alerts">All Alerts</a></li>
+            <li><a href="application-jvm.html" class="hk-jvm">JVM <span class="label label-danger label-alert pull-right">3</span></a></li>
+            <li><a href="application-web.html" class="hk-web">Web</a></li>
+            <li><a href="application-deployments.html" class="hk-deployments">Deployments</a></li>
+            <li class="active"><a href="application-datasources.html" class="hk-datasources">Datasources</a></li>
+            <li><a href="#" class="hk-datasources">Transactions</a></li>
+            <li><a href="#" class="hk-datasources">JMS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- .screen-top-nav -->
+
+    <div class="container">
+      <div class="hk-screen-content">
+
+        <section id="hk-datasources">
+
+          <div class="clearfix">
+            <div class="hk-control-actions-bar pull-left">
+              <div class="hk-container-separator">
+                <input type="text" class="form-control separator" placeholder="Filter by Name...">
+              </div>
+              <div class="hk-container-separator">
+                <select class="selectpicker">
+                  <option>Sort A - Z</option>
+                  <option>Sort Z - A</option>
+                </select>
+              </div>
+              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal-jbdc-drivers">Add Driver</button>
+              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal-add-datasource">Add Datasource</button>
+            </div>
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+          </div>
+
+          <div class="hk-resource-container">
+            <div class="panel panel-default hk-summary">
+              <div class="panel-heading">
+                <span class="hk-heading">MyDatasource 1</span>
+                <div class="dropdown pull-right">
+                  <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Actions
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li class="disabled"><a href="#">Enable</a></li>
+                    <li><a href="#">Disabled</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">2 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Datasource Alerts</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">73%</span>
+                  <span class="hk-item">Connections Used (%)</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">7 Available (of 28)</span>
+                  <span class="hk-item">Available Connections (of total)</span>
+                </div>
+              </div>
+            </div>
+            <div class="hk-panel-collapse-area hk-collapsed">
+              <a href="#"><span>View Metrics</span><i class="fa fa-chevron-circle-down"></i></a>
+            </div>
+
+            <div class="hk-collapsible-area hide">
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Datasource Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-datasource-settings"><i class="fa fa-cog"></i> Alert Settings</a></span>
+              </div>
+              <div class="clearfix">
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    12 Feb, 5:35 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    11 Feb, 3:53 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>
+              </div>
+
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left">Metrics</h3>
+                <div class="hk-update pull-right">
+                  <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+                </div>
+              </div>
+              <div class="panel panel-default hk-graph">
+                <h2>Availability and Responsiveness</h2>
+                <img src="img/graph-av-rp.png" alt="graph-av-rp">
+                <div class="row hk-legend hk-legend-inline text-left">
+                  <div class="col-md-7 col-lg-6">
+                    <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
+                    <div class="hk-graphselector hk-blue">
+                      <input type="checkbox" id="available1" checked="checked">
+                      <label for="available1"><span>Available Connections</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-green">
+                      <input type="checkbox" id="connections1">
+                      <label for="connections1"><span>Connections in Use</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-gray">
+                      <input type="checkbox" id="timed1">
+                      <label for="timed1"><span>Timed-out Connections</span></label>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-6">
+                    <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
+                    <div class="hk-graphselector hk-yellow">
+                      <input type="checkbox" id="wait1">
+                      <label for="wait1"><span>Wait Time (Avg.)</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-purple">
+                      <input type="checkbox" id="creation1">
+                      <label for="creation1"><span>Creation Time (Avg.)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- .hk-resource-container -->
+
+          <div class="hk-resource-container">
+            <div class="panel panel-default hk-summary">
+              <div class="panel-heading">
+                <span class="hk-heading">MyDatasource 1</span>
+                <div class="dropdown pull-right">
+                  <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Actions
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Delete</a></li>
+                    <li class="disabled"><a href="#">Enable</a></li>
+                    <li><a href="#">Disabled</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">2 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Datasource Alerts</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">73%</span>
+                  <span class="hk-item">Connections Used (%)</span>
+                </div>
+                <div class="col-sm-4 hk-summary-item">
+                  <span class="hk-data">7 Available (of 28)</span>
+                  <span class="hk-item">Available Connections (of total)</span>
+                </div>
+              </div>
+            </div>
+            <div class="hk-panel-collapse-area hk-collapsed">
+              <a href="#"><span>View Metrics</span><i class="fa fa-chevron-circle-down"></i></a>
+            </div>
+
+            <div class="hk-collapsible-area hide">
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Datasource Alerts <span>(2 of 10)</span></button></h3>
+                <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-datasource-settings"><i class="fa fa-cog"></i> Alert Settings</a></span>
+              </div>
+              <div class="clearfix">
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    12 Feb, 5:35 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>
+                <div class="panel panel-default alert alert-danger">
+                  <div class="hk-alert-icon">
+                    <i class="fa fa-flag"></i>
+                  </div>
+                  <div class="hk-date">
+                    11 Feb, 3:53 PM
+                  </div>
+                  <div class="hk-event">
+                    <strong>Alert Summary</strong>: alert details.
+                  </div>
+                </div>
+              </div>
+
+              <div class="hk-info-top clearfix">
+                <h3 class="pull-left">Metrics</h3>
+                <div class="hk-update pull-right">
+                  <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
+                </div>
+              </div>
+              <div class="panel panel-default hk-graph">
+                <h2>Availability and Responsiveness</h2>
+                <img src="img/graph-av-rp.png" alt="graph-av-rp">
+                <div class="row hk-legend hk-legend-inline text-left">
+                  <div class="col-md-7 col-lg-6">
+                    <h4>Connection Availability<img src="img/legend-connection.png" alt="legend-connection" height="12"></h4>
+                    <div class="hk-graphselector hk-blue">
+                      <input type="checkbox" id="available2" checked="checked">
+                      <label for="available2"><span>Available Connections</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-green">
+                      <input type="checkbox" id="connections2">
+                      <label for="connections2"><span>Connections in Use</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-gray">
+                      <input type="checkbox" id="timed2">
+                      <label for="timed1"><span>Timed-out Connections</span></label>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-6">
+                    <h4>Responsiveness<img src="img/legend-responsiveness.png" alt="legend-responsiveness" height="12"></h4>
+                    <div class="hk-graphselector hk-yellow">
+                      <input type="checkbox" id="wait2">
+                      <label for="wait2"><span>Wait Time (Avg.)</span></label>
+                    </div>
+                    <div class="hk-graphselector hk-purple">
+                      <input type="checkbox" id="creation2">
+                      <label for="creation2"><span>Creation Time (Avg.)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- .hk-resource-container -->
+
+        </section>
+
+      </div>
+    </div><!-- .container -->
+
+
+    <!-- Modal Datasource Settings -->
+
+    <div class="modal fade modal-alert" id="modal-datasource-settings" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">Datasource Alert Settings</h4>
+          </div>
+          <div class="modal-body hk-alert-settings">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#" class="hk-ds-connection">Connection Availability</a></li>
+              <li><a href="#" class="hk-ds-responsiveness">Responsiveness</a></li>
+            </ul>
+
+            <div id="hk-ds-connection" class="hk-tab-content">
+              <p>Configure conditions settings for Connection Availability alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Available Connections</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="dsc-connections">Less than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="dsc-connections">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="dsc-connections-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="dsc-connections-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-dsc">
+                          <input type="radio" name="alert" id="every-time-dsc" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-dsc">
+                          <input type="radio" name="alert" id="greater-time-dsc" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-dsc">Email</label>
+                    <div class="col-sm-5">
+                      <input type="text" id="email-dsc" class="form-control" value="email@domain.com">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="c-email-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="c-email-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div id="hk-ds-responsiveness" class="hk-tab-content hide">
+              <p>Configure conditions settings for Responsiveness alerts and notifications.</p>
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend>Wait Time</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="dsr-greater">Greater than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="dsr-greater">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="dsr-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="dsr-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Creation Time</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="dsrc-greater">Greater than</label>
+                    <div class="col-sm-5">
+                      <input type="number" min="0" value="200" class="form-control hk-input-small" id="dsrc-greater">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="dsrc-greater-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="dsrc-greater-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Alert</legend>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">Create Alert</label>
+                    <div class="col-sm-9">
+                      <div class="radio">
+                        <label for="every-time-dsr">
+                          <input type="radio" name="alert" id="every-time-dsr" value="option1" checked>
+                          Every time conditions are met.
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label for="greater-time-dsr">
+                          <input type="radio" name="alert" id="greater-time-dsr" value="option2">
+                          Only when conditions are met for greater than:
+                        </label>
+                      </div>
+                      <div class="input-group input-select indented">
+                        <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                        <select class="selectpicker">
+                          <option>seconds</option>
+                          <option selected="selected">minutes</option>
+                          <option>hours</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Notification</legend>
+                  <p>Receive an email notification every time the conditions are met.</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email-dsr">Email</label>
+                    <div class="col-sm-5">
+                      <input type="text" id="email-dsr" class="form-control" value="email@domain.com">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="onoffswitch pull-right">
+                        <input type="checkbox" id="r-email-switch" class="onoffswitch-checkbox" checked="checked">
+                        <label class="onoffswitch-label" for="r-email-switch">
+                          <span class="onoffswitch-inner">
+                            <span class="onoffswitch-active ng-binding">ON</span>
+                            <span class="onoffswitch-inactive ng-binding">OFF</span>
+                          </span>
+                          <span class="onoffswitch-switch"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save All</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- #modal-datasource-settings -->
+
+
+    <!-- Modal Drivers -->
+
+    <div class="modal fade" id="modal-jbdc-drivers" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">JDBC Drivers</h4>
+          </div>
+
+          <div class="modal-body hk-1">
+            <p><strong>Step 1 of 3: Add Datasource Driver</strong></p>
+            <form class="hk-form-horizontal">
+              <fieldset>
+                <div class="form-group">
+                  <label for="deployment-file">Download the JDBC driver from your database vendor</label>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="file" class="form-control" id="deployment-file">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-1">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-1" disabled>&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-2">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-2 hide">
+            <p><strong>Step 2 of 3: Define Parameters</strong></p>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver File Name</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="dn"><span class="hk-required">*</span> Driver  Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Defines the JDBC driver the datasource should use."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <input type="text" id="dn" class="form-control" value="driverfile.jar">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="dmn"><span class="hk-required">*</span> Driver Module Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="The name of the module the driver was loaded from, if it was loaded from the module path."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <input type="text" id="dmn" class="form-control" value="driverfile.jar">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="dc"><span class="hk-required">*</span> Driver  Class</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="dc" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="dmv">Driver Major Version</label>
+                  <div class="col-sm-6">
+                    <input type="number" min="0" value="1" class="form-control hk-input-small" id="dmv">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="dmiv">Driver Minor Version</label>
+                  <div class="col-sm-6">
+                    <input type="number" min="0" value="1" class="form-control hk-input-small" id="dmiv">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-2 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-1">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-3">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-3 hide">
+            <p><strong>Step 3 of 3: Review and Add Driver</strong></p>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver File Name</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Defines the JDBC driver the datasource should use."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Module Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="The name of the module the driver was loaded from, if it was loaded from the module path."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">com.mysql</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Class</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">drivername</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver Major Version</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">3</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver Minor Version</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">1</span>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-3 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-2">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-4">Add</button>
+          </div>
+
+          <div class="modal-body hk-4 hide">
+            <p><strong>Confirm - Delete Driver</strong></p>
+            <div class="alert alert-success">
+              <span class="pficon pficon-ok"></span>
+              <strong>You have successfully added driverfile.jar</strong>
+            </div>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver File Name</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Defines the JDBC driver the datasource should use."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Module Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="The name of the module the driver was loaded from, if it was loaded from the module path."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">com.mysql</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Class</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">drivername</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver Major Version</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">3</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver Minor Version</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">1</span>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-4 hide">
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-5">Exit</button>
+          </div>
+
+          <div class="modal-body hk-5 hide">
+            <p><strong>Confirm - Delete Driver</strong></p>
+            <div class="alert alert-danger">
+              <span class="pficon pficon-error-circle-o"></span>
+              <strong>Error: Driver file installation failed.</strong>
+            </div>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver File Name</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Defines the JDBC driver the datasource should use."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">driverfile.jar</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Module Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="The name of the module the driver was loaded from, if it was loaded from the module path."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">com.mysql</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label"><span class="hk-required">*</span> Driver Class</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">drivername</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver Major Version</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">3</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Driver Minor Version</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">1</span>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-5 hide">
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-2">&#60; Back</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Exit</button>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- #modal-jbdc-drivers -->
+
+
+    <!-- Modal Add Datasource -->
+
+    <div class="modal fade" id="modal-add-datasource" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">Add Datasource</h4>
+          </div>
+
+          <div class="modal-body hk-1">
+            <p><strong>Step 1 of 5: Datasource Type</strong></p>
+            <form class="hk-form-vertical">
+              <div class="form-group">
+                <label>Select XA or Non-XA Datasource</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="datasource-type" checked>
+                    XA Datasource
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="XA datasources are used by applications whose transactions are distributed accross multiple databases."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="datasource-type">
+                    Non-XA Datasource
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Non-XA datasources are used for applications which do not use transactions, or applications which use transactions with a single database."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Choose Datasource Type</label>
+                <div>
+                  <select class="selectpicker">
+                    <option>Custom</option>
+                    <option>PostgreSQL XA Datasource</option>
+                    <option>MySQL XA Datasource</option>
+                    <option>Oracle XA Datasource</option>
+                    <option>Microsoft SQLServer XA Datasource</option>
+                    <option>IBM DB2 XA Datasource</option>
+                    <option>Sybase XA Datasource</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer hk-1">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-2">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-2 hide">
+            <p><strong>Step 2 of 5: Datasource Attributes - Custom</strong></p>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="name">Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="name" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group has-error">
+                  <label class="col-sm-3 control-label" for="jndi"><span class="hk-required">*</span> JNDI  Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Specifies the JNDI Name for the datasource."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <input type="text" id="jndi" class="form-control" value="java:/">
+                    <span class="help-block">JNDI Name has to start with 'java:/' or 'java:boss/'</span>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-2 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-1">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-3">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-3 hide">
+            <p><strong>Step 3 of 5: Datasource Driver</strong></p>
+            <p>To connect to a datasource, your datasource vendor's drivers need to be installed and configured.</p>
+            <p>Add a new driver of select from an existing one.</p>
+            <div class="btn-table-list-container">
+              <table class="table hk-table-list hk-table-select">
+                <tbody>
+                  <tr>
+                    <td class="hk-td-radio">
+                      <input type="radio" name="driver"/>
+                    </td>
+                    <td>
+                      <i class="fa fa-plus"></i> Add Driver
+                    </td>
+                    <td class="hk-actions-two">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="hk-td-radio">
+                      <input type="radio" name="driver"/>
+                    </td>
+                    <td>
+                      Driver Name One
+                    </td>
+                    <td class="hk-actions-two">
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View"><i class="fa fa-eye"></i></button>
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="Remove"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                  </tr>
+                  <tr class="link">
+                    <td class="hk-td-radio">
+                      <input type="radio" name="driver"/>
+                    </td>
+                    <td>
+                      Driver Name Two
+                    </td>
+                    <td class="hk-actions-two">
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View"><i class="fa fa-eye"></i></button>
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="Remove"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer hk-3 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-2">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-4">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-4 hide">
+            <p><strong>Step 4 of 5: XA Properties</strong></p>
+            <p>Each property is identified by the name attribute and the property value is given by the xa-datasource-property element content.</p>
+            <form>
+              <table class="table hk-table-list">
+                <thead>
+                  <tr>
+                    <th>
+                      Name Attribute <a href="#" class="hk-btn-icon" data-toggle="popover" data-html="true" data-placement="top" data-content="Each property is identified by the name attribute."><i class="fa fa-question-circle"></i></a>
+                    </th>
+                    <th>
+                      Property Value <a href="#" class="hk-btn-icon" data-toggle="popover" data-html="true" data-placement="top" data-content="Specifies a property value to assign to the XADataSource implementation class."><i class="fa fa-question-circle"></i></a>
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control">
+                    </td>
+                    <td class="hk-actions-one">
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="Remove"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Add Property</td>
+                    <td></td>
+                    <td class="hk-actions-one">
+                      <button class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="Add"><i class="fa fa-plus"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <div class="modal-footer hk-4 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-3">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-5">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-5 hide">
+            <p><strong>Step 5 of 5: Connection Settings</strong></p>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="un">User  Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="un" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="drn"><span class="hk-required">*</span> Driver Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="drn" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="sd">Security Domain
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Specify the security domain wich defines the javax.security.auth."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <input type="text" id="sd" class="form-control">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-5 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-4">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-6">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-6 hide">
+            <p><strong>Confirm - Create and Test Datasource</strong></p>
+            <div class="alert alert-danger">
+              <span class="pficon pficon-error-circle-o"></span>
+              <strong>Datasource Connection Failed.</strong><br/>
+              You may re-check the data that you provided and then try again, or cancel. Cancel will permanently delete the failed datasource.
+            </div>
+            <form class="form-horizontal">
+              <fieldset>
+                <p class="hk-required-info pull-right"><span class="hk-required">*</span> Required field</p>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">User Name</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">Bob</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label"><span class="hk-required">*</span> Driver Name</label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">drivername</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Security Domain
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Specify the security domain wich defines the javax.security.auth."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">com.mysql</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Datasource Name
+                    <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Specify the security domain wich defines the javax.security.auth."><i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-6">
+                    <span class="hk-input-text">My Datasource</span>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer hk-6 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-5">&#60; Back</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Create and Test</button>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- #modal-add-datasource -->
+
+  </body>
+</html>

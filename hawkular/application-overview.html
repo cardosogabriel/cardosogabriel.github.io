@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="bower_components/patternfly/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script>
+      // Initialize Datatables
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li>
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li class="active">
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hk-application-overview">
+      <div class="hk-screen-top-nav">
+        <div class="container">
+          <div class="row hk-top-row">
+            <div class="col-xs-6">
+              <a href="applications-list.html" class="back">&laquo; All Application Servers</a>
+            </div>
+            <div class="col-xs-6">
+              <div class="hk-date-range dropdown">
+                <i class="fa fa-calendar"></i>
+                <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+                <div class="dropdown-menu infotip bottom-right">
+                  <div class="arrow"></div>
+                  <div class="dropdown-menu-content">
+                    <span class="hk-label">Last</span>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1h</button>
+                      <button type="button" class="btn btn-default">12h</button>
+                      <button type="button" class="btn btn-default">Day</button>
+                      <button type="button" class="btn btn-default active">Week</button>
+                      <button type="button" class="btn btn-default">Month</button>
+                      <button type="button" class="btn btn-default">Year</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-heading">
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <h1>Eavy Machine</h1>
+          </div>
+          <div class="hk-nav-tabs-container">
+            <ul class="nav nav-tabs nav-tabs-pf">
+              <li class="active"><a href="application-overview.html" class="hk-alerts">Overview</a></li>
+              <li><a href="application-jvm.html" class="hk-jvm">JVM <span class="label label-danger label-alert pull-right">3</span></a></li>
+              <li><a href="application-web.html" class="hk-web">Web</a></li>
+              <li><a href="application-deployments.html" class="hk-deployments">Deployments</a></li>
+              <li><a href="application-datasources.html" class="hk-datasources">Datasources</a></li>
+              <li><a href="#" class="hk-datasources">Transactions</a></li>
+              <li><a href="#" class="hk-datasources">JMS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- .screen-top-nav -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
+
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading">
+                <h2>Server Details</h2>
+              </div>
+              <div class="panel-body">
+                <dl class="dl-horizontal">
+                  <dt>Type</dt>
+                  <dd><span class="hk-open">Wildfly</span></dd>
+                  <dt>Version</dt>
+                  <dd>8.1.0</dd>
+                  <dt>Status</dt>
+                  <dd>Running <i class="fa fa-arrow-up"></i></dd>
+                  <dt>Host</dt>
+                  <dd class="hk-word-break">tomy.corp.redhat.com</dd>
+                  <dt>Labels</dt>
+                  <dd>
+                    <span class="label label-default">Key: Value</span> <span class="label label-default">System: Defined</span> <span class="label label-primary">User: Defined</span> <button class="btn btn-link"><i class="fa fa-plus-circle"></i>Add Label </button>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading">
+                <h2>Notifications</h2>
+              </div>
+              <div class="panel-body">
+                <div class="hk-box-v-item hk-action">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-plus-circle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-heading"><a href="#">Add a Deployment</a></div>
+                      <div class="hk-info">Add and deploy an application.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item hk-action">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-plus-circle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-heading"><a href="#">Add a Datasource</a></div>
+                      <div class="hk-info">Add and JDBC Datasource and Driver.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item hk-action">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-download"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-heading"><a href="#">Export a JBoss Diagnostics Report</a></div>
+                      <div class="hk-info">Create a report document that can be shared with others.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 col-md-8">
+
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading clearfix">
+                <h2 class="pull-left">Status Overview</h2>
+                <span class="hk-time-range pull-right">10 Jun 2015, 12:13 - 13:13</span>
+              </div>
+              <div class="panel-body hk-dashboard">
+                <div class="col-md-6 hk-dashboard-block">
+                  <div class="hk-data-info">
+                    <div class="hk-data">25</div>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-alerts.png" alt="chart-dash-datasources">
+                    </div>
+                  </div>
+                  <div class="hk-block-title">Alerts</div>
+                </div>
+                <div class="col-md-6 hk-dashboard-block">
+                  <div class="hk-data-info">
+                    <div class="hk-data">62</div>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-datasources.png" alt="chart-dash-datasources">
+                    </div>
+                  </div>
+                  <div class="hk-block-title">Used Datasource Connections</div>
+                </div>
+                <div class="col-md-6 hk-dashboard-block">
+                  <div class="hk-data-info">
+                    <div class="hk-data">824</div>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-web.png" alt="chart-dash-web">
+                    </div>
+                  </div>
+                  <div class="hk-block-title">JVM (Average Heap Usage per MB)</div>
+                </div>
+                <div class="col-md-6 hk-dashboard-block">
+                  <div class="hk-data-info">
+                    <div class="hk-data">10</div>
+                    <div class="hk-info">
+                      <p class="card-pf-aggregate-status-notifications">
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-times-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="Failed"></i>1
+                        </span>
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-square" data-toggle="tooltip" data-placement="top" data-original-title="Stopped"></i>1
+                        </span>
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-check-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="OK"></i>8
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="hk-block-title">JVM (Average Heap Usage per MB)</div>
+                </div>
+                <div class="col-md-6 hk-dashboard-block">
+                  <div class="hk-data-info">
+                    <div class="hk-data">842</div>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-web.png" alt="chart-dash-web">
+                    </div>
+                  </div>
+                  <div class="hk-block-title">Web Sessions</div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- .col-md-6 -->
+
+          <div class="col-lg-3 col-md-8">
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading">
+                <h2>Server Alerts</h2>
+              </div>
+              <div class="panel-body">
+
+                <div class="hk-box-v-item">
+                  <div class="checkbox hk-display-alerts">
+                    <label>
+                      <input type="checkbox"> Display resolved alerts
+                    </label>
+                  </div>
+                </div>
+
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle hk-warning"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Open</div>
+                      <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading hk-acknowledged">Acknowledged</div>
+                      <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .container -->
+    </div>
+  </body>
+</html>
