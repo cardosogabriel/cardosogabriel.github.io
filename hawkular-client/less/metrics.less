@@ -43,7 +43,7 @@ body {
     width: calc(~"100% - 40px");
   }
 
-  @media (min-width: 1401px) {
+  @media (min-width: 1441px) {
     width: 1400px;
   }
 }
@@ -162,6 +162,14 @@ a:hover {
   word-break: break-all;
 }
 
+.hk-warning {
+  color: @brand-warning;
+}
+
+.hk-success {
+  color: @brand-success;
+}
+
 
 // Alerts
 
@@ -222,7 +230,7 @@ a:hover {
 .btn-link, a {
 
   .fa {
-    color: @link-color;
+    color: @gray;
     vertical-align: text-bottom;
   }
 
@@ -710,6 +718,10 @@ p + .form-horizontal {
   margin-left: @grid-gutter-width/8;
 }
 
+.form-actions {
+  text-align: right;
+}
+
 
 // Icons
 
@@ -769,10 +781,6 @@ a:hover .fa-spinner {
 
 &.fa-times-circle-o {
   color: @brand-danger;
-}
-
-.hk-warning {
-  color: @brand-warning;
 }
 
 
@@ -879,6 +887,11 @@ a:hover .fa-spinner {
       font-weight: 600;
     }
   }
+
+  p.primary-message {
+    font-size: ceil(@font-size-base + 1);
+    font-weight: bold;
+  }
 }
 
 #modal-jbdc-drivers .btn-table-list-container {
@@ -942,6 +955,39 @@ a:hover .fa-spinner {
 .hk-form-editable {
   .hk-read-only {
     display: none;
+  }
+}
+
+
+// Lists
+
+.hk-comment-list {
+  padding-left: 0;
+
+  li {
+    border-top: 1px solid @list-group-border;
+    list-style: none;
+    padding: @grid-gutter-width/4;
+    padding-bottom: 0;
+
+    .pficon {
+      color: @gray-light;
+      font-size: ceil(@font-size-base + 2);
+      padding-right: 5px;
+    }
+
+    .hk-author {
+      font-weight: bold;
+      padding-right: 5px;
+    }
+
+    .hk-date {
+      color: @gray-light;
+    }
+
+    p {
+      padding: 10px 0;
+    }
   }
 }
 
@@ -1508,7 +1554,7 @@ a:hover .fa-spinner {
 
   &.table > thead > tr > th,
   &.table > tbody > tr > td {
-    padding: @grid-gutter-width/3 @grid-gutter-width/2;
+    padding: @grid-gutter-width/3 @grid-gutter-width/4;
   }
 
   .fa-flag {
@@ -1602,7 +1648,7 @@ td .fa-comment-o {
 #toast-container > .toast-error:after {
   position: absolute;
   left: 16px;
-  top: 16px;
+  top: 10px;
   font-family: "FontAwesome";
   font-size: 20px;
 }
@@ -1938,7 +1984,7 @@ section {
 
 .hk-collapsible-area {
   display: block!important;
-  max-height: 1120px;
+  max-height: 1320px;
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease;
 	-moz-transition: max-height 0.3s ease;
