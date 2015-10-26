@@ -23,20 +23,31 @@ body {
 }
 
 .row { // reducing space between boxes
-  > .col-lg-9 + .col-lg-3 {
-    @media (min-width: @screen-lg-min) {
+
+  @media (min-width: @screen-lg-min) {
+    > .col-lg-9 + .col-lg-3 {
       padding-left: 0;
     }
-  }
 
-  > .col-lg-3 + .col-lg-6 {
-    @media (min-width: @screen-lg-min) {
+    > .col-lg-3 + .col-lg-6 {
       padding-right: 0;
     }
   }
 
-  > .col-md-4 {
-    padding-right: 0;
+  @media (max-width: @screen-md-max) {
+    > .col-md-8 + .col-md-4 {
+      padding-left: 0;
+    }
+
+    > .col-md-4:first-child {
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: @screen-md-min) {
+    > .col-md-9 + .col-md-3 {
+      padding-left: 0;
+    }
   }
 }
 
@@ -60,6 +71,10 @@ body {
 h1 {
   margin-bottom: @grid-gutter-width/2;
   margin-top: @grid-gutter-width/4*3;
+
+  &.offset-panels {
+    margin-bottom: @grid-gutter-width/4*3;
+  }
 }
 
 h2 {
@@ -102,6 +117,15 @@ h1, h2 {
 
 .hk-input-text {
   line-height: 1.66666667;
+}
+
+ul.hk-input-text {
+  line-height: 1.4;
+  padding-top: 2px;
+
+  li:not(:last-child) {
+    padding-bottom: 5px;
+  }
 }
 
 .dl-horizontal {
@@ -721,10 +745,10 @@ p + .form-horizontal {
   margin-left: @grid-gutter-width/8;
 }
 
-.form-actions {
-  text-align: right;
+.hk-form-actions-separator {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 15px;
 }
-
 
 // Icons
 
