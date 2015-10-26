@@ -95,6 +95,7 @@
           </div>
         </div>
         <div class="hk-heading">
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <h1>Eavy Machine</h1>
         </div>
         <div class="hk-nav-tabs-container">
@@ -112,127 +113,141 @@
     </div><!-- .screen-top-nav -->
 
     <div class="container">
-      <div class="hk-screen-content">
+      <section id="hk-deployments" class="hk-tab-content">
+        <div class="row">
 
-        <section id="hk-deployments" class="hk-tab-content">
+          <div class="col-lg-9">
 
-          <h3 class="pull-left">Deployment Status</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
-          <div class="panel panel-default hk-summary">
-            <div class="row">
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">10 <i class="fa fa-flag"></i></span>
-                <span class="hk-item">Deployment Alerts</span>
+            <h3 class="pull-left">Deployment Status</h3>
+            <div class="panel panel-default hk-summary">
+              <div class="row">
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">10 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Deployment Alerts</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">2 Failed</span>
+                  <span class="hk-item">Deployments</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">3 Enabled</span>
+                  <span class="hk-item">Deployments</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">4 Disabled</span>
+                  <span class="hk-item">Deployments</span>
+                </div>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">2 Failed</span>
-                <span class="hk-item">Deployments</span>
+            </div>
+
+            <div class="hk-info-top clearfix">
+            <h3>Deployments</h3>
+              <div class="actions-table">
+                <button class="btn btn-primary add" type="button" data-toggle="modal" data-target="#add-deployment">Add Deployment</button>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    Actions
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Enable</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Disable</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Redeploy</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Undeploy</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+                  </ul>
+                </div>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">3 Enabled</span>
-                <span class="hk-item">Deployments</span>
+            </div>
+
+            <table class="datatable table table-striped table-bordered hk-table-select">
+              <thead>
+                <tr>
+                  <th><input type="checkbox"></th>
+                  <th>Current State</th>
+                  <th>Deployments <span class="label label-default label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Total alerts">10</span></th>
+                  <th>Enabled/Disabled</th>
+                  <th>Computed Health</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="state"><i class="fa fa-square"></i> Stopped</td>
+                  <td><strong>A new application v1.0.0</strong> (anewapplication.war) <span class="label label-danger label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Deployment alerts">1</span></td>
+                  <td>Disabled</td>
+                  <td class="warning">Fair</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="state"><i class="fa fa-check-circle-o"></i> OK</td>
+                  <td><strong>application.war</strong> (anewapplication.war) with a huge text to simulate how does this work when the deployment has a name that make all columns shrink.</td>
+                  <td>Enabled</td>
+                  <td class="success">Good</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="state"><i class="fa fa-times-circle-o"></i> Failed</td>
+                  <td><strong>other deployment v2.1</strong> (otherapplication.war) <span class="label label-danger label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Deployment alerts">9</span></td>
+                  <td>Enabled</td>
+                  <td class="danger">Poor</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="state"><i class="fa fa-times-circle-o"></i> Failed</td>
+                  <td><strong>other deployment v2.1</strong> (otherapplication.war)</td>
+                  <td>Enabled</td>
+                  <td class="danger">Poor</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="col-lg-3">
+            <div class="hk-info-top clearfix">
+              <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-deployments-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+            </div>
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading clearfix">
+                <h2 class="pull-left">Deployment Alerts</h2>
+                <span class="label label-default pull-right">3</span>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">4 Disabled</span>
-                <span class="hk-item">Deployments</span>
+              <div class="panel-body">
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle hk-warning"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Deployment Alerts <span>(2 of 10)</span></button></h3>
-            <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-deployments-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-          </div>
-          <div class="clearfix">
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                12 Feb, 5:35 PM
-              </div>
-              <div class="hk-event">
-                <strong>Alert Summary</strong>: alert details.
-              </div>
-            </div>
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                11 Feb, 3:53 PM
-              </div>
-              <div class="hk-event">
-                <strong>Alert Summary</strong>: alert details.
-              </div>
-            </div>
-          </div>
-
-          <div class="hk-info-top clearfix">
-          <h3>Deployments</h3>
-            <div class="actions-table">
-              <button class="btn btn-primary add" type="button" data-toggle="modal" data-target="#add-deployment">Add Deployment</button>
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                  Actions
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Enable</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Disable</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Redeploy</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Undeploy</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <table class="datatable table table-striped table-bordered hk-table-select">
-            <thead>
-              <tr>
-                <th><input type="checkbox"></th>
-                <th>Current State</th>
-                <th>Deployments <span class="label label-default label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Total alerts">10</span></th>
-                <th>Enabled/Disabled</th>
-                <th>Computed Health</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td class="state"><i class="fa fa-square"></i> Stopped</td>
-                <td><strong>A new application v1.0.0</strong> (anewapplication.war) <span class="label label-danger label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Deployment alerts">1</span></td>
-                <td>Disabled</td>
-                <td class="warning">Fair</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td class="state"><i class="fa fa-check-circle-o"></i> OK</td>
-                <td><strong>application.war</strong> (anewapplication.war) with a huge text to simulate how does this work when the deployment has a name that make all columns shrink.</td>
-                <td>Enabled</td>
-                <td class="success">Good</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td class="state"><i class="fa fa-times-circle-o"></i> Failed</td>
-                <td><strong>other deployment v2.1</strong> (otherapplication.war) <span class="label label-danger label-alert pull-right" data-toggle="tooltip" data-placement="top" title="Deployment alerts">9</span></td>
-                <td>Enabled</td>
-                <td class="danger">Poor</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td class="state"><i class="fa fa-times-circle-o"></i> Failed</td>
-                <td><strong>other deployment v2.1</strong> (otherapplication.war)</td>
-                <td>Enabled</td>
-                <td class="danger">Poor</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </section><!-- .deployments -->
-
-      </div>
+        </div>
+      </section>
     </div><!-- .container -->
 
 

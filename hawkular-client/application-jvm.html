@@ -95,6 +95,7 @@
           </div>
         </div>
         <div class="hk-heading">
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <h1>Eavy Machine</h1>
         </div>
         <div class="hk-nav-tabs-container">
@@ -112,81 +113,95 @@
     </div><!-- .screen-top-nav -->
 
     <div class="container">
-      <div class="hk-screen-content">
+      <section id="hk-jvm" class="hk-tab-content">
+        <div class="row">
 
-        <section id="hk-jvm" class="hk-tab-content">
+          <div class="col-lg-9">
 
-          <h3 class="pull-left">JVM Status</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
-          <div class="panel panel-default hk-summary">
-            <div class="row">
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">10 <i class="fa fa-flag"></i></span>
-                <span class="hk-item">JVM Alerts</span>
+            <h3 class="pull-left">JVM Status</h3>
+            <div class="panel panel-default hk-summary">
+              <div class="row">
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">10 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">JVM Alerts</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">1270 MB</span>
+                  <span class="hk-item">Average Heap Usage</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">5 s</span>
+                  <span class="hk-item">Last Garbage Collection (Duration)</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">2000 MB</span>
+                  <span class="hk-item">Maximum Heap</span>
+                </div>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">1270 MB</span>
-                <span class="hk-item">Average Heap Usage</span>
+            </div>
+
+            <div class="hk-info-top clearfix">
+              <h3 class="pull-left">JVM Metrics</h3>
+              <div class="hk-update pull-right">
+                <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">5 s</span>
-                <span class="hk-item">Last Garbage Collection (Duration)</span>
+            </div>
+
+            <div class="panel panel-default hk-graph">
+              <h2>JVM Heap Usage</h2>
+              <div class="hk-legend text-left">
+                <span><i class="fa fa-circle hk-primary"></i>Used</span>
+                <span><i class="fa fa-circle hk-orange"></i>Maximum</span>
+                <span><i class="fa fa-circle hk-gray"></i>Commited</span>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">2000 MB</span>
-                <span class="hk-item">Maximum Heap</span>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3">
+            <div class="hk-info-top clearfix">
+              <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-jvm-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+            </div>
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading clearfix">
+                <h2 class="pull-left">JVM Alerts</h2>
+                <span class="label label-default pull-right">3</span>
+              </div>
+              <div class="panel-body">
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle hk-warning"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> JVM Alerts <span>(2 of 10)</span></button></h3>
-            <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-jvm-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-          </div>
-          <div class="clearfix">
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                12 Feb, 5:35 PM
-              </div>
-              <div class="hk-event">
-                Server <strong>down</strong> for 4 minutes (until 5:39 PM).
-              </div>
-            </div>
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                11 Feb, 3:53 PM
-              </div>
-              <div class="hk-event">
-                <strong>Response time</strong> was above the threshold for 7 minutes (until 4:00 PM).
-              </div>
-            </div>
-          </div>
-
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left">JVM Metrics</h3>
-            <div class="hk-update pull-right">
-              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
-            </div>
-          </div>
-
-          <div class="panel panel-default hk-graph">
-            <h2>JVM Heap Usage</h2>
-            <div class="hk-legend text-left">
-              <span><i class="fa fa-circle hk-primary"></i>Used</span>
-              <span><i class="fa fa-circle hk-orange"></i>Maximum</span>
-              <span><i class="fa fa-circle hk-gray"></i>Commited</span>
-            </div>
-          </div>
-
-        </section><!-- .jvm-metrics -->
-
-      </div>
+        </div>
+      </section>
     </div><!-- .container -->
 
 

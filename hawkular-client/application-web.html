@@ -95,6 +95,7 @@
           </div>
         </div>
         <div class="hk-heading">
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
           <h1>Eavy Machine</h1>
         </div>
         <div class="hk-nav-tabs-container">
@@ -112,117 +113,131 @@
     </div><!-- .screen-top-nav -->
 
     <div class="container">
-      <div class="hk-screen-content">
+      <section id="hk-web" class="hk-tab-content">
+        <div class="row">
 
-        <section id="hk-web" class="hk-tab-content">
+          <div class="col-lg-9">
 
-          <h3 class="pull-left">Web Status</h3>
-          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
-          <div class="panel panel-default hk-summary">
-            <div class="row">
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">10 <i class="fa fa-flag"></i></span>
-                <span class="hk-item">Alerts</span>
+            <h3 class="pull-left">Web Status</h3>
+            <div class="panel panel-default hk-summary">
+              <div class="row">
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">10 <i class="fa fa-flag"></i></span>
+                  <span class="hk-item">Alerts</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">800</span>
+                  <span class="hk-item">Active Sessions (Average)</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">700 ms</span>
+                  <span class="hk-item">Response Time (Average)</span>
+                </div>
+                <div class="col-sm-3 hk-summary-item">
+                  <span class="hk-data">1005</span>
+                  <span class="hk-item">Threads Servicing Requests (Avg.)</span>
+                </div>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">800</span>
-                <span class="hk-item">Active Sessions (Average)</span>
+            </div>
+
+            <div class="hk-info-top clearfix">
+              <h3 class="pull-left">Web Metrics</h3>
+              <div class="hk-update pull-right">
+                <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">700 ms</span>
-                <span class="hk-item">Response Time (Average)</span>
+            </div>
+
+            <div class="panel panel-default hk-graph">
+              <h2>Web: Sessions, Requests and Response Time</h2>
+              <div class="row hk-legend text-left">
+                <div class="col-md-3 col-lg-2">
+                  <h4>Sessions</h4>
+                  <div class="hk-graphselector hk-blue">
+                    <input type="checkbox" id="max-active" checked="checked">
+                    <label for="max-active"><span>Max Active Sessions</span></label>
+                  </div>
+                  <div class="hk-graphselector hk-orange">
+                    <input type="checkbox" id="expired">
+                    <label for="expired"><span>Expired Sessions</span></label>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-2 margin-heading">
+                  <div class="hk-graphselector hk-green">
+                    <input type="checkbox" id="active">
+                    <label for="active"><span>Active Sessions</span></label>
+                  </div>
+                  <div class="hk-graphselector hk-red">
+                    <input type="checkbox" id="rejected">
+                    <label for="rejected"><span>Rejected Sessions</span></label>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                  <h4>Container</h4>
+                  <div class="hk-graphselector hk-purple">
+                    <input type="checkbox" id="request">
+                    <label for="request"><span>Request Threads</span></label>
+                  </div>
+                  <div class="hk-graphselector hk-yellow">
+                    <input type="checkbox" id="pending">
+                    <label for="pending"><span>Pending Requests</span></label>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                  <h4>Requests</h4>
+                  <div class="hk-graphselector hk-gray">
+                    <input type="checkbox" id="response">
+                    <label for="response"><span>Response Time</span></label>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-3 hk-summary-item">
-                <span class="hk-data">1005</span>
-                <span class="hk-item">Threads Servicing Requests (Avg.)</span>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3">
+            <div class="hk-info-top clearfix">
+              <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-web-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
+            </div>
+            <div class="panel panel-default clearfix">
+              <div class="panel-heading clearfix">
+                <h2 class="pull-left">Web Alerts</h2>
+                <span class="label label-default pull-right">3</span>
+              </div>
+              <div class="panel-body">
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle hk-warning"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left" data-toggle="tooltip" data-placement="top" title="Expand/collapse" data-original-title="Expand/collapse"><button class="btn btn-link hk-trigger"><i class="fa fa-plus-square-o"></i> Web Alerts <span>(2 of 10)</span></button></h3>
-            <span class="hk-settings pull-left"><a href="#" data-toggle="modal" data-target="#modal-web-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-          </div>
-          <div class="clearfix">
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                12 Feb, 5:35 PM
-              </div>
-              <div class="hk-event">
-                <strong>408 Request Timeout</strong>: For some reason the server took too much time processing your request.
-              </div>
-            </div>
-            <div class="panel panel-default alert alert-danger">
-              <div class="hk-alert-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="hk-date">
-                11 Feb, 3:53 PM
-              </div>
-              <div class="hk-event">
-                <strong>408 Request Timeout</strong>: For some reason the server took too much time processing your request.
-              </div>
-            </div>
-          </div>
-
-          <div class="hk-info-top clearfix">
-            <h3 class="pull-left">Web Metrics</h3>
-            <div class="hk-update pull-right">
-              <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
-            </div>
-          </div>
-
-          <div class="panel panel-default hk-graph">
-            <h2>Web: Sessions, Requests and Response Time</h2>
-            <div class="row hk-legend text-left">
-              <div class="col-md-3 col-lg-2">
-                <h4>Sessions</h4>
-                <div class="hk-graphselector hk-blue">
-                  <input type="checkbox" id="max-active" checked="checked">
-                  <label for="max-active"><span>Max Active Sessions</span></label>
-                </div>
-                <div class="hk-graphselector hk-orange">
-                  <input type="checkbox" id="expired">
-                  <label for="expired"><span>Expired Sessions</span></label>
-                </div>
-              </div>
-              <div class="col-md-3 col-lg-2 margin-heading">
-                <div class="hk-graphselector hk-green">
-                  <input type="checkbox" id="active">
-                  <label for="active"><span>Active Sessions</span></label>
-                </div>
-                <div class="hk-graphselector hk-red">
-                  <input type="checkbox" id="rejected">
-                  <label for="rejected"><span>Rejected Sessions</span></label>
-                </div>
-              </div>
-              <div class="col-md-3 col-lg-2">
-                <h4>Container</h4>
-                <div class="hk-graphselector hk-purple">
-                  <input type="checkbox" id="request">
-                  <label for="request"><span>Request Threads</span></label>
-                </div>
-                <div class="hk-graphselector hk-yellow">
-                  <input type="checkbox" id="pending">
-                  <label for="pending"><span>Pending Requests</span></label>
-                </div>
-              </div>
-              <div class="col-md-3 col-lg-2">
-                <h4>Requests</h4>
-                <div class="hk-graphselector hk-gray">
-                  <input type="checkbox" id="response">
-                  <label for="response"><span>Response Time</span></label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </section><!-- .web -->
-
-      </div>
+        </div>
+      </section><!-- .web -->
     </div><!-- .container -->
 
 
