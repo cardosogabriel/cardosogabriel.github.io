@@ -31,6 +31,7 @@ body {
 
     > .col-lg-3 + .col-lg-6 {
       padding-right: 0;
+      padding-left: 0;
     }
   }
 
@@ -750,6 +751,18 @@ p + .form-horizontal {
   padding-top: 15px;
 }
 
+.hk-selected-container {
+  border: 1px solid @list-group-border;
+  max-height: 64px;
+  overflow: scroll;
+  padding: 0 5px 5px 5px;
+}
+
+.form-group ul {
+  margin-bottom: 0;
+}
+
+
 // Icons
 
 .fa .meaning {
@@ -849,11 +862,11 @@ a:hover .fa-spinner {
 
     &:first-child {
       margin-top: @grid-gutter-width/4;
+    }
 
-      legend {
-        border-top: none;
-        padding-top: 0;
-      }
+    fieldset:first-child legend {
+      border-top: none;
+      padding-top: 0;
     }
   }
 
@@ -987,6 +1000,10 @@ a:hover .fa-spinner {
   .hk-read-only {
     display: none;
   }
+}
+
+.modal select[multiple] {
+  height: 180px;
 }
 
 
@@ -1529,7 +1546,7 @@ a:hover .fa-spinner {
   z-index: 10;
   right: 5px;
 
-  .btn:first-child {
+   > .btn:first-child {
     margin-right: 8px;
   }
 }

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="bower_components/patternfly/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script>
+      // Initialize Datatables
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active">
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li>
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li>
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hk-alert-center">
+
+      <div class="hk-screen-top-nav">
+        <div class="container">
+          <div class="row hk-top-row">
+            <div class="col-xs-6 col-xs-offset-6">
+              <div class="hk-date-range dropdown">
+                <i class="fa fa-calendar"></i>
+                <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+                <div class="dropdown-menu infotip bottom-right">
+                  <div class="arrow"></div>
+                  <div class="dropdown-menu-content">
+                    <span class="hk-label">Last</span>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1h</button>
+                      <button type="button" class="btn btn-default">12h</button>
+                      <button type="button" class="btn btn-default">Day</button>
+                      <button type="button" class="btn btn-default active">Week</button>
+                      <button type="button" class="btn btn-default">Month</button>
+                      <button type="button" class="btn btn-default">Year</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-heading">
+            <h1 class="text-center">Alert Center</h1>
+          </div>
+          <div class="hk-nav-tabs-container">
+            <ul class="nav nav-tabs nav-tabs-pf">
+              <li><a href="alert-center.html" class="hk-alerts">Alerts</a></li>
+              <li class="active"><a href="alert-center-definitions.html" class="hk-alerts">Definitions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hk-info-top clearfix">
+          <h3 class="pull-left">Triggers (3)</h3>
+          <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+        </div>
+        <div class="hk-table-container">
+          <div class="hk-actions-table-search">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Display Resolved Alerts
+              </label>
+            </div>
+          </div>
+          <div class="hk-actions-table">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-create-definition">Create Definition</button>
+            <div class="dropdown pull-right">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                Change State
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Acknowledge</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Resolve</a></li>
+              </ul>
+            </div>
+          </div>
+          <table class="datatable table table-bordered hk-table-alerts hk-table-detailed hk-table-select">
+            <thead>
+              <tr>
+                <th><input type="checkbox"/></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Resource</th>
+                <th>Severity</th>
+                <th>State</th>
+                <th>Notifications</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hk-alert-resolved">
+                <td><input type="checkbox"/></td>
+                <td>http://www.zimbra.com</td>
+                <td>Availability for URL http://www.zimbra.com</td>
+                <td>http://www.zimbra.com</td>
+                <td>Critical</td>
+                <td>Enabled</td>
+                <td>1 <i class="fa fa-envelope-o"></i></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
+              </tr>
+              <tr class="hk-alert-resolved">
+                <td><input type="checkbox"/></td>
+                <td>http://www.zimbra.com</td>
+                <td>Availability for URL http://www.zimbra.com</td>
+                <td>http://www.zimbra.com</td>
+                <td>Critical</td>
+                <td>Enabled</td>
+                <td>1 <i class="fa fa-envelope-o"></i></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
+              </tr>
+              <tr class="hk-alert-resolved">
+                <td><input type="checkbox"/></td>
+                <td>http://www.zimbra.com</td>
+                <td>Availability for URL http://www.zimbra.com</td>
+                <td>http://www.zimbra.com</td>
+                <td>Critical</td>
+                <td>Enabled</td>
+                <td>1 <i class="fa fa-envelope-o"></i></td>
+                <td><a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- .container -->
+
+    <!-- Modal Create Definition -->
+
+    <div class="modal fade" id="modal-create-definition" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">Create Alert Definition</h4>
+          </div>
+
+          <div class="modal-body hk-1">
+            <h3>Resource Selection</h3>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="resource">Resource Type</label>
+                <div class="col-sm-6">
+                  <select class="selectpicker" id="resource">
+                    <option>Wildfly Application Servers</option>
+                    <option>EAP</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="filter">Filter by</label>
+                <div class="col-sm-6">
+                  <input type="text" id="filter" class="form-control" placeholder="Filter by text in the resource path">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="filter">Select resources</label>
+                <div class="col-sm-9">
+                  <select multiple class="form-control hk-select-multiple">
+                    <option>Resource 1</option>
+                    <option>Resource 2</option>
+                    <option>Resource 3</option>
+                    <option>Resource 4</option>
+                    <option>Resource 5</option>
+                    <option>Resource 6</option>
+                    <option>Resource 7</option>
+                    <option>Resource 8</option>
+                    <option>Resource 9</option>
+                    <option>Resource 10</option>
+                    <option>Resource 11</option>
+                    <option>Resource 12</option>
+                    <option>Resource 13</option>
+                    <option>Resource 14</option>
+                    <option>Resource 15</option>
+                    <option>Resource 16</option>
+                    <option>Resource 17</option>
+                    <option>Resource 18</option>
+                    <option>Resource 19</option>
+                    <option>Resource 20</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer hk-1">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-2">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-2 hide">
+            <form class="form-horizontal">
+              <h3>Alert Conditions</h3>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Selected resources</label>
+                <div class="col-sm-9">
+                  <div class="hk-selected-container">
+                    <ul class="list-unstyled hk-input-text">
+                      <li>
+                        Resource 1
+                      </li>
+                      <li>
+                        Resource 2
+                      </li>
+                      <li>
+                        Resource 3
+                      </li>
+                      <li>
+                        Resource 4
+                      </li>
+                      <li>
+                        Resource 5
+                      </li>
+                      <li>
+                        Resource 6
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="conditions">Set conditions for</label>
+                <div class="col-sm-6">
+                  <select class="selectpicker" id="conditions">
+                    <option>JVM Heap Usage</option>
+                    <option>JVM Non-Heap Usage</option>
+                    <option>JVM Garbage Collection</option>
+                    <option>Web Sessions</option>
+                    <option>Datasource Connection Availability</option>
+                    <option>Datasource Responsiveness</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr/>
+
+              <!-- This section depends on what is selected above -->
+
+              <h3>JVM Alert Settings</h3>
+              <p>Configure conditions settings for Heap usage alerts and notifications.</p>
+
+              <fieldset>
+                <legend>Duration (major)</legend>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="major">Greater than</label>
+                  <div class="col-sm-5">
+                    <div class="input-group hk-input-small">
+                      <input type="number" min="0" value="200" class="form-control" id="major">
+                      <div class="input-group-addon">ms</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="onoffswitch pull-right">
+                      <input type="checkbox" id="major-switch" class="onoffswitch-checkbox" checked="checked">
+                      <label class="onoffswitch-label" for="major-switch">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Alert</legend>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Create Alert</label>
+                  <div class="col-sm-9">
+                    <div class="radio">
+                      <label for="every-time-g">
+                        <input type="radio" name="alert" id="every-time-g" value="option1" checked>
+                        Every time conditions are met.
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="greater-time-g">
+                        <input type="radio" name="alert" id="greater-time-g" value="option2">
+                        Only when conditions are met for greater than:
+                      </label>
+                    </div>
+                    <div class="input-group input-select indented">
+                      <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                      <select class="selectpicker">
+                        <option>seconds</option>
+                        <option selected="selected">minutes</option>
+                        <option>hours</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Notification</legend>
+                <p>Receive an email notification every time the conditions are met.</p>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="email-g">Email</label>
+                  <div class="col-sm-5">
+                    <input type="text" id="email-g" class="form-control" value="email@domain.com">
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="onoffswitch pull-right">
+                      <input type="checkbox" id="g-email-switch" class="onoffswitch-checkbox" checked="checked">
+                      <label class="onoffswitch-label" for="g-email-switch">
+                        <span class="onoffswitch-inner">
+                          <span class="onoffswitch-active ng-binding">ON</span>
+                          <span class="onoffswitch-inactive ng-binding">OFF</span>
+                        </span>
+                        <span class="onoffswitch-switch"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+            </form>
+          </div>
+          <div class="modal-footer hk-2 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-1">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-3">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-3 hide">
+            <h3>General Settings</h3>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Resources</label>
+                <div class="col-sm-9">
+                  <ul class="list-unstyled hk-input-text">
+                    <li>
+                      Resource 1
+                    </li>
+                    <li>
+                      Resource 2
+                    </li>
+                    <li>
+                      Resource 3
+                    </li>
+                    <li>
+                      Resource 4
+                    </li>
+                    <li>
+                      Resource 5
+                    </li>
+                    <li>
+                      Resource 6
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Conditions for</label>
+                <div class="col-sm-6">
+                  <span class="hk-input-text">JVM Heap</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="name">Alert Name</label>
+                <div class="col-sm-6">
+                  <input type="text" id="name" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="filter">Priority</label>
+                <div class="col-sm-9">
+                  <select class="selectpicker">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                    <option>Critical</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Initial State</label>
+                <div class="col-sm-9">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="status" checked>
+                      Enabled
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="status">
+                      Disabled
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer hk-3 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-2">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" data-dismiss="modal">Finish</button>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- #modal-add-datasource -->
+
+  </body>
+</html>
