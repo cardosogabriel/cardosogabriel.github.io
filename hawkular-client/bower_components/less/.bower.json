@@ -1,5 +1,6 @@
 {
   "name": "less",
+  "version": "2.3.1",
   "main": "dist/less.js",
   "ignore": [
     "**/.*",
@@ -22,15 +23,13 @@
     ".npmignore"
   ],
   "homepage": "https://github.com/less/less",
-  "version": "2.5.3",
-  "_release": "2.5.3",
+  "_release": "2.3.1",
   "_resolution": {
     "type": "version",
-    "tag": "v2.5.3",
-    "commit": "8381b13c3a22f643eac7c54ddfb6cbe70d76a1df"
+    "tag": "v2.3.1",
+    "commit": "11164596515245ab2ae6423c84a0920fb6ce36fb"
   },
   "_source": "git://github.com/less/less.git",
-  "_target": "~2.5.3",
-  "_originalSource": "less",
-  "_direct": true
+  "_target": "~2.3.1",
+  "_originalSource": "less"
 }

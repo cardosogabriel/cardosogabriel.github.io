@@ -19,6 +19,6 @@
     "patternfly": "~1.1.3"
   },
   "resolutions": {
-    "patternfly": "~2.4.0"
+    "patternfly": "~2.5.0"
   }
 }
