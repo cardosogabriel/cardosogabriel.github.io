@@ -634,6 +634,10 @@ a:hover {
   padding: 2px 4px;
 }
 
+.nav-tabs .label {
+  margin-left: 10px;
+}
+
 .hk-alert-settings .form-horizontal {
   margin-top: @grid-gutter-width/2;
 }
@@ -1695,7 +1699,7 @@ td .fa-comment-o {
   padding: 10px;
   position: relative;
   text-align: center;
-  width: 260px;
+//   width: 260px;
 }
 
 .tiles-view-pf .tile-check-box {
@@ -1753,15 +1757,36 @@ td .fa-comment-o {
 
 // Tiles (hawkular personalization)
 
+.tiles-view-pf {
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .tile {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+
 .hk-tile-alert {
   margin-bottom: 5px;
+  min-height: 17px;
 }
 
 .hk-tile-title {
   border-bottom: 1px solid @table-border-color;
   font-size: ceil(@font-size-base + 2);
   font-weight: 600;
+  height: 60px;
   margin-bottom: @grid-gutter-width/2;
+  overflow: hidden;
   padding-bottom: @grid-gutter-width/2;
   word-wrap: break-word;
 }
