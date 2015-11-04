@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="bower_components/patternfly/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script>
+      // Initialize Datatables
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li class="active">
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li>
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hk-application-url">
+
+      <div class="hk-screen-top-nav">
+        <div class="container">
+          <div class="row hk-top-row">
+            <div class="col-xs-6">
+              <ol class="breadcrumb">
+                <li>
+                  <a href="applications-list.html">Application Servers</a>
+                </li>
+                <li>
+                  <a href="application-overview.html">Eavy Machine</a>
+                </li>
+                <li>
+                  <a href="application-urls.html">URLs</a>
+                </li>
+                <li class="active"> <strong>http://www.somebigurlcomeshere.com</strong></li>
+              </ol>
+            </div>
+            <div class="col-xs-6">
+              <div class="hk-date-range dropdown">
+                <div class="input-group" data-toggle="dropdown">
+                  <div class="hk-input" >10 Jun 2015 12:13 - 13:13</div>
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                </div>
+                <div class="dropdown-menu infotip bottom-right">
+                  <div class="arrow"></div>
+                  <div class="dropdown-menu-content">
+                    <span class="hk-label">Last</span>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1h</button>
+                      <button type="button" class="btn btn-default">12h</button>
+                      <button type="button" class="btn btn-default">Day</button>
+                      <button type="button" class="btn btn-default active">Week</button>
+                      <button type="button" class="btn btn-default">Month</button>
+                      <button type="button" class="btn btn-default">Year</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-heading">
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <h1 class="offset-panels">http://www.somebigurlcomeshere.com</h1>
+          </div>
+        </div>
+      </div><!-- .screen-top-nav -->
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-9">
+
+            <h2 class="no-margin-top">Availability Metrics</h2>
+            <div class="row row-cards-pf">
+              <div class="col-sm-6 col-md-3">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">99.995 %</span> Availability
+                    </a>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">30 s</span> Total Downtime
+                    </a>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">3 Feb 2015</span> Last Downtime
+                    </a>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">1</span> Downtime Events
+                    </a>
+                  </h2>
+                </div>
+              </div>
+            </div><!-- .row-cards-pf -->
+            <div class="container-fluid container-cards-pf">
+              <div class="row row-cards-pf">
+                <div class="card-pf card-pf-utilization hk-graph">
+                  <h3>Up/Downtime</h3>
+                  <img src="img/graph-availability.png" alt="graph">
+                  <div class="hk-legend text-left">
+                    <span><span class="hk-legend-square hk-green"></span>Available</span>
+                    <span><span class="hk-legend-square hk-red"></span>Down</span>
+                    <span><span class="hk-legend-square hk-gray-light"></span>Unknown</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2>Response Time Status</h2>
+            <div class="row row-cards-pf">
+              <div class="col-sm-6 col-md-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">821 ms</span> Average
+                    </a>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">772 ms</span> Median
+                    </a>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <a href="#">
+                      <span class="card-pf-aggregate-status-count">869 ms</span> 95th Percentile
+                    </a>
+                  </h2>
+                </div>
+              </div>
+            </div><!-- .row-cards-pf -->
+            <div class="container-fluid container-cards-pf">
+              <div class="row row-cards-pf">
+                <div class="card-pf card-pf-utilization hk-graph">
+                  <h3>Availability Metrics</h3>
+                  <div class="text-center hk-spinner-container">
+                    <div class="spinner spinner-lg"></div>
+                  </div>
+                  <div class="hk-legend text-left">
+                    <span><i class="fa fa-circle hk-blue"></i>Response Time</span>
+                    <span><i class="fa fa-circle hk-red"></i>Threshold</span>
+                    <span><span class="hk-legend-square hk-red-light"></span>Interval above the threshold</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3">
+            <div class="row row-cards-pf">
+              <div class="col-md-12">
+
+                <div class="card-pf card-pf-utilization">
+                  <div class="card-pf-heading">
+                    <h2 class="card-pf-title">URL Details</h2>
+                  </div>
+                  <div class="card-pf-body">
+                    <dl class="dl-horizontal">
+                      <dt>IP</dt>
+                      <dd>66.111.97.145</dd>
+                      <dt>URL <i class="fa fa-external-link"></i></dt>
+                      <dd><a href="#" class="hk-word-break">http://www.somebigurlcomeshere.com</a></dd>
+                      <dt>Powered by</dt>
+                      <dd>gwt</dd>
+                    </dl>
+                  </div>
+                </div>
+
+                <div class="card-pf card-pf-utilization">
+                  <div class="card-pf-heading">
+                    <h2 class="card-pf-title">Server Alerts</h2>
+                  </div>
+                  <div class="card-pf-body">
+                    <div class="hk-box-v-item">
+                      <div class="checkbox hk-display-alerts">
+                        <label>
+                          <input type="checkbox"> Display resolved alerts
+                        </label>
+                      </div>
+                    </div>
+                    <div class="hk-box-v-item">
+                      <div class="hk-display-table">
+                        <div class="hk-icon-container">
+                          <i class="fa fa-exclamation-triangle hk-warning"></i>
+                        </div>
+                        <div class="hk-info-container">
+                          <div class="hk-info-heading">Open</div>
+                          <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                          <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                        </div>
+                        <div class="hk-icon-container">
+                          <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="hk-box-v-item">
+                      <div class="hk-display-table">
+                        <div class="hk-icon-container">
+                          <i class="fa fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="hk-info-container">
+                          <div class="hk-info-heading hk-acknowledged">Acknowledged</div>
+                          <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                          <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                        </div>
+                        <div class="hk-icon-container">
+                          <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- .container -->
+
+    </div><!-- .hk-application-url -->
+
+  </body>
+</html>
