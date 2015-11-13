@@ -70,13 +70,17 @@
     <div class="hk-screen-top-nav">
       <div class="container">
         <div class="row hk-top-row">
-          <div class="col-xs-6">
+          <div class="col-xs-7">
             <a href="applications-list.html" class="back">&laquo; All Application Servers</a>
           </div>
-          <div class="col-xs-6">
+          <div class="col-sm-5">
             <div class="hk-date-range dropdown">
-              <i class="fa fa-calendar"></i>
-              <div class="hk-input" data-toggle="dropdown">10 Jun 2015 12:13 - 13:13</div>
+              <div class="input-group" data-toggle="dropdown">
+                <div class="hk-input" >10 Jun 2015 12:13 - 13:13</div>
+                <span class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </div>
               <div class="dropdown-menu infotip bottom-right">
                 <div class="arrow"></div>
                 <div class="dropdown-menu-content">
@@ -120,23 +124,35 @@
           <div class="col-lg-9">
 
             <h3 class="pull-left">Web Status</h3>
-            <div class="panel panel-default hk-summary">
-              <div class="row">
-                <div class="col-sm-3 hk-summary-item">
-                  <span class="hk-data">10 <i class="fa fa-flag"></i></span>
-                  <span class="hk-item">Alerts</span>
+
+            <div class="row row-cards-pf">
+              <div class="col-md-3 col-sm-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <i class="fa fa-flag"></i>
+                    <span class="card-pf-aggregate-status-count">10</span> Web Alerts
+                  </h2>
                 </div>
-                <div class="col-sm-3 hk-summary-item">
-                  <span class="hk-data">800</span>
-                  <span class="hk-item">Active Sessions (Average)</span>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <span class="card-pf-aggregate-status-count">800</span> Active Sessions (Avg.)
+                  </h2>
                 </div>
-                <div class="col-sm-3 hk-summary-item">
-                  <span class="hk-data">700 ms</span>
-                  <span class="hk-item">Response Time (Average)</span>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <span class="card-pf-aggregate-status-count">700 ms</span> Response Time (Avg.)
+                  </h2>
                 </div>
-                <div class="col-sm-3 hk-summary-item">
-                  <span class="hk-data">1005</span>
-                  <span class="hk-item">Threads Servicing Requests (Avg.)</span>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
+                  <h2 class="card-pf-title">
+                    <span class="card-pf-aggregate-status-count">1005</span> Threads Servicing Requests (Avg.)
+                  </h2>
                 </div>
               </div>
             </div>
