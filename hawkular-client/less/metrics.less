@@ -341,7 +341,9 @@ a:hover {
 }
 
 .hk-h2-offset {
-  margin-top: 39px;
+  @media (min-width: @screen-lg-min) {
+    margin-top: 39px;
+  }
 }
 
 .hk-cards-offset {
@@ -1893,7 +1895,7 @@ td .fa-comment-o {
   border: 2px solid;
   height: 50px;
   margin: 0 auto;
-  -moz-border-radius:25px;
+  border-radius:25px;
   -webkit-border-radius: 25px;
   width: 50px;
 
@@ -2020,6 +2022,10 @@ td .fa-comment-o {
   h1 + .fa {
     color: @gray-light;
     font-size: ceil(@font-size-base * 4);
+  }
+
+  .tiles-view-pf .tile {
+    min-height: 300px;
   }
 }
 

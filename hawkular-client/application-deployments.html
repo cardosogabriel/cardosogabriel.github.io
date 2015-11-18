@@ -76,7 +76,7 @@
           <div class="col-sm-5">
             <div class="hk-date-range dropdown">
               <div class="input-group" data-toggle="dropdown">
-                <div class="hk-input" >10 Jun 2015 12:13 - 13:13</div>
+                <div class="hk-input">Last Hour</div>
                 <span class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </span>
@@ -223,40 +223,52 @@
           </div>
 
           <div class="col-lg-3">
-            <div class="hk-info-top clearfix">
-              <span class="hk-settings pull-right"><a href="#" data-toggle="modal" data-target="#modal-deployments-settings"><i class="fa fa-cog"></i>Alert Settings</a></span>
-            </div>
-            <div class="panel panel-default clearfix">
-              <div class="panel-heading clearfix">
-                <h2 class="pull-left">Deployment Alerts</h2>
-                <span class="label label-default pull-right">3</span>
-              </div>
-              <div class="panel-body">
-                <div class="hk-box-v-item">
-                  <div class="hk-display-table">
-                    <div class="hk-icon-container">
-                      <i class="fa fa-exclamation-triangle hk-warning"></i>
-                    </div>
-                    <div class="hk-info-container">
-                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
-                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
-                    </div>
-                    <div class="hk-icon-container">
-                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
-                    </div>
+            <div class="row row-cards-pf">
+              <div class="col-md-12">
+                <div class="card-pf card-pf-utilization hk-h2-offset">
+                  <div class="card-pf-heading">
+                    <p class="card-pf-heading-details hk-definitions-link">
+                      <a href="#" data-toggle="modal" data-target="#modal-deployments-settings"><i class="fa fa-cog"></i> Definitions</a>
+                    </p>
+                    <h2 class="card-pf-title">Deployments Alerts</h2>
                   </div>
-                </div>
-                <div class="hk-box-v-item">
-                  <div class="hk-display-table">
-                    <div class="hk-icon-container">
-                      <i class="fa fa-exclamation-triangle"></i>
+                  <div class="card-pf-body">
+                    <div class="hk-box-v-item">
+                      <div class="checkbox hk-display-alerts">
+                        <label>
+                          <input type="checkbox"> Display resolved alerts
+                        </label>
+                      </div>
                     </div>
-                    <div class="hk-info-container">
-                      <div class="hk-info-heading">Place here the full alert message that was in the content area.</div>
-                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    <div class="hk-box-v-item">
+                      <div class="hk-display-table">
+                        <div class="hk-icon-container">
+                          <i class="fa fa-exclamation-triangle hk-warning"></i>
+                        </div>
+                        <div class="hk-info-container">
+                          <div class="hk-info-heading">Open</div>
+                          <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                          <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                        </div>
+                        <div class="hk-icon-container">
+                          <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="hk-icon-container">
-                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                    <div class="hk-box-v-item">
+                      <div class="hk-display-table">
+                        <div class="hk-icon-container">
+                          <i class="fa fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="hk-info-container">
+                          <div class="hk-info-heading hk-acknowledged">Acknowledged</div>
+                          <p class="hk-info-info">Downtime event: Exceeded threshold on some...</p>
+                          <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                        </div>
+                        <div class="hk-icon-container">
+                          <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
