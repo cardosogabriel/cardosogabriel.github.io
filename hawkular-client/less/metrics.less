@@ -1128,6 +1128,10 @@ a:hover .fa-times-circle-o,
 
 // On off switch
 
+.form-group .bootstrap-switch {
+  float: right;
+}
+
 .onoffswitch {
   -moz-user-select: none;
   height: 26px;
@@ -1775,6 +1779,18 @@ td.hk-actions-two {
 
 td .fa-comment-o {
   margin-left: @grid-gutter-width/8;
+}
+
+.hk-table-overflow-y {
+  border-bottom: 1px solid @table-border-color;
+  border-top: 1px solid @table-border-color;
+  max-height: 126px;
+  overflow-y: scroll;
+
+  .table {
+    margin-bottom: -1px;
+    margin-top: -1px;
+  }
 }
 
 
