@@ -35,9 +35,11 @@ body {
 .row { // reducing space between boxes
 
   @media (min-width: @screen-lg-min) {
+/*
     > .col-lg-9 + .col-lg-3 {
       padding-left: 0;
     }
+*/
 
     > .col-lg-3 + .col-lg-6 {
       padding-right: 0;
@@ -46,26 +48,24 @@ body {
   }
 
   @media (max-width: @screen-md-max) {
+/*
     > .col-md-8 + .col-md-4 {
       padding-left: 0;
     }
+*/
 
     > .col-md-4 + .col-md-8 {
       padding-left: 0;
     }
   }
 
+/*
   @media (min-width: @screen-md-min) {
     > .col-md-9 + .col-md-3 {
       padding-left: 0;
     }
   }
-}
-
-.hk-sidebar-right {
-  @media (max-width: @screen-md-max) {
-    margin-top: 20px;
-  }
+*/
 }
 
 
@@ -386,6 +386,11 @@ a:hover {
     }
   }
 
+  .form-control {
+    border: none;
+    box-shadow: none;
+  }
+
   .hk-graph-container  {
     margin: 0 auto;
     //width: 750px;
@@ -426,7 +431,7 @@ a:hover {
     font-size: ceil(@font-size-base - 1);
     margin-bottom: 10px;
     margin-left: 38px;
-    margin-top: 30px;
+    margin-top: 10px;
 
     &.hk-legend-availability {
       //margin-left: 248px;
@@ -436,7 +441,7 @@ a:hover {
       //  margin-left: 148px;
       //}
     }
-    // TODO: be reviewed by Gabriel
+
     &.hk-legend-metrics {
       //margin-left: 270px;
       margin-left: 12%;
@@ -652,9 +657,21 @@ a:hover {
     margin-right: 15px;
   }
 
+  label {
+    margin-right: 10px;
+  }
+
+  .input-group {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
   .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     margin-bottom: 0;
-    width: 100px;
+    width: auto;
   }
 
   .btn + .btn {
@@ -827,7 +844,7 @@ p + .form-horizontal {
 }
 
 .hk-control-actions-bar .input-group {
-  width: 330px;
+  width: 300px;
 }
 
 
@@ -1043,37 +1060,6 @@ a:hover .fa-times-circle-o,
 .modal-footer {
   margin-top: 0;
   padding-top: 0;
-}
-
-.steps-indicator {
-  margin: 0 0 10px 0;
-  padding: 0;
-
-  li a {
-    color: @gray;
-    font-weight: normal;
-    text-transform: none;
-
-    &:before {
-      background-color: white;
-      border: 1px solid @gray-light;
-    }
-  }
-
-  li.current a,
-  li.editing a {
-    color: @gray-dark;
-    font-weight: bold;
-
-    &:before {
-      background-color: @gray-light;
-    }
-  }
-
-  li.done a:before {
-    background-color: @brand-success;
-    border-color: @brand-success;
-  }
 }
 
 .hk-form-read-only {
@@ -1891,6 +1877,11 @@ td .fa-comment-o {
   }
 }
 
+h2 + .tiles-view-pf {
+  margin-top: -10px;
+  padding-top: 0;
+}
+
 .tile:hover {
   cursor: pointer;
 }
@@ -1945,6 +1936,21 @@ td .fa-comment-o {
 .tile-content img {
   margin-bottom: @grid-gutter-width/5;
   width: 100%;
+}
+
+.hk-tile-aggregate-status {
+  span {
+    display: block;
+  }
+
+  .hk-aggregate-status-count {
+    font-size: ceil(@font-size-base * 1.5);
+    font-weight: 600;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
 }
 
 
@@ -2030,6 +2036,87 @@ td .fa-comment-o {
 #toast-container > .toast-error:after {
   content: "";
   color: #cc0000;
+}
+
+
+// Wizard
+
+.hk-wizard {
+  position: relative;
+
+  .steps {
+    margin-top: 55px;
+  }
+
+  .steps-indicator {
+    position: absolute;
+    top: -55px;
+
+    &[class*="steps-"] {
+
+      &:before {
+        left: 0;
+      }
+
+      li {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: auto;
+      }
+    }
+
+    &:before {
+      display: none;
+    }
+
+    li:before {
+      background-color: @list-group-border;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    li:last-child:before {
+      width: 50%;
+    }
+
+    li a {
+      color: @gray-light;
+      font-weight: 600;
+      text-transform: none;
+
+      &:before {
+        background-color: @gray-light;
+        border: none;
+        height: 8px;
+        left: calc(~"50% - 4px");
+        top: -4px;
+        width: 8px;
+      }
+    }
+
+    li.current a,
+    li.editing a {
+      color: @link-color;
+      font-weight: 600;
+
+      &:before {
+        background-color: @link-color;
+      }
+    }
+
+    li.done a {
+      color: @gray;
+      font-weight: bold;
+
+      &:before {
+        background-color: @gray;
+      }
+    }
+  }
 }
 
 
@@ -2504,5 +2591,4 @@ section {
 
     }
   }
-
 }

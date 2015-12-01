@@ -88,200 +88,192 @@
 
       <div class="container">
 
-        <div class="row hk-cards-offset">
+        <div class="row row-cards-pf hk-cards-offset">
           <div class="col-lg-9 col-md-8">
 
-            <div class="row row-cards-pf">
-              <div class="col-xs-12">
-                <div class="card-pf">
-                  <div class="card-pf-heading">
-                    <h2 class="card-pf-title">
-                      Response Time for localhost~local
-                    </h2>
-                  </div>
-                  <div class="card-pf-body">
-                    <form class="form-horizontal">
+            <div class="card-pf">
+              <div class="card-pf-heading">
+                <h2 class="card-pf-title">
+                  Response Time for localhost~local
+                </h2>
+              </div>
+              <div class="card-pf-body">
+                <form class="form-horizontal">
 
-                      <h3>General</h3>
-                      <fieldset>
-                        <div class="form-group">
-                          <label class="col-sm-2 control-label" for="status">State</label>
-                          <div class="col-sm-6">
-                            <span class="hk-input-text hk-bold">Enabled</span>
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="onoffswitch pull-right">
-                              <input type="checkbox" id="rt-duration-switch" class="onoffswitch-checkbox" checked="checked">
-                              <label class="onoffswitch-label" for="rt-duration-switch">
-                                <span class="onoffswitch-inner">
-                                  <span class="onoffswitch-active ng-binding">ON</span>
-                                  <span class="onoffswitch-inactive ng-binding">OFF</span>
-                                </span>
-                                <span class="onoffswitch-switch"></span>
-                              </label>
-                            </div>
-                          </div>
+                  <h3>General</h3>
+                  <fieldset>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="status">State</label>
+                      <div class="col-sm-6">
+                        <span class="hk-input-text hk-bold">Enabled</span>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="onoffswitch pull-right">
+                          <input type="checkbox" id="rt-duration-switch" class="onoffswitch-checkbox" checked="checked">
+                          <label class="onoffswitch-label" for="rt-duration-switch">
+                            <span class="onoffswitch-inner">
+                              <span class="onoffswitch-active ng-binding">ON</span>
+                              <span class="onoffswitch-inactive ng-binding">OFF</span>
+                            </span>
+                            <span class="onoffswitch-switch"></span>
+                          </label>
                         </div>
-                        <div class="form-group">
-                          <label class="col-sm-2 control-label">Severity</label>
-                          <div class="col-sm-10">
-                            <select class="selectpicker" id="status">
-                              <option>Low</option>
-                              <option>Medium</option>
-                              <option>High</option>
-                              <option>Critical</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-sm-2 control-label">Name</label>
-                          <div class="col-sm-10">
-                            <span class="hk-input-text">User or system defined name here.</span>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-sm-2 control-label">Description</label>
-                          <div class="col-sm-10">
-                            <span class="hk-input-text">Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here.</span>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="col-sm-2 control-label">Resource</label>
-                          <div class="col-sm-10">
-                            <ul class="list-unstyled hk-input-text">
-                              <li>
-                                <strong>Type:</strong> URL Response Time
-                              </li>
-                              <li>
-                                <strong>Name:</strong> Wildfly server named "foobar" on host named "prokchop.corp.redhat.com"
-                              </li>
-                              <li>
-                                <strong>Path:</strong> /e;test/f;308d55eijo3908/r039dj3930d8j-Local-\\/deployment=hawkular-console.war
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </fieldset>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Severity</label>
+                      <div class="col-sm-10">
+                        <select class="selectpicker" id="status">
+                          <option>Low</option>
+                          <option>Medium</option>
+                          <option>High</option>
+                          <option>Critical</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Name</label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">User or system defined name here.</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Description</label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here.</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Resource</label>
+                      <div class="col-sm-10">
+                        <ul class="list-unstyled hk-input-text">
+                          <li>
+                            <strong>Type:</strong> URL Response Time
+                          </li>
+                          <li>
+                            <strong>Name:</strong> Wildfly server named "foobar" on host named "prokchop.corp.redhat.com"
+                          </li>
+                          <li>
+                            <strong>Path:</strong> /e;test/f;308d55eijo3908/r039dj3930d8j-Local-\\/deployment=hawkular-console.war
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </fieldset>
 
-                      <h3>Alert Settings</h3>
-                      <fieldset>
-                        <legend>Response Time</legend>
-                        <div class="form-group">
-                          <label class="col-sm-3 control-label" for="rt-time">Time (maximum)</label>
-                          <div class="col-sm-5 inline-row">
-                            <div class="input-group input-select">
-                              <input type="number" min="0" class="form-control" placeholder="Duration" id="rt-time" value="5">
-                              <select class="selectpicker">
-                                <option>seconds</option>
-                                <option selected="selected">minutes</option>
-                                <option>hours</option>
-                              </select>
-                            </div>
-                          </div>
+                  <h3>Alert Settings</h3>
+                  <fieldset>
+                    <legend>Response Time</legend>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label" for="rt-time">Time (maximum)</label>
+                      <div class="col-sm-5 inline-row">
+                        <div class="input-group input-select">
+                          <input type="number" min="0" class="form-control" placeholder="Duration" id="rt-time" value="5">
+                          <select class="selectpicker">
+                            <option>seconds</option>
+                            <option selected="selected">minutes</option>
+                            <option>hours</option>
+                          </select>
                         </div>
-                      </fieldset>
-                      <fieldset>
-                        <legend>Alert</legend>
-                        <div class="form-group">
-                          <label class="col-sm-3 control-label">Create Alert</label>
-                          <div class="col-sm-9">
-                            <div class="radio">
-                              <label for="every-time-rt">
-                                <input type="radio" name="alert" id="every-time-rt" value="option1" checked>
-                                Every time conditions are met.
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label for="greater-time-rt">
-                                <input type="radio" name="alert" id="greater-time-rt" value="option2">
-                                Only when conditions are met for greater than:
-                              </label>
-                            </div>
-                            <div class="input-group input-select indented">
-                              <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
-                              <select class="selectpicker">
-                                <option>seconds</option>
-                                <option selected="selected">minutes</option>
-                                <option>hours</option>
-                              </select>
-                            </div>
-                          </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Alert</legend>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Create Alert</label>
+                      <div class="col-sm-9">
+                        <div class="radio">
+                          <label for="every-time-rt">
+                            <input type="radio" name="alert" id="every-time-rt" value="option1" checked>
+                            Every time conditions are met.
+                          </label>
                         </div>
-                      </fieldset>
-                      <fieldset>
-                        <legend>Notification</legend>
-                        <p>Receive an email notification every time the conditions are met.</p>
-                        <div class="form-group">
-                          <label class="col-sm-3 control-label" for="email-rt">Email</label>
-                          <div class="col-sm-5">
-                            <input type="text" id="email-rt" class="form-control" value="email@domain.com">
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="onoffswitch pull-right">
-                              <input type="checkbox" id="rt-email-switch" class="onoffswitch-checkbox" checked="checked">
-                              <label class="onoffswitch-label" for="rt-email-switch">
-                                <span class="onoffswitch-inner">
-                                  <span class="onoffswitch-active ng-binding">ON</span>
-                                  <span class="onoffswitch-inactive ng-binding">OFF</span>
-                                </span>
-                                <span class="onoffswitch-switch"></span>
-                              </label>
-                            </div>
-                          </div>
+                        <div class="radio">
+                          <label for="greater-time-rt">
+                            <input type="radio" name="alert" id="greater-time-rt" value="option2">
+                            Only when conditions are met for greater than:
+                          </label>
                         </div>
-                      </fieldset>
+                        <div class="input-group input-select indented">
+                          <input type="number" min="0" class="form-control" placeholder="Duration" value="10">
+                          <select class="selectpicker">
+                            <option>seconds</option>
+                            <option selected="selected">minutes</option>
+                            <option>hours</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Notification</legend>
+                    <p>Receive an email notification every time the conditions are met.</p>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label" for="email-rt">Email</label>
+                      <div class="col-sm-5">
+                        <input type="text" id="email-rt" class="form-control" value="email@domain.com">
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="onoffswitch pull-right">
+                          <input type="checkbox" id="rt-email-switch" class="onoffswitch-checkbox" checked="checked">
+                          <label class="onoffswitch-label" for="rt-email-switch">
+                            <span class="onoffswitch-inner">
+                              <span class="onoffswitch-active ng-binding">ON</span>
+                              <span class="onoffswitch-inactive ng-binding">OFF</span>
+                            </span>
+                            <span class="onoffswitch-switch"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
 
-                    </form>
-                    <div class="form-actions hk-form-actions-separator text-right">
-                      <button class="btn btn-default" type="button">Cancel</button>
-                      <button class="btn btn-primary" type="button" disabled>Save</button>
+                </form>
+                <div class="form-actions hk-form-actions-separator text-right">
+                  <button class="btn btn-default" type="button">Cancel</button>
+                  <button class="btn btn-primary" type="button" disabled>Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="card-pf card-pf-utilization">
+              <div class="card-pf-heading">
+                <p class="card-pf-heading-details hk-definitions-link">
+                  <a href="alert-center-definitions.html">
+                    <i class="fa fa-cog"></i>Definitions
+                  </a>
+                </p>
+                <h2 class="card-pf-title">Alerts</h2>
+              </div>
+              <div class="card-pf-body">
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle hk-warning"></i>
+                    </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Alert/Trigger description here...</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div><!-- /row -->
-          </div><!-- /container -->
-
-          <div class="col-lg-3 col-md-4">
-            <div class="row row-cards-pf">
-              <div class="col-md-12">
-                <div class="card-pf card-pf-utilization">
-                  <div class="card-pf-heading">
-                    <p class="card-pf-heading-details hk-definitions-link">
-                      <a href="alert-center-definitions.html">
-                        <i class="fa fa-cog"></i>Definitions
-                      </a>
-                    </p>
-                    <h2 class="card-pf-title">Alerts</h2>
-                  </div>
-                  <div class="card-pf-body">
-                    <div class="hk-box-v-item">
-                      <div class="hk-display-table">
-                        <div class="hk-icon-container">
-                          <i class="fa fa-exclamation-triangle hk-warning"></i>
-                        </div>
-                        <div class="hk-info-container">
-                          <div class="hk-info-heading">Alert/Trigger description here...</div>
-                          <p class="hk-info-info">15 Aug 2015, 21:55</p>
-                        </div>
-                        <div class="hk-icon-container">
-                          <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
-                        </div>
-                      </div>
+                <div class="hk-box-v-item">
+                  <div class="hk-display-table">
+                    <div class="hk-icon-container">
+                      <i class="fa fa-exclamation-triangle"></i>
                     </div>
-                    <div class="hk-box-v-item">
-                      <div class="hk-display-table">
-                        <div class="hk-icon-container">
-                          <i class="fa fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="hk-info-container">
-                          <div class="hk-info-heading">Alert/Trigger description here...</div>
-                          <p class="hk-info-info">15 Aug 2015, 21:55</p>
-                        </div>
-                        <div class="hk-icon-container">
-                          <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
-                        </div>
-                      </div>
+                    <div class="hk-info-container">
+                      <div class="hk-info-heading">Alert/Trigger description here...</div>
+                      <p class="hk-info-info">15 Aug 2015, 21:55</p>
+                    </div>
+                    <div class="hk-icon-container">
+                      <a href="alert-center-detail.html" class="btn btn-link" data-toggle="tooltip" data-placement="top" data-original-title="View Details"><i class="fa fa-chevron-circle-right"></i></a>
                     </div>
                   </div>
                 </div>

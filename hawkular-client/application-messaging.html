@@ -70,7 +70,7 @@
     <div class="hk-screen-top-nav">
       <div class="container">
         <div class="row hk-top-row">
-          <div class="col-sm-7">
+          <div class="col-xs-7">
             <a href="applications-list.html" class="back">&laquo; All Application Servers</a>
           </div>
           <div class="col-sm-5">
@@ -110,116 +110,93 @@
             <li><a href="application-web.html" class="hk-web">Web</a></li>
             <li><a href="application-deployments.html" class="hk-deployments">Deployments</a></li>
             <li><a href="application-datasources.html" class="hk-datasources">Datasources</a></li>
-            <li class="active"><a href="application-transactions.html" class="hk-datasources">Transactions</a></li>
-            <li><a href="application-messaging-list.html" class="hk-messaging">Messaging</a></li>
+            <li><a href="application-transactions.html" class="hk-transactions">Transactions</a></li>
+            <li class="active"><a href="application-messaging-list.html" class="hk-messaging">Messaging</a></li>
           </ul>
         </div>
       </div>
     </div><!-- .screen-top-nav -->
 
     <div class="container">
-      <section id="hk-jvm" class="hk-tab-content">
+      <section id="hk-web" class="hk-tab-content">
         <div class="row">
 
           <div class="col-lg-9">
 
-            <h3 class="pull-left">Transactions Status</h3>
-
+            <h3>Messaging Status</h3>
             <div class="row row-cards-pf">
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-4">
                 <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
                   <h2 class="card-pf-title">
                     <i class="fa fa-flag"></i>
-                    <span class="card-pf-aggregate-status-count">10</span> JVM Alerts
+                    <span class="card-pf-aggregate-status-count">10</span> Web Alerts
                   </h2>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-4">
                 <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
                   <h2 class="card-pf-title">
-                    <span class="card-pf-aggregate-status-count">.001%</span> Failed
+                    <span class="card-pf-aggregate-status-count">2</span> Delivering Count
                   </h2>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+              <div class="col-sm-4">
                 <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
                   <h2 class="card-pf-title">
-                    <span class="card-pf-aggregate-status-count">.003%</span> Aborted
-                  </h2>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="card-pf card-pf-aggregate-status card-pf-aggregate-status-mini">
-                  <h2 class="card-pf-title">
-                    <span class="card-pf-aggregate-status-count">.002%</span> Timed Out
+                    <span class="card-pf-aggregate-status-count">40</span> Subscribers
                   </h2>
                 </div>
               </div>
             </div>
 
             <div class="hk-info-top clearfix">
-              <h3 class="pull-left">Transactions Metrics</h3>
+              <h3 class="pull-left">Messaging Metrics</h3>
               <div class="hk-update pull-right">
                 <button class="btn btn-link hk-chart-update" data-toggle="tooltip" data-placement="top" title="" data-original-title="Update chart"><i class="fa fa-refresh"></i></button>
               </div>
             </div>
 
             <div class="row row-cards-pf">
-
-              <div class="col-sm-3">
-                <div class="card-pf card-pf-utilization">
-                  <h2 class="card-pf-title">
-                    Inflight Transactions
-                  </h2>
-                  <div class="card-pf-body">
-                    <p class="card-pf-utilization-details">
-                      <span class="card-pf-utilization-card-details-count">120000</span>
-                    </p>
-                    <img src="img/chart-sparkline-transactions.png" alt="chart-sparkline-transactions" style="height: auto; width: 100%"> <!-- to be replaced by the chart -->
-                    <p class="hk-card-interval">Last Hour</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-9">
+              <div class="col-xs-12">
                 <div class="card-pf hk-graph">
-                  <h2>Transactions <span>(10 Jun 2015, 12:15 - 13:15)</span></h2>
-                  <img src="img/chart-transactions.png" alt="chart-transaction" style="height: auto; width: 100%">
+                  <h2>Topics</h2>
+                  <div class="form-control text-left">
+                    <label class="radio-inline">
+                      <input type="radio" name="topics" checked> Messages
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="topics"> Subscribers
+                    </label>
+                  </div>
+                  <img src="img/chart-messaging.png" alt="chart-messaging" style="width: 100%; height: auto;">
                   <div class="row hk-legend text-left">
-                    <div class="hk-graphselector hk-blue col-md-4 col-sm-6">
-                      <input type="checkbox" id="commited" checked="checked">
-                      <label for="commited"><span>Commited</span></label>
+                    <div class="col-sm-3">
+                      <div class="hk-graphselector hk-green">
+                        <input type="checkbox" id="count" checked="checked">
+                        <label for="count"><span>Message Count</span></label>
+                      </div>
                     </div>
-                    <div class="hk-graphselector hk-green col-md-4 col-sm-6">
-                      <input type="checkbox" id="heuristic" checked="checked">
-                      <label for="heuristic"><span>Heuristic</span></label>
+                    <div class="col-sm-3">
+                      <div class="hk-graphselector hk-orange">
+                        <input type="checkbox" id="added" checked="checked">
+                        <label for="added"><span>Message Added</span></label>
+                      </div>
                     </div>
-                    <div class="hk-graphselector hk-gray col-md-4 col-sm-6">
-                      <input type="checkbox" id="aborted" checked="checked">
-                      <label for="aborted"><span>Aborted</span></label>
-                    </div>
-                    <div class="hk-graphselector hk-purple col-md-4 col-sm-6">
-                      <input type="checkbox" id="timeout" checked="checked">
-                      <label for="timeout"><span>Timed-out</span></label>
-                    </div>
-                    <div class="hk-graphselector hk-orange col-md-4 col-sm-6">
-                      <input type="checkbox" id="request" checked="checked">
-                      <label for="request"><span>Application Failure</span></label>
-                    </div>
-                    <div class="hk-graphselector hk-red col-md-4 col-sm-6">
-                      <input type="checkbox" id="pending" checked="checked">
-                      <label for="pending"><span>Resource Failure</span></label>
+                    <div class="col-sm-3">
+                      <div class="hk-graphselector hk-red">
+                        <input type="checkbox" id="delivering" checked="checked">
+                        <label for="delivering"><span>Delivering Count</span></label>
+                      </div>
                     </div>
                   </div>
 
                 </div>
               </div>
-
-            </div><!-- .row-cards-pf -->
+            </div>
 
           </div>
 
-          <div class="col-lg-3 hk-sidebar-right">
+          <div class="col-lg-3">
             <div class="row row-cards-pf">
               <div class="col-md-12">
                 <div class="card-pf card-pf-utilization hk-h2-offset">
@@ -227,7 +204,7 @@
                     <p class="card-pf-heading-details hk-definitions-link">
                       <a href="#"><i class="fa fa-cog"></i> Definitions</a>
                     </p>
-                    <h2 class="card-pf-title">Deployments Alerts</h2>
+                    <h2 class="card-pf-title">Messaging Alerts</h2>
                   </div>
                   <div class="card-pf-body">
                     <div class="hk-box-v-item">
@@ -274,7 +251,7 @@
           </div>
 
         </div>
-      </section>
+      </section><!-- .web -->
     </div><!-- .container -->
 
   </body>
