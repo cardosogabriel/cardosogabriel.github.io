@@ -277,7 +277,7 @@ a:hover {
 .btn-link, a {
 
   .fa {
-    color: @gray;
+    color: @link-color;
     vertical-align: text-bottom;
   }
 
@@ -1939,13 +1939,16 @@ h2 + .tiles-view-pf {
 }
 
 .hk-tile-aggregate-status {
-  span {
-    display: block;
-  }
 
   .hk-aggregate-status-count {
     font-size: ceil(@font-size-base * 1.5);
     font-weight: 600;
+
+    [class*="pficon-"],
+    .fa {
+      color: @link-color;
+      margin-right: 5px;
+    }
   }
 
   &:not(:last-child) {
