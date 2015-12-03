@@ -24,10 +24,6 @@
         $('.datatable').dataTable( {
         });
       });
-
-      $(function() {
-        $('.tile').matchHeight();
-      });
     </script>
   </head>
 
@@ -127,251 +123,255 @@
       </div>
     </div><!-- .screen-top-nav -->
 
-    <div class="container">
+    <div class="hk-application-messaging-list">
 
-      <div class="hk-control-actions-bar">
-        <form>
-          <div class="hk-container-separator">
-            <label>Messaging server</label>
+      <div class="container">
+
+        <div class="hk-control-actions-bar">
+          <form>
+            <div class="hk-container-separator">
+              <label>Messaging server</label>
+              <select class="selectpicker">
+                <option>Messaging server 1</option>
+                <option>Messaging server 2</option>
+              </select>
+            </div>
+            <div class="hk-container-separator">
+              <div class="input-group ">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">All <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Queue</a></li>
+                    <li><a href="#">JMS Queue</a></li>
+                    <li><a href="#">Topic</a></li>
+                    <li><a href="#">All</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control" placeholder="Enter text to filter...">
+              </div>
+            </div>
             <select class="selectpicker">
-              <option>Messaging server 1</option>
-              <option>Messaging server 2</option>
+              <option>Sort A - Z</option>
+              <option>Sort Z - A</option>
             </select>
-          </div>
-          <div class="hk-container-separator">
-            <div class="input-group ">
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">All <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Queue</a></li>
-                  <li><a href="#">JMS Queue</a></li>
-                  <li><a href="#">Topic</a></li>
-                  <li><a href="#">All</a></li>
-                </ul>
-              </div><!-- /btn-group -->
-              <input type="text" class="form-control" placeholder="Enter text to filter...">
-            </div>
-          </div>
-          <select class="selectpicker">
-            <option>Sort A - Z</option>
-            <option>Sort Z - A</option>
-          </select>
-        </form>
-      </div>
-
-      <h2>Queue</h2>
-
-      <div class="tiles-view-pf row-cards-pf">
-
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small"></span>
-              </div>
-              <div class="hk-tile-title">...queue.exampleQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
-                </div>
-              </div>
-            </div>
-          </div>
+          </form>
         </div>
 
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small">3</span>
-              </div>
-              <div class="hk-tile-title">...queue.exampleQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
+        <h2>Queue</h2>
+
+        <div class="tiles-view-pf row-cards-pf">
+
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small"></span>
                 </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
+                <div class="hk-tile-title">...queue.exampleQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small"></span>
-              </div>
-              <div class="hk-tile-title">...queue.exampleQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small">3</span>
                 </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
+                <div class="hk-tile-title">...queue.exampleQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small">3</span>
-              </div>
-              <div class="hk-tile-title">...queue.exampleQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small"></span>
                 </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small"></span>
-              </div>
-              <div class="hk-tile-title">...queue.exampleQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
+                <div class="hk-tile-title">...queue.exampleQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small">3</span>
-              </div>
-              <div class="hk-tile-title">...queue.exampleQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small">3</span>
                 </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <h2>JMS Queue</h2>
-
-      <div class="tiles-view-pf row-cards-pf">
-
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small">3</span>
-              </div>
-              <div class="hk-tile-title">...queue.selectorQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
+                <div class="hk-tile-title">...queue.exampleQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <div class="tile">
-            <div class="tile-content">
-              <div class="text-right hk-tile-alert">
-                <span class="label label-danger hk-label-small"></span>
-              </div>
-              <div class="hk-tile-title">...queue.selectorQueue</div>
-              <div class="hk-tile-content">
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
-                  Consumers
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small"></span>
                 </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
-                  Messages
-                </div>
-                <div class="hk-tile-aggregate-status">
-                  <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
-                  Delivering
+                <div class="hk-tile-title">...queue.exampleQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small">3</span>
+                </div>
+                <div class="hk-tile-title">...queue.exampleQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-      </div>
+        <h2>JMS Queue</h2>
 
-    </div><!-- .container -->
+        <div class="tiles-view-pf row-cards-pf">
+
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small">3</span>
+                </div>
+                <div class="hk-tile-title">...queue.selectorQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-sm-3">
+            <div class="tile">
+              <div class="tile-content">
+                <div class="text-right hk-tile-alert">
+                  <span class="label label-danger hk-label-small"></span>
+                </div>
+                <div class="hk-tile-title">...queue.selectorQueue</div>
+                <div class="hk-tile-content">
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><span class="pficon-users"></span>23</div>
+                    Consumers
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-paper-plane-o"></i>957</div>
+                    Messages
+                  </div>
+                  <div class="hk-tile-aggregate-status">
+                    <div class="hk-aggregate-status-count"><i class="fa fa-random"></i>46</div>
+                    Delivering
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- .container -->
+
+    </div>
 
   </body>
 </html>
