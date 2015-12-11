@@ -100,13 +100,19 @@
                 <form class="form-horizontal">
                   <fieldset>
                     <div class="form-group">
-                      <label class="col-sm-2 control-label" for="status">State</label>
+                      <label class="col-sm-2 control-label">Alert</label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">Information about the alert here. Information about the alert here. Information about the alert here. Information about the alert here. Information about the alert here. Information about the alert here. </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">State</label>
                       <div class="col-sm-6">
-                        <select class="selectpicker" id="status" disabled>
-                          <option>Open</option>
-                          <option>Acknowledged</option>
-                          <option>Resolved</option>
-                        </select>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default">Open</button>
+                          <button type="button" class="btn btn-default active">Acknowledged</button>
+                          <button type="button" class="btn btn-default">Resolved</button>
+                        </div>
                       </div>
                     </div>
                     <div class="form-group">
@@ -116,11 +122,9 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-sm-2 control-label">Description
-                        <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Trigger description"><i class="fa fa-info-circle"></i></a>
-                      </label>
+                      <label class="col-sm-2 control-label">Trigger Description</label>
                       <div class="col-sm-10">
-                        <span class="hk-input-text">Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here. Trigger description text here.</span>
+                        <span class="hk-input-text"><a href="#">Available Connection Count for Datasource snapshot-rc-vrscl/local</a></span>
                       </div>
                     </div>
                     <div class="form-group">
@@ -130,11 +134,25 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label class="col-sm-2 control-label">Resource Name</label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">snapshot-rc-vrscl/Local~/subsystem=datasources/data-source=KeycloakDS</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <label class="col-sm-2 control-label">Resource Path
                         <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="e = environment, f = feed, r = the resource id"><i class="fa fa-info-circle"></i></a>
                       </label>
                       <div class="col-sm-10">
                         <span class="hk-input-text">/e;test/f;308083738390e9/deployment=hawkular-console.war</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">Feed Id
+                        <a class="hk-btn-icon" tabindex="0" role="button" data-toggle="popover" data-html="true" data-placement="top" data-content="Text description for Feed Id"><i class="fa fa-info-circle"></i></a>
+                      </label>
+                      <div class="col-sm-10">
+                        <span class="hk-input-text">/subsystem=datasources/data-source=KeycloakDS</span>
                       </div>
                     </div>
                     <div class="form-group">
@@ -154,6 +172,7 @@
           </div>
 
           <div class="col-md-3">
+
             <div class="card-pf card-pf-utilization">
               <div class="card-pf-heading">
                 <h2 class="card-pf-title">Notifications</h2>
@@ -185,6 +204,21 @@
                 </div>
               </div>
             </div>
+
+            <div class="card-pf card-pf-utilization">
+              <h2 class="card-pf-title">
+                Datasource
+              </h2>
+              <div class="card-pf-body">
+                <p class="card-pf-utilization-details">
+                  <span class="card-pf-utilization-card-details-count">120000</span>
+                  <span class="card-pf-utilization-card-details-description">Available Connections</span>
+                </p>
+                <img src="img/chart-sparkline-transactions.png" alt="chart-sparkline-transactions" style="height: auto; width: 100%"> <!-- to be replaced by the chart -->
+                <p class="hk-card-interval">Last 30 days</p>
+              </div>
+            </div>
+
           </div>
 
         </div>

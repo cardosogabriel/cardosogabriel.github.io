@@ -32,42 +32,6 @@ body {
   }
 }
 
-.row { // reducing space between boxes
-
-  @media (min-width: @screen-lg-min) {
-/*
-    > .col-lg-9 + .col-lg-3 {
-      padding-left: 0;
-    }
-*/
-
-    > .col-lg-3 + .col-lg-6 {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
-
-  @media (max-width: @screen-md-max) {
-/*
-    > .col-md-8 + .col-md-4 {
-      padding-left: 0;
-    }
-*/
-
-    > .col-md-4 + .col-md-8 {
-      padding-left: 0;
-    }
-  }
-
-/*
-  @media (min-width: @screen-md-min) {
-    > .col-md-9 + .col-md-3 {
-      padding-left: 0;
-    }
-  }
-*/
-}
-
 
 /*------------------------------------*\
     SCREEN COMPONENTS
@@ -362,6 +326,10 @@ a:hover {
 
 .hk-card-interval { // provisional until pf style
   font-size: 10px;
+  margin-top: 10px;
+}
+
+.card-pf-utilization-card-details-description { // provisional until pf style
   margin-top: 10px;
 }
 
