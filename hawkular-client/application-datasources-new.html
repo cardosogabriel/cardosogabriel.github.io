@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <link href="css/c3.css" rel="stylesheet" type="text/css">
+
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script src="js/jquery.matchHeight.js" type="text/javascript"></script>
+    <script>
+      // Initialize Datatables
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+        });
+      });
+
+      $(function() {
+        $('.tile').matchHeight();
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li>
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li class="active">
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hk-urls-list">
+      <div class="hk-screen-top-nav">
+        <div class="container">
+          <div class="row hk-top-row">
+            <div class="col-sm-7">
+              <ol class="breadcrumb">
+                <li>
+                  <a href="applications-list.html">Application Servers</a>
+                </li>
+                <li class="active"> <strong>Eavy Machine</strong></li>
+              </ol>
+            </div>
+            <div class="col-sm-5">
+              <div class="hk-date-range dropdown">
+                <div class="input-group" data-toggle="dropdown">
+                  <div class="hk-input">Last Hour</div>
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                </div>
+                <div class="dropdown-menu infotip bottom-right">
+                  <div class="arrow"></div>
+                  <div class="dropdown-menu-content">
+                    <span class="hk-label">Last</span>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">1h</button>
+                      <button type="button" class="btn btn-default">12h</button>
+                      <button type="button" class="btn btn-default">Day</button>
+                      <button type="button" class="btn btn-default active">Week</button>
+                      <button type="button" class="btn btn-default">Month</button>
+                      <button type="button" class="btn btn-default">Year</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hk-heading">
+            <span class="hk-update pull-right" data-toggle="tooltip" data-placement="top" title="Last update"><i class="fa fa-clock-o"></i>17:21</span>
+            <h1>Eavy Machine</h1>
+          </div>
+          <div class="hk-nav-tabs-container">
+            <ul class="nav nav-tabs nav-tabs-pf">
+              <li><a href="application-overview.html" class="hk-alerts">Overview</a></li>
+              <li><a href="application-urls.html">URLs</a></li>
+              <li><a href="application-jvm.html" class="hk-jvm">JVM <span class="label label-danger hk-label-small pull-right">3</span></a></li>
+              <li><a href="application-web.html" class="hk-web">Web</a></li>
+              <li><a href="application-deployments.html" class="hk-deployments">Deployments</a></li>
+              <li class="active"><a href="application-datasources.html" class="hk-datasources">Datasources</a></li>
+              <li><a href="application-transactions.html" class="hk-transactions">Transactions</a></li>
+              <li><a href="application-messaging-list.html" class="hk-messaging">Messaging</a></li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- .screen-top-nav -->
+
+      <div class="container">
+
+        <div class="hk-control-actions-bar">
+          <div class="hk-container-separator">
+            <input type="text" class="form-control separator" placeholder="Filter by Name...">
+          </div>
+          <div class="hk-container-separator">
+            <select class="selectpicker">
+              <option>Sort A - Z</option>
+              <option>Sort Z - A</option>
+            </select>
+          </div>
+          <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal-jbdc-drivers">Add Driver</button>
+          <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal-add-datasource">Add Datasource</button>
+        </div>
+
+        <div class="tiles-view-pf row-cards-pf">
+          <div class="row">
+
+            <div class="col-lg-2 col-md-3 col-sm-3">
+              <div class="tile">
+                <div class="tile-content">
+                  <div class="text-right hk-tile-alert">
+                    <span class="label label-danger hk-label-small">3</span>
+                  </div>
+                  <div class="hk-tile-title">
+                    <div class="dropdown">
+                      <button class="btn btn-link dropdown-toggle" id="ds-actions1" data-toggle="dropdown">
+                        Hawkular.DS
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="ds-actions1">
+                        <li><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#">Enable</a></li>
+                        <li class="disabled"><a role="menuitem" tabindex="-1" href="#">Disable</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                      <div id="donut-1"></div>
+                    </div>
+                  </div>
+                  <script>
+                    var donut1 = c3.generate({
+                      bindto: '#donut-1',
+                      type: "donut",
+                      donut: {
+                        title: "A",
+                        label: {show: false},
+                        width: 11
+                      },
+                      size: {
+                        height: 171 // produces a diameter of 150 and a centered chart
+                      },
+                      legend: {
+                        show: false
+                      },
+                      color: {
+                        pattern: ["#0099d3","#D1D1D1"]
+                      },
+                      tooltip: {
+                        contents: function (d) {
+                          return '<span class="donut-tooltip-pf" style="white-space: nowrap;">' +
+                                  Math.round(d[0].ratio * 100) + '% ' + d[0].name +
+                                  '</span>';
+                        }
+                      },
+                      data: {
+                        type: "donut",
+                        columns: [
+                          ["Connections Used", 45],
+                          ["Connections Available", 55]
+                        ],
+                        groups: [
+                          ["used", "available"]
+                        ],
+                        order: null
+                      },
+                    });
+
+                    var donutChartTitle = d3.select("#donut-1").select('text.c3-chart-arcs-title');
+                    donutChartTitle.text("");
+                    donutChartTitle.insert('tspan').text("45%").classed('donut-title-big-pf', true).attr('dy', 0).attr('x', 0);
+                    donutChartTitle.insert('tspan').text("Connections").classed('donut-title-small-pf', true).attr('dy', 20).attr('x', 0);
+                    donutChartTitle.insert('tspan').text("Used").classed('donut-title-small-pf', true).attr('dy', 15).attr('x', 0);
+
+                  </script>
+
+                  <div class="hk-tile-info">7 Available <br/>(of 28 connections)</div>
+                  <a href="application-url.html" class="hide">View details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-sm-3">
+              <div class="tile">
+                <div class="tile-content">
+                  <div class="text-right hk-tile-alert">
+                    <span class="label label-danger hk-label-small">3</span>
+                  </div>
+                  <div class="hk-tile-title">
+                    <div class="dropdown">
+                      <button class="btn btn-link dropdown-toggle" id="ds-actions1" data-toggle="dropdown">
+                        Hawkular.DS
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="ds-actions1">
+                        <li><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#">Delete</a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#">Enable</a></li>
+                        <li class="disabled"><a role="menuitem" tabindex="-1" href="#">Disable</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                      <div id="donut-2"></div>
+                    </div>
+                  </div>
+                  <script>
+                    var donut2 = c3.generate({
+                      bindto: '#donut-2',
+                      type: "donut",
+                      donut: {
+                        title: "A",
+                        label: {show: false},
+                        width: 11
+                      },
+                      size: {
+                        height: 171 // produces a diameter of 150 and a centered chart
+                      },
+                      legend: {
+                        show: false
+                      },
+                      color: {
+                        pattern: ["#0099d3","#D1D1D1"]
+                      },
+                      tooltip: {
+                        contents: function (d) {
+                          return '<span class="donut-tooltip-pf" style="white-space: nowrap;">' +
+                                  Math.round(d[0].ratio * 100) + '% ' + d[0].name +
+                                  '</span>';
+                        }
+                      },
+                      data: {
+                        type: "donut",
+                        columns: [
+                          ["Connections Used", 45],
+                          ["Connections Available", 55]
+                        ],
+                        groups: [
+                          ["used", "available"]
+                        ],
+                        order: null
+                      },
+                    });
+
+                    var donutChartTitle = d3.select("#donut-2").select('text.c3-chart-arcs-title');
+                    donutChartTitle.text("");
+                    donutChartTitle.insert('tspan').text("45%").classed('donut-title-big-pf', true).attr('dy', 0).attr('x', 0);
+                    donutChartTitle.insert('tspan').text("Connections").classed('donut-title-small-pf', true).attr('dy', 20).attr('x', 0);
+                    donutChartTitle.insert('tspan').text("Used").classed('donut-title-small-pf', true).attr('dy', 15).attr('x', 0);
+
+                  </script>
+
+                  <div class="hk-tile-info">7 Available <br/>(of 28 connections)</div>
+                  <a href="application-url.html" class="hide">View details</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- .container -->
+    </div>
+  </body>
+</html>
