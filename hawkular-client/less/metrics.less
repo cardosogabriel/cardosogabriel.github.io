@@ -1859,10 +1859,12 @@ td .fa-comment-o {
 
 .tiles-view-pf {
 
+  overflow: visible;
+
   .row {
     margin-left: 0;
     margin-right: 0;
-    overflow: hidden; //to avoid firefox scroll
+    overflow: visible; //to avoid firefox scroll
   }
 
   [class*="col-"] {
@@ -2414,7 +2416,13 @@ section {
 }
 
 
-// Datasources tab
+// Datasources screen
+
+.hk-application-datasources .tiles-view-pf .row {
+  overflow: hidden; // to avoid scroll in Firefox
+}
+
+// to be deleted
 
 .hk-panel-collapse-area {
 
