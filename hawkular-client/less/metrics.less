@@ -118,6 +118,12 @@ ul.hk-input-text {
     line-height: 1.4;
   }
 
+  dd .label {
+    display: inline-block;
+    padding: 5px 6px;
+    margin-bottom: 3px;
+  }
+
   dt {
     @media (min-width: @screen-sm-min) {
       text-align: left;
@@ -911,6 +917,11 @@ a:hover .fa-times-circle-o,
 
 .btn-danger .fa {
   color: white;
+}
+
+[class^="pficon-"],
+[class*=" pficon-"] {
+  font-size: 14px;
 }
 
 
@@ -1861,7 +1872,19 @@ td .fa-comment-o {
 
   .tile {
     margin: 10px 0;
+    position: relative;
     width: 100%;
+
+    .hk-delete {
+      position: absolute;
+      right: 13px;
+      top: 12px;
+      visibility: hidden;
+    }
+
+    &:hover .hk-delete {
+      visibility: visible;
+    }
   }
 }
 

@@ -98,42 +98,24 @@
           <h2 class="text-center">Current status of your URLs</h2>
 
           <div class="hk-control-actions-bar hk-separator">
-            <select class="selectpicker">
-              <option>Sort A - Z</option>
-              <option>Sort Z - A</option>
-            </select>
-          </div>
-          <div>
-            <div id="exampleSimpleFilter">
-              <div class="simple-filter"><div pf-simple-filter-fields="" config="config" add-filter-fn="addFilter"><div class="simple-filter filter-fields"><form class="ng-pristine ng-valid"><div class="form-group toolbar-pf-filter"><div class="input-group"><div dropdown="" class="input-group-btn dropdown"><button dropdown-toggle="" type="button" class="btn btn-default dropdown-toggle filter-fields" aria-haspopup="true" aria-expanded="false" tooltip="Filter by" tooltip-placement="bottom">Name <span class="caret"></span></button><ul class="dropdown-menu"><!-- ngRepeat: item in config.fields --><li ng-repeat="item in config.fields" class="" style=""><a class="filter-field" role="menuitem" tabindex="-1" ng-click="selectField(item)">Name</a></li><!-- end ngRepeat: item in config.fields --><li ng-repeat="item in config.fields" class="" style=""><a class="filter-field" role="menuitem" tabindex="-1" ng-click="selectField(item)">State</a></li><!-- end ngRepeat: item in config.fields --></ul></div><!-- ngIf: currentField.filterType !== 'select' --><div ng-if="currentField.filterType !== 'select'" class="" style=""><input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="config.currentValue" placeholder="Containts text" ng-keypress="onValueKeyPress($event)"></div><!-- end ngIf: currentField.filterType !== 'select' --><!-- ngIf: currentField.filterType === 'select' --></div></div></form></div></div><div pf-simple-filter-results="" config="config"><div class="simple-filter"><div class="row toolbar-pf-results"><div class="col-sm-12"><h5>5 Results</h5><!-- ngIf: config.appliedFilters.length > 0 --><ul class="list-inline"><!-- ngRepeat: filter in config.appliedFilters --></ul><p><!-- ngIf: config.appliedFilters.length > 0 --></p></div><!-- /col --></div><!-- /row --></div></div></div></div>
-</div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-            <div class="row">
-              <form class="col-sm-8">
-                <div class="hk-container-separator">
-                  <div class="input-group ">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Name <span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Name</a></li>
-                        <li><a href="#">What else?</a></li>
-                      </ul>
-                    </div><!-- /btn-group -->
-                    <input type="text" class="form-control" placeholder="Filter by Name...">
-                  </div>
+            <form>
+              <div class="hk-container-separator">
+                <div class="input-group ">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Name <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Name</a></li>
+                      <li><a href="#">What else?</a></li>
+                    </ul>
+                  </div><!-- /btn-group -->
+                  <input type="text" class="form-control" placeholder="Enter text to filter...">
                 </div>
-              </form>
-
-            </div>
+              </div>
+              <select class="selectpicker">
+                <option>Sort A - Z</option>
+                <option>Sort Z - A</option>
+              </select>
+            </form>
           </div>
 
           <div class="tiles-view-pf row-cards-pf">
@@ -142,7 +124,7 @@
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">http://www.ufsc.br</div>
@@ -154,13 +136,16 @@
                     <div class="hk-tile-info">Response Time: 50000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">https://issues.jboss.org/browse/HAWKULAR-710</div>
@@ -172,13 +157,16 @@
                     <div class="hk-tile-info">Response Time: 1000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">http://www.ufsc.br</div>
@@ -190,13 +178,16 @@
                     <div class="hk-tile-info">Response Time: 50000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">https://issues.jboss.org/browse/HAWKULAR-710</div>
@@ -208,13 +199,16 @@
                     <div class="hk-tile-info">Response Time: 1000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">http://www.ufsc.br</div>
@@ -226,13 +220,16 @@
                     <div class="hk-tile-info">Response Time: 50000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">https://issues.jboss.org/browse/HAWKULAR-710</div>
@@ -244,13 +241,16 @@
                     <div class="hk-tile-info">Response Time: 1000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">http://www.ufsc.br</div>
@@ -262,13 +262,16 @@
                     <div class="hk-tile-info">Response Time: 50000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-3 col-sm-3">
                 <div class="tile">
                   <div class="tile-content">
-                    <div class="text-right hk-tile-alert">
+                    <div class="text-left hk-tile-alert">
                       <span class="label label-danger hk-label-small">3</span>
                     </div>
                     <div class="hk-tile-title">https://issues.jboss.org/browse/HAWKULAR-710</div>
@@ -280,6 +283,9 @@
                     <div class="hk-tile-info">Response Time: 1000ms</div>
                     <a href="application-url.html" class="hide">View details</a>
                   </div>
+                  <button class="btn-link hk-delete" data-toggle="tooltip" data-placement="left" title="Delete">
+                    <span class="pficon-delete"></span>
+                  </button>
                 </div>
               </div>
 
