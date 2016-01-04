@@ -25,9 +25,11 @@
         });
       });
 
+/*
       $(function() {
         $('.hk-dashboard-block').matchHeight();
       });
+*/
     </script>
   </head>
 
@@ -202,64 +204,98 @@
               <div class="card-pf-body">
                 <div class="row">
 
-                  <div class="col-md-6 hk-dashboard-block">
-                    <div class="hk-data-info">
-                      <div class="hk-data">25</div>
-                      <div class="hk-info">
-                        <img src="img/chart-dash-alerts.png" alt="chart-dash-datasources">
-                      </div>
+                  <div class="col-sm-6 hk-dashboard-block">
+                    <h3 class="card-pf-title">Alerts</h3>
+                    <p class="card-pf-utilization-details">
+                      <span class="card-pf-utilization-card-details-count">2</span>
+                      <span class="card-pf-utilization-card-details-description">
+                        <span class="card-pf-utilization-card-details-line-1"></span>
+                        <span class="card-pf-utilization-card-details-line-2">open alerts</span>
+                      </span>
+                    </p>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-alerts.png" alt="provisional screenshot">
                     </div>
-                    <div class="hk-block-title">Alerts</div>
                   </div>
 
-                  <div class="col-md-6 hk-dashboard-block">
-                    <div class="hk-data-info">
-                      <div class="hk-data">62</div>
-                      <div class="hk-info">
-                        <img src="img/chart-dash-datasources.png" alt="chart-dash-datasources">
-                      </div>
+                  <div class="col-sm-6 hk-dashboard-block">
+                    <h3 class="card-pf-title">Used Connections</h3>
+                    <p class="card-pf-utilization-details">
+                      <span class="card-pf-utilization-card-details-count">0</span>
+                      <span class="card-pf-utilization-card-details-description">
+                        <span class="card-pf-utilization-card-details-line-1"></span>
+                        <span class="card-pf-utilization-card-details-line-2">Hawkular datasource</span>
+                      </span>
+                    </p>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-connections.png" width="63" alt="provisional screenshot">
                     </div>
-                    <div class="hk-block-title">Used Datasource Connections</div>
                   </div>
 
-                  <div class="col-md-6 hk-dashboard-block">
-                    <div class="hk-data-info">
-                      <div class="hk-data">824</div>
-                      <div class="hk-info">
-                        <img src="img/chart-dash-web.png" alt="chart-dash-web">
-                      </div>
+                  <div class="col-sm-6 hk-dashboard-block">
+                    <h3 class="card-pf-title">Used Connections</h3>
+                    <p class="card-pf-utilization-details">
+                      <span class="card-pf-utilization-card-details-count">0</span>
+                      <span class="card-pf-utilization-card-details-description">
+                        <span class="card-pf-utilization-card-details-line-1"></span>
+                        <span class="card-pf-utilization-card-details-line-2">Keycloak datasource</span>
+                      </span>
+                    </p>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-connections.png" width="63" alt="provisional screenshot">
                     </div>
-                    <div class="hk-block-title">JVM (Average Heap Usage per MB)</div>
                   </div>
 
-                  <div class="col-md-6 hk-dashboard-block">
-                    <div class="hk-data-info">
-                      <div class="hk-data">10</div>
-                      <div class="hk-info">
-                        <p class="card-pf-aggregate-status-notifications">
-                          <span class="card-pf-aggregate-status-notification">
-                            <i class="fa fa-times-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="Failed"></i>1
-                          </span>
-                          <span class="card-pf-aggregate-status-notification">
-                            <i class="fa fa-square" data-toggle="tooltip" data-placement="top" data-original-title="Stopped"></i>1
-                          </span>
-                          <span class="card-pf-aggregate-status-notification">
-                            <i class="fa fa-check-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="OK"></i>8
-                          </span>
-                        </p>
-                      </div>
+                  <div class="col-sm-6 hk-dashboard-block">
+                    <h3 class="card-pf-title">Deployment Status</h3>
+                    <p class="card-pf-utilization-details">
+                      <span class="card-pf-utilization-card-details-count">10</span>
+                      <span class="card-pf-utilization-card-details-description">
+                        <span class="card-pf-utilization-card-details-line-1"></span>
+                        <span class="card-pf-utilization-card-details-line-2">deployments</span>
+                      </span>
+                    </p>
+                    <div class="hk-info">
+                      <p class="card-pf-aggregate-status-notifications">
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-times-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="Failed"></i>1
+                        </span>
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-square" data-toggle="tooltip" data-placement="top" data-original-title="Stopped"></i>1
+                        </span>
+                        <span class="card-pf-aggregate-status-notification">
+                          <i class="fa fa-check-circle-o" data-toggle="tooltip" data-placement="top" data-original-title="OK"></i>8
+                        </span>
+                      </p>
                     </div>
-                    <div class="hk-block-title">JVM (Average Heap Usage per MB)</div>
                   </div>
 
-                  <div class="col-md-6 hk-dashboard-block">
-                    <div class="hk-data-info">
-                      <div class="hk-data">842</div>
-                      <div class="hk-info">
-                        <img src="img/chart-dash-web.png" alt="chart-dash-web">
-                      </div>
+                  <div class="col-sm-6 hk-dashboard-block">
+                    <h3 class="card-pf-title">JVM Heap Usage</h3>
+                    <p class="card-pf-utilization-details">
+                      <span class="card-pf-utilization-card-details-count">336</span>
+                      <span class="card-pf-utilization-card-details-description">
+                        <span class="card-pf-utilization-card-details-line-1"></span>
+                        <span class="card-pf-utilization-card-details-line-2">average usage (MB)</span>
+                      </span>
+                    </p>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-alerts.png" alt="provisional screenshot">
                     </div>
-                    <div class="hk-block-title">Web Sessions</div>
+                  </div>
+
+                  <div class="col-sm-6 hk-dashboard-block">
+                    <h3 class="card-pf-title">Web Sessions</h3>
+                    <p class="card-pf-utilization-details">
+                      <span class="card-pf-utilization-card-details-count">0</span>
+                      <span class="card-pf-utilization-card-details-description">
+                        <span class="card-pf-utilization-card-details-line-1"></span>
+                        <span class="card-pf-utilization-card-details-line-2">active sessions</span>
+                      </span>
+                    </p>
+                    <div class="hk-info">
+                      <img src="img/chart-dash-alerts.png" alt="provisional screenshot">
+                    </div>
                   </div>
 
                 </div>
@@ -268,7 +304,7 @@
 
           </div><!-- .col-md-6 -->
 
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-md-12">
             <div class="card-pf card-pf-utilization">
               <div class="card-pf-heading">
                 <p class="card-pf-heading-details hk-definitions-link">
