@@ -2382,6 +2382,115 @@ h2 + .tiles-view-pf {
 }
 
 
+// Application servers 100% sidebar
+
+/*
+
+.hk-application-servers.container-fluid,
+.hk-application-servers.container-fluid .row {
+  height: 100%;
+}
+
+
+.hk-sidebar-container {
+  background-color: black;
+  min-height: calc(~"100% - 79px");
+  overflow: hidden;
+
+  > div {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+  }
+}
+*/
+
+html,
+body {
+  height: 100%;
+}
+
+.hk-application-servers {
+  height: calc(~"100% - 62px");
+  position: relative;
+}
+
+.hk-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-height: 100%;
+  width: 20em;
+
+  @media (max-width: @screen-xs-max) {
+    display: none;
+  }
+
+  > div {
+    background: #3a3f43;
+    color: white;
+    padding: 2em;
+  }
+
+  h4 {
+    font-size: ceil(@font-size-base + 1);
+    font-style: italic;
+  }
+
+  .btn-link:hover {
+    color: @link-color;
+  }
+
+  .pficon-close {
+    font-size: ceil(@font-size-base - 2);
+  }
+
+  .hk-filter-v-block {
+    padding: 1.5em 0;
+
+    + .hk-filter-v-block {
+      border-top: 1px solid #888;
+    }
+
+    .radio,
+    .checkbox {
+      margin-left: 1.5em;
+    }
+
+    .hk-label-heading {
+      color: white;
+      font-weight: bold;
+
+      .fa {
+        color: white;
+        font-size: @font-size-base;
+      }
+    }
+
+    nav {
+      margin-left: 1.5em;
+      margin-top: 1em;
+
+      a:hover {
+        color: @link-color;
+      }
+
+      a.selected {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.hk-content-sidebar {
+  @media (min-width: @screen-sm-min) {
+    margin-left: 20em;
+    width: calc(~"100% - 20em");
+  }
+}
+
+
 // Application server screen
 
 .btn-link.hk-trigger {
