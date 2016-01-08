@@ -850,6 +850,25 @@ p + .form-horizontal {
   width: 300px;
 }
 
+.hk-label-inputs {
+  padding-left: 2em;
+  padding-right: 2em;
+
+  .combobox-container {
+    float: left;
+    width: calc(~"50% - 25px");
+  }
+
+  .hk-label-semicolon {
+    float: left;
+    padding: 0 6px;
+  }
+
+  .btn {
+    margin-left: 1em;
+  }
+}
+
 
 // Icons
 
@@ -1791,6 +1810,10 @@ td .fa-comment-o {
   }
 }
 
+th .fa {
+  color: @gray-dark;
+}
+
 
 // Tiles (copied from Angular Patternfly)
 
@@ -2384,26 +2407,6 @@ h2 + .tiles-view-pf {
 
 // Application servers 100% sidebar
 
-/*
-
-.hk-application-servers.container-fluid,
-.hk-application-servers.container-fluid .row {
-  height: 100%;
-}
-
-
-.hk-sidebar-container {
-  background-color: black;
-  min-height: calc(~"100% - 79px");
-  overflow: hidden;
-
-  > div {
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
-  }
-}
-*/
-
 html,
 body {
   height: 100%;
@@ -2437,7 +2440,8 @@ body {
     font-style: italic;
   }
 
-  .btn-link:hover {
+  .btn-link:hover,
+  a:hover {
     color: @link-color;
   }
 
@@ -2470,10 +2474,6 @@ body {
     nav {
       margin-left: 1.5em;
       margin-top: 1em;
-
-      a:hover {
-        color: @link-color;
-      }
 
       a.selected {
         color: white;
