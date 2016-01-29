@@ -2461,7 +2461,7 @@ body {
 }
 
 .hk-sidebar {
-  background: white;
+  background-color: white;
   bottom: 0;
   left: 0;
   min-height: 100%;
@@ -2474,38 +2474,8 @@ body {
   }
 
   > div {
+    background-color: white;
     padding: 2em;
-  }
-
-
-  .hk-filters-selected {
-
-    .dropdown-menu {
-      margin-top: 15px;
-      min-width: 0;
-      width: 100%;
-    }
-
-    .dropdown-menu-content {
-      padding: 15px;
-    }
-
-    .hk-filter-selected {
-
-       + .hk-filter-selected {
-        margin-top: 5px;
-      }
-
-      .btn {
-        margin-left: 5px;
-      }
-    }
-
-    .hk-dropdown-footer {
-      background-color: #f5f5f5;
-      margin: 10px -15px -15px;
-      padding: 10px 15px;
-    }
   }
 
   h4 {
@@ -2562,6 +2532,26 @@ body {
         font-weight: bold;
       }
     }
+  }
+}
+
+.hk-filters-selected {
+
+  .hk-filter-selected {
+
+     + .hk-filter-selected {
+      margin-top: 5px;
+    }
+
+    .btn {
+      margin-left: 5px;
+    }
+  }
+
+  .hk-dropdown-footer {
+    background-color: #f5f5f5;
+    margin: 10px -14px -10px;
+    padding: 10px 15px;
   }
 }
 
