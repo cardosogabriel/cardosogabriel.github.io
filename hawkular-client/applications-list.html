@@ -76,8 +76,36 @@
 
       <div class="hk-sidebar">
         <div>
-          <h4>Filter servers by:</h4>
-          <button class="btn-link pull-right">Clear All <span class="pficon-close"></span></button>
+          <div class="hk-filter-v-block">
+            <div class="hk-filters-selected dropdown clearfix">
+              <a href="#" class="btn-link pull-right" data-toggle="dropdown"><i class="fa fa-filter"></i> 5 Filters Applied</a>
+              <h4>Filter by</h4>
+              <div class="dropdown-menu infotip bottom-right">
+                <div class="arrow"></div>
+                <div class="dropdown-menu-content">
+                  <div class="hk-filter-selected">
+                    Host 1 (domain controler) <button class="btn btn-link"><span class="pficon-close"></span></button>
+                  </div>
+                  <div class="hk-filter-selected">
+                    MyServerGroup (ha) <button class="btn btn-link"><span class="pficon-close"></span></button>
+                  </div>
+                  <div class="hk-filter-selected">
+                    Location: New Jersey <button class="btn btn-link"><span class="pficon-close"></span></button>
+                  </div>
+                  <div class="hk-filter-selected">
+                    Location: New York <button class="btn btn-link"><span class="pficon-close"></span></button>
+                  </div>
+                  <div class="hk-filter-selected">
+                    Staging: Test <button class="btn btn-link"><span class="pficon-close"></span></button>
+                  </div>
+                  <div class="hk-dropdown-footer">
+                    <button class="btn btn-link">Clear All</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
           <div class="hk-filter-v-block">
             <label class="hk-label-heading">Text</label>
             <input type="text" class="form-control" placeholder="Contains text">

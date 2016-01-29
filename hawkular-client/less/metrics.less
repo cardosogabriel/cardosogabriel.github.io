@@ -1,7 +1,6 @@
 // Variables
 
-@danger-bg:                                                         rgba(204,0,0,0.07);
-
+@danger-bg: rgba(204, 0, 0, 0.07);
 
 /*------------------------------------*\
     STRUCTURAL STYLES
@@ -44,7 +43,6 @@ body {
   }
 }
 
-
 /*------------------------------------*\
     SCREEN COMPONENTS
 \*------------------------------------*/
@@ -74,7 +72,7 @@ h3 {
   color: @gray;
   font-size: ceil(@font-size-base + 1);
   font-weight: bold;
-  margin-bottom:@grid-gutter-width/8*3;
+  margin-bottom: @grid-gutter-width/8*3;
   margin-top: @grid-gutter-width/4;
 
   + .hk-update {
@@ -172,7 +170,6 @@ a:hover {
   font-weight: 600;
 }
 
-
 // Help components
 
 .hk-display-table {
@@ -209,6 +206,9 @@ a:hover {
   background-color: @brand-danger;
 }
 
+.hk-cursor-pointer {
+  cursor: pointer;
+}
 
 // Alerts
 
@@ -217,7 +217,6 @@ a:hover {
 .alert-danger {
   background-color: transparent;
 }
-
 
 // Animations / Transitions
 
@@ -229,6 +228,7 @@ a:hover {
     opacity: 1;
   }
 }
+
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
@@ -237,6 +237,7 @@ a:hover {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -262,7 +263,6 @@ a:hover {
 .btn-primary {
   transition: background 0.5s ease, border-color 0.5s ease, color 0.5s ease;
 }
-
 
 // Buttons
 
@@ -335,6 +335,10 @@ a:hover {
   clear: both;
 }
 
+.card-pf-title {
+  line-height: 1.3;
+}
+
 .row-cards-pf + .container-cards-pf {
   margin-top: 0;
 }
@@ -370,6 +374,21 @@ a:hover {
   margin-left: 5px;
 }
 
+.hk-card-token {
+
+  .card-pf-body {
+    margin-top: -5px;
+
+    p {
+      margin-top: @grid-gutter-width/2;
+    }
+  }
+
+  .card-pf-title span {
+    margin-right: @grid-gutter-width/4;
+  }
+}
+
 
 // Charts and Legends
 
@@ -396,7 +415,7 @@ a:hover {
     box-shadow: none;
   }
 
-  .hk-graph-container  {
+  .hk-graph-container {
     margin: 0 auto;
 
     &.hk-graph-availability svg { /* top 40px, bottom 30px, align center */
@@ -630,6 +649,12 @@ a:hover {
   }
 }
 
+.hk-donut-chart {
+  .c3-chart-arcs-title {
+    dominant-baseline: central;
+    font-size: 1.4em;
+  }
+}
 
 // Control Actions Bar
 
@@ -667,7 +692,7 @@ a:hover {
   }
 
   .btn + .btn {
-    margin-left: 10px;
+    margin-left: @grid-gutter-width/4;
   }
 
   + .hk-update {
@@ -680,11 +705,17 @@ a:hover {
   }
 }
 
+.hk-update {
+  &.hk-in-alert {
+    margin-bottom: @grid-gutter-width/2;
+    margin-top: @grid-gutter-width/8;
+  }
+}
+
 .simple-filter .form-group {
   margin-bottom: 0;
   margin-top: -9px;
 }
-
 
 // Forms
 
@@ -813,7 +844,7 @@ a:hover {
 }
 
 p + .form-horizontal {
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .hk-required-info {
@@ -825,7 +856,7 @@ p + .form-horizontal {
   color: @brand-danger;
 }
 
-.btn + .btn {
+.hk-form-buttons .btn {
   margin-left: @grid-gutter-width/8;
 }
 
@@ -867,6 +898,10 @@ p + .form-horizontal {
   .btn {
     margin-left: 1em;
   }
+}
+
+.hk-form-buttons-offset {
+  width: calc(~"100% - 81px");
 }
 
 
@@ -956,7 +991,6 @@ a:hover .fa-times-circle-o,
 [class*=" pficon-"] {
   font-size: 14px;
 }
-
 
 // Modal Boxes
 
@@ -1085,7 +1119,7 @@ a:hover .fa-times-circle-o,
 }
 
 .modal-backdrop {
-  width: 100%!important;
+  width: 100% !important;
 }
 
 .modal-footer {
@@ -1108,7 +1142,6 @@ a:hover .fa-times-circle-o,
 .modal select[multiple] {
   height: 180px;
 }
-
 
 // Lists
 
@@ -1141,7 +1174,6 @@ a:hover .fa-times-circle-o,
     }
   }
 }
-
 
 // On off switch
 
@@ -1238,7 +1270,6 @@ a:hover .fa-times-circle-o,
   color: #9d9fa1;
 }
 
-
 // Panels
 
 .row-panels { // provisional until everything is updated to cards
@@ -1268,6 +1299,10 @@ a:hover .fa-times-circle-o,
       font-weight: 600;
     }
 
+    .hk-resource-name {
+      font-size: ceil(@font-size-base * 1.5);
+    }
+
     h2 {
       line-height: 1.3;
       margin: @grid-gutter-width/8 0;
@@ -1292,6 +1327,10 @@ a:hover .fa-times-circle-o,
 
       &.pull-right {
         margin-right: -10px;
+      }
+
+      &.hk-action-buttons {
+        margin-top: @padding-base-vertical;
       }
     }
   }
@@ -1466,14 +1505,12 @@ a:hover .fa-times-circle-o,
   }
 }
 
-
 // Right Sidebar
 
 .col-lg-3 .hk-info-top {
   margin-top: 10px;
   margin-bottom: 15px;
 }
-
 
 // Summary
 
@@ -1547,7 +1584,6 @@ a:hover .fa-times-circle-o,
     font-size: inherit;
   }
 }
-
 
 // Tables
 
@@ -1685,7 +1721,7 @@ a:hover .fa-times-circle-o,
 
   .add,
   .dropdown {
-    display:inline-block;
+    display: inline-block;
   }
 }
 
@@ -1814,7 +1850,6 @@ th .fa {
   color: @gray-dark;
 }
 
-
 // Tiles (copied from Angular Patternfly)
 
 .tiles-view-pf {
@@ -1870,9 +1905,9 @@ th .fa {
 
 .tiles-view-pf .tile:hover,
 .tiles-view-pf .tile:focus {
-  -webkit-box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.24);
-  -moz-box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.24);
-  box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.24);
+  -webkit-box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.24);
   border: 1px solid #d1d1d1
 }
 
@@ -1890,7 +1925,6 @@ th .fa {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-
 
 // Tiles (hawkular personalization)
 
@@ -1953,7 +1987,7 @@ h2 + .tiles-view-pf {
   font-weight: 600;
   height: 60px;
   margin-bottom: @grid-gutter-width/2;
-//   overflow: hidden;
+  //   overflow: hidden;
   padding-bottom: @grid-gutter-width/2;
   word-wrap: break-word;
 
@@ -1972,7 +2006,7 @@ h2 + .tiles-view-pf {
   border: 2px solid;
   height: 50px;
   margin: 0 auto 10px auto;
-  border-radius:25px;
+  border-radius: 25px;
   -webkit-border-radius: 25px;
   width: 50px;
 
@@ -2022,6 +2056,20 @@ h2 + .tiles-view-pf {
   }
 }
 
+.hk-datasource-tile {
+
+  .tile {
+    height: 330px;
+
+    .tile-content {
+      overflow: inherit;
+    }
+
+    .hk-tile-info .hk-data {
+      word-wrap: break-word;
+    }
+  }
+}
 
 // Toastr Overrides
 
@@ -2030,9 +2078,9 @@ h2 + .tiles-view-pf {
   background-position: left top;
   background-size: 56px 100%;
   border-radius: 1px;
-//   border: 1px solid #bdbdbd;
+  //   border: 1px solid #bdbdbd;
   border: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   color: #333333;
   opacity: 0.95;
   padding: 15px 20px 15px 71px;
@@ -2047,23 +2095,23 @@ h2 + .tiles-view-pf {
 }
 
 #toast-container > div:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #toast-container > .toast-success {
-  background-image: linear-gradient(#439a3b, #439a3b)!important;
+  background-image: linear-gradient(#439a3b, #439a3b) !important;
 }
 
 #toast-container > .toast-warning {
-  background-image: linear-gradient(#ec7a08, #ec7a08)!important;
+  background-image: linear-gradient(#ec7a08, #ec7a08) !important;
 }
 
 #toast-container > .toast-error {
-  background-image: linear-gradient(#cc0000, #cc0000)!important;
+  background-image: linear-gradient(#cc0000, #cc0000) !important;
 }
 
 #toast-container > .toast-info {
-  background-image: linear-gradient(#4d5258, #4d5258)!important;
+  background-image: linear-gradient(#4d5258, #4d5258) !important;
 }
 
 #toast-container > .toast-success:after,
@@ -2106,7 +2154,6 @@ h2 + .tiles-view-pf {
     opacity: 1;
   }
 }
-
 
 // Wizard
 
@@ -2187,7 +2234,6 @@ h2 + .tiles-view-pf {
     }
   }
 }
-
 
 /*------------------------------------*\
     SCREENS
@@ -2281,7 +2327,6 @@ h2 + .tiles-view-pf {
     }
   }
 }
-
 
 // URLs list screen
 
@@ -2383,7 +2428,6 @@ h2 + .tiles-view-pf {
   }
 }
 
-
 // Application servers screen
 
 .hk-application-servers {
@@ -2403,7 +2447,6 @@ h2 + .tiles-view-pf {
     color: @gray-light;
   }
 }
-
 
 // Application servers 100% sidebar
 
@@ -2430,19 +2473,44 @@ body {
   }
 
   > div {
-    background: #3a3f43;
-    color: white;
+    background: white;
     padding: 2em;
+  }
+
+
+  .hk-filters-selected {
+
+    .dropdown-menu {
+      margin-top: 15px;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .dropdown-menu-content {
+      padding: 15px;
+    }
+
+    .hk-filter-selected {
+
+       + .hk-filter-selected {
+        margin-top: 5px;
+      }
+
+      .btn {
+        margin-left: 5px;
+      }
+    }
+
+    .hk-dropdown-footer {
+      background-color: #f5f5f5;
+      margin: 10px -15px -15px;
+      padding: 10px 15px;
+    }
   }
 
   h4 {
     font-size: ceil(@font-size-base + 1);
     font-style: italic;
-  }
-
-  .btn-link:hover,
-  a:hover {
-    color: @link-color;
   }
 
   .pficon-close {
@@ -2452,21 +2520,35 @@ body {
   .hk-filter-v-block {
     padding: 1.5em 0;
 
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
     + .hk-filter-v-block {
-      border-top: 1px solid #888;
+      border-top: 1px solid @table-border-color;
     }
 
     .radio,
     .checkbox {
       margin-left: 1.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     .hk-label-heading {
-      color: white;
       font-weight: bold;
 
       .fa {
-        color: white;
         font-size: @font-size-base;
       }
     }
@@ -2476,7 +2558,7 @@ body {
       margin-top: 1em;
 
       a.selected {
-        color: white;
+        color: @link-hover-color;
         font-weight: bold;
       }
     }
@@ -2489,7 +2571,6 @@ body {
     width: calc(~"100% - 20em");
   }
 }
-
 
 // Application server screen
 
@@ -2554,7 +2635,6 @@ section {
   }
 }
 
-
 // Datasources screen
 
 .hk-application-datasources .tiles-view-pf .row {
@@ -2599,7 +2679,7 @@ section {
 }
 
 .hk-collapsible-area {
-  display: block!important;
+  display: block !important;
   max-height: 1320px;
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease;
@@ -2650,15 +2730,15 @@ section {
 
 #hk-datasources .row-cards-pf {
   margin-top: 30px;
+  padding-top: 0px;
 }
-
 
 // Application overview screen
 
 .hk-dashboard-block {
 
   padding-top: @grid-gutter-width/2;
-//   height: 120px;
+  //   height: 120px;
 
   &:nth-child(1),
   &:nth-child(2) {
@@ -2712,7 +2792,7 @@ section {
   }
 
   .hk-block-title {
-    margin-left: 25%;
+    margin-left: 35%;
   }
 
   p.card-pf-aggregate-status-notifications {
@@ -2735,11 +2815,11 @@ section {
 .server-label {
   display: inline-block;
   padding-right: 5px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .remove-label {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
   margin-left: 5px;
   margin-right: 0;
@@ -2750,9 +2830,7 @@ section {
   }
 }
 
-
 // Application URL screen
-
 
 .hk-application-url .dl-horizontal {
   dt {
@@ -2767,7 +2845,6 @@ section {
     }
   }
 }
-
 
 // Access portal screens
 
@@ -2790,6 +2867,22 @@ section {
     margin-bottom: 40px;
   }
 
+  .download-agent-icon {
+    font-size: 48px;
+  }
+
+  .download-header {
+    margin: 0 0 20px 0;
+  }
+
+  .download-instructions {
+    margin: 0 60px 20px 60px;
+  }
+
+  .download-button-container {
+    margin-bottom: 20px;
+  }
+
   .highlight pre {
     padding: 9px 14px;
     margin-bottom: 14px;
@@ -2800,6 +2893,7 @@ section {
 
   .btn-clipboard {
     position: absolute;
+    cursor: pointer;
     top: 0;
     right: 0;
     z-index: 10;
@@ -2812,7 +2906,7 @@ section {
     border-radius: 0 4px 0 4px;
   }
 
-  .zero-clipboard {
+  .clipboard {
     position: relative;
     display: none;
   }
@@ -2822,10 +2916,14 @@ section {
   }
 
   @media (min-width: 768px) {
-    .zero-clipboard {
+    .clipboard {
       display: block;
-      position: relative;
-
     }
   }
+}
+
+// Tokens screen
+
+.hk-tokens .row-cards-pf {
+  margin-top: @grid-gutter-width/2;
 }
