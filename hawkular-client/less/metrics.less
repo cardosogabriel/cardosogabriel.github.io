@@ -210,6 +210,10 @@ a:hover {
   cursor: pointer;
 }
 
+.hk-inline-block {
+  display: inline-block;
+}
+
 // Alerts
 
 .alert-success,
@@ -328,7 +332,6 @@ a:hover {
   }
 }
 
-
 // Cards
 
 .row-cards-pf {
@@ -337,6 +340,10 @@ a:hover {
 
 .card-pf-title {
   line-height: 1.3;
+}
+
+.card-pf-body {
+  margin-bottom: 0;
 }
 
 .row-cards-pf + .container-cards-pf {
@@ -374,21 +381,32 @@ a:hover {
   margin-left: 5px;
 }
 
-.hk-card-token {
-
-  .card-pf-body {
-    margin-top: -5px;
-
-    p {
-      margin-top: @grid-gutter-width/2;
-    }
-  }
-
-  .card-pf-title span {
-    margin-right: @grid-gutter-width/4;
-  }
+.hk-card-border {
+  border: 1px solid @table-border-color;
 }
 
+// Cards Flexbox
+
+.hk-row-cards-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+
+  &:before,
+  &:after {
+    display: flex;
+  }
+
+  [class*="col-"] {
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card-pf {
+    width: 100%;
+  }
+}
 
 // Charts and Legends
 
@@ -904,6 +922,10 @@ p + .form-horizontal {
   width: calc(~"100% - 81px");
 }
 
+.hk-input-bottom-info {
+  margin-top: @grid-gutter-width/8;
+}
+
 
 // Icons
 
@@ -990,6 +1012,10 @@ a:hover .fa-times-circle-o,
 [class^="pficon-"],
 [class*=" pficon-"] {
   font-size: 14px;
+}
+
+.btn-primary .fa {
+  color: white;
 }
 
 // Modal Boxes
@@ -2343,6 +2369,7 @@ h2 + .tiles-view-pf {
 
 .form-horizontal.hk-add-url {
   margin-bottom: @grid-gutter-width/4*3;
+  margin-top: @grid-gutter-width/4;
 
   .input-group-btn {
     vertical-align: top;
@@ -2434,6 +2461,10 @@ h2 + .tiles-view-pf {
 
   h1 {
     margin-bottom: @grid-gutter-width/4;
+
+    + .blank-slate-pf {
+      margin-top: @grid-gutter-width/2;
+    }
   }
 
   .dataTables_wrapper {

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Hawkular</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Hawkular console by Red Hat">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet/less" type="text/css" href="less/hawkular.less">
+    <script src="bower_components/less/dist/less.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="bower_components/patternfly/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/components/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+    <script type="text/javascript" src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
+    <script type="text/javascript" src="js/hawkular.js"></script>
+    <script>
+      // Initialize Datatables
+      $(document).ready(function() {
+        $('.datatable').dataTable( {
+          "bFilter": false;
+          "bPaginate": false
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/brand.svg" alt="Hawkular" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              Brian Johnson <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Log Out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li>
+            <a href="alert-center.html">Alert Center</a>
+          </li>
+          <li>
+            <a href="urls-list.html">URLs</a>
+          </li>
+          <li class="active">
+            <a href="applications-list.html">Application Servers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container hk-application-servers">
+
+      <h1 class="text-center">Application Servers</h1>
+
+      <div class="blank-slate-pf">
+        <div class="blank-slate-pf-icon">
+          <i class="fa fa-cubes"></i>
+        </div>
+        <h1>No application servers installed.</h1>
+        <p>Use the Agent Installer to help you get your first application running.</p>
+        <div class="blank-slate-pf-main-action">
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#agent-installer">
+            Start Agent Installer
+          </button>
+        </div>
+      </div>
+
+    </div><!-- .container -->
+
+    <!-- Modal Add Deployment -->
+
+    <div class="modal fade" id="agent-installer" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <h4 class="modal-title">Agent Installer</h4>
+          </div>
+
+          <div class="modal-body hk-1">
+            <p><strong>Server Information</strong></p>
+            <p class="hk-required-info">All fields are optional</p>
+            <p>The data you do not provide here, either you will have to pass it on the command line, edit the config of the target or <a href="">run a CLI set-up</a>.</p>
+
+            <form class="form-horizontal">
+              <fieldset>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="server-name">Server Name
+                    <a class="hk-btn-icon" tabindex="-1" role="button" popover-append-to-body="true" popover-placement="top" popover-trigger="mouseover mouseout" popover="The agent will use this name to refer to the server where it is deployed and locally managing.">
+                      <i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="server-name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="wildfly-home">Wildfly Home
+                    <a class="hk-btn-icon" tabindex="-1" role="button" popover-append-to-body="true" popover-placement="top" popover-trigger="mouseover mouseout" popover="Path to your Wildfly server into which the wildfly agent should be installed.
+                       This is the path on your monitored host.">
+                      <i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="wildfly-home" placeholder="The path of the Wildfly server" style="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="username">Username
+                    <a class="hk-btn-icon" tabindex="-1" role="button" popover-append-to-body="true" popover-placement="top" popover-trigger="mouseover mouseout" popover="Username for this Hawkular server.">
+                      <i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="username" autocomplete="off">
+                  </div>
+                  <div class="col-sm-7 col-sm-offset-3 hk-input-bottom-info">
+                    <i> * Advanced Option: use <strong>Token</strong> <code>--security-key</code> instead</i>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="password">Password
+                    <a class="hk-btn-icon" tabindex="-1" role="button" popover-append-to-body="true" popover-placement="top" popover-trigger="mouseover mouseout" popover="Password for this Hawkular server.">
+                      <i class="fa fa-info-circle"></i></a>
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" type="password" id="password" autocomplete="off">
+                  </div>
+                  <div class="col-sm-7 col-sm-offset-3">
+                    <i> * Advanced Option: use <strong>Token</strong> <code>--security-code</code> instead</i>
+                  </div>
+                </div>
+                <div class="form-group checkbox">
+                  <div class="col-sm-7 col-sm-offset-3">
+                  <label>
+                    <input type="checkbox"> Enable agent at server restart.
+                  </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </form>
+
+          </div><!-- .modal-body -->
+
+          <div class="modal-footer hk-1">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-2">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-2 hide">
+            <p><strong>Provide Credentials</strong></p>
+            <form class="hk-form-vertical">
+              <div class="form-group">
+                <label>Credentials Type</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="credentials-type" checked="">
+                    Token Credentials
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="credentials-type">
+                    User Name Credentials
+                  </label>
+                </div>
+              </div>
+              <div class="hk-info-top clearfix">
+                <button class="btn btn-default pull-right">Create Token</button>
+              </div>
+              <table class="datatable table table-bordered hk-table-select">
+                <thead>
+                  <tr>
+                    <th><input type="checkbox"/></th>
+                    <th>Token Name</th>
+                    <th>Key</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Persona</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox"/></td>
+                    <td>Token Name 1</td>
+                    <td class="hk-word-break">jio09feujf8e9ef89efj98ef</td>
+                    <td class="hk-word-break">988j9j988989j89jv89vje89e</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"/></td>
+                    <td>Token Name 2</td>
+                    <td class="hk-word-break">jio09feujf8e9ef89efj98ef</td>
+                    <td class="hk-word-break">988j9j988989j89jv89vje89e</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"/></td>
+                    <td>Token Name 3</td>
+                    <td class="hk-word-break">jio09feujf8e9ef89efj98ef</td>
+                    <td class="hk-word-break">988j9j988989j89jv89vje89e</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <div class="modal-footer hk-2 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-1">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-3">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-3 hide">
+            <p><strong>Create a passcode</strong></p>
+            <p>A passcode will encrypt your credentials inside the installer. You will need to provide this code when running the installer.</p>
+            <form class="form-horizontal">
+              <p class="hk-required-info text-right"><span class="hk-required">*</span> Required field</p>
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="passcode">Passcode <span class="hk-required">*</span></label>
+                <div class="col-sm-6">
+                  <input type="password" id="passcode" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="passcode-confirmation">Re-enter Passcode <span class="hk-required">*</span></label>
+                <div class="col-sm-6">
+                  <input type="password" id="passcode-confirmation" class="form-control">
+                </div>
+              </div>
+            </form>
+            <hr/>
+            <label class="control-label">Selected Token</label>
+            <div class="row row-cards-pf">
+              <div class="col-xs-12">
+                <div class="card-pf hk-card-token hk-card-border">
+                  <h2 class="card-pf-title">Token Name</h2>
+                  <div class="card-pf-body">
+                    <p>Token Description</p>
+                    <p>
+                      <small class="ng-binding"><b>Key:</b> 4f2ec792-6fcc-4072-9eaa-7fe531b22d95</small><br>
+                      <small class="ng-binding"><b>Secret:</b> 04d91f03546f70b36e6f151e78a03e6e</small><br>
+                      <small class="ng-binding"><b>Persona:</b> John Doe</small><br>
+                    </p>
+                  </div>
+                  <div class="card-pf-footer">
+                    <p>
+                      Expiration date:
+                      <abbr data-toggle="tooltip" data-placement="top" title="This date is shown in your timezone." class="ng-binding">
+                        ∞
+                      </abbr>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer hk-3 hide">
+            <button type="button" class="btn btn-default hk-btn-distant" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default hk-wz-nav" value="hk-2">&#60; Back</button>
+            <button type="button" class="btn btn-primary hk-wz-nav" value="hk-4">Next &#62;</button>
+          </div>
+
+          <div class="modal-body hk-4 hide">
+            <p><strong>Download installer</strong></p>
+            <p class="text-center">
+              <button class="btn btn-primary btn-lg"><i class="fa fa-download"></i> Download Installer</button>
+            </p>
+            <h3>Steps to take after downloading:</h3>
+            <h4 class="hk-margin-top">Place a file in a target directory</h4>
+            <p>The default location is the current working directory, unless you specified a directory in previous steps. Note: storing the installer in the same directory as your server instance, will simplify the command line needed to run the installer (as you won't need to provide a <code>-targetlocation-</code>).</p>
+            <h4>Run the installer</h4>
+            <p>In a CLI tool, run <code>java jar hawkularwildfly-agent-installer.jar -encryptionkey your_key</code>. For detailed installation instructions, refer to <a href="#">link to docs</a>.
+          </div>
+          <div class="modal-footer hk-4 hide">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Exit</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
